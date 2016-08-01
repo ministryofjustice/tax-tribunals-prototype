@@ -15,7 +15,7 @@
     Enter your case details from the letter the tribunal sent you.
   </p>
 
-  <form>
+  <form id="case_requests" action="/case_to_pay" method="GET" data-alt-url="/case_paid">
     <div class="form-group">
       <label class="form-label" for="forms_new_case_request_case_reference">Case Reference<span class="form-hint">e.g. TC/2012/00001</span></label>
       <input class="form-control" type="text" name="forms_new_case_request[case_reference]" id="forms_new_case_request_case_reference" />
@@ -24,7 +24,7 @@
       <label class="form-label" for="forms_new_case_request_confirmation_code">Confirmation Code<span class="form-hint">e.g. ABC123</span></label>
       <input class="form-control" type="text" name="forms_new_case_request[confirmation_code]" id="forms_new_case_request_confirmation_code" />
     </div>
-    <a href="/case_nothing_to_pay" class="button">Find Case</a>
+    <input class="button" type="submit" value="Find case" />
   </form>
 
   <details class="find-case-help">

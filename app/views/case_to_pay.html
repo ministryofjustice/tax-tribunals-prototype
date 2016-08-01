@@ -1,0 +1,60 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Tax Tribunals Prototype
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  {% include "includes/phase_banner_alpha.html" %}
+
+  <h1 class="heading-large">
+    <span class="heading-secondary">TC/2012/00001</span>
+    Harry Pierce vs HMRC
+  </h1>
+
+  <!-- unpaid case -->
+  <p class="lede">
+    You need to pay fees before the tribunal continues to work on your case.
+  </p>
+
+  <div class="notice notice-payment">
+    <i class="icon icon-important">
+      <span class="visuallyhidden">Warning</span>
+    </i>
+    <strong class="bold-small">
+      You may lose the right to appeal if you do not pay your fee within the time limit we give you.
+    </strong>
+  </div>
+
+  <div class="liabilities-list">
+
+    <div class="grid-row payments-row">
+      <div class="column-one-third">
+        <div class="data">
+          <h2 class="bold-xlarge">£50.00</h2>
+          <p class="bold-small">Lodgement Fee</p>
+        </div>
+      </div>
+      <div class="column-two-thirds">
+        <p>
+          <a class="button" href="#">Pay now</a>
+        </p>
+        <p class="font-xsmall">
+          You will be redirected to GOV.UK Pay, an official secure payments service.
+        </p>
+      </div>
+    </div>
+
+  </div>
+  <!-- unpaid case -->
+
+  <p>
+    <a class="link-back" href="/case_requests">Find another case</a>
+  </p>
+
+</main>
+
+{% endblock %}
