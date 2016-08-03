@@ -124,4 +124,7 @@ $(document).ready(function() {
   toggleContent.showHideRadioToggledContent();
   toggleContent.showHideCheckboxToggledContent();
 
+  // trigger stickAtTopWhenScrolling
+  GOVUK.stickAtTopWhenScrolling.init();
+
 });
