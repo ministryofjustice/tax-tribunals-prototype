@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Tax Tribunals Prototype
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  {% include "includes/phase_banner_alpha.html" %}
+
+  <h1 class="heading-large">
+    <span class="heading-secondary">TC/2012/00001</span>
+    Harry Pierce vs HMRC
+  </h1>
+
+  <div class="govuk-box-highlight">
+    <h1 class="bold-large">Payment successful</h1>
+    <p>
+      Your payment reference is
+      <strong class="heading-medium">JFM2JH12F109JAE92NPIQCA1MF</strong>
+    </p>
+  </div>
+
+  <p>We have sent you a confirmation email.</p>
+  <h2 class="heading-medium">What happens next</h2>
+  <p>
+    The tribunal will continue to work on your case.  They will send you an
+    invoice and may contact you to ask for more information.
+  </p>
+  <p>
+    <a href="#">What did you think of this service?</a> (takes 30 seconds)
+  </p>
+
+  <p>
+    <a class="link-back" href="/case_requests">Find another case</a>
+  </p>
+
+</main>
+
+{% endblock %}

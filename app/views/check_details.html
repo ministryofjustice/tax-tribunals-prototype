@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Tax Tribunals Prototype
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  {% include "includes/phase_banner_alpha.html" %}
+
+  <h1 class="heading-large">
+    Confirm your payment
+  </h1>
+
+  <table class="confirm-details">
+    <tbody>
+      <tr>
+        <td>Card number:</td>
+        <td class="details">************1111</td>
+      </tr>
+      <tr>
+        <td>Expiry date:</td>
+        <td class="details">02/20</td>
+      </tr>
+      <tr>
+        <td>Name on card:</td>
+        <td class="details">Mr Test Tester</td>
+      </tr>
+      <tr>
+        <td>Billing address:</td>
+        <td class="details">1 Test Street, Teston, TE57 1NG</td>
+      </tr>
+      <tr>
+        <td>Payment for:</td>
+        <td class="details">TC/2016/00019 - Lodgement Fee</td>
+      </tr>
+      <tr>
+        <td>Total amount:</td>
+        <td class="details">£50.00</td>
+      </tr>
+      <tr>
+        <td>Confirmation email:</td>
+        <td class="details">qwertyuiop@example.com</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <ul class="buttons">
+    <li><a class="button" href="/confirmation">Continue</a></li>
+    <li><a class="link" id="cancel-payment" href="/case_to_pay">Cancel</a></li>
+  </ul>
+
+</main>
+
+{% endblock %}
