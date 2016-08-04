@@ -1,5 +1,6 @@
 var paidCase = {
   form_id: 'case_requests',
+  paid_keyword: 'paid',
 
   init: function() {
     var self = this;
@@ -13,8 +14,6 @@ var paidCase = {
     var self = this,
         $form = $('form#' + self.form_id);
 
-    console.log('yus');
-
     $form.on('submit', function(e) {
       e.preventDefault();
       self.checkPaid($form);
@@ -22,10 +21,11 @@ var paidCase = {
   },
 
   checkPaid: function($form) {
-    var paid = false;
+    var self = this,
+        paid = false;
 
     $form.find('input').each(function(n, input) {
-      if($(input).val() === 'paid') {
+      if($(input).val() === self.paid_keyword) {
         paid = true;
       }
     });
