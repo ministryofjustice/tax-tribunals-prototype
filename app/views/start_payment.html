@@ -1,0 +1,62 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Tax Tribunals Prototype
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  {% include "includes/phase_banner_alpha.html" %}
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <h1 class="heading-large">Pay your tax tribunal fees</h1>
+
+      <p class="lede">
+        Pay for your tax tribunal fees online if you have an existing case with the tribunal.
+      </p>
+
+      <p>
+        Use this service to:
+      </p>
+      <ul class="list list-bullet">
+        <li>view outstanding fees on your case</li>
+        <li>make a payment for fees</li>
+      </ul>
+      <p>
+        Making a payment takes about 5 minutes.
+      </p>
+      <p>
+        <a class="button button-start" href="/case_requests">Start now</a>
+      </p>
+
+      <h2 class="heading-medium">Before you start</h2>
+      <p>
+        You will need your case reference and confirmation code, which you can find on the letter from the tribunal.
+      </p>
+
+    </div>
+
+    <div class="column-one-third">
+      <aside class="govuk-related-items">
+
+        <h2 class="heading-medium">Useful links</h2>
+        <nav role="navigation" aria-labelledby="subsection-title">
+          <ul class="font-xsmall">
+            <li>
+              <a href="https://www.gov.uk/courts-tribunals/first-tier-tribunal-tax" rel="external" target="_blank">About the tax tribunal </a><br />
+              <span class="related-link-hint">Information on when and how you can appeal.</span>
+            </li>
+          </ul>
+        </nav>
+
+      </aside>
+    </div>
+  </div>
+</main>
+
+{% endblock %}
+
+
