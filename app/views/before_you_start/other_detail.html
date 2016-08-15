@@ -1,0 +1,63 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Tax Tribunals Prototype
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  {% include "includes/phase_banner_alpha.html" %}
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <h1 class="heading-large">Is it about...?</h1>
+
+      <p class="lede">Select the option that is relevant to you.</p>
+
+      <form class="js_route" action="type_of_tax">
+        <fieldset>
+          <div class="form-group">
+            <label class="block-label">
+              <input name="what_is_it_about" type="radio" value="amount_of_tax" />
+              Dispute about the amount of tax
+            </label>
+
+            <label class="block-label">
+              <input name="what_is_it_about" type="radio" value="point_of_law" data-destination="hmrc_and_late" />
+              Reference point of law
+            </label>
+
+            <label class="block-label">
+              <input name="what_is_it_about" type="radio" value="ukbf" data-destination="hmrc_and_late" />
+              UK Border Force
+            </label>
+
+            <label class="block-label">
+              <input name="what_is_it_about" type="radio" value="nca" data-destination="hmrc_and_late" />
+              NCA
+            </label>
+
+            <label class="block-label" data-target="other_entry">
+              <input name="what_is_it_about" type="radio" value="other" />
+              Other
+            </label>
+            <div class="panel js-hidden" id="other_entry">
+              <input type="text" id="other_entry_field">
+            </div>
+          </div>
+        </fieldset>
+
+        <p>
+          <input class="button" type="submit" value="Continue">
+        </p>
+
+      </form>
+    </div>
+  </div>
+</main>
+
+{% endblock %}
+
+

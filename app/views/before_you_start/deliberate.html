@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Tax Tribunals Prototype
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  {% include "includes/phase_banner_alpha.html" %}
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <h1 class="heading-large">Is your dispute a deliberate innaccurate return?</h1>
+
+      <p class="lede">Select the option that is relevant to you.</p>
+
+      <form class="js_route" action="type_of_tax">
+        <fieldset>
+          <div class="form-group">
+            <label class="block-label">
+              <input name="deliberate" type="radio" value="low" data-store="fee=200" />
+              Yes
+            </label>
+
+            <label class="block-label">
+              <input name="deliberate" type="radio" value="mid" data-store="fee=50" />
+              No
+            </label>
+          </div>
+        </fieldset>
+
+        <p>
+          <input class="button" type="submit" value="Continue">
+        </p>
+
+      </form>
+    </div>
+  </div>
+</main>
+
+{% endblock %}
+
+

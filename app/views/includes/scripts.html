@@ -5,4 +5,13 @@
 <script src="/public/javascripts/govuk/stick-at-top-when-scrolling.js"></script>
 <script src="/public/javascripts/application.js"></script>
 
-<script src="/public/javascripts/paid-case.js"></script>
+<!-- load and init() modules based on moj Heisenberg pattern -->
+<script src="/public/javascripts/module_loader.js"></script>
+<!-- modules -->
+<script src="/public/javascripts/modules/paid-case.js"></script>
+<script src="/public/javascripts/modules/form-routes.js"></script>
+<script src="/public/javascripts/modules/data-store.js"></script>
+<!-- initialise -->
+<script type="text/javascript">
+  window.moj.init();
+</script>

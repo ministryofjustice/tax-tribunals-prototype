@@ -1,0 +1,50 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Tax Tribunals Prototype
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  {% include "includes/phase_banner_alpha.html" %}
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <h1 class="heading-large">What is the penalty amount?</h1>
+
+      <p class="lede">Select the option that is relevant to you.</p>
+
+      <form class="js_route" action="type_of_tax">
+        <fieldset>
+          <div class="form-group">
+            <label class="block-label">
+              <input name="dispute_type" type="radio" value="low" data-store="fee=20" />
+              Fixed, less than £100
+            </label>
+
+            <label class="block-label">
+              <input name="dispute_type" type="radio" value="mid" data-store="fee=50" data-destination="deliberate" />
+              £101 – £19,999
+            </label>
+
+            <label class="block-label">
+              <input name="dispute_type" type="radio" value="high" data-store="fee=200" />
+              £20,000 or more
+            </label>
+          </div>
+        </fieldset>
+
+        <p>
+          <input class="button" type="submit" value="Continue">
+        </p>
+
+      </form>
+    </div>
+  </div>
+</main>
+
+{% endblock %}
+
+

@@ -16,43 +16,43 @@
 
       <p class="lede">Select the option that is relevant to you.</p>
 
-      <form>
+      <form class="js_route" action="display_fee">
         <fieldset>
           <div class="form-group">
             <label class="block-label">
-              <input name="dispute_type" type="radio" value="penalty" />
+              <input name="dispute_type" type="radio" value="penalty" data-destination="penalty_detail" />
               Penalty
             </label>
 
             <label class="block-label">
-              <input name="dispute_type" type="radio" value="information_notice" />
+              <input name="dispute_type" type="radio" value="information_notice" data-store="fee=50" />
               Information notice
             </label>
 
             <label class="block-label">
-              <input name="dispute_type" type="radio" value="paye_code" />
+              <input name="dispute_type" type="radio" value="paye_code" data-store="fee=50,direct=true" />
               PAYE code
             </label>
 
             <label class="block-label">
-              <input name="dispute_type" type="radio" value="out_of_time_request" />
+              <input name="dispute_type" type="radio" value="out_of_time_request" data-store="fee=50" />
               Out of time request
             </label>
 
             <label class="block-label">
-              <input name="dispute_type" type="radio" value="close_ongoing_enquiry" />
+              <input name="dispute_type" type="radio" value="close_ongoing_enquiry" data-store="fee=50" />
               Close an ongoing enquiry
             </label>
 
             <label class="block-label">
-              <input name="dispute_type" type="radio" value="none_of_the_above" />
+              <input name="dispute_type" type="radio" value="none_of_the_above" data-store="fee=200" data-destination="other_detail" />
               None of the above
             </label>
           </div>
         </fieldset>
 
         <p>
-          <a class="button" href="/type_of_tax">Continue</a>
+          <input class="button" type="submit" value="Continue">
         </p>
 
       </form>

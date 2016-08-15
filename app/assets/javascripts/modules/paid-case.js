@@ -1,4 +1,6 @@
-var paidCase = {
+'use strict';
+
+moj.Modules.paidCase = {
   form_id: 'case_requests',
   paid_keyword: 'paid',
 
@@ -33,7 +35,3 @@ var paidCase = {
     document.location = (paid ? $form.data('alt-url') : $form.attr('action'));
   }
 };
-
-$(function() {
-  paidCase.init();
-});
