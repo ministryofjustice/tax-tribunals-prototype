@@ -22,7 +22,6 @@ moj.Modules.displayValues = {
           dataValue = moj.Modules.dataStore.getItem(dataKey);
 
       if(dataValue) {
-        moj.log(dataValue);
         $el.text(dataValue);
       }
     });

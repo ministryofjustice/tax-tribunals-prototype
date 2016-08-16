@@ -12,7 +12,6 @@ moj.Modules.dataStore = {
 
     for (var i = storedLength - 1; i >= 0; i--) {
       if($('body').hasClass('start-before')) {
-        moj.log('DELETED: ' + sessionStorage.key(i));
         self.deleteItem(sessionStorage.key(i));
       } else {
         moj.log('RETRIEVED: ' + sessionStorage.key(i) + ' = ' + sessionStorage.getItem(sessionStorage.key(i)));
@@ -30,6 +29,7 @@ moj.Modules.dataStore = {
   },
 
   deleteItem: function(key) {
+    moj.log('DELETING: ' + key);
     sessionStorage.removeItem(key);
   },
 
