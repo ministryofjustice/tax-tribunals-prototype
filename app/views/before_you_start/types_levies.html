@@ -13,28 +13,24 @@
   <div class="grid-row">
     <div class="column-two-thirds">
       <br>
-      <p><a href="">Back</a> &nbsp; Step 2 of 6</p>
-      <h1 class="heading-large">What is the penalty or surcharge amount?</h1>
+      <p><a href="">Back</a> &nbsp; Step 5 of 6</p>
+      <h1 class="heading-large">What type of tax is your dispute about?</h1>
 
       <p class="lede">Select the option that is relevant to you.</p>
 
-      <form class="js_route" action="type_of_tax">
+      <form class="js_route" action="fee">
         <fieldset>
           <div class="form-group">
             <label class="block-label">
-              <input name="dispute_type" type="radio" value="low" data-store="fee=20" />
-              Fixed, less than £100
+              <input name="tax_type" type="radio" value="agregates-levy" data-store="direct=false" />
+              Aggregates Levy
             </label>
 
             <label class="block-label">
-              <input name="dispute_type" type="radio" value="mid" data-destination="deliberate" />
-              £101 – £19,999
+              <input name="tax_type" type="radio" value="climate_change_levy" data-store="direct=false" />
+              Climate Change Levy
             </label>
 
-            <label class="block-label">
-              <input name="dispute_type" type="radio" value="high" data-store="fee=200" />
-              £20,000 or more
-            </label>
           </div>
         </fieldset>
 
@@ -48,5 +44,3 @@
 </main>
 
 {% endblock %}
-
-
