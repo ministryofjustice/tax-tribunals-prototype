@@ -2,17 +2,18 @@
 
 moj.Modules.dataStore = {
   init: function() {
-    var self = this;
+    var self = this,
+        storedLength = sessionStorage.length;
 
     $('form').on('submit', function(e) {
       self.checkForItemsToStore($(e.target).closest('form'));
       e.preventDefault();
     });
 
-    for (var i = 0; i < sessionStorage.length; i++) {
-      if($('body').hasClass('index')) {
-         moj.log('DELETED: ' + sessionStorage.key(i));
-        sessionStorage.removeItem(sessionStorage.key(i));
+    for (var i = storedLength - 1; i >= 0; i--) {
+      if($('body').hasClass('start-before')) {
+        moj.log('DELETED: ' + sessionStorage.key(i));
+        self.deleteItem(sessionStorage.key(i));
       } else {
         moj.log('RETRIEVED: ' + sessionStorage.key(i) + ' = ' + sessionStorage.getItem(sessionStorage.key(i)));
       }
@@ -29,7 +30,7 @@ moj.Modules.dataStore = {
   },
 
   deleteItem: function(key) {
-
+    sessionStorage.removeItem(key);
   },
 
   checkForItemsToStore: function($form) {
