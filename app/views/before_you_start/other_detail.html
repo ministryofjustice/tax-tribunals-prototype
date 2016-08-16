@@ -12,9 +12,11 @@
 
   <div class="grid-row">
     <div class="column-two-thirds">
-      <h1 class="heading-large">Is it about...?</h1>
+      <br>
+      <p><a href="">Back</a> &nbsp; Step 2 of 6</p>
+      <h1 class="heading-large">What is your dispute about?</h1>
 
-      <p class="lede">Select the option that is relevant to you.</p>
+      <p class="lede">You can only choose one reason per appeal. For example if you wanted to appeal against both a penalty and the amount you owe, you will need to make two separate appeals to the tax tribunal.</p>
 
       <form class="js_route" action="type_of_tax">
         <fieldset>
@@ -25,24 +27,32 @@
             </label>
 
             <label class="block-label">
-              <input name="what_is_it_about" type="radio" value="point_of_law" data-destination="hmrc_and_late" />
+              <input name="what_is_it_about" type="radio" value="point_of_law" data-destination="fee" />
               Reference point of law
             </label>
 
             <label class="block-label">
-              <input name="what_is_it_about" type="radio" value="ukbf" data-destination="hmrc_and_late" />
+              <input name="what_is_it_about" type="radio" value="ukbf" data-destination="fee" />
               UK Border Force
             </label>
 
             <label class="block-label">
-              <input name="what_is_it_about" type="radio" value="nca" data-destination="hmrc_and_late" />
-              NCA
+              <input name="what_is_it_about" type="radio" value="nca" data-destination="fee" />
+              National Crime Authority (NCA)
+            </label>
+
+            <label class="block-label">
+              <input name="what_is_it_about" type="radio" value="parlimentary_expenses" data-destination="fee" />
+              Independent parlimentary expenses standards authority
             </label>
 
             <label class="block-label" data-target="other_entry">
               <input name="what_is_it_about" type="radio" value="other" />
               Other
             </label>
+            <div class="panel js-hidden" id="other_entry">
+              <input type="text" id="other_entry_field">
+            </div>
             <div class="panel js-hidden" id="other_entry">
               <input type="text" id="other_entry_field">
             </div>

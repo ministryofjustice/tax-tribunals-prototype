@@ -12,26 +12,38 @@
 
   <div class="grid-row">
     <div class="column-two-thirds">
-      <h1 class="heading-large">What is the type of tax?</h1>
+      <br>
+      <p><a href="">Back</a> &nbsp; Step 4 of 6</p>
+      <h1 class="heading-large">What type of tax is your dispute about?</h1>
 
       <p class="lede">Select the option that is relevant to you.</p>
 
-      <form class="js_route" action="...">
+      <form class="js_route" action="fee">
         <fieldset>
           <div class="form-group">
             <label class="block-label">
-              <input name="tax_type" type="radio" value="personal" />
-              Personal
+              <input name="tax_type" type="radio" value="tax" data-destination="types_taxes" />
+              Tax including personal, company and value added tax (VAT)
             </label>
 
             <label class="block-label">
-              <input name="tax_type" type="radio" value="business" />
-              Business
+              <input name="tax_type" type="radio" value="duties" data-destination="types_duties" />
+              Duty (including stamp duties)
             </label>
 
             <label class="block-label">
-              <input name="tax_type" type="radio" value="import" />
-              Import
+              <input name="tax_type" type="radio" value="levies" data-destination="types_levies" />
+              Levy
+            </label>
+
+            <label class="block-label">
+              <input name="tax_type" type="radio" value="statutory_payments" data-destination="types_payments" />
+              Payments or repayments
+            </label>
+
+            <label class="block-label">
+              <input name="tax_type" type="radio" value="other" data-destination="types_tax_other" />
+              Other
             </label>
           </div>
         </fieldset>
@@ -46,5 +58,3 @@
 </main>
 
 {% endblock %}
-
-
