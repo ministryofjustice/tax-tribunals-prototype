@@ -9,12 +9,14 @@ moj.Modules.dataStore = {
       e.preventDefault();
     });
 
-
-    for (var i = 0; i < sessionStorage.length; i++){
-        // do something with localStorage.getItem(localStorage.key(i));
-      moj.log('RETRIEVED: ' + sessionStorage.key(i) + ' = ' + sessionStorage.getItem(sessionStorage.key(i)));
+    for (var i = 0; i < sessionStorage.length; i++) {
+      if($('body').hasClass('index')) {
+         moj.log('DELETED: ' + sessionStorage.key(i));
+        sessionStorage.removeItem(sessionStorage.key(i));
+      } else {
+        moj.log('RETRIEVED: ' + sessionStorage.key(i) + ' = ' + sessionStorage.getItem(sessionStorage.key(i)));
+      }
     }
-
   },
 
   storeItem: function(key, value) {
@@ -24,6 +26,10 @@ moj.Modules.dataStore = {
 
   getItem: function(key) {
     return JSON.parse(sessionStorage.getItem(key));
+  },
+
+  deleteItem: function(key) {
+
   },
 
   checkForItemsToStore: function($form) {
