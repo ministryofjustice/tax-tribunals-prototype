@@ -5,3 +5,11 @@ table {
 td.details {
   font-weight: bold;
 }
+
+.expandable-demo tr {
+  vertical-align: top;
+}
+
+td li strong { // TODO: remove this, it's horrible
+  display: block;
+}

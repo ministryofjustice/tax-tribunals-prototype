@@ -1,0 +1,148 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Expandables demo - Tax Tribunals Prototype
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  {% include "includes/phase_banner_alpha.html" %}
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <h1 class="heading-large">Appeal to an independent tax tribunal</h1>
+
+      <p class="lede">Use this service to challenge decisions by HM Revenue and Customs (HMRC).</p>
+      <p>The tribunal is independent of government and will listen to both sides of the argument before making a decision.</p>
+      <p>For more information see the <a href="#" data-alert="This information is not available at this time.">guide to tax tribunals and fees</a>.</p>
+      <p>You can make an appeal to the tax tribunal using the steps below.</p>
+
+      <details>
+        <summary><strong>1. Find how much your appeal costs: £20, £50 or £200</strong> (about 5 minutes to complete)</summary>
+        <div class="panel">
+          <p>You will need to pay an initial one-off fee to start your appeal with the tribunal. The amount depends on the complexity of your case.</p>
+          <p>You may also have to pay further fees. You will be told these once the tribunal has looked at your case and decided if it needs a hearing with a judge.</p>
+          <p>You will get a <a href="#" data-alert="This information is not available at this time.">refund for all tax tribunal fees</a>  if the case is decided in your favour.</p>
+          <p>If you’re on a low income or receiving certain benefits, you may be able to <a href="https://www.gov.uk/get-help-with-court-fees">get help with fees</a>.</p>
+
+          <table class="expandable-demo">
+            <caption>Table explaining the fees for different types of appeals or applications</caption>
+            <thead>
+              <tr>
+                <th scope="col">Type of appeal or application</th>
+                <th scope="col">Fee to start appeal</th>
+                <th scope="col">Further fees for hearings</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <ul class="list list-bullet">
+                    <li><strong>Penalty of £100 or less</strong>
+                      (e.g. for late self-assessment)</li>
+                  </ul>
+                </td>
+                <td>£20</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>
+                  <ul class="list list-bullet">
+                    <li><strong>Penalties of £101 to £20,000</strong>
+                                        (e.g. for late filing or payment)</li>
+
+                    <li><strong>Inaccurate return (considered careless)</strong></li>
+                    <li><strong>Information notice</strong></li>
+                    <li><strong>PAYE code</strong></li>
+
+                    <li><strong>Apply for a late HMRC review</strong></li>
+                    <li><strong>Apply to close an enquiry</strong></li>
+                  </ul>
+                </td>
+                <td>£50</td>
+                <td>£200</td>
+              </tr>
+              <tr>
+                <td>
+                  <ul class="list list-bullet">
+                    <li>All other types of appeal or application</li>
+                  </ul>
+                </td>
+                <td>£200</td>
+                <td>up to £1,000</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </details>
+
+      <details>
+        <summary><strong>2. Check if you need a review from HMRC and you’re in time to appeal?</strong> (5 minutes)</summary>
+        <div class="panel">
+          <p>You must have had a review with HMRC for certain types of appeal.</p>
+          <p>You must appeal within the time stated on the final decision letter from HMRC. This is usually 30 days.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary><strong>3. Enter details and save your application if you want to return later</strong> (20 minutes)</summary>
+        <div class="panel">
+          <p>If you know the fee or want to return and complete an existing appeal – go here.</p>
+          <p>Save information if you want to return.</p>
+          <p>You’ll need your decision letter from HMRC.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary><strong>4. Pay and submit appeal</strong> (5 minutes)</summary>
+        <div class="panel">
+          <p>Pay the initial fee to process your appeal using a debit or credit card. </p>
+          <p>If you want to pay by cheque, you have 7 days to pay or your appeal will not be processed. You must pay the fee before the deadline to start an appeal expires.</p>
+        </div>
+      </details>
+
+      <p>
+        <a class="button button-start" href="#">Start now</a>
+      </p>
+
+      <h2 class="heading-medium">Other ways to apply</h2>
+      <ul class="list list-bullet">
+        <li>You can apply by <a class="external" rel="external" href="http://hmctsformfinder.justice.gov.uk/HMCTS/GetForms.do?court_forms_category=Tax%20(First-tier%20Tribunal)">paper form</a></li>
+        <li>
+          Send your application
+          <ul class="list list-bullet">
+            <li>by email to <a href="mailto:taxappeals@hmcts.gsi.gov.uk">taxappeals@hmcts.gsi.gov.uk</a></li>
+            <li>by post to First-tier Tribunal (Tax Chamber), PO Box 16972, Birmingham, B16 6TZ</li>
+          </ul>
+        </li>
+      </ul>
+
+    </div>
+
+    <div class="column-one-third">
+      <aside class="govuk-related-items">
+
+        <h2 class="heading-medium">Courts, sentencing and tribunals</h2>
+        <nav role="navigation">
+          <ul class="font-xsmall">
+              <li><a href="https://www.gov.uk/court-fees-what-they-are">Court and tribunal fees</a></li>
+              <li><a href="https://www.gov.uk/tax-tribunal">Appeal to a tax tribunal</a></li>
+          </ul>
+        </nav>
+
+        <h2 class="heading-medium">Elsewhere on GOV.UK</h2>
+        <nav role="navigation">
+          <ul class="font-xsmall">
+            <li><a href="https://www.gov.uk/tax-appeals">Disagree with a tax decision</a></li>
+            <li><a href="https://www.gov.uk/government/publications/tax-chamber-tribunal-procedure-rules">Tax tribunal procedure rules</a></li>
+          </ul>
+        </nav>
+
+      </aside>
+    </div>
+  </div>
+</main>
+
+{% endblock %}
