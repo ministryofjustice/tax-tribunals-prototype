@@ -1,7 +1,7 @@
 'use strict';
 
 moj.Modules.backLinks = {
-  link_class: 'link-back',
+  link_class: 'js-link-back',
 
   init: function() {
     var self = this;
