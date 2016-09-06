@@ -6,5 +6,3 @@ For more on how the kit works, see its own [readme](govuk_prototype_kit_README.m
 
 Auto deploys to [https://moj-taxtribs-prototype.herokuapp.com/](https://moj-taxtribs-prototype.herokuapp.com/) which is passworded to prevent public users from finding it and trying to use it.
 
-* user: tax-tribs
-* pw: st0pStr3ss1ng
