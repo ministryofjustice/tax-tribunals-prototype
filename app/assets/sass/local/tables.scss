@@ -10,6 +10,10 @@ td.details {
   vertical-align: top;
 }
 
+.expandable-demo caption {
+  display: none;
+}
+
 td li strong { // TODO: remove this, it's horrible
   display: block;
 }
