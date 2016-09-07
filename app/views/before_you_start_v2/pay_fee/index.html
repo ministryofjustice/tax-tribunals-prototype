@@ -1,0 +1,60 @@
+{% extends "layout.html" %} {% block page_title %} Check others criminal history {% endblock %} {% block content %}
+<main id="content" role="main">
+  {% include "includes/phase_banner_beta.html" %}
+
+  <div class="breadcrumbs">
+    <ol>
+      <li>
+        <a href="/task_list">Become a childminder</a>
+      </li>
+      <li>
+        Check others criminal history
+      </li> 
+    </ol>
+  </div>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <form method="get" action="/task_list/" class="form">
+
+      {{formData | safe}}
+
+        <h1 class="heading-large">
+          Check others criminal history
+        </h1>
+
+        <fieldset>
+          <legend class="visuallyhidden">
+            Check criminal history
+          </legend>
+
+          <p id="reason_for_task">If other adults have access to where you will look after childer, they will need criminal history checks also.</p>
+
+          <p>For example if you plan to care for children in your home and you have a partner, they will also need a DBS check.</p>
+
+          <p>Tasks to check others criminal history:</p>
+
+          <ol class="list list-number">
+            <li><a href="https://www.gov.uk/disclosure-barring-service-check/overview">read DBS guidance</a></li>
+            <li><a href="https://www.gov.uk/disclosure-barring-service-check/documents-the-applicant-must-provide-">find identity documents</a></li>
+            <li><a href="http://ofsteddbsapplication.co.uk/Step-One.aspx">get DBS check through Ofsted</a></li>
+            <li>pay for DBS check (£44)</li>
+            <li>recieve DBS certificate</li>
+          </ol>
+
+          <input type="hidden" name="check_other_criminal_history" value="complete">
+
+        </fieldset>
+
+        <div class="form-group">
+          <input type="submit" class="button" value="Task complete" />
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+
+</main>
+{% endblock %}

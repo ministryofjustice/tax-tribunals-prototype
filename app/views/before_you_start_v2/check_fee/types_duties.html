@@ -1,0 +1,84 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  What type of tax is your dispute about? - Tax Tribunals Prototype
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  {% include "includes/phase_banner_alpha.html" %}
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <p><a class="link-back js-link-back" href="">Back</a> &nbsp; Step 5 of 6</p>
+      <h1 class="heading-large">What type of tax is your dispute about?</h1>
+
+      <p class="lede">Select the option that is relevant to you.</p>
+
+      <form class="js_route" action="fee">
+        <fieldset>
+          <div class="form-group">
+            <label class="block-label">
+              <input name="tax_type" type="radio" value="tax" />
+              Air Passenger Duty
+            </label>
+
+            <label class="block-label">
+              <input name="tax_type" type="radio" value="duties" />
+              Hydrocarbon Oils Duty
+            </label>
+
+            <label class="block-label">
+              <input name="tax_type" type="radio" value="levies" />
+              General Betting Duty
+            </label>
+
+            <label class="block-label">
+              <input name="tax_type" type="radio" value="statutory_payments" />
+              Gaming Duty
+            </label>
+
+            <label class="block-label">
+              <input name="tax_type" type="radio" value="other" />
+              Pool Betting Duty
+            </label>
+
+            <label class="block-label">
+              <input name="tax_type" type="radio" value="other" />
+              Remote Gaming Duty
+            </label>
+
+            <label class="block-label">
+              <input name="tax_type" type="radio" value="other" />
+              Bingo Duty
+            </label>
+
+            <label class="block-label">
+              <input name="tax_type" type="radio" value="other" />
+              Lottery Duty
+            </label>
+
+            <label class="block-label">
+              <input name="tax_type" type="radio" value="other" />
+              Alcoholic Liquor Duties
+            </label>
+
+            <label class="block-label">
+              <input name="tax_type" type="radio" value="other" />
+              Tobacco Products Duty Amusement Machine Licence Duty (AMLD)
+            </label>
+          </div>
+        </fieldset>
+
+        <p>
+          <input class="button" type="submit" value="Continue">
+        </p>
+
+      </form>
+    </div>
+  </div>
+</main>
+
+{% endblock %}

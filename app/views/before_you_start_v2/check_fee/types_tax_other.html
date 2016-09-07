@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  What other type of tax is your dispute about? - Tax Tribunals Prototype
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  {% include "includes/phase_banner_alpha.html" %}
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <p><a class="link-back js-link-back" href="">Back</a> &nbsp; Step 5 of 6</p>
+      <h1 class="heading-large">What other type of tax is your dispute about?</h1>
+
+      <p class="lede">Select the option that is relevant to you.</p>
+
+      <form class="js_route" action="fee">
+        <fieldset>
+          <div class="form-group">
+            <label class="block-label">
+              <input name="tax_type" type="radio" value="cis" data-store="direct=true" />
+              Construction Industry Scheme (CIS)
+            </label>
+
+            <label class="block-label">
+              <input name="tax_type" type="radio" value="money_laundering" />
+              Money laundering decisions
+            </label>
+
+            <label class="block-label">
+              <input name="tax_type" type="radio" value="counter_terrorism" />
+              Decisions by HMRC under the Counter-Terrorism Act 2009
+            </label>
+          </div>
+        </fieldset>
+
+        <p>
+          <input class="button" type="submit" value="Continue">
+        </p>
+
+      </form>
+    </div>
+  </div>
+</main>
+
+{% endblock %}

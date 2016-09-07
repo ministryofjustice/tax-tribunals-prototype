@@ -1,0 +1,146 @@
+{% extends "layout.html" %}
+{% block page_title %} Task list {% endblock %}
+
+{% block extra_css %}<link rel="stylesheet" href="/public/stylesheets/dm_list.css" />{% endblock %}
+
+{% block content %}
+<main id="content" role="main">
+  {% include "includes/phase_banner_beta.html" %}
+
+   <div id="">
+      
+  <div class="grid-row">
+
+    <div class="column-two-thirds">
+      
+        <header class="page-heading page-heading-with-context page-heading-without-breadcrumb">
+
+          <p class="context">Overview</p>
+          <h1 class="heading-large">Appeal to an independent tax tribunal</h1>
+
+        </header>
+
+      <p class="lede">Use this service to challenge decisions by HM Revenue and Customs (HMRC).</p>
+      
+      <p>The tribunal is independent of government and will listen to both sides of the argument before making a decision.</p>
+
+      <p>For more information see the <a href="#" data-alert="This information is not available at this time.">guide to tax tribunal fees</a>.
+
+      <p>You can make an appeal to the tax tribunal using the steps below.</p>
+      
+      <br>
+      
+
+    {{formData | safe}}
+
+    </div>
+
+  </div>
+
+  <div class="grid-row">
+
+    <div class="column-three-quarters">  
+
+  <table>
+    <thead>
+      <tr>
+        <th scope="col" id="col-task"></th>
+        <th class="numeric" id="task-status" scope="col" id="col-status"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- check fee -->
+      <tr>
+        <td class="task">
+          <a href="start-page">
+            <span class="step-number" id="task-number"></span>
+            <span class="task-name"> 1. Check your tribunal processing fee (5 minutes)</span>
+          </a>
+        </td>
+        <td class="numeric" id="task-status">
+          {% if data.shared_home=="yes" or data.shared_home=="no"  %}
+            {% include "includes/task_status_complete.html" %}
+          {% endif %}
+        </td>
+      </tr>
+      <!-- check review -->
+      <tr>
+        <td class="task">
+          <a href="read_rules{{formQuery}}">
+            <span class="step-number" id="task-number"></span>
+            <span class="task-name"> 2. Do you need a review from HMRC? (5 minutes)</span>
+          </a>
+        </td>
+        <td class="numeric" id="task-status">
+          {% if data.read_rules=="complete" %}
+            {% include "includes/task_status_complete.html" %}
+          {% endif %}
+        </td>
+      </tr>
+      <!-- Enter details -->
+      <tr>
+        <td class="task">
+          <a href="/task_list/check_criminal_history{{formQuery}}">
+            <span class="step-number" id="task-number"></span>
+            <span class="task-name"> 3. Enter appeak details (20 minutes)</span>
+          </a>
+        </td>
+        <td class="numeric" id="task-status">
+          {% if data.check_criminal_history=="complete" %}
+            {% include "includes/task_status_complete.html" %}
+          {% endif %}
+        </td>
+      </tr>
+      <!-- Pay for appeal -->
+        <tr>
+          <td class="task">
+            <a href="/task_list/check_others_criminal_history{{formQuery}}">
+              <span class="step-number" id="task-number"></span>
+              <span class="task-name"> 4. Pay fee (5 minutes)</span>
+            </a>
+          </td>
+          <td class="numeric" id="task-status">
+            {% if data.check_other_criminal_history=="complete" %}
+              {% include "includes/task_status_complete.html" %}
+            {% endif %}
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+
+<div class="column-quarter">
+
+      <ul class="actions">
+        <li class="action"><a href="/save_and_return/email">Save and complete later</a></li>
+        <li class="action"><a href="#">Print list</a></li>
+        <li class="action"><a href="#">Delete list</a></li>
+      </ul>
+
+      <div class="meta-data">
+        <p class="last-edited font-xsmall">List number<br>
+          <span class="bold-xsmall">1280880</span>
+        </p>
+        <p class="last-edited font-xsmall">Created on<br>
+          <span class="bold-xsmall">25 July 2016</span>
+        </p>
+        <p class="last-edited font-xsmall">Last visited on<br>
+          <span class="bold-xsmall">23 August 2016</span>
+        </p>
+        <p class="last-edited font-xsmall">Status<br>
+          <span class="bold-xsmall"><span id="completed-steps"></span> of <span id="total-steps"></span> tasks completed</span>
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+    
+  </div>
+
+</main>
+{% endblock %}
+{% block extra_js_1 %}<!-- ticky list javascript one -->{% endblock %}
+{% block extra_js_2 %}<!-- ticky list javascript two -->{% endblock %}
