@@ -41,15 +41,22 @@
     <p>
     You can start your appeal by entering your details. You'll be able to save your appeal information and return later to complete everything and pay your fee.
     </p>
+
+    <form class="js_route" action="/before_you_start_v2/start">
+
+    {{formData | safe}}
+
+        <fieldset>
+          <input type="hidden" name="check_fee" value="complete">
+        </fieldset>
+
+     <div class="form-group">
+          <input type="submit" class="button" value="Task complete" />
+     </div>
+     
      <p>
-        <a class="button button-start" href="dispute_type">Yes, start appeal</a>
+        <a class="button" href="survey">No</a>
     </p>
-     <p>
-        <a class="button button-start" href="dispute_type">No</a>
-    </p>
-    <p>
-    <a href="#">What did you think of this service?</a> (takes 30 seconds)
-   </p>
 
   <p>
     <a class="link-back" href="start">Start again</a>

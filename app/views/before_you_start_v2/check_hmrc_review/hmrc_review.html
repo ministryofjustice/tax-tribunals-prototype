@@ -12,12 +12,15 @@
 
   <div class="grid-row">
     <div class="column-two-thirds">
-      <p><a class="link-back js-link-back" href="">Back</a> &nbsp; Step 3 of 6</p>
-      <h1 class="heading-large">Does HRMC claim your dispute is due to a deliberately innaccurate return?</h1>
+
+    {{formData | safe}}
+
+      <!-- p><a class="link-back js-link-back" href="">Back</a> &nbsp; Step 3 of 6</p -->
+      <h1 class="heading-large">Have you reviewed your dispute with HMRC?</h1>
 
       <p class="lede">Select the option that is relevant to you.</p>
 
-      <form class="js_route" action="type_of_tax">
+      <form class="js_route" action="../start">
         <fieldset>
           <div class="form-group">
             <label class="block-label">
@@ -30,10 +33,13 @@
               No
             </label>
           </div>
+
+          <input type="hidden" name="check_hmrc_review" value="complete">
+
         </fieldset>
 
         <p>
-          <input class="button" type="submit" value="Continue">
+          <input type="submit" class="button" value="Continue" />
         </p>
 
       </form>

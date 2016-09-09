@@ -15,7 +15,6 @@
       
         <header class="page-heading page-heading-with-context page-heading-without-breadcrumb">
 
-          <p class="context">Overview</p>
           <h1 class="heading-large">Appeal to an independent tax tribunal</h1>
 
         </header>
@@ -27,8 +26,6 @@
       <p>For more information see the <a href="#" data-alert="This information is not available at this time.">guide to tax tribunal fees</a>.
 
       <p>You can make an appeal to the tax tribunal using the steps below.</p>
-      
-      <br>
       
 
     {{formData | safe}}
@@ -52,13 +49,13 @@
       <!-- check fee -->
       <tr>
         <td class="task">
-          <a href="start-page">
+          <a href="check_fee/start{{formQuery}}">
             <span class="step-number" id="task-number"></span>
             <span class="task-name"> 1. Check your tribunal processing fee (5 minutes)</span>
           </a>
         </td>
         <td class="numeric" id="task-status">
-          {% if data.shared_home=="yes" or data.shared_home=="no"  %}
+          {% if data.check_fee=="yes" or data.shared_home=="no"  %}
             {% include "includes/task_status_complete.html" %}
           {% endif %}
         </td>
@@ -66,13 +63,13 @@
       <!-- check review -->
       <tr>
         <td class="task">
-          <a href="read_rules{{formQuery}}">
+          <a href="check_hmrc_review/hmrc_review{{formQuery}}">
             <span class="step-number" id="task-number"></span>
             <span class="task-name"> 2. Do you need a review from HMRC? (5 minutes)</span>
           </a>
         </td>
         <td class="numeric" id="task-status">
-          {% if data.read_rules=="complete" %}
+          {% if data.check_hmrc_review=="complete" %}
             {% include "includes/task_status_complete.html" %}
           {% endif %}
         </td>
@@ -80,13 +77,13 @@
       <!-- Enter details -->
       <tr>
         <td class="task">
-          <a href="/task_list/check_criminal_history{{formQuery}}">
+          <a href="appeal_information{{formQuery}}">
             <span class="step-number" id="task-number"></span>
-            <span class="task-name"> 3. Enter appeak details (20 minutes)</span>
+            <span class="task-name"> 3. Enter appeal details (20 minutes)</span>
           </a>
         </td>
         <td class="numeric" id="task-status">
-          {% if data.check_criminal_history=="complete" %}
+          {% if data.appeal_information=="complete" %}
             {% include "includes/task_status_complete.html" %}
           {% endif %}
         </td>
@@ -94,13 +91,13 @@
       <!-- Pay for appeal -->
         <tr>
           <td class="task">
-            <a href="/task_list/check_others_criminal_history{{formQuery}}">
+            <a href="pay_fee{{formQuery}}">
               <span class="step-number" id="task-number"></span>
               <span class="task-name"> 4. Pay fee (5 minutes)</span>
             </a>
           </td>
           <td class="numeric" id="task-status">
-            {% if data.check_other_criminal_history=="complete" %}
+            {% if data.pay_fee=="complete" %}
               {% include "includes/task_status_complete.html" %}
             {% endif %}
           </td>
@@ -114,7 +111,7 @@
 <div class="column-quarter">
 
       <ul class="actions">
-        <li class="action"><a href="/save_and_return/email">Save and complete later</a></li>
+        <li class="action"><a href="save_and_return/email">Save and complete later</a></li>
         <li class="action"><a href="#">Print list</a></li>
         <li class="action"><a href="#">Delete list</a></li>
       </ul>

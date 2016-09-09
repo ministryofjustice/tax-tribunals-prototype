@@ -5,10 +5,10 @@
   <div class="breadcrumbs">
     <ol>
       <li>
-        <a href="/task_list">Become a childminder</a>
+        <a href="/task_list">Appeal to the independent tax tribunal</a>
       </li>
       <li>
-        Check others criminal history
+        Pay your tax tribunal fee
       </li> 
     </ol>
   </div>
@@ -21,29 +21,53 @@
       {{formData | safe}}
 
         <h1 class="heading-large">
-          Check others criminal history
+          Pay your tax tribunal fee
         </h1>
 
         <fieldset>
           <legend class="visuallyhidden">
-            Check criminal history
+            Pay your tax tribunal fee
           </legend>
 
-          <p id="reason_for_task">If other adults have access to where you will look after childer, they will need criminal history checks also.</p>
+          <p id="reason_for_task">Pay for your tax tribunal fees online if you have an existing case with the tribunal.</p>
 
-          <p>For example if you plan to care for children in your home and you have a partner, they will also need a DBS check.</p>
+          <p>
+            Use this service to:
+          </p>
+          <ul class="list list-bullet">
+            <li>view outstanding fees on your case</li>
+            <li>make a payment for fees</li>
+          </ul>
+          <p>
+            Making a payment takes about 5 minutes.
+          </p>
+          <p>
+            <a class="button button-start" href="/before_you_start_v2/start">Start now</a>
+          </p>
 
-          <p>Tasks to check others criminal history:</p>
+          <h2 class="heading-medium">Before you start</h2>
+          <p>
+            You will need your case reference and confirmation code, which you can find on the letter from the tribunal.
+          </p>
 
-          <ol class="list list-number">
-            <li><a href="https://www.gov.uk/disclosure-barring-service-check/overview">read DBS guidance</a></li>
-            <li><a href="https://www.gov.uk/disclosure-barring-service-check/documents-the-applicant-must-provide-">find identity documents</a></li>
-            <li><a href="http://ofsteddbsapplication.co.uk/Step-One.aspx">get DBS check through Ofsted</a></li>
-            <li>pay for DBS check (£44)</li>
-            <li>recieve DBS certificate</li>
-          </ol>
+        </div>
 
-          <input type="hidden" name="check_other_criminal_history" value="complete">
+        <div class="column-one-third">
+          <aside class="govuk-related-items">
+
+            <h2 class="heading-medium">Useful links</h2>
+            <nav role="navigation" aria-labelledby="subsection-title">
+              <ul class="font-xsmall">
+                <li>
+                  <a href="https://www.gov.uk/courts-tribunals/first-tier-tribunal-tax" rel="external" target="_blank">About the tax tribunal </a><br />
+                  <span class="related-link-hint">Information on when and how you can appeal.</span>
+                </li>
+              </ul>
+            </nav>
+
+          </aside>
+
+          <input type="hidden" name="pay_fee" value="complete">
 
         </fieldset>
 
