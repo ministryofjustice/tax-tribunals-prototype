@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+
+{% set ptitle = "Is the appeal about indirect tax?" %}
+
+{% block page_title %}
+  {{ ptitle }} - Tax Tribunals Prototype
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  {% include "includes/phase_banner_alpha.html" %}
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <h1 class="heading-large">{{ ptitle }}</h1>
+
+      <p class="lede">Lorem ipsum</p>
+
+        <form class="js_route" action="outcome">
+          <div class="form-group">
+            <fieldset>
+              <legend class="visuallyhidden">{{ ptitle }}</legend>
+              <label class="block-label">
+                <input name="concerns_indirect_tax" type="radio" value="yes" data-store="concerns_indirect_tax=yes" />
+                Yes
+              </label>
+
+              <label class="block-label">
+                <input name="concerns_indirect_tax" type="radio" value="no" data-store="concerns_indirect_tax=no" data-destination="paid_disputed_tax" />
+                No
+              </label>
+            </fieldset>
+          </div>
+
+          <p>
+            <input class="button" type="submit" value="Continue">
+          </p>
+
+        </form>
+
+      </div>
+
+    </div>
+  </div>
+</main>
+
+{% endblock %}
+
+

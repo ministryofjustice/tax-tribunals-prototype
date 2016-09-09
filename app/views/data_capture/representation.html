@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+
+{% set ptitle = "Is the appellant being represented?" %}
+
+{% block page_title %}
+  {{ ptitle }} - Tax Tribunals Prototype
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  {% include "includes/phase_banner_alpha.html" %}
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <h1 class="heading-large">{{ ptitle }}</h1>
+
+      <p class="lede">Lorem ipsum</p>
+
+        <form class="js_route" action="late">
+          <div class="form-group">
+            <fieldset>
+              <legend class="visuallyhidden">{{ ptitle }}</legend>
+              <label class="block-label">
+                <input name="appellant_has_representation" type="radio" value="yes" data-store="appellant_has_representation=yes" data-destination="representative_details" />
+                Yes
+              </label>
+
+              <label class="block-label">
+                <input name="appellant_has_representation" type="radio" value="no" data-store="appellant_has_representation=no" />
+                No
+              </label>
+            </fieldset>
+          </div>
+
+          <p>
+            <input class="button" type="submit" value="Continue">
+          </p>
+
+        </form>
+
+      </div>
+
+    </div>
+  </div>
+</main>
+
+{% endblock %}
+
+

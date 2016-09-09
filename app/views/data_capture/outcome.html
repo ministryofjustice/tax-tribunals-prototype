@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+
+{% set ptitle = "What is the result or desired outcome?" %}
+
+{% block page_title %}
+  {{ ptitle }} - Tax Tribunals Prototype
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  {% include "includes/phase_banner_alpha.html" %}
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <h1 class="heading-large">{{ ptitle }}</h1>
+
+      <p class="lede">Lorem ipsum</p>
+
+      <form class="js_route" action="outcome">
+
+        <div class="form-group">
+          <label class="form-label" for="desired_outcome">
+            Give details of the desired outcome
+          </label>
+          <textarea class="form-control" id="desired_outcome" rows="4" cols="40" data-store></textarea>
+        </div>
+
+        <p>
+          <input class="button" type="submit" value="Continue">
+        </p>
+
+      </form>
+
+    </div>
+  </div>
+</main>
+
+{% endblock %}
+
+

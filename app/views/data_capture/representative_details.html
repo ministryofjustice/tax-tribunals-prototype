@@ -1,0 +1,99 @@
+{% extends "layout.html" %}
+
+{% set ptitle = "Representative details" %}
+
+{% block page_title %}
+  {{ ptitle }} - Tax Tribunals Prototype
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  {% include "includes/phase_banner_alpha.html" %}
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <h1 class="heading-large">{{ ptitle }}</h1>
+
+      <p class="lede">Lorem ipsum</p>
+
+      <form class="js_route" action="late">
+        <div class="form-group">
+          <fieldset>
+            <legend>Representative type</legend>
+            <label class="block-label">
+              <input name="representative_type" type="radio" value="individual" data-store="representative_type=individual" />
+              Individual
+            </label>
+
+            <label class="block-label" data-target="company-details">
+              <input name="representative_type" type="radio" value="company" data-store="representative_type=company" />
+              Company
+            </label>
+          </fieldset>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="representative_name">
+            Name
+          </label>
+          <input class="form-control" type="text" id="representative_name" data-store>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="representative_address">
+            Address
+          </label>
+          <textarea class="form-control" id="representative_address" rows="4" cols="40" data-store></textarea>
+        </div>
+
+        <div class="form-group js-hidden" id="company-details">
+          <label class="form-label" for="representative_company_number">
+            Company registered number
+          </label>
+          <input class="form-control" type="text" id="representative_company_number" data-store>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="representative_phone">
+            Phone number
+          </label>
+          <input class="form-control" type="text" id="representative_phone" data-store>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="representative_email">
+            Email address
+          </label>
+          <input class="form-control" type="text" id="representative_email" data-store>
+        </div>
+
+        <div class="form-group">
+          <fieldset>
+            <legend>Is the representative a legal professional?</legend>
+            <label class="block-label">
+              <input name="representative_is_legal_professional" type="radio" value="yes" data-store="representative_is_legal_professional=yes" />
+              Yes
+            </label>
+
+            <label class="block-label">
+              <input name="representative_is_legal_professional" type="radio" value="no" data-store="representative_is_legal_professional=no" data-destination="representative_approval" />
+              No
+            </label>
+          </fieldset>
+        </div>
+
+        <p>
+          <input class="button" type="submit" value="Continue">
+        </p>
+
+      </form>
+
+    </div>
+  </div>
+</main>
+
+{% endblock %}
+
+

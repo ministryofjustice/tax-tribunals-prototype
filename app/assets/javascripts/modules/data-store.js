@@ -5,13 +5,8 @@ moj.Modules.dataStore = {
     var self = this,
         storedLength = sessionStorage.length;
 
-    $('form').on('submit', function(e) {
-      self.checkForItemsToStore($(e.target).closest('form'));
-      e.preventDefault();
-    });
-
     for (var i = storedLength - 1; i >= 0; i--) {
-      if($('body').hasClass('start-before')) {
+      if($('body').hasClass('clear-session')) {
         self.deleteItem(sessionStorage.key(i));
       } else {
         moj.log('RETRIEVED: ' + sessionStorage.key(i) + ' = ' + sessionStorage.getItem(sessionStorage.key(i)));
@@ -35,23 +30,32 @@ moj.Modules.dataStore = {
 
   checkForItemsToStore: function($form) {
     var self = this,
-        els = $form.find('input[type="radio"]:checked');
+        radioEls = $form.find('input[type="radio"][data-store]:checked'),
+        textEls = $form.find('input[type="text"][data-store], textarea[data-store]');
 
-    if(els.length) {
-      els.each(function(n, el) {
+    if(radioEls.length) {
+      radioEls.each(function(n, el) {
         var dataToStore = $(el).data('store'),
             pairs;
 
-        if(dataToStore) {
-          pairs = dataToStore.split(',');
+        pairs = dataToStore.split(',');
 
-          pairs.forEach(function(pair) {
-            var key = pair.split('=')[0],
-                value = pair.split('=')[1];
+        pairs.forEach(function(pair) {
+          var key = pair.split('=')[0],
+              value = pair.split('=')[1];
 
-            self.storeItem(key, value);
-          });
-        }
+          self.storeItem(key, value);
+        });
+      });
+    }
+
+    if(textEls.length) {
+      textEls.each(function(n, el) {
+        var $el = $(el),
+            key = $el.attr('id'),
+            value = $el.val();
+
+        self.storeItem(key, value);
       });
     }
   }

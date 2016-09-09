@@ -20,6 +20,8 @@ function ShowHideContent() {
       // If the data-target attribute is defined
       if (dataTarget) {
 
+        $('#' + dataTarget).addClass('toggleable');
+
         // Set aria-controls
         $radio.attr('aria-controls', dataTarget);
 
@@ -32,11 +34,7 @@ function ShowHideContent() {
             var groupDataTarget = $this.parent('label').attr('data-target');
             var $groupDataTarget = $('#' + groupDataTarget);
 
-            // Hide toggled content
-            $groupDataTarget.addClass('js-hidden');
-            // Set aria-expanded and aria-hidden for hidden content
-            $this.attr('aria-expanded', 'false');
-            $groupDataTarget.attr('aria-hidden', 'true');
+            self.radioPanelHide($this, $groupDataTarget);
           });
 
           var $dataTarget = $('#' + dataTarget);
@@ -59,11 +57,7 @@ function ShowHideContent() {
             var groupDataTarget = $(this).parent('label').attr('data-target');
             var $groupDataTarget = $('#' + groupDataTarget);
 
-            // Hide toggled content
-            $groupDataTarget.addClass('js-hidden');
-            // Set aria-expanded and aria-hidden for hidden content
-            $(this).attr('aria-expanded', 'false');
-            $groupDataTarget.attr('aria-hidden', 'true');
+            self.radioPanelHide($(this), $groupDataTarget);
           });
 
         });
@@ -71,6 +65,17 @@ function ShowHideContent() {
 
     });
   }
+
+  self.radioPanelHide = function($el, $target) {
+    // Hide toggled content
+    $target.addClass('js-hidden');
+    // Set aria-expanded and aria-hidden for hidden content
+    $el.attr('aria-expanded', 'false');
+    $target.attr('aria-hidden', 'true');
+
+
+  };
+
   self.showHideCheckboxToggledContent = function () {
 
     $(".block-label input[type='checkbox']").each(function() {

@@ -1,34 +1,33 @@
 'use strict';
 
 moj.Modules.formRoutes = {
-  form_class: 'js_route',
-
   init: function() {
     var self = this;
 
-    if($('form.' + self.form_class).length) {
+    if($('form').length) {
       self.bindEvents();
     }
   },
 
   bindEvents: function() {
     var self = this,
-        $form = $('form.' + self.form_class).eq(0);
+        $form = $('form').eq(0);
 
     $form.on('submit', function(e) {
       e.preventDefault();
 
+      moj.Modules.dataStore.checkForItemsToStore($form);
       self.checkRoute($form);
     });
   },
 
   checkRoute: function($form) {
     var self = this,
-        $checkedButton = $form.find('input[type="radio"]:checked'),
+        $checkedDestinationButton = $form.find('input[type="radio"][data-destination]:checked').last(),
         nextPage;
 
-    if($checkedButton.length && typeof $checkedButton.data('destination') !== 'undefined') {
-      nextPage = $checkedButton.data('destination');
+    if($checkedDestinationButton.length) {
+      nextPage = $checkedDestinationButton.data('destination');
     } else {
       nextPage = $form.attr('action');
     }
