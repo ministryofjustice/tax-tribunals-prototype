@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 
-{% set ptitle = "What is the result or desired outcome?" %}
+{% set ptitle = "Closure - other information" %}
 
 {% block page_title %}
   {{ ptitle }} - Tax Tribunals Prototype
@@ -18,13 +18,13 @@
 
       <p class="lede">Lorem ipsum</p>
 
-      <form class="js_route" action="close_enquiry">
+      <form class="js_route" action="documents">
 
         <div class="form-group">
-          <label class="form-label" for="desired_outcome">
-            Give details of the desired outcome
+          <label class="form-label" for="closure_period">
+            Any other relevant information
           </label>
-          <textarea class="form-control" id="desired_outcome" rows="4" cols="40" data-store></textarea>
+          <textarea class="form-control form-control-3-4" id="closure_other_information" rows="4" cols="40" data-store></textarea>
         </div>
 
         <p>

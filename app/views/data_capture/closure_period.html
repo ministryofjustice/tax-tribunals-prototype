@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 
-{% set ptitle = "What is the result or desired outcome?" %}
+{% set ptitle = "Closure period" %}
 
 {% block page_title %}
   {{ ptitle }} - Tax Tribunals Prototype
@@ -16,15 +16,15 @@
     <div class="column-two-thirds">
       <h1 class="heading-large">{{ ptitle }}</h1>
 
-      <p class="lede">Lorem ipsum</p>
+      <p class="lede">Period within which the issue of a closure notice is sought</p>
 
-      <form class="js_route" action="close_enquiry">
+      <form class="js_route" action="closure_other">
 
         <div class="form-group">
-          <label class="form-label" for="desired_outcome">
-            Give details of the desired outcome
+          <label class="form-label" for="closure_period">
+            Please use this box to say within what period the issue of a closure notice is being requested
           </label>
-          <textarea class="form-control" id="desired_outcome" rows="4" cols="40" data-store></textarea>
+          <textarea class="form-control form-control-3-4" id="closure_period" rows="4" cols="40" data-store></textarea>
         </div>
 
         <p>

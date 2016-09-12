@@ -1,0 +1,63 @@
+{% extends "layout.html" %}
+
+{% set ptitle = "Closure details" %}
+
+{% block page_title %}
+  {{ ptitle }} - Tax Tribunals Prototype
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  {% include "includes/phase_banner_alpha.html" %}
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <h1 class="heading-large">{{ ptitle }}</h1>
+
+      <p class="lede">Lorem ipsum</p>
+
+      <form class="js_route" action="closure_period">
+
+        <div class="form-group">
+          <label class="form-label" for="closure_hmrc_reference_number">
+            HMRC Reference Number
+          </label>
+          <input class="form-control" type="text" id="closure_hmrc_reference_number" data-store>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="closure_hmrc_officer_name">
+            Name of HMRC officer conducting the enquiry
+          </label>
+          <input class="form-control" type="text" id="closure_hmrc_officer_name" data-store>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="closure_years_under_enquiry">
+            Years or accounts of Returns under enquiry
+          </label>
+          <input class="form-control" type="text" id="closure_years_under_enquiry" data-store>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="closure_date_decisions">
+            Date Decision(s)
+          </label>
+          <input class="form-control" type="text" id="closure_date_decisions" data-store>
+        </div>
+
+        <p>
+          <input class="button" type="submit" value="Continue">
+        </p>
+
+      </form>
+
+    </div>
+  </div>
+</main>
+
+{% endblock %}
+
+
