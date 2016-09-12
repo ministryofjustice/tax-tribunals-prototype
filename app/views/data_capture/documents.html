@@ -1,0 +1,50 @@
+{% extends "layout.html" %}
+
+{% set ptitle = "Document checklist" %}
+
+{% block page_title %}
+  {{ ptitle }} - Tax Tribunals Prototype
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  {% include "includes/phase_banner_alpha.html" %}
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <h1 class="heading-large">{{ ptitle }}</h1>
+
+      <p class="lede">Lorem ipsum</p>
+
+      <form class="js_route" action="documents">
+
+        <p>Documents to upload (with checkboxes, presumably?):</p>
+        <ul class="list list-bullet">
+          <li>A copy of the HMRC decision(s) I am appealing against</li>
+          <li>A copy of any statement of reasons for that decision(s)</li>
+          <li>A copy of any notice of conclusions of an HMRC Review</li>
+          <li>A copy of my appeal to HMRC (Direct tax only)</li>
+          <li>A copy of any hardship decision by HMRC or any letter to HMRC regarding hardship (Indirect tax only)</li>
+        </ul>
+
+        <div class="form-group">
+          <ul class="list list-bullet">
+            <li>Document upload goes here?</li>
+          </ul>
+        </div>
+
+        <p>
+          <input class="button" type="submit" value="Continue">
+        </p>
+
+      </form>
+
+    </div>
+  </div>
+</main>
+
+{% endblock %}
+
+
