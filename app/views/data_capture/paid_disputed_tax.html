@@ -19,6 +19,7 @@
       <p class="lede">Lorem ipsum</p>
 
         <form class="js_route" action="outcome">
+
           <div class="form-group">
             <fieldset>
               <legend class="visuallyhidden">{{ ptitle }}</legend>
@@ -32,7 +33,8 @@
                 No
               </label>
             </fieldset>
-            <div class="form-group js-hidden" id="unpaid_disputed_tax_details">
+
+            <div class="form-group js-hidden panel" id="unpaid_disputed_tax_details">
               <fieldset>
                 <legend>Have you applied to HMRC for their agreement that the appeal may proceed without payment or deposit of the disputed tax?</legend>
                 <label class="block-label" data-target="hmrc_application_status_details">
@@ -45,7 +47,8 @@
                   No
                 </label>
               </fieldset>
-              <div class="form-group js-hidden" id="hmrc_application_status_details">
+
+              <div class="form-group js-hidden panel" id="hmrc_application_status_details">
                 <fieldset>
                   <legend>Please tell us the status of your application.</legend>
                   <label class="block-label">
@@ -63,7 +66,8 @@
                     Pending HMRC decision
                   </label>
                 </fieldset>
-                <div class="form-group js-hidden" id="hmrc_application_refused_details">
+
+                <div class="form-group js-hidden panel" id="hmrc_application_refused_details">
                   <fieldset>
                     <legend>Are you applying to the Tribunal for consent to the appeal proceeding without payment or deposit of tax?</legend>
                     <label class="block-label" data-target="hmrc_application_refused_reasons_details">
@@ -76,24 +80,18 @@
                       No
                     </label>
                   </fieldset>
-                  <div class="form-group js-hidden" id="hmrc_application_refused_reasons_details">
+
+                  <div class="form-group js-hidden panel" id="hmrc_application_refused_reasons_details">
                     <label class="form-label" for="hmrc_reasons_to_allow_hardship">
                       Reasons why you think the hardship should be allowed
                     </label>
                     <textarea class="form-control form-control-3-4" id="hmrc_reasons_to_allow_hardship" rows="10" cols="40" data-store></textarea>
                   </div>
+
                 </div>
               </div>
             </div>
           </div>
-
-
-
-
-
-
-
-
 
           <p>
             <input class="button" type="submit" value="Continue">
@@ -108,5 +106,3 @@
 </main>
 
 {% endblock %}
-
-
