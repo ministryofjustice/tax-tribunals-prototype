@@ -73,7 +73,9 @@ function ShowHideContent() {
     $el.attr('aria-expanded', 'false');
     $target.attr('aria-hidden', 'true');
 
-
+    $target.find('input[type="radio"]:checked').prop('checked', false).closest('label').removeClass('selected');
+    $target.find('.toggleable').addClass('js-hidden');
+    $target.find('textarea, input[type="text"]').val('');
   };
 
   self.showHideCheckboxToggledContent = function () {
