@@ -55,7 +55,11 @@ moj.Modules.dataStore = {
             key = $el.attr('id'),
             value = $el.val();
 
-        self.storeItem(key, value);
+        if(value) {
+          self.storeItem(key, value);
+        } else {
+          self.deleteItem(key);
+        }
       });
     }
   }
