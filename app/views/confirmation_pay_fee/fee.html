@@ -1,0 +1,69 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Tax tribunal lodgement fee - Tax Tribunals Prototype
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  {% include "includes/phase_banner_alpha.html" %}
+
+  <p>Step X of Y</p>
+  <div class="govuk-box-highlight">
+    <h2 class="bold-large">Your appeal has been submited to the tax tribunal.</h2>
+    <br>
+    <h2>Your reference is:
+      <span class="display-block fee-display">
+        <span class="write-value" data-key="fee">TC/2016/123456</span>
+      </span>
+    </h2>
+ </div>
+ <div>
+    <h1 class="heading-large">Please arrange payment of your tribunal fee</h1>
+
+    <p class="lede">Select your method of payment</p>
+  
+    <form class="js_route" action="fee">
+        <fieldset>
+          <div class="form-group">
+            <label class="block-label">
+              <input name="dispute_type" type="radio" value="debit_credit_card" />
+              Debit or credit card
+            </label>
+
+            <label class="block-label">
+              <input name="dispute_type" type="radio" value="help_with_fees" />
+              Help with fees
+            </label>
+
+            <label class="block-label">
+              <input name="dispute_type" type="radio" value="out_of_time_request" data-store="fee=50" />
+              Account
+            </label>
+
+            <label class="block-label">
+              <input name="dispute_type" type="radio" value="close_ongoing_enquiry" data-store="fee=50" />
+              Cheque
+            </label>
+
+          </div>
+        </fieldset>
+
+        <p>
+          <input class="button" type="submit" value="Continue">
+        </p>
+
+      </form>
+
+      <details>
+        <summary>Help with types of appeal</summary>
+        <div class="panel">
+          <p>You can only choose one reason per appeal. For example if you wanted to appeal against both a penalty and the amount you owe, you will need to make two separate appeals to the tax tribunal.</p>
+        </div>
+      </details>
+ </div>
+</main>
+
+{% endblock %}
