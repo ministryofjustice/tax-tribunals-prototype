@@ -12,7 +12,7 @@
 
   <p>Step X of Y</p>
   <div class="govuk-box-highlight">
-    <h2 class="bold-large">Your appeal has been submited to the tax tribunal.</h2>
+    <h2 class="bold-large">Your appeal has been successfully submited to the tax tribunal and we await your payment.</h2>
     <br>
     <h2>Your reference is:
       <span class="display-block fee-display">
@@ -21,9 +21,12 @@
     </h2>
  </div>
  <div>
-    <h1 class="heading-large">Please arrange payment of your tribunal fee</h1>
+
+    <p class="lede"></p>
+    <h1 class="heading-large">Next step, pay of your tribunal fee</h1>
 
     <p class="lede">Select your method of payment</p>
+    <p>JOSH: Thinking there should be some reference to paying now or if you can't you have X days to pay and what happens if you don't pay, for example returned appeal and not processed.</p>
   
     <form class="js_route" action="../payment_tool/case_to_pay">
         <fieldset>
@@ -40,12 +43,12 @@
 
             <label class="block-label">
               <input name="dispute_type" type="radio" value="out_of_time_request" data-store="fee=50" />
-              Account
+              Authorised account
             </label>
 
             <label class="block-label">
               <input name="dispute_type" type="radio" value="close_ongoing_enquiry" data-store="fee=50" />
-              Cheque
+              Cheque or postal order
             </label>
 
           </div>
@@ -58,7 +61,7 @@
       </form>
 
       <details>
-        <summary>Help with types of appeal</summary>
+        <summary>Help with types of payment</summary>
         <div class="panel">
           <p>You can only choose one reason per appeal. For example if you wanted to appeal against both a penalty and the amount you owe, you will need to make two separate appeals to the tax tribunal.</p>
         </div>
