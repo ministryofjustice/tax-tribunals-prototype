@@ -4,7 +4,7 @@ moj.Modules.formRoutes = {
   init: function() {
     var self = this;
 
-    if($('form').length) {
+    if($('form.js-route').length) {
       self.bindEvents();
     }
   },
