@@ -13,32 +13,37 @@
   <div class="grid-row">
     <div class="column-two-thirds">
       <p><a class="link-back js-link-back" href="start.html">Back</a> &nbsp; Step X of Y</p>
-      <h1 class="heading-large">Have you appealed directly to HMRC?</h1>
+      <h1 class="heading-large">Do you think you are late to appeal to the Tax Tribunal?</h1>
+      
+      <p class="lede">You have up to 30 days to appeal a HMRC decision.</p>
+      <p class="lede">Use the date from the last letter you received. When a review is completed by HMRC you should receive what's called a 'decision letter'. If you've not received a decision letter, use the last letter you've received from HMRC.</p>
 
-      <p class="lede">Info.</p>
-
-      <form class="js_route" action="lateness">
+      <form class="js_route" action="">
         <fieldset>
           <div class="form-group">
             <label class="block-label">
               <input name="dispute_type" type="radio" value="penalty" data-destination="" />
-              Yes
+              I am not late
             </label>
 
             <label class="block-label">
-              <input name="dispute_type" type="radio" value="paye_code" data-destination="hmrc_review_no" data-store="" />
-              No
+              <input name="dispute_type" type="radio" value="paye_code" data-destination="" data-store="" />
+              I am late
             </label>
-
           </div>
         </fieldset>
 
-        <p>
           <input class="button" type="submit" value="Continue">
         </p>
 
       </form>
 
+        <h2 class="heading-large">Additional info/form inputs?</h2>
+          <ul>
+            <li>Date of letter if know (should reveal? inputs)</li>
+            <li>Reason for lateness needed if late - make mention. Placement TBC</li>
+          </ul> 
+        
       <details>
         <summary>Help with types of appeal</summary>
         <div class="panel">
