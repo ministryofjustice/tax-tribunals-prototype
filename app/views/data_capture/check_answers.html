@@ -1,0 +1,129 @@
+{% extends "layout.html" %}
+
+{% set ptitle = "Check answers" %}
+
+{% block page_title %}
+  {{ ptitle }} - Tax Tribunals Prototype
+{% endblock %}
+
+{% block body_end %}
+  {{ super() }}
+  <script src="/public/javascripts/modules/data-capture-summary.js"></script>
+  <script>
+    moj.Modules.dataCaptureSummary.init();
+  </script>
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  {% include "includes/phase_banner_alpha.html" %}
+
+  <h1 class="heading-large">{{ ptitle }}</h1>
+
+  <table class="check-your-answers">
+    <tbody>
+
+      <tr>
+        <th>Appellant details</th>
+        <td>
+          <div data-key="appellant_name">Terry Example</div>
+          <div>
+            {{ appellant_name }}
+          </div>
+          <div data-key="appellant_address" class="js_breaklines">1 Test Road<br>Teston<br>TE37 1NG</div>
+          <div>
+            Tel: <span data-key="appellant_phone">01234 567890</span>
+          </div>
+          <div>
+            Email: <span data-key="appellant_email">test@example.com</span>
+          </div>
+        </td>
+        <td class="change-answer"><a href="#" data-alert="This functionality is not currently available in this demo">Change</a></td>
+      </tr>
+
+      <tr id="representative_details">
+        <th>Representative details</th>
+        <td>ABC Solicitors<br>7 High Street<br>Teston<br>TE55 3RS<br>Tel: 07777 888999<br>Email: abc@example.com</td>
+        <td class="change-answer"><a href="#" data-alert="This functionality is not currently available in this demo">Change</a></td>
+      </tr>
+
+      <tr>
+        <th>Is the application late?</th>
+        <td>Yes</td>
+        <td class="change-answer"><a href="#" data-alert="This functionality is not currently available in this demo">Change</a></td>
+      </tr>
+
+      <tr>
+        <th>Original application deadline</th>
+        <td>11/09/2016</td>
+        <td class="change-answer"><a href="#" data-alert="This functionality is not currently available in this demo">Change</a></td>
+      </tr>
+
+      <tr>
+        <th>Reasons given for late application</th>
+        <td>The dog ate my homework</td>
+        <td class="change-answer"><a href="#" data-alert="This functionality is not currently available in this demo">Change</a></td>
+      </tr>
+
+      <tr>
+        <th>Direct or indirect tax</th>
+        <td>Indirect</td>
+        <td class="change-answer"><a href="#" data-alert="This functionality is not currently available in this demo">Change</a></td>
+      </tr>
+
+      <tr>
+        <th>Paid or deposited the disputed tax?</th>
+        <td>No</td>
+        <td class="change-answer"><a href="#" data-alert="This functionality is not currently available in this demo">Change</a></td>
+      </tr>
+
+      <tr>
+        <th>Applied to proceed without payment or deposit?</th>
+        <td>Yes</td>
+        <td class="change-answer"><a href="#" data-alert="This functionality is not currently available in this demo">Change</a></td>
+      </tr>
+
+      <tr>
+        <th>Status of application to proceed?</th>
+        <td>Granted</td>
+        <td class="change-answer"><a href="#" data-alert="This functionality is not currently available in this demo">Change</a></td>
+      </tr>
+
+      <tr>
+        <th>Desired outcome</th>
+        <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nec ultricies nisi, in cursus nibh. Cras iaculis malesuada consectetur. Mauris ut venenatis massa. Ut imperdiet feugiat tempus. Nunc ac molestie enim, at ullamcorper quam.</td>
+        <td class="change-answer"><a href="#" data-alert="This functionality is not currently available in this demo">Change</a></td>
+      </tr>
+
+      <tr>
+        <th>Is application to close an enquiry?</th>
+        <td>No</td>
+        <td class="change-answer"><a href="#" data-alert="This functionality is not currently available in this demo">Change</a></td>
+      </tr>
+
+      <tr>
+        <th>Grounds for appeal</th>
+        <td>Morbi condimentum dictum rutrum. Nullam porttitor leo nulla, et maximus turpis commodo eget. Aliquam vitae mattis ipsum. Mauris faucibus, leo vel bibendum tristique, lorem tortor lacinia tellus, vitae porta dui mi posuere odio.</td>
+        <td class="change-answer"><a href="#" data-alert="This functionality is not currently available in this demo">Change</a></td>
+      </tr>
+
+      <tr>
+        <th>Documents submitted</th>
+        <td>
+          <ul class="list list-bullet">
+            <li>Bank statement - 01/08/2016</li>
+            <li>Rent agreement - 01/02/2013</li>
+            <li>Other document - 01/01/2016</li>
+          </ul>
+        </td>
+        <td class="change-answer"><a href="#" data-alert="This functionality is not currently available in this demo">Change</a></td>
+      </tr>
+
+    </tbody>
+  </table>
+
+</main>
+
+{% endblock %}

@@ -2,8 +2,16 @@ table {
   margin-bottom: $gutter;
 }
 
+tr {
+  vertical-align: top;
+}
+
 td.details {
   font-weight: bold;
+}
+
+td.right {
+  text-align: right;
 }
 
 .expandable-demo tr {
@@ -16,4 +24,16 @@ td.details {
 
 td li strong { // TODO: remove this, it's horrible
   display: block;
+}
+
+table.check-your-answers {
+  th {
+    font-size: 16px;
+    font-weight: normal;
+    max-width: 250px;
+  }
+  td {
+    font-size: 16px;
+    max-width: 400px;
+  }
 }

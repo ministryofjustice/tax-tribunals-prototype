@@ -1,12 +1,11 @@
 'use strict';
 
 moj.Modules.displayValues = {
-  element_class: 'write-value',
   data_attribute: 'key',
 
   init: function() {
     var self = this,
-        elements = $('.' + self.element_class);
+        elements = $('[data-' + self.data_attribute + ']');
 
     if(elements.length) {
       self.writeValues(elements);
@@ -19,10 +18,15 @@ moj.Modules.displayValues = {
     elements.each(function(n, element) {
       var $el = $(element),
           dataKey = $el.data(self.data_attribute),
-          dataValue = moj.Modules.dataStore.getItem(dataKey);
+          dataValue = moj.Modules.dataStore.getItem(dataKey),
+          writeVal;
 
       if(dataValue) {
-        $el.text(dataValue);
+        writeVal = dataValue;
+        if($el.hasClass('js_breaklines')) {
+          writeVal = writeVal.replace(/(?:\r\n|\r|\n)/g, '<br>');
+        }
+        $el.html(writeVal);
       }
     });
   }
