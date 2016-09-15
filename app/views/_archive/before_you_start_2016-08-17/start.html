@@ -1,0 +1,81 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Make an appeal to the tax tribunal - Tax Tribunals Prototype
+{% endblock %}
+
+{% block body_classes %}clear-session{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  {% include "includes/phase_banner_alpha.html" %}
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <h1 class="heading-large">Make an appeal to the tax tribunal</h1>
+
+      <p class="lede">Use this service to challenge decisions by HM Revenue and Customs (HMRC).</p>
+      <p>The tribunal is independent of government and will listen to both sides of the argument before making a decision.</p>
+
+      <h2 class="heading-medium">What it costs</h2>
+
+      <p>You may have to pay <a href="#" data-alert="This information is not available at this time.">tax tribunal fees</a> of <strong class="bold">up to £200</strong> to start an appeal, and further fees depending on your case. You’ll get these back if you’re successful.</p>
+
+      <p>You may want to <a class="external" rel="external" href="https://www.gov.uk/guidance/tax-disputes-alternative-dispute-resolution-adr">resolve your matter directly with HMRC</a> at no cost using its review and resolution services.</p>
+
+      <p>If you’re on a low income or receiving certain benefits, you may be able to <a class="external" rel="external" href="https://www.gov.uk/get-help-with-court-fees">get help with fees</a> to make an appeal.</p>
+
+      <p>
+        <a class="button button-start" href="dispute_type">Start now</a>
+      </p>
+
+      <h2 class="heading-medium">Before you start</h2>
+      <ul class="list list-bullet">
+        <li>You’ll need your decision letter from HMRC</li>
+        <li>You’ll need a debit or credit card to pay your appeal fee</li>
+        <li>You can also use this service to appeal certain decisions made by the UK Border Force (UKBF) and National Crime Agency (NCA)</li>
+      </ul>
+
+      <h2 class="heading-medium">Other ways to apply</h2>
+      <ul class="list list-bullet">
+        <li>You can apply by <a class="external" rel="external" href="http://hmctsformfinder.justice.gov.uk/HMCTS/GetForms.do?court_forms_category=Tax%20(First-tier%20Tribunal)">paper form</a></li>
+        <li>
+          Send your application
+          <ul class="list list-bullet">
+            <li>by email to <a href="mailto:taxappeals@hmcts.gsi.gov.uk">taxappeals@hmcts.gsi.gov.uk</a></li>
+            <li>by post to First-tier Tribunal (Tax Chamber), PO Box 16972, Birmingham, B16 6TZ</li>
+          </ul>
+        </li>
+      </ul>
+
+    </div>
+
+    <div class="column-one-third">
+      <aside class="govuk-related-items">
+
+        <h2 class="heading-medium">Courts, sentencing and tribunals</h2>
+        <nav role="navigation">
+          <ul class="font-xsmall">
+              <li><a href="https://www.gov.uk/court-fees-what-they-are">Court and tribunal fees</a></li>
+              <li><a href="https://www.gov.uk/tax-tribunal">Appeal to a tax tribunal</a></li>
+          </ul>
+        </nav>
+
+        <h2 class="heading-medium">Elsewhere on GOV.UK</h2>
+        <nav role="navigation">
+          <ul class="font-xsmall">
+            <li><a href="https://www.gov.uk/tax-appeals">Disagree with a tax decision</a></li>
+            <li><a href="https://www.gov.uk/government/publications/tax-chamber-tribunal-procedure-rules">Tax tribunal procedure rules</a></li>
+          </ul>
+        </nav>
+
+      </aside>
+    </div>
+  </div>
+</main>
+
+{% endblock %}
+
+

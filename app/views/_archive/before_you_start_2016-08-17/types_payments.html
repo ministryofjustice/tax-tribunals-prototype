@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  What payment or repayment is your dispute about? - Tax Tribunals Prototype
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  {% include "includes/phase_banner_alpha.html" %}
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <p><a class="link-back js-link-back" href="">Back</a> &nbsp; Step 5 of 6</p>
+      <h1 class="heading-large">What payment or repayment is your dispute about?</h1>
+
+      <p class="lede">Select the option that is relevant to you.</p>
+
+      <form class="js_route" action="fee">
+        <fieldset>
+          <div class="form-group">
+            <label class="block-label">
+              <input name="tax_type" type="radio" value="tax" data-store="direct=true" />
+              Student Loan repayments
+            </label>
+
+            <label class="block-label">
+              <input name="tax_type" type="radio" value="statutory-payments" data-store="direct=true" />
+              Statutory payments (for example, Statutory Sick Pay, Statutory Maternity Pay)
+            </label>
+          </div>
+        </fieldset>
+
+        <p>
+          <input class="button" type="submit" value="Continue">
+        </p>
+
+      </form>
+    </div>
+  </div>
+</main>
+
+{% endblock %}
