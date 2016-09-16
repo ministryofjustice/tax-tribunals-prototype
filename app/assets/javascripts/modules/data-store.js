@@ -31,7 +31,7 @@ moj.Modules.dataStore = {
   checkForItemsToStore: function($form) {
     var self = this,
         radioEls = $form.find('input[type="radio"][data-store]:checked'),
-        textEls = $form.find('input[type="text"][data-store], textarea[data-store]');
+        textEls = $form.find('input[type="text"][data-store], input[type="hidden"][data-store], textarea[data-store]');
 
     if(radioEls.length) {
       radioEls.each(function(n, el) {

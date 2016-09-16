@@ -13,6 +13,7 @@ moj.Modules.formRoutes = {
     var self = this,
         $form = $('form').eq(0);
 
+    moj.log('binding form');
     $form.on('submit', function(e) {
       e.preventDefault();
 

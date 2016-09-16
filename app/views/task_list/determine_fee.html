@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Task list demo - Determine fee - Tax Tribunals Prototype
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  {% include "includes/phase_banner_alpha.html" %}
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <h1 class="heading-large">Determine your fee</h1>
+
+      <form class="js_route" action="start">
+
+        <p>In this step you will determine the correct fee for your application.</p>
+
+        <p>For the purposes of this demo, simply press Continue.</p>
+
+        <input type="hidden" id="task_determine_fee" name="determine_fee" value="complete" data-store>
+
+        <p>
+          <input class="button" type="submit" value="Continue">
+        </p>
+
+      </form>
+
+    </div>
+
+  </div>
+</main>
+
+{% endblock %}
