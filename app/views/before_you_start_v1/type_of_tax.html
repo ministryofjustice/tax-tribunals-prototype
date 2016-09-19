@@ -12,17 +12,19 @@
 
   <div class="grid-row">
     <div class="column-two-thirds">
-      <p><a class="link-back js-link-back" href="">Back</a> &nbsp; Step 4 of 6</p>
-      <h1 class="heading-large">What type of tax is your dispute about?</h1>
+      <p><a class="link-back js-link-back" href="">Back</a> &nbsp; Step 1 of 6</p>
+      <h1 class="heading-large">What is your appeal about?</h1>
 
-      <p class="lede">Select the option that is relevant to you.</p>
+      <p class="lede">The type of tax or HMRC decision you’re appealing about will be shown on the last letter you had from HMRC. This could be the original notice letter from HMRC or the decision or conclusion letter if you had an appeal or review with HMRC.</p>
+      <p>If the tax is not listed below or you’re making a different type of appeal or application, please select ‘other’.</p>
 
       <form class="js_route" action="dispute_type">
         <fieldset>
           <div class="form-group">
             <label class="block-label">
               <input name="tax_type" type="radio" value="income_tax" />
-              Income tax (this is to do with personal income for example pay as you earn (PAYE))
+              Income tax<br>
+              (for example, personal income like Pay As You Earn (PAYE))
             </label>
 
             <label class="block-label">
@@ -32,12 +34,17 @@
 
             <label class="block-label">
               <input name="tax_type" type="radio" value="corporation_tax" />
-              Corporation tax
+              Innacurate returns (careless or deliberate)
+            </label>
+
+            <label class="block-label">
+              <input name="tax_type" type="radio" value="corporation_tax" />
+              Advance Payment Notice (APN) and Disclosure Of Tax Aviodance Schemes (DOTAS)
             </label>
 
             <label class="block-label">
               <input name="tax_type" type="radio" value="something_else" />
-              Something else
+              Excise duty
             </label>
 
             <label class="block-label">
