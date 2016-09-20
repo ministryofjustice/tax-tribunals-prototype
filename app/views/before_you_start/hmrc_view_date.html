@@ -21,14 +21,16 @@
         <fieldset>
           <div class="form-group">
             <div class="form-group form-group-day">
-              <label for="dob-day">Date of the last letter from HRMC<br>
-              <strong>(DATE PATTERN --- DD/MM/YYYY)</strong></label><br>
+              <label for="dob-day">
+                Date of the last letter from HRMC
+              </label>
+              <p class="form-hint">Date format DD/MM/YYYY</p>
               <input class="form-control" id="dob-day" name="dob-day" type="number" pattern="[0-9]*" min="0"  data-store="hmrc_view_date" >
             </div>
 
             <label class="block-label">
               <input name="dispute_type" type="checkbox" value="no" data-store="hmrc_view_date_none" />
-              I don't know the date of the last letter from HMRC 
+              I don't know the date of the last letter from HMRC
             </label>
 
           </div>

@@ -13,25 +13,18 @@
   <div class="grid-row">
     <div class="column-two-thirds">
       <p><a class="link-back js-link-back" href="start.html">Back</a> &nbsp; Step X of Y</p>
-      <h1 class="heading-large">From the date you've given us your appeal [is | is not] late</h1>
+      <h1 class="heading-large">From the date you've given us your appeal is late</h1>
 
       <p class="lede">If your appeal is late you will need to provide a reason for being late.</p>
 
-      <form class="js_route" action="start">
-        <fieldset>
-          <!-- div class="form-group">
-            <label class="block-label">
-              <input name="dispute_type" type="radio" value="yes" data-destination="lateness" />
-              Yes
-            </label>
+      <form class="js_route" action="/data_capture/appellant_details">
 
-            <label class="block-label">
-              <input name="dispute_type" type="radio" value="no" data-destination="hmrc_review_no" data-store="" />
-              No
-            </label>
-
-          </div -->
-        </fieldset>
+        <div class="form-group">
+          <label class="form-label" for="lateness-reason">
+            Reason(s) for late appeal
+          </label>
+          <textarea class="form-control form-control-3-4" id="lateness_reason" rows="4" cols="40" data-store></textarea>
+        </div>
 
         <p>
           <input class="button" type="submit" value="Continue">
