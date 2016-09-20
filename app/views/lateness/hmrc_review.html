@@ -13,37 +13,32 @@
   <div class="grid-row">
     <div class="column-two-thirds">
       <p><a class="link-back js-link-back" href="start.html">Back</a> &nbsp; Step X of Y</p>
-      <h1 class="heading-large">Do you think you are late to appeal to the Tax Tribunal?</h1>
-      
-      <p class="lede">You have up to 30 days to appeal a HMRC decision.</p>
-      <p class="lede">Use the date from the last letter you received. When a review is completed by HMRC you should receive what's called a 'decision letter'. If you've not received a decision letter, use the last letter you've received from HMRC.</p>
+      <h1 class="heading-large">Have you appealed directly to HMRC?</h1>
 
-      <form class="js_route" action="">
+      <p class="lede">The tax tribunal is independent of HMRC. Appealing to HMRC is know as a view or review and is free.</p>
+
+      <form class="js_route" action="lateness">
         <fieldset>
           <div class="form-group">
             <label class="block-label">
-              <input name="dispute_type" type="radio" value="penalty" data-destination="" />
-              I am not late
+              <input name="dispute_type" type="radio" value="yes" data-destination="lateness" />
+              Yes
             </label>
 
             <label class="block-label">
-              <input name="dispute_type" type="radio" value="paye_code" data-destination="" data-store="" />
-              I am late
+              <input name="dispute_type" type="radio" value="no" data-destination="hmrc_review_no" data-store="" />
+              No
             </label>
+
           </div>
         </fieldset>
 
+        <p>
           <input class="button" type="submit" value="Continue">
         </p>
 
       </form>
 
-        <h2 class="heading-large">Additional info/form inputs?</h2>
-          <ul>
-            <li>Date of letter if know (should reveal? inputs)</li>
-            <li>Reason for lateness needed if late - make mention. Placement TBC</li>
-          </ul> 
-        
       <details>
         <summary>Help with types of appeal</summary>
         <div class="panel">
