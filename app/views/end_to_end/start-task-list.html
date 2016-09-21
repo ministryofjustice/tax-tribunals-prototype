@@ -1,0 +1,76 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Task list demo - Tax Tribunals Prototype
+{% endblock %}
+
+{% block body_end %}
+  {{ super() }}
+  <script src="/public/javascripts/modules/task-list.js"></script>
+  <script>
+    moj.Modules.taskList.init();
+  </script>
+{% endblock %}
+
+{% block body_classes %}clear-session{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  {% include "includes/phase_banner_alpha.html" %}
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <h1 class="heading-large">Appeal to an independent tax tribunal</h1>
+
+      <p class="lede">Use this service to challenge decisions by HM Revenue and Customs (HMRC).</p>
+      <p>The tribunal is independent of government and will listen to both sides of the argument before making a decision.</p>
+      <p>For more information see the <a href="#" data-alert="This information is not available at this time.">guide to tax tribunals and fees</a>.</p>
+      <p>You can make an appeal to the tax tribunal using the steps below.</p>
+
+      <ol class="list list-number task-list" data-task-list>
+        <li>
+          <a href="determine_fee">Find out your fee</a>
+          <span class="task-status" data-task="determine_fee"></span>
+        </li>
+        <li>
+          <a href="check_if_late">Check you're in time</a>
+          <span class="task-status" data-task="check_if_late"></span>
+        </li>
+        <li>
+          <a href="enter_details">Enter appeal details</a>
+          <span class="task-status" data-task="enter_details"></span>
+        </li>
+        <li>
+          <a href="pay_fee">Pay fee</a>
+          <span class="task-status" data-task="pay_fee"></span>
+        </li>
+      </ol>
+
+      <h2 class="heading-medium">Other ways to appeal</h2>
+      <ul class="list list-bullet">
+        <li>You can submit an appeal or application by <a class="external" rel="external" href="http://hmctsformfinder.justice.gov.uk/HMCTS/GetForms.do?court_forms_category=Tax%20(First-tier%20Tribunal)">paper form</a></li>
+        <li>
+          Send by post to First-tier Tribunal (Tax Chamber), PO Box 16972, Birmingham, B16 6TZ
+        </li>
+      </ul>
+
+    </div>
+
+    <div class="column-one-third">
+      <aside class="govuk-related-items">
+
+        <h2 class="heading-medium">Controls</h2>
+        <nav role="navigation">
+          <ul class="font-xsmall">
+            <li><a href="start" class="reset-task-list">Reset task list</a></li>
+          </ul>
+        </nav>
+
+      </aside>
+    </div>
+  </div>
+</main>
+
+{% endblock %}
