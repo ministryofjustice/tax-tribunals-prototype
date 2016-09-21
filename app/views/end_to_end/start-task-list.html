@@ -9,10 +9,9 @@
   <script src="/public/javascripts/modules/task-list.js"></script>
   <script>
     moj.Modules.taskList.init();
+    moj.Modules.dataStore.storeItem('mode', 'task_list');
   </script>
 {% endblock %}
-
-{% block body_classes %}clear-session{% endblock %}
 
 {% block content %}
 
@@ -31,19 +30,19 @@
 
       <ol class="list list-number task-list" data-task-list>
         <li>
-          <a href="determine_fee">Find out your fee</a>
+          <a href="/before_you_start/type_of_tax">Find out your fee</a>
           <span class="task-status" data-task="determine_fee"></span>
         </li>
         <li>
-          <a href="check_if_late">Check you're in time</a>
+          <a href="/before_you_start/hmrc_view">Check you're in time</a>
           <span class="task-status" data-task="check_if_late"></span>
         </li>
         <li>
-          <a href="enter_details">Enter appeal details</a>
+          <a href="/data_capture/appellant_details">Enter appeal details</a>
           <span class="task-status" data-task="enter_details"></span>
         </li>
         <li>
-          <a href="pay_fee">Pay fee</a>
+          <a href="/payment_tool/case_to_pay">Pay fee</a>
           <span class="task-status" data-task="pay_fee"></span>
         </li>
       </ol>

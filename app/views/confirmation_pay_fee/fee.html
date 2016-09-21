@@ -16,7 +16,7 @@
     <br>
     <h2>Your reference is:
       <span class="display-block fee-display">
-        <span class="write-value" data-key="fee">TC/2016/123456</span>
+        <span class="write-value">TC/2016/123456</span>
       </span>
     </h2>
  </div>
@@ -24,27 +24,27 @@
     <h1 class="heading-large">Please arrange payment of your tribunal fee</h1>
 
     <p class="lede">Select your method of payment</p>
-  
+
     <form class="js_route" action="../payment_tool/case_to_pay">
         <fieldset>
           <div class="form-group">
             <label class="block-label">
-              <input name="dispute_type" type="radio" value="debit_credit_card" />
+              <input name="payment_type" type="radio" value="debit_credit_card" />
               Debit or credit card
             </label>
 
             <label class="block-label">
-              <input name="dispute_type" type="radio" value="help_with_fees" />
+              <input name="payment_type" type="radio" value="help_with_fees" />
               Help with fees
             </label>
 
             <label class="block-label">
-              <input name="dispute_type" type="radio" value="out_of_time_request" data-store="fee=50" />
+              <input name="payment_type" type="radio" value="account" />
               Account
             </label>
 
             <label class="block-label">
-              <input name="dispute_type" type="radio" value="close_ongoing_enquiry" data-store="fee=50" />
+              <input name="payment_type" type="radio" value="cheque" />
               Cheque
             </label>
 
