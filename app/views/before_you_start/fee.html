@@ -4,6 +4,16 @@
   Tax tribunal lodgement fee - Tax Tribunals Prototype
 {% endblock %}
 
+{% block body_end %}
+  {{ super() }}
+  <script>
+    if(moj.Modules.dataStore.getItem('mode') === 'task_list') {
+      moj.Modules.dataStore.storeItem('task_determine_fee', 'complete');
+      $('a.js-next').attr('href', '/end_to_end/start-task-list').text('Continue');
+    }
+  </script>
+{% endblock %}
+
 {% block content %}
 
 <main id="content" role="main">
@@ -43,11 +53,11 @@
     </p>
 
     <p>
-      <a class="button button-start" href="hmrc_view">Yes, start appeal</a>
+      <a class="button button-start js-next" href="hmrc_view">Yes, start appeal</a>
     </p>
-    <p>
+<!--     <p>
       <a class="button button-start" href="#">No</a>
-    </p>
+    </p> -->
 
     <p>
     <a href="#">What did you think of this service?</a> (takes 30 seconds)

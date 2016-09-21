@@ -17,7 +17,6 @@ moj.Modules.taskList = {
   bindEvents: function() {
     var self = this;
 
-
     $('a.reset-task-list').on('click', function(e) {
       e.preventDefault();
 
@@ -28,8 +27,8 @@ moj.Modules.taskList = {
   getTasks: function(list) {
     var self = this;
 
-    $(list).find('li a').each(function(n, link) {
-      self.tasks[self.tasks.length] = $(link).attr('href');
+    $(list).find('[data-task]').each(function(n, link) {
+      self.tasks[self.tasks.length] = $(link).data('task');
     });
   },
 
@@ -51,9 +50,7 @@ moj.Modules.taskList = {
     var self = this;
 
     for(var x = 0; x < self.tasks.length; x++) {
-      var task = self.tasks[x];
-
-      moj.Modules.dataStore.deleteItem('task_' + task);
+      moj.Modules.dataStore.deleteItem('task_' + self.tasks[x]);
     }
 
     self.checkCompletedItems();
