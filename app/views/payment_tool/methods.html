@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Tax tribunal lodgement fee - Tax Tribunals Prototype
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  {% include "includes/phase_banner_alpha.html" %}
+
+  <p><a class="link-back js-link-back" href="">Back</a> &nbsp; Step X of Y</p>
+
+  <h1 class="heading-large">Please arrange payment of your tribunal fee</h1>
+
+  <p class="lede">Select your method of payment</p>
+
+  <form class="js_route" action="case_to_pay">
+    <fieldset>
+      <div class="form-group">
+        <label class="block-label">
+          <input name="payment_type" type="radio" value="debit_credit_card" />
+          Debit or credit card
+        </label>
+
+        <label class="block-label">
+          <input name="payment_type" type="radio" value="help_with_fees" />
+          Help with fees
+        </label>
+
+        <label class="block-label">
+          <input name="payment_type" type="radio" value="account" />
+          Account
+        </label>
+
+        <label class="block-label">
+          <input name="payment_type" type="radio" value="cheque" />
+          Cheque
+        </label>
+
+      </div>
+    </fieldset>
+
+    <p>
+      <input class="button" type="submit" value="Continue">
+    </p>
+
+  </form>
+
+</main>
+
+{% endblock %}
