@@ -29,9 +29,6 @@
         <th>Appellant details</th>
         <td>
           <div data-key="appellant_name">Terry Example</div>
-          <div>
-            {{ appellant_name }}
-          </div>
           <div data-key="appellant_address" class="js_breaklines">1 Test Road<br>Teston<br>TE37 1NG</div>
           <div>
             Tel: <span data-key="appellant_phone">01234 567890</span>
@@ -43,21 +40,24 @@
         <td class="change-answer"><a href="#" data-alert="This functionality is not currently available in this demo">Change</a></td>
       </tr>
 
-      <tr id="representative_details">
+      <tr id="representative_details" class="js-hidden">
         <th>Representative details</th>
-        <td>ABC Solicitors<br>7 High Street<br>Teston<br>TE55 3RS<br>Tel: 07777 888999<br>Email: abc@example.com</td>
+        <td>
+          <div data-key="representative_name">ABC Solicitors</div>
+          <div data-key="representative_address" class="js_breaklines">7 High Street<br>Teston<br>TE55 3RS</div>
+          <div>
+            Tel: <span data-key="representative_phone">07777 888999</span>
+          </div>
+          <div>
+            Email: <span data-key="representative_email">abc@example.com</span>
+          </div>
+        </td>
         <td class="change-answer"><a href="#" data-alert="This functionality is not currently available in this demo">Change</a></td>
       </tr>
 
       <tr>
         <th>Is the application late?</th>
         <td>Yes</td>
-        <td class="change-answer"><a href="#" data-alert="This functionality is not currently available in this demo">Change</a></td>
-      </tr>
-
-      <tr>
-        <th>Original application deadline</th>
-        <td>11/09/2016</td>
         <td class="change-answer"><a href="#" data-alert="This functionality is not currently available in this demo">Change</a></td>
       </tr>
 
@@ -75,7 +75,7 @@
 
       <tr>
         <th>Paid or deposited the disputed tax?</th>
-        <td>No</td>
+        <td><span data-key="paid_disputed_tax">No</span></td>
         <td class="change-answer"><a href="#" data-alert="This functionality is not currently available in this demo">Change</a></td>
       </tr>
 
