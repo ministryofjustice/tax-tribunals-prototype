@@ -11,11 +11,6 @@
   <script src="/public/javascripts/modules/data-capture-summary.js"></script>
   <script>
     moj.Modules.dataCaptureSummary.init();
-
-    if(moj.Modules.dataStore.getItem('mode') === 'task_list') {
-      moj.Modules.dataStore.storeItem('task_enter_details', 'complete');
-      $('a.js-next').attr('href', '/end_to_end/start-task-list').text('Continue');
-    }
   </script>
 {% endblock %}
 
@@ -68,7 +63,7 @@
 
       <tr>
         <th>Reasons given for late application</th>
-        <td>The dog ate my homework</td>
+        <td>Lorem ipsum dolor sit amet</td>
         <td class="change-answer"><a href="#" data-alert="This functionality is not currently available in this demo">Change</a></td>
       </tr>
 
@@ -134,7 +129,7 @@
   <p>By completing this application and clicking the ‘Submit application and continue’ button, I believe the information I have given in this form is true to the best of my knowledge. If I am found to have been deliberately untruthful or dishonest, criminal proceedings for fraud can be brought against me. I understand that if I have given false information or I do not provide further evidence if requested, my application may be rejected and the full fee will be payable.</p>
 
   <p>
-    <a class="button js-next" href="/payment_tool/case_to_pay">Continue</a>
+    <a class="button js-next" href="confirmation">Continue</a>
   </p>
 
 </main>
