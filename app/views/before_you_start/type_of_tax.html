@@ -12,7 +12,7 @@
 
   <div class="grid-row">
     <div class="column-two-thirds">
-      <p><a class="link-back js-link-back" href="">Back</a> &nbsp; Step 1 of 6</p>
+      <p><a class="link-back js-link-back" href="">Back</a> &nbsp; Step 1 of 4</p>
       <h1 class="heading-large">What is your appeal about?</h1>
 
       <p class="lede">The type of tax or HMRC decision you’re appealing about will be shown on the last letter you had from HMRC. This could be the original notice letter from HMRC or the decision or conclusion letter if you had an appeal or review with HMRC.</p>
@@ -23,38 +23,47 @@
           <div class="form-group">
             <label class="block-label">
               <input name="tax_type" type="radio" value="income_tax" />
-              Income tax<br>
-              (for example, personal income like Pay As You Earn (PAYE))
+              <strong>Income tax</strong><br>
+              for example, Pay As You Earn (PAYE), self assessments
             </label>
 
             <label class="block-label">
               <input name="tax_type" type="radio" value="vat" />
-              Value added tax (VAT)
+              <strong>Value added tax (VAT)</strong>
             </label>
 
             <label class="block-label">
-              <input name="tax_type" type="radio" value="corporation_tax" />
-              Innacurate returns (careless or deliberate)
+              <input name="tax_type" type="radio" value="corporation_tax" data-destination="fee" data-store="fee=50" />
+              <strong>Advance Payment Notice (APN)</strong><br>
+               including Disclosure Of Tax Aviodance Schemes (DOTAS)
             </label>
 
             <label class="block-label">
-              <input name="tax_type" type="radio" value="closure_notices" />
-              Closure application
+              <input name="tax_type" type="radio" value="inaccurate_returns" data-destination="inaccurate_returns"  />
+              <strong>Inaccurate returns</strong>
             </label>
 
             <label class="block-label">
-              <input name="tax_type" type="radio" value="corporation_tax" />
-              Advance Payment Notice (APN) and Disclosure Of Tax Aviodance Schemes (DOTAS)
+              <input name="tax_type" type="radio" value="closure_notices" data-destination="fee" data-store="fee=50" />
+              <strong>Closure notice</strong><br>
+              Explanation?
             </label>
 
             <label class="block-label">
-              <input name="tax_type" type="radio" value="something_else" />
-              Excise duty
+              <input name="tax_type" type="radio" value="information notice" data-destination="fee" data-store="fee=50"  />
+              <strong>Information notice</strong><br>
+              Explanation?
+            </label>
+
+            <label class="block-label">
+              <input name="tax_type" type="radio" value="information notice" data-destination="fee" data-store="fee=50"  />
+              <strong>Application for permission from the tribunal</strong><br>
+              for example, requests to HMRC, UK Border Force (UKBF), National Crime Authority (NCA) for review requests
             </label>
 
             <label class="block-label">
               <input name="tax_type" type="radio" value="other" data-destination="types_tax_other" />
-              Other
+              <strong>Other</strong>
             </label>
           </div>
         </fieldset>
