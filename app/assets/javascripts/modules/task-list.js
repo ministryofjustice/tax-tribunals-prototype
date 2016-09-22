@@ -39,7 +39,7 @@ moj.Modules.taskList = {
       var task = self.tasks[x];
 
       if(moj.Modules.dataStore.getItem('task_' + task) === 'complete') {
-        $('span[data-task="' + task + '"]').show().text('COMPLETED');
+        $('span[data-task="' + task + '"]').show();
       } else {
         $('span[data-task="' + task + '"]').hide();
       }

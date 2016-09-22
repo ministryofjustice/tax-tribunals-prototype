@@ -13,7 +13,6 @@
       var $els = $('.js-stick-at-top-when-scrolling');
 
       if($els.length > 0){
-        console.log($els.length);
         sticky.$els = $els;
 
         if(sticky._scrollTimeout === false) {
