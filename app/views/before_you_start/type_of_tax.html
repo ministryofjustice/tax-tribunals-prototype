@@ -22,13 +22,13 @@
         <fieldset>
           <div class="form-group">
             <label class="block-label">
-              <input name="tax_type" type="radio" value="income_tax" />
+              <input name="tax_type" type="radio" value="income_tax" data-store="tax_type=income_tax,direct=true" />
               <strong>Income tax</strong><br>
               for example, Pay As You Earn (PAYE), self assessments
             </label>
 
             <label class="block-label">
-              <input name="tax_type" type="radio" value="vat" />
+              <input name="tax_type" type="radio" value="vat" data-store="tax_type=vat,direct=false" />
               <strong>Value added tax (VAT)</strong>
             </label>
 
@@ -44,7 +44,7 @@
             </label>
 
             <label class="block-label">
-              <input name="tax_type" type="radio" value="closure_notices" data-destination="fee" data-store="fee=50" />
+              <input name="tax_type" type="radio" value="closure_notices" data-destination="fee" data-store="fee=50,dispute_type=closure" />
               <strong>Closure notice</strong><br>
               Explanation?
             </label>
