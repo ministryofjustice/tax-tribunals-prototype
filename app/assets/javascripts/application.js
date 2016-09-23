@@ -64,7 +64,7 @@ function ShowHideContent() {
       }
 
     });
-  }
+  };
 
   self.radioPanelHide = function($el, $target) {
     // Hide toggled content
@@ -115,7 +115,7 @@ function ShowHideContent() {
       }
 
     });
-  }
+  };
 }
 
 $(document).ready(function() {

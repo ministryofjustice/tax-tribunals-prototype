@@ -30,6 +30,10 @@
       if (window && window.console) {
         window.console.dir(obj);
       }
+    },
+
+    ucFirst: function(string) {
+      return string.charAt(0).toUpperCase() + string.slice(1);
     }
 
   };

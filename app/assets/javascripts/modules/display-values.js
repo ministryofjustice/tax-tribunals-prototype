@@ -26,6 +26,9 @@ moj.Modules.displayValues = {
         if($el.hasClass('js_breaklines')) {
           writeVal = writeVal.replace(/(?:\r\n|\r|\n)/g, '<br>');
         }
+        if($el.hasClass('js_uc_first')) {
+          writeVal = moj.ucFirst(writeVal);
+        }
         $el.html(writeVal);
       }
     });
