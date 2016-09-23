@@ -6,6 +6,19 @@
   {{ ptitle }} - Tax Tribunals Prototype
 {% endblock %}
 
+{% block body_end %}
+  {{ super() }}
+  <script>
+    if(moj.Modules.dataStore.getItem('direct') === 'true') {
+      moj.Modules.dataStore.storeItem('concerns_indirect_tax', 'no');
+      document.location = 'outcome';
+    } else if(moj.Modules.dataStore.getItem('direct') === 'false') {
+      moj.Modules.dataStore.storeItem('concerns_indirect_tax', 'yes');
+      document.location = 'paid_disputed_tax';
+    }
+  </script>
+{% endblock %}
+
 {% block content %}
 
 <main id="content" role="main">

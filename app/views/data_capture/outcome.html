@@ -6,6 +6,15 @@
   {{ ptitle }} - Tax Tribunals Prototype
 {% endblock %}
 
+{% block body_end %}
+  {{ super() }}
+  <script>
+    if(moj.Modules.dataStore.getItem('close_an_enquiry') === 'yes' || moj.Modules.dataStore.getItem('dispute_type') === 'closure') {
+      $('form').attr('action', 'closure_details');
+    }
+  </script>
+{% endblock %}
+
 {% block content %}
 
 <main id="content" role="main">

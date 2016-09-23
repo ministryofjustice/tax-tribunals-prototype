@@ -4,6 +4,15 @@
   What is your dispute about? - Tax Tribunals Prototype
 {% endblock %}
 
+{% block body_end %}
+  {{ super() }}
+  <script>
+    if(moj.Modules.dataStore.getItem('tax_type') === 'vat') {
+      $('input[value="paye_code"]').closest('label').hide();
+    }
+  </script>
+{% endblock %}
+
 {% block content %}
 
 <main id="content" role="main">
@@ -41,7 +50,7 @@
             </label -->
 
             <label class="block-label">
-              <input name="dispute_type" type="radio" value="close_ongoing_enquiry" data-store="fee=50,appeal=false" />
+              <input name="dispute_type" type="radio" value="close_ongoing_enquiry" data-store="fee=50,appeal=false,dispute_type=closure" />
               Closure notice
             </label>
 
