@@ -32,14 +32,20 @@
         <fieldset>
           <div class="form-group">
             <label class="block-label">
-              <input name="dispute_type" type="radio" value="penalty" data-store="application_is_late=no" />
+              <input name="lateness" type="radio" value="in_time" data-store="application_is_late=no" />
               Yes, I am in time
             </label>
 
             <label class="block-label">
-              <input name="dispute_type" type="radio" value="paye_code" data-destination="hmrc_view_late" data-store="application_is_late=yes" />
+              <input name="lateness" type="radio" value="out_time" data-destination="hmrc_view_late" data-store="application_is_late=yes" />
               No, I am late
             </label>
+
+            <label class="block-label">
+              <input name="lateness" type="radio" value="unknown" data-destination="hmrc_view_late" data-store="application_is_late=yes" />
+              I'm not sure
+            </label>
+
           </div>
         </fieldset>
 
