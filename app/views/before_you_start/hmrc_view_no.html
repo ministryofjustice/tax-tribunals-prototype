@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block page_title %}
-  What is your dispute about? - Tax Tribunals Prototype
+  Do you want to appeal to HMRC first? - Tax Tribunals Prototype
 {% endblock %}
 
 {% block content %}
@@ -13,9 +13,28 @@
   <div class="grid-row">
     <div class="column-two-thirds">
       <p><a class="link-back js-link-back" href="start.html">Back</a> &nbsp; Step X of Y</p>
-      <h1 class="heading-large">You need to have applied to HMRC to appeal before you can appeal to the Tax Tribunal </h1>
+      <h1 class="heading-large">Do you want to appeal to HMRC first?</h1>
 
-      <p class="lede">Information about HRMC appeal process</p>
+      <p class="lede">You have the choice whether to appeal directly to HMRC first, or continue with your appeal to the independent tax tribunal. 
+      <p>
+      <h2>
+      It is free to appeal to HMRC 
+      <p>
+      You must contact HMRC within the deadline shown on the original notice letter from HMRC. This is usually <strong>30 days</strong>, although you can still appeal late if there are good reasons
+      </p>
+      <p>
+      There is no fee to pay to appeal directly to HMRC. You will usually have to pay your own costs, for example towards postage, printing or professional advice.
+      </p>
+      <h2>
+      You can still appeal to the tax tribunal after a direct appeal to HMRC
+      <p>
+      HMRC will send you a decision letter telling you the outcome of your appeal. 
+      </p>
+      <p>
+      If you disagree with HMRC’s response, you can ask HMRC for a review or make an appeal to an independent tax tribunal within 30 days .
+      </p>
+Contact HMRC to appeal directly >>
+Continue appeal to tax tribunal >></p>
 
       <form class="js_route" action="start">
         <fieldset>
@@ -33,16 +52,29 @@
           </div-->
         </fieldset>
 
-        <p>
-          <input class="button" type="submit" value="Continue">
-        </p>
-
+         <p>
+         <a class="button button-start js-next" href="https://www.gov.uk/contact-hmrc">Contact HMRC</a>
+         </p>
+         <p>
+         <a class="button button-start js-next" href="appellant_details">Continue appeal to tribunal</a>
+         </p>
       </form>
 
       <details>
-        <summary>Help with types of appeal</summary>
+        <summary>Help with appealing directly to HMRC</summary>
         <div class="panel">
-          <p>You can only choose one reason per appeal. For example if you wanted to appeal against both a penalty and the amount you owe, you will need to make two separate appeals to the tax tribunal.</p>
+          <p>HMRC will clearly tell you on the original notice letter sent to you how you can query or appeal against a tax decision.</p>
+          <p>You normally have 30 days to appeal.</p>
+          <p>It is free to appeal directly to HMRC. You will usually have to pay your own costs, for example towards postage, printing or professional advice.</p>
+          <p><strong>You can still appeal to the tax tribunal after an  appeal to HMRC</strong>
+          <p>HMRC will send you a decision letter telling you the outcome of your appeal.</p>
+          <p>If you disagree with HMRC’s response, you can:
+          <ul>
+            <li>ask HMRC for a review of the decision by an officer who wasn’t involved in the original decision (you can still apply to the tax tribunal afterwards if you do not accept the review findings)</li>
+            <li>consider alternative dispute resolution (ADR)</li>
+            <li>appeal to an independent tax tribunal within 30 days</li>
+          </ul>
+          <p>See the <a href="https://www.gov.uk/tax-appeals">guidance from HMRC on how to appeal</a> against a tax decision.</p>
         </div>
       </details>
     </div>
