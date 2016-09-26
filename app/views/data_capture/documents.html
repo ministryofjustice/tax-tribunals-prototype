@@ -16,11 +16,11 @@
     <div class="column-two-thirds">
       <h1 class="heading-large">{{ ptitle }}</h1>
 
-      <p class="lede">Lorem ipsum</p>
+      <p class="lede">For your case to proceed without delay you need to make sure the correct documents are sent. We can accept scanned images or good quality pictures, for example via a smartphone. If you are unable to upload your documents you will need to post them to us within 14 days of your application being submitted.</p>
 
       <form class="js_route" action="check_answers">
 
-        <p>Documents to upload (with checkboxes, presumably?):</p>
+        <p>Documents to upload:</p>
         <ul class="list list-bullet">
           <li>A copy of the HMRC decision(s) I am appealing against</li>
           <li>A copy of any statement of reasons for that decision(s)</li>
@@ -30,10 +30,18 @@
         </ul>
 
         <div class="form-group">
-          <ul class="list list-bullet">
-            <li>Document upload goes here?</li>
-          </ul>
+          <input class="button" type="button" value="Upload documents" >
         </div>
+        
+        <label class="block-label">
+          <input name="tax_type" type="checkbox" value="vat" data-store="tax_type=vat,direct=false" />
+          I am unable to upload my documents and will post them
+        </label>
+
+        <p>&nbsp;</p>
+        
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
 
         <p>
           <input class="button" type="submit" value="Continue">
