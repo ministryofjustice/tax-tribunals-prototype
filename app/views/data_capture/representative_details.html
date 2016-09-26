@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 
-{% set ptitle = "Representative details" %}
+{% set ptitle = "Representative's details" %}
 
 {% block page_title %}
   {{ ptitle }} - Tax Tribunals Prototype
@@ -16,12 +16,12 @@
     <div class="column-two-thirds">
       <h1 class="heading-large">{{ ptitle }}</h1>
 
-      <p class="lede">Lorem ipsum</p>
+      <p class="lede">Enter the details of the person who is representing you. You should ensure they agree for their name to be put down. All correspondence and documents will be sent to their address.</p>
 
       <form class="js_route" action="indirect">
         <div class="form-group">
           <fieldset>
-            <legend>Representative type</legend>
+            <legend>Is the representative an individual or company?</legend><br>
             <label class="block-label">
               <input name="representative_type" type="radio" value="individual" data-store="representative_type=individual" />
               Individual
@@ -36,14 +36,14 @@
 
         <div class="form-group">
           <label class="form-label" for="representative_name">
-            Name
+            Name (first name and last name)
           </label>
           <input class="form-control" type="text" id="representative_name" data-store>
         </div>
 
         <div class="form-group">
           <label class="form-label" for="representative_address">
-            Address
+            Address (including post code)
           </label>
           <textarea class="form-control" id="representative_address" rows="4" cols="40" data-store></textarea>
         </div>
@@ -71,7 +71,7 @@
 
         <div class="form-group">
           <fieldset>
-            <legend>Is the representative a legal professional?</legend>
+            <legend>Is the representative a legal professional?</legend><br>
             <label class="block-label">
               <input name="representative_is_legal_professional" type="radio" value="yes" data-store="representative_is_legal_professional=yes" />
               Yes
