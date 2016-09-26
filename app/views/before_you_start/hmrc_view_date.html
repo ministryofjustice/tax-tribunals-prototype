@@ -4,6 +4,16 @@
   Are you in time to appeal? - Tax Tribunals Prototype
 {% endblock %}
 
+{% block body_end %}
+  {{ super() }}
+  <script>
+    if(moj.Modules.dataStore.getItem('mode') === 'task_list') {
+      moj.Modules.dataStore.storeItem('task_check_if_late', 'complete');
+      $('form').attr('action', '/end_to_end/start-task-list');
+    }
+  </script>
+{% endblock %}
+
 {% block content %}
 
 <main id="content" role="main">
@@ -14,20 +24,20 @@
     <div class="column-two-thirds">
       <p><a class="link-back js-link-back" href="start.html">Back</a> &nbsp; Step X of Y</p>
       <h1 class="heading-large">Do think you're in time to appeal to the tax tribunal?</h1>
-      
+
       <p class="lede">Use the date shown on the HMRC decision letter to work out whether you are in time to appeal to the tribunal. You usually have up to 30 days. You can still continue your appeal if you think you are late.
 </p>
 
-      <form class="js_route" action="">
+      <form class="js_route" action="/data_capture/appellant_details">
         <fieldset>
           <div class="form-group">
             <label class="block-label">
-              <input name="dispute_type" type="radio" value="penalty" data-destination="" />
+              <input name="dispute_type" type="radio" value="penalty" data-store="application_is_late=no" />
               Yes, I am in time
             </label>
 
             <label class="block-label">
-              <input name="dispute_type" type="radio" value="paye_code" data-destination="" data-store="" />
+              <input name="dispute_type" type="radio" value="paye_code" data-destination="hmrc_view_late" data-store="application_is_late=yes" />
               No, I am late
             </label>
           </div>
