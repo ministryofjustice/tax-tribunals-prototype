@@ -16,38 +16,36 @@
     <br>
     <h2>Your reference is:
       <span class="display-block fee-display">
-        TC/2016/123456
+        <span class="write-value">TC/2016/123456</span>
       </span>
     </h2>
  </div>
  <div>
-
-    <p class="lede"></p>
-    <h1 class="heading-large">Next step, pay of your tribunal fee</h1>
+    <h1 class="heading-large">Please arrange payment of your tribunal fee</h1>
 
     <p class="lede">Select your method of payment</p>
 
-    <form class="js_route" action="../payment_other/start">
+    <form class="js_route" action="../payment_tool/case_to_pay">
         <fieldset>
           <div class="form-group">
             <label class="block-label">
-              <input name="dispute_type" type="radio" value="debit_credit_card" data-destination="../payment_tool/case_to_pay" />
+              <input name="payment_type" type="radio" value="debit_credit_card" />
               Debit or credit card
             </label>
 
             <label class="block-label">
-              <input name="dispute_type" type="radio" value="help_with_fees" />
+              <input name="payment_type" type="radio" value="help_with_fees" />
               Help with fees
             </label>
 
             <label class="block-label">
-              <input name="dispute_type" type="radio" value="out_of_time_request" data-store="fee=50" />
-              Authorised account
+              <input name="payment_type" type="radio" value="account" />
+              Account
             </label>
 
             <label class="block-label">
-              <input name="dispute_type" type="radio" value="close_ongoing_enquiry" data-store="fee=50" />
-              Cheque or postal order
+              <input name="payment_type" type="radio" value="cheque" />
+              Cheque
             </label>
 
           </div>
@@ -60,7 +58,7 @@
       </form>
 
       <details>
-        <summary>Help with types of payment</summary>
+        <summary>Help with types of appeal</summary>
         <div class="panel">
           <p>You can only choose one reason per appeal. For example if you wanted to appeal against both a penalty and the amount you owe, you will need to make two separate appeals to the tax tribunal.</p>
         </div>

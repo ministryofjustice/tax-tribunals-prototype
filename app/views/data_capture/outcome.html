@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 
-{% set ptitle = "What is the result or desired outcome?" %}
+{% set ptitle = "What outcome do you want from your appeal?" %}
 
 {% block page_title %}
   {{ ptitle }} - Tax Tribunals Prototype
@@ -25,15 +25,15 @@
     <div class="column-two-thirds">
       <h1 class="heading-large">{{ ptitle }}</h1>
 
-      <p class="lede">Lorem ipsum</p>
+      <p class="lede">Give a summary of the decisions you think should be made in regards to your appeal.</p>
 
       <form class="js_route" action="grounds_for_appeal">
 
         <div class="form-group">
           <label class="form-label" for="desired_outcome">
-            Give details of the desired outcome
+            
           </label>
-          <textarea class="form-control form-control-3-4" id="desired_outcome" rows="4" cols="40" data-store></textarea>
+          <textarea class="form-control form-control-3-4" id="desired_outcome" rows="6 cols="40" data-store></textarea>
         </div>
 
         <p>
