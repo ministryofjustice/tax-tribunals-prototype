@@ -13,9 +13,13 @@ moj.Modules.formRoutes = {
     var self = this,
         $form = $('form').eq(0);
 
-    moj.log('binding form');
+    moj.log('js form routing');
     $form.on('submit', function(e) {
       e.preventDefault();
+
+      if($form.hasClass('js_store_answers')) {
+        moj.Modules.recordAnswers.recordAnswer($form);
+      }
 
       moj.Modules.dataStore.checkForItemsToStore($form);
       self.checkRoute($form);
