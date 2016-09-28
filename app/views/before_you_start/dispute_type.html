@@ -7,7 +7,7 @@
 {% block body_end %}
   {{ super() }}
   <script>
-    if(moj.Modules.dataStore.getItem('tax_type') === 'vat') {
+    if(moj.Modules.dataStore.getItem('tax_type').toLowerCase() === 'vat') {
       $('input[value="paye_code"]').closest('label').hide();
     }
   </script>
