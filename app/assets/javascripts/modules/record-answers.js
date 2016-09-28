@@ -10,6 +10,7 @@ moj.Modules.recordAnswers = {
 
     if($('ul.your-answers').length) {
       self.listAnswers();
+      self.trimTable();
     }
   },
 
@@ -82,6 +83,15 @@ moj.Modules.recordAnswers = {
 
         $list.append(html);
       }
+    }
+  },
+
+  trimTable: function() {
+    var fee = moj.Modules.dataStore.getItem('fee');
+
+    if(fee) {
+      $('table.expandable-demo tbody tr').hide();
+      $('table.expandable-demo tbody tr.fee-' + fee).show();
     }
   }
 };
