@@ -13,6 +13,8 @@
 
     if(moj.Modules.dataStore.getItem('application_is_late') === 'no') {
       $('[data-task="check_if_late"]').text('IN TIME');
+    } else if(moj.Modules.dataStore.getItem('application_is_late') === 'unknown') {
+      $('[data-task="check_if_late"]').text('NOT SURE');
     }
   </script>
 {% endblock %}

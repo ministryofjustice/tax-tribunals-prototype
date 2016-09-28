@@ -26,6 +26,46 @@
     <tbody>
 
       <tr>
+        <th colspan="3"><h2 class="heading-medium">Fee details</h2></th>
+      </tr>
+      <tr>
+        <th>What is your appeal about?</th>
+        <td>
+          <ul class="list-bullet js_fee-determination-details">
+            <li>Income tax</li>
+          </ul>
+        </td>
+        <td class="change-answer"><a href="#" data-alert="This functionality is not currently available in this demo">Change</a></td>
+      </tr>
+      <tr>
+        <th>Fee</th>
+        <td>£<span data-key="fee">50</span></td>
+        <td>&nbsp;</td>
+      </tr>
+
+      <tr>
+        <th colspan="3"><h2 class="heading-medium">Appeal timeliness</h2></th>
+      </tr>
+      <tr>
+        <th>Have you made an appeal to HMRC?</th>
+        <td><span data-key="hmrc_view" class="js_uc_first">Yes</span></td>
+        <td class="change-answer"><a href="#" data-alert="This functionality is not currently available in this demo">Change</a></td>
+      </tr>
+      <tr id="application_is_late_row" class="js-hidden">
+        <th>Is this application late?</th>
+        <td><span data-key="application_is_late" class="js_uc_first">Yes</span></td>
+        <td class="change-answer"><a href="#" data-alert="This functionality is not currently available in this demo">Change</a></td>
+      </tr>
+      <tr id="reasons_for_late_application_row" class="js-hidden">
+        <th>Reason(s) for late application</th>
+        <td><span data-key="lateness_reason" class="js_uc_first">Yes</span></td>
+        <td class="change-answer"><a href="#" data-alert="This functionality is not currently available in this demo">Change</a></td>
+      </tr>
+
+      <tr>
+        <th colspan="3"><h2 class="heading-medium">Appeal details</h2></th>
+      </tr>
+      <tr>
         <th>Appellant details</th>
         <td>
           <div data-key="appellant_name">Terry Example</div>
@@ -40,7 +80,7 @@
         <td class="change-answer"><a href="#" data-alert="This functionality is not currently available in this demo">Change</a></td>
       </tr>
 
-      <tr id="representative_details" class="js-hidden">
+      <tr id="representative_details_row" class="js-hidden">
         <th>Representative details</th>
         <td>
           <div data-key="representative_name">ABC Solicitors</div>
@@ -54,14 +94,14 @@
         </td>
         <td class="change-answer"><a href="#" data-alert="This functionality is not currently available in this demo">Change</a></td>
       </tr>
-
+<!--
       <tr>
         <th>Is the application late?</th>
-        <td>Yes</td>
+        <td><span data-key="application_is_late" class="js_uc_first">Yes</span></td>
         <td class="change-answer"><a href="#" data-alert="This functionality is not currently available in this demo">Change</a></td>
       </tr>
 
-      <tr>
+      <tr id="reasons_for_late_application_row" class="js-hidden">
         <th>Reasons given for late application</th>
         <td><span data-key="lateness_reason">Lorem ipsum dolor sit amet</span></td>
         <td class="change-answer"><a href="#" data-alert="This functionality is not currently available in this demo">Change</a></td>
@@ -90,16 +130,16 @@
         <td>Granted</td>
         <td class="change-answer"><a href="#" data-alert="This functionality is not currently available in this demo">Change</a></td>
       </tr>
-
+ -->
       <tr>
         <th>Desired outcome</th>
         <td><span data-key="desired_outcome">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nec ultricies nisi, in cursus nibh. Cras iaculis malesuada consectetur. Mauris ut venenatis massa. Ut imperdiet feugiat tempus. Nunc ac molestie enim, at ullamcorper quam.</span></td>
         <td class="change-answer"><a href="#" data-alert="This functionality is not currently available in this demo">Change</a></td>
       </tr>
 
-      <tr>
+      <tr id="closure_notice_row" class="js-hidden">
         <th>Is application to close an enquiry?</th>
-        <td><span data-key="close_an_enquiry" class="js_uc_first">No</span></td>
+        <td>Yes</td>
         <td class="change-answer"><a href="#" data-alert="This functionality is not currently available in this demo">Change</a></td>
       </tr>
 
@@ -112,7 +152,7 @@
       <tr>
         <th>Documents submitted</th>
         <td>
-          <ul class="list list-bullet">
+          <ul class="list-bullet">
             <li>Bank statement - 01/08/2016</li>
             <li>Rent agreement - 01/02/2013</li>
             <li>Other document - 01/01/2016</li>
