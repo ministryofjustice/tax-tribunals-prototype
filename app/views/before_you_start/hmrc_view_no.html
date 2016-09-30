@@ -4,15 +4,6 @@
   Do you want to appeal to HMRC first? - Tax Tribunals Prototype
 {% endblock %}
 
-{% block body_end %}
-  {{ super() }}
-  <script>
-    if(moj.Modules.dataStore.getItem('mode') === 'task_list') {
-      $('a.js-next').attr('href', '/end_to_end/start-task-list').text('Continue');
-    }
-  </script>
-{% endblock %}
-
 {% block content %}
 
 <main id="content" role="main">
@@ -48,7 +39,7 @@
       <a class="button" href="https://www.gov.uk/contact-hmrc">Contact HMRC</a>
       </p>
       <p>
-       <a class="button js-next" href="../data_capture/appellant_details">Continue appeal to tribunal</a>
+       <a class="button js-next" href="hmrc_view_date">Continue appeal to tribunal</a>
      </p>
 
       <details>
