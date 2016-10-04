@@ -4,13 +4,20 @@
   Tax tribunal appeal confirmation - Tax Tribunals Prototype
 {% endblock %}
 
+{% block body_end %}
+  {{ super() }}
+  <script>
+    moj.Modules.dataStore.storeItem('tc_number', 'TC/2016/123456');
+  </script>
+{% endblock %}
+
 {% block content %}
 
 <main id="content" role="main">
 
   {% include "includes/phase_banner_alpha.html" %}
 
-  <p>Step X of Y</p>
+  <p><a class="link-back js-link-back" href="">Back</a> &nbsp; Step X of Y</p>
   <div class="govuk-box-highlight">
     <h2 class="bold-large">Your appeal has been submitted to the tax tribunal.</h2>
     <br>
