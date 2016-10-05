@@ -11,6 +11,9 @@
       moj.Modules.dataStore.storeItem('task_check_if_late', 'complete');
       $('form').attr('action', '/end_to_end/start-task-list');
     }
+    if(moj.Modules.dataStore.getItem('application_is_late') === 'unknown') {
+      $('.might-be-late').text('think you might be');
+    }
   </script>
 {% endblock %}
 
@@ -25,7 +28,7 @@
       <p><a class="link-back js-link-back" href="start.html">Back</a> &nbsp; Step X of Y</p>
       <h1 class="heading-large">Why are you late with your appeal?</h1>
 
-      <p class="lede">Enter the reasons why you are late appealing to the tribunal. The judge will consider your case. Your appeal fee will not be refunded if your reasons are not accepted.</p>
+      <p class="lede">Enter the reasons why you <span class="might-be-late">are</span> late appealing to the tribunal. The judge will consider your case. Your appeal fee will not be refunded if your reasons are not accepted.</p>
 
       <form class="js_route" action="/data_capture/appellant_details">
 
