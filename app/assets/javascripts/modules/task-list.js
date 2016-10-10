@@ -36,12 +36,14 @@ moj.Modules.taskList = {
     var self = this;
 
     for(var x = 0; x < self.tasks.length; x++) {
-      var task = self.tasks[x];
+      var task = self.tasks[x],
+          $el = $('span[data-task="' + task + '"]');
 
       if(moj.Modules.dataStore.getItem('task_' + task) === 'complete') {
-        $('span[data-task="' + task + '"]').show();
+        $el.show();
       } else {
-        $('span[data-task="' + task + '"]').hide();
+        $el.hide();
+        $el.closest('li').next('li').find('a').contents().unwrap();
       }
     }
   },
