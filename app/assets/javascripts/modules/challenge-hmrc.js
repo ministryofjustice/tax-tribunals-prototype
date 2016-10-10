@@ -9,10 +9,7 @@ moj.Modules.challengeHMRC = {
         pageName = self.getPageName();
 
     if(isDirect === 'true' && hasChallenged === 'no' && pageName !== 'hmrc_must') {
-      moj.log('redirect to must challenge');
       moj.Modules.dataStore.storeItem('challenge_redirect', 'yes');
-      // moj.Modules.dataStore.storeItem('fromPage', '');
-
       document.location = 'hmrc_must.html';
     }
   },
