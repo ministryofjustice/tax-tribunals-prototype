@@ -4,7 +4,20 @@
   Are you late? - Tax Tribunals Prototype
 {% endblock %}
 
-{% block body_classes %}{% endblock %}
+{% block body_end %}
+  {{ super() }}
+  <script>
+    var feeDetermined = moj.Modules.dataStore.getItem('task_determine_fee');
+
+    if(feeDetermined !== 'complete') {
+      var $button = $('a.button-start').eq(0);
+
+      $button.addClass('disabled').on('click', function(e) {
+        e.preventDefault();
+      }).before('<p class="disable-message">' + $button.data('disable-message') + '</p><p><a class="link-back js-link-back" href="">Back</a></p>');
+    }
+  </script>
+{% endblock %}
 
 {% block content %}
 
@@ -19,7 +32,7 @@
       <p class="lede">This section will help you determine whether you are in time to apply for lorem ipsum blah.</p>
 
       <p>
-        <a class="button button-start" href="hmrc_view_date">Continue</a>
+        <a class="button button-start" href="hmrc_view_date" data-disable-message="Please complete step 1 first">Continue</a>
       </p>
 
     </div>

@@ -43,7 +43,6 @@ moj.Modules.taskList = {
         $el.show();
       } else {
         $el.hide();
-        $el.closest('li').next('li').find('a').contents().unwrap();
       }
     }
   },
