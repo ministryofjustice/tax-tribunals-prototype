@@ -4,6 +4,13 @@
   Tax Tribunals Prototype
 {% endblock %}
 
+{% block body_end %}
+  {{ super() }}
+  <script>
+    moj.Modules.dataStore.storeItem('tc_number', 'TC/2016/123456');
+  </script>
+{% endblock %}
+
 {% block content %}
 
 <main id="content" role="main">
@@ -11,11 +18,10 @@
   {% include "includes/phase_banner_alpha.html" %}
 
   <h1 class="heading-large">
-    <span class="heading-secondary" data-key="tc_number">TC/2012/00001</span>
+    <span class="heading-secondary" data-key="tc_number">TC/2016/123456</span>
     <span data-key="appellant_name">Terry Example</span> vs HMRC
   </h1>
 
-  <!-- unpaid case -->
   <p class="lede">
     You need to pay fees before the tribunal continues to work on your case.
   </p>
@@ -30,26 +36,42 @@
   </div>
 
   <div class="liabilities-list">
-
-    <div class="grid-row payments-row">
-      <div class="column-one-third">
-        <div class="data">
-          <h2 class="bold-xlarge">£<span data-key="fee">20</span></h2>
-          <p class="bold-small">Lodgement Fee</p>
-        </div>
-      </div>
-      <div class="column-two-thirds">
-        <p>
-          <a class="button" href="pay_now">Pay now</a>
-        </p>
-        <p class="font-xsmall">
-          You will be redirected to GOV.UK Pay, an official secure payments service.
-        </p>
-      </div>
-    </div>
-
+    <h2 class="heading-large">£<span data-key="fee">20</span> Lodgement Fee</h2>
   </div>
-  <!-- unpaid case -->
+
+  <p class="lede">Select your method of payment</p>
+
+  <form class="js_route" action="pay_credit_card">
+    <fieldset>
+      <div class="form-group">
+        <label class="block-label">
+          <input name="payment_type" type="radio" value="debit_credit_card" />
+          Debit or credit card
+        </label>
+
+        <label class="block-label">
+          <input name="payment_type" type="radio" value="help_with_fees" data-destination="pay_hwf" />
+          Help with fees
+        </label>
+
+        <label class="block-label">
+          <input name="payment_type" type="radio" value="account" data-destination="pay_account" />
+          Account
+        </label>
+
+        <label class="block-label">
+          <input name="payment_type" type="radio" value="cheque" data-destination="pay_cheque" />
+          Cheque
+        </label>
+
+      </div>
+    </fieldset>
+
+    <p>
+      <input class="button" type="submit" value="Continue">
+    </p>
+
+  </form>
 
   <p>
     <a class="link-back" href="case_requests">Find another case</a>

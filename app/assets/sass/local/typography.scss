@@ -6,3 +6,13 @@ strong {
   margin: 0.25em 0;
   @include bold-48;
 }
+
+.disable-message {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 1em 0;
+}
+
+address {
+  font-style: normal;
+}

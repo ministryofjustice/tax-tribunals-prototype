@@ -10,7 +10,7 @@
     moj.Modules.dataStore.storeItem('tc_number', 'TC/2016/123456');
     if(moj.Modules.dataStore.getItem('mode') === 'task_list') {
       moj.Modules.dataStore.storeItem('task_enter_details', 'complete');
-      $('a.js-next').attr('href', '/end_to_end/start-task-list').text('Continue');
+      $('a.js-next').text('Continue');
     }
   </script>
 {% endblock %}
@@ -28,7 +28,7 @@
     <br>
     <h2>Your reference is:
       <span class="display-block fee-display">
-        <span class="write-value">TC/2016/123456</span>
+        <span class="write-value" data-key="tc_number">TC/2016/123456</span>
       </span>
     </h2>
  </div>

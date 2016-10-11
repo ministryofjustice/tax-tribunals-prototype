@@ -1,0 +1,64 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Tax tribunal lodgement fee - Tax Tribunals Prototype
+{% endblock %}
+
+{% block head %}
+  {{ super() }}
+  {% include "includes/paycss.html" %}
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  {% include "includes/phase_banner_alpha.html" %}
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <h1 class="heading-large">
+        <span class="heading-secondary" data-key="tc_number">TC/2012/00001</span>
+        <span data-key="appellant_name">Terry Example</span> vs HMRC
+      </h1>
+
+      <h2 class="heading-medium">Pay via help with fees</h2>
+
+      <p>If you have successfully applied for help with fees, please enter your reference number below.</p>
+      <p>If you have not applied for help with fees, but would like to see if you are eligible, visit <a href="https://www.gov.uk/get-help-with-court-fees">the help with fees service</a>. If your application is successful you will be able to return to this service and enter your reference number later.</p>
+
+      <form class="js_route" action="confirmation_hwf">
+
+        <div class="form-group">
+          <label class="form-label" for="hwf-reference">Help with fees reference number</label>
+          <input class="form-control" type="text" id="hwf-reference" data-store>
+        </div>
+
+        <p>
+          <input class="button" type="submit" value="Continue">
+        </p>
+
+      </form>
+
+    </div>
+
+    <div class="column-one-third">
+      <aside class="payment-summary">
+        <div class="inner js-stick-at-top-when-scrolling" style="width: 250px;">
+          <h2>Payment summary</h2>
+          <p>
+            <span id="payment-description"><span data-key="tc_number">TC/2016/00019</span> - Lodgement Fee</span>
+          </p>
+          <p>
+            Total amount:
+            <span id="amount" class="amount">£<span data-key="fee">20</span></span>
+          </p>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+</main>
+
+{% endblock %}
