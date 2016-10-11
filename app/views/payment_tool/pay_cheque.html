@@ -1,0 +1,61 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Tax tribunal lodgement fee - Tax Tribunals Prototype
+{% endblock %}
+
+{% block head %}
+  {{ super() }}
+  {% include "includes/paycss.html" %}
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  {% include "includes/phase_banner_alpha.html" %}
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <h1 class="heading-large">
+        <span class="heading-secondary" data-key="tc_number">TC/2012/00001</span>
+        <span data-key="appellant_name">Terry Example</span> vs HMRC
+      </h1>
+
+      <h2 class="heading-medium">Pay via cheque</h2>
+
+      <p>Lorem ipsum pay by cheque information dolor sit adipiscing.</p>
+
+      <p>Send your cheque clearly marked with your reference number <strong class="heading-secondary" data-key="tc_number">TC/2012/00001</strong> on the back to:</p>
+      <address>
+        Tax Tribunal Fees<br>
+        1 Test Road<br>
+        Testerham<br>
+        TE37 1NG
+      </address>
+
+      <h2 class="heading-medium">What to do next</h2>
+      <p>Lorem ipsum</p>
+
+    </div>
+
+    <div class="column-one-third">
+      <aside class="payment-summary">
+        <div class="inner js-stick-at-top-when-scrolling" style="width: 250px;">
+          <h2>Payment summary</h2>
+          <p>
+            <span id="payment-description"><span data-key="tc_number">TC/2016/00019</span> - Lodgement Fee</span>
+          </p>
+          <p>
+            Total amount:
+            <span id="amount" class="amount">£<span data-key="fee">20</span></span>
+          </p>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+</main>
+
+{% endblock %}
