@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+
+{% set ptitle = "Is the appeal for an individual or company?" %}
+
+{% block page_title %}
+  {{ ptitle }} - Tax Tribunals Prototype
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  {% include "includes/phase_banner_alpha.html" %}
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <h1 class="heading-large">{{ ptitle }}</h1>
+
+      <p class="lede">JOSH: Anything needed here?</p>
+
+      <form class="js_route" action="appellant_details">
+        <div class="form-group">
+          <fieldset>
+            <legend class="form-label">CLIVE: Don't think we need this legend</legend>
+            <label class="block-label">
+              <input name="appellant_type" type="radio" value="individual" data-store="appellant_type=individual" />
+              Individual
+            </label>
+
+            <label class="block-label" data-target="company-details">
+              <input name="appellant_type" type="radio" value="company" data-store="appellant_type=company" />
+              Company
+            </label>
+          </fieldset>
+        </div>
+
+        <p>
+          <input class="button" type="submit" value="Continue">
+        </p>
+
+      </form>
+
+    </div>
+  </div>
+</main>
+
+{% endblock %}
+
+
