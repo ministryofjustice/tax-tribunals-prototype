@@ -8,7 +8,7 @@ moj.Modules.taskList = {
         list = $('[data-task-list]').eq(0);
 
     if(list.length) {
-      self.getTasks(list);
+      self.tasks = self.getTasks(list);
       self.bindEvents();
       self.checkCompletedItems();
     }
@@ -25,11 +25,14 @@ moj.Modules.taskList = {
   },
 
   getTasks: function(list) {
-    var self = this;
+    var self = this,
+        tasks = [];
 
     $(list).find('[data-task]').each(function(n, link) {
-      self.tasks[self.tasks.length] = $(link).data('task');
+      tasks[tasks.length] = $(link).data('task');
     });
+
+    return tasks;
   },
 
   checkCompletedItems: function() {
@@ -55,5 +58,17 @@ moj.Modules.taskList = {
     }
 
     self.checkCompletedItems();
+  },
+
+  getTasksRemotely: function(callback) {
+    var self = this;
+
+    $.get('/end_to_end/start-task-list', function(data) {
+      var $list = $(data).find('[data-task-list]'),
+          html = $list.html(),
+          tasks = self.getTasks(html);
+
+      callback(tasks);
+    });
   }
 };

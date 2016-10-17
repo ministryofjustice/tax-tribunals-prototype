@@ -6,9 +6,7 @@
 
 {% block body_end %}
   {{ super() }}
-  <script src="/public/javascripts/modules/task-list.js"></script>
   <script>
-    moj.Modules.taskList.init();
     moj.Modules.dataStore.storeItem('mode', 'task_list');
 
     if(moj.Modules.dataStore.getItem('application_is_late') === 'no') {
