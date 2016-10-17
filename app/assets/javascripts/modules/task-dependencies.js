@@ -64,7 +64,7 @@ moj.Modules.taskDependencies = {
         for(var x = 0; x < unmetDependencies.length - 1; x++) {
           message += unmetDependencies[x] + ', ';
         }
-        message += ' and ' + unmetDependencies[1];
+        message += ' and ' + unmetDependencies[unmetDependencies.length - 1];
     }
     message += ' first';
 
