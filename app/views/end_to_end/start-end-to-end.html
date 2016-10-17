@@ -4,6 +4,13 @@
   End-to-end demo - Tax Tribunals Prototype
 {% endblock %}
 
+{% block body_end %}
+  {{ super() }}
+  <script>
+    moj.Modules.dataStore.storeItem('mode', 'end_to_end');
+  </script>
+{% endblock %}
+
 {% block content %}
 
 <main id="content" role="main">
@@ -153,8 +160,6 @@
             </details>
           </li>
         </ol>
-
-        <input type="hidden" name="mode" id="mode" value="end_to_end" data-store>
 
         <p>
           <input type="submit" class="button button-start" value="Start now">

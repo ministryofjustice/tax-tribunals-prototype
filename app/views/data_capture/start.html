@@ -6,22 +6,6 @@
   {{ ptitle }} - Tax Tribunals Prototype
 {% endblock %}
 
-{% block body_end %}
-  {{ super() }}
-  <script>
-    var feeDetermined = moj.Modules.dataStore.getItem('task_determine_fee'),
-        checkLateness = moj.Modules.dataStore.getItem('task_check_if_late');
-
-    if(feeDetermined !== 'complete' || checkLateness !== 'complete') {
-      var $button = $('a.button-start').eq(0);
-
-      $button.addClass('disabled').on('click', function(e) {
-        e.preventDefault();
-      }).before('<p class="disable-message">' + $button.data('disable-message') + '</p><p><a class="link-back js-link-back" href="">Back</a></p>');
-    }
-  </script>
-{% endblock %}
-
 {% block content %}
 
 <main id="content" role="main">
@@ -36,7 +20,7 @@
       <p>Morbi lectus odio, gravida eu ornare a, dictum vel diam. Pellentesque dignissim magna ac viverra pretium. Phasellus congue egestas sapien, sit amet euismod diam rutrum a. Vestibulum nisi ligula, laoreet sed gravida at, venenatis eget neque.</p>
 
       <p>
-        <a class="button button-start" href="appellant_details" data-disable-message="Please complete steps 1 and 2 first">Start now</a>
+        <a class="button button-start js-start-task" href="appellant_details" data-dependent-tasks="[1,2]" data-disable-message="Please complete steps 1 and 2 first">Start now</a>
       </p>
 
     </div>
