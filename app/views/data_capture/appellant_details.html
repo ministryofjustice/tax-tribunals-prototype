@@ -22,7 +22,8 @@
 
         <div class="form-group">
           <label class="form-label" for="appellant_name">
-            Name (first name and last name)
+            <span class="js-hidden" data-dependent="appellant_type=individual">Name (first name and last name)</span>
+            <span class="js-hidden" data-dependent="appellant_type=company">Company name</span>
           </label>
           <input class="form-control" type="text" id="appellant_name" data-store>
         </div>
@@ -34,25 +35,34 @@
           <textarea class="form-control" id="appellant_address" rows="4" cols="40" data-store></textarea>
         </div>
 
-        <div class="form-group js-hidden" id="company-details">
+        <div class="form-group js-hidden" data-dependent="appellant_type=company">
           <label class="form-label" for="appellant_company_number">
             Company registered number
           </label>
           <input class="form-control" type="text" id="appellant_company_number" data-store>
         </div>
 
-        <div class="form-group">
-          <label class="form-label" for="appellant_phone">
-            Phone number
+        <div class="form-group js-hidden" data-dependent="appellant_type=company">
+          <label class="form-label" for="appellant_contact_name">
+            Contact name
           </label>
-          <input class="form-control" type="text" id="appellant_phone" data-store>
+          <input class="form-control" type="text" id="appellant_contact_name" data-store>
         </div>
 
         <div class="form-group">
           <label class="form-label" for="appellant_email">
-            Email address
+            <span class="js-hidden" data-dependent="appellant_type=individual">Email address</span>
+            <span class="js-hidden" data-dependent="appellant_type=company">Contact's email address</span>
           </label>
           <input class="form-control" type="text" id="appellant_email" data-store>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="appellant_phone">
+            <span class="js-hidden" data-dependent="appellant_type=individual">Phone number</span>
+            <span class="js-hidden" data-dependent="appellant_type=company">Contact's phone number</span>
+          </label>
+          <input class="form-control" type="text" id="appellant_phone" data-store>
         </div>
 
         <p>

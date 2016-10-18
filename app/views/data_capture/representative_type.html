@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 
-{% set ptitle = "Is the appeal for an individual or company?" %}
+{% set ptitle = "Is the representative an individual or company?" %}
 
 {% block page_title %}
   {{ ptitle }} - Tax Tribunals Prototype
@@ -18,17 +18,17 @@
 
       <p class="lede">JOSH: Anything needed here?</p>
 
-      <form class="js_route" action="appellant_details">
+      <form class="js_route" action="representative_details">
         <div class="form-group">
           <fieldset>
             <legend class="form-label">CLIVE: Don't think we need this legend</legend>
             <label class="block-label">
-              <input name="appellant_type" type="radio" value="individual" data-store="appellant_type=individual" />
+              <input name="representative_type" type="radio" value="individual" data-store="representative_type=individual" />
               Individual
             </label>
 
             <label class="block-label">
-              <input name="appellant_type" type="radio" value="company" data-store="appellant_type=company" />
+              <input name="representative_type" type="radio" value="company" data-store="representative_type=company" />
               Company
             </label>
           </fieldset>
