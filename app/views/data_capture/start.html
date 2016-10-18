@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 
-{% set ptitle = "Appeal details" %}
+{% set ptitle = "Enter appeal details and pay fee" %}
 
 {% block page_title %}
   {{ ptitle }} - Tax Tribunals Prototype
@@ -16,8 +16,14 @@
     <div class="column-two-thirds">
       <h1 class="heading-large">{{ ptitle }}</h1>
 
-      <p class="lede">Lorem ipsum</p>
-      <p>Morbi lectus odio, gravida eu ornare a, dictum vel diam. Pellentesque dignissim magna ac viverra pretium. Phasellus congue egestas sapien, sit amet euismod diam rutrum a. Vestibulum nisi ligula, laoreet sed gravida at, venenatis eget neque.</p>
+      <p class="lede">You will need to include grounds for your appeal and upload a scan or photo of the letters from HMRC.</p>
+      <p>You will need to provide:</p>
+                <ul class="list list-bullet">
+                  <li>a scan or photo of the original decision letter or review conclusion letter from HMRC</li>
+                  <li>HMRC reference number shown on the letters</li>
+                  <li>details of your representative if you have one</li>
+                  <li>a National Insurance number or VAT registration number depending on your type of appeal</li>
+                </ul>
 
       <p>
         <a class="button button-start js-start-task" href="appellant_details" data-dependent-tasks="[1,2]" data-disable-message="Please complete steps 1 and 2 first">Start now</a>
