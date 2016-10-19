@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+
+{% set ptitle = "Is the representative a legal professional?" %}
+
+{% block page_title %}
+  {{ ptitle }} - Tax Tribunals Prototype
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  {% include "includes/phase_banner_alpha.html" %}
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <h1 class="heading-large">{{ ptitle }}</h1>
+
+      <p class="lede">JOSH: Anything needed here?</p>
+
+      <form class="js_route" action="indirect">
+        <div class="form-group">
+          <fieldset>
+            <label class="block-label">
+              <input name="representative_is_legal_professional" type="radio" value="yes" data-store="representative_is_legal_professional=yes" />
+              Yes
+            </label>
+
+            <label class="block-label">
+              <input name="representative_is_legal_professional" type="radio" value="no" data-store="representative_is_legal_professional=no" data-destination="representative_approval" />
+              No
+            </label>
+          </fieldset>
+        </div>
+
+        <p>
+          <input class="button" type="submit" value="Continue">
+        </p>
+
+      </form>
+
+    </div>
+  </div>
+</main>
+
+{% endblock %}
+
+
