@@ -27,6 +27,8 @@ td li strong { // TODO: remove this, it's horrible
 }
 
 table.check-your-answers {
+  margin-top: 45px;
+
   th {
     font-size: 16px;
     font-weight: normal;
@@ -35,5 +37,13 @@ table.check-your-answers {
   td {
     font-size: 16px;
     max-width: 400px;
+
+    &.left {
+      text-align: left;
+    }
+  }
+
+  h2 {
+    margin-top: 0;
   }
 }

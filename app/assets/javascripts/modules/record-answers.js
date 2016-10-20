@@ -68,24 +68,31 @@ moj.Modules.recordAnswers = {
     var storedAnswers = moj.Modules.dataStore.getItem('storedAnswers');
 
     if(storedAnswers.length) {
-      var $table = $('table.your-answers').eq(0);
+      var $table = $('table.your-answers').eq(0),
+          html = '';
 
       $table.find('tbody').empty();
 
+      html += '<tr></tr>';
+      html += '<th>Have you challenged HMRC?</th>';
+      html += '<td colspan="2">';
+      html += moj.ucFirst(moj.Modules.dataStore.getItem('hmrc_challenge'));
+      html += '</td>';
+      html += '</tr>';
+
       for(var x = 0; x < storedAnswers.length; x++) {
-        var html = '';
 
         html += '<tr>';
         html += '<th>';
         html += storedAnswers[x].question;
         html += '</th>';
-        html += '<td>';
+        html += '<td colspan="2">';
         html += storedAnswers[x].text;
         html += '</td>';
         html += '</tr>';
-
-        $table.find('tbody').append(html);
       }
+
+      $table.find('tbody').append(html);
     }
   },
 
