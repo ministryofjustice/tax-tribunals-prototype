@@ -8,7 +8,7 @@ moj.Modules.recordAnswers = {
       self.checkForSubseqeuentAnswers();
     }
 
-    if($('ul.your-answers').length) {
+    if($('table.your-answers').length) {
       self.listAnswers();
       self.trimTable();
     }
@@ -68,20 +68,23 @@ moj.Modules.recordAnswers = {
     var storedAnswers = moj.Modules.dataStore.getItem('storedAnswers');
 
     if(storedAnswers.length) {
-      var $list = $('ul.your-answers').eq(0);
+      var $table = $('table.your-answers').eq(0);
 
-      $list.empty();
+      $table.find('tbody').empty();
 
       for(var x = 0; x < storedAnswers.length; x++) {
         var html = '';
 
-        html += '<li>';
+        html += '<tr>';
+        html += '<th>';
         html += storedAnswers[x].question;
-        html += ': ';
+        html += '</th>';
+        html += '<td>';
         html += storedAnswers[x].text;
-        html += '</li>';
+        html += '</td>';
+        html += '</tr>';
 
-        $list.append(html);
+        $table.find('tbody').append(html);
       }
     }
   },
