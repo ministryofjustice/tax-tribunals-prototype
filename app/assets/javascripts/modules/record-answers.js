@@ -8,7 +8,7 @@ moj.Modules.recordAnswers = {
       self.checkForSubseqeuentAnswers();
     }
 
-    if($('ul.your-answers').length) {
+    if($('table.your-answers').length) {
       self.listAnswers();
       self.trimTable();
     }
@@ -68,21 +68,31 @@ moj.Modules.recordAnswers = {
     var storedAnswers = moj.Modules.dataStore.getItem('storedAnswers');
 
     if(storedAnswers.length) {
-      var $list = $('ul.your-answers').eq(0);
+      var $table = $('table.your-answers').eq(0),
+          html = '';
 
-      $list.empty();
+      $table.find('tbody').empty();
+
+      html += '<tr></tr>';
+      html += '<th>Have you challenged HMRC?</th>';
+      html += '<td colspan="2">';
+      html += moj.ucFirst(moj.Modules.dataStore.getItem('hmrc_challenge'));
+      html += '</td>';
+      html += '</tr>';
 
       for(var x = 0; x < storedAnswers.length; x++) {
-        var html = '';
 
-        html += '<li>';
+        html += '<tr>';
+        html += '<th>';
         html += storedAnswers[x].question;
-        html += ': ';
+        html += '</th>';
+        html += '<td colspan="2">';
         html += storedAnswers[x].text;
-        html += '</li>';
-
-        $list.append(html);
+        html += '</td>';
+        html += '</tr>';
       }
+
+      $table.find('tbody').append(html);
     }
   },
 
