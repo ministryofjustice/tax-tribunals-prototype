@@ -6,6 +6,7 @@ public
 lib/govuk_template.html
 govuk_modules
 node_modules/*
+npm-debug.log
 .tmuxp.*
 
 .nvmrc
