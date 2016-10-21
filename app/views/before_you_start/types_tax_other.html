@@ -17,13 +17,162 @@
 
       <p class="lede">The type of tax, decision or application is usually shown on the original notice letter from HMRC, or decision letter (if you had an appeal or review with HMRC).</p>
 
-      <form class="js_route js_store_answers" action="fee" data-number="2">
+      <form class="js_route js_store_answers" action="dispute_type" data-number="2">
         <fieldset>
            <div class="form-group form-group-day">
-              <label for="dob-day">
-                Enter the tax, decision or application involved in your appeal
+              <label class="block-label">
+                <input name="tax_type" type="radio" value="aggregates_levy" data-store="tax_type=Aggregates levy,direct=false" />
+                <strong>Aggregates levy</strong>
               </label>
-              <input class="form-control" id="dispute_other" name="dispute_other" type="text" data-store="fee=50" >
+
+              <label class="block-label">
+                <input name="tax_type" type="radio" value="air_passenger_duty" data-store="tax_type=Air passenger duty,direct=false" />
+                <strong>Air passenger duty</strong>
+              </label>
+
+              <label class="block-label">
+                <input name="tax_type" type="radio" value="alcoholic_liqueur_duties" data-store="tax_type=Alcoholic liqueur duties,direct=false" />
+                <strong>Alcoholic liqueur duties</strong>
+              </label>
+
+              <label class="block-label">
+                <input name="tax_type" type="radio" value="bingo_duty" data-store="tax_type=Bingo Duty,direct=false" />
+                <strong>Bingo Duty</strong>
+              </label>
+
+              <label class="block-label">
+                <input name="tax_type" type="radio" value="capital_gains_tax" data-store="tax_type=Capital gains tax,direct=true" />
+                <strong>Capital Gains Tax</strong>
+              </label>
+
+              <label class="block-label">
+                <input name="tax_type" type="radio" value="corporation_tax" data-store="tax_type=Corporation tax,direct=true" />
+                <strong>Climate change levy</strong>
+              </label>
+
+              <label class="block-label">
+                <input name="tax_type" type="radio" value="apn" data-store="tax_type=Corporation tax,direct=true" />
+                <strong>Construction Industry Scheme (CIS)</strong>
+              </label>
+
+              <label class="block-label">
+                <input name="tax_type" type="radio" value="corporation_tax" data-store="tax_type=Corporation tax,direct=true" />
+                <strong>Corporation Tax</strong>
+              </label>
+
+              <label class="block-label">
+                <input name="tax_type" type="radio" value="counter_terrorism–decision" data-store="tax_type=Counter-terrorism decision,direct=false,fee=200" data-destination="fee" />
+                <strong>Counter-terrorism decision</strong>
+              </label>
+
+              <label class="block-label">
+                <input name="tax_type" type="radio" value="customs_duty" data-store="tax_type=Customs duty,direct=false" data-destination="fee" />
+                <strong>Customs duty</strong>
+              </label>
+
+              <label class="block-label">
+                <input name="tax_type" type="radio" value="gaming_duty" data-store="tax_type=Gaming duty,direct=false" />
+                <strong>Gaming duty</strong>
+              </label>
+
+              <label class="block-label">
+                <input name="tax_type" type="radio" value="general_betting_duty" data-store="tax_type=General betting duty,direct=false" />
+                <strong>General betting duty</strong>
+              </label>
+
+              <label class="block-label">
+                <input name="tax_type" type="radio" value="export_penalty_regulations" data-store="tax_type=Export Penalty regulations / FA 2003 decision,direct=false" />
+                <strong>Export Penalty regulations / FA 2003 decision</strong>
+              </label>
+
+              <label class="block-label">
+                <input name="tax_type" type="radio" value="hydrocarbon_oil_duty" data-store="tax_type=Hydrocarbon oil duty,direct=false,fee=200" data-destination="fee" />
+                <strong>Hydrocarbon oil duty</strong>
+              </label>
+
+              <label class="block-label">
+                <input name="tax_type" type="radio" value="inheritance _tax" data-store="tax_type=Inheritance tax,direct=true" />
+                <strong>Inheritance tax</strong>
+              </label>
+
+              <label class="block-label">
+                <input name="tax_type" type="radio" value="insurance_premium_tax" data-store="tax_type=Insurance premium tax,direct=false" />
+                <strong>Insurance premium tax</strong>
+              </label>
+
+              <label class="block-label">
+                <input name="tax_type" type="radio" value="landfill_tax" data-store="tax_type=Landfill tax,direct=false" />
+                <strong>Landfill tax</strong>
+              </label>
+
+              <label class="block-label">
+                <input name="tax_type" type="radio" value="lottery_tax" data-store="tax_type=Lottery tax,direct=false" />
+                <strong>Lottery tax</strong>
+              </label>
+
+              <label class="block-label">
+                <input name="tax_type" type="radio" value="money_laundering_decisions" data-store="tax_type=Money laundering decisions,direct=false,fee=200" data-destination="fee" />
+                <strong>Money laundering decisions</strong>
+              </label>
+
+              <label class="block-label">
+                <input name="tax_type" type="radio" value="national_insurance" data-store="tax_type=National insurance contributions,direct=true" />
+                <strong>National Insurance (NI) contributions</strong>
+              </label>
+
+              <label class="block-label">
+                <input name="tax_type" type="radio" value="petroleum_revenue_tax" data-store="tax_type=Petroleum revenue tax,direct=true" />
+                <strong>Petroleum Revenue tax</strong>
+              </label>
+
+              <label class="block-label">
+                <input name="tax_type" type="radio" value="pool_betting_duty" data-store="tax_type=Pool betting duty,direct=false" />
+                <strong>Pool betting duty</strong>
+              </label>
+
+              <label class="block-label">
+                <input name="tax_type" type="radio" value="remote_gaming_duty" data-store="tax_type=Remote gaming duty,direct=false" />
+                <strong>Remote gaming duty</strong>
+              </label>
+
+              <label class="block-label">
+                <input name="tax_type" type="radio" value="restoration_case" data-store="tax_type=Restoration case,direct=false,fee=200" data-destination="fee"  />
+                <strong>Restoration case</strong><br>
+                applying to have goods replaced/returned
+              </label>
+
+              <label class="block-label">
+                <input name="tax_type" type="radio" value="stamp_duties" data-store="tax_type=Stamp duties,direct=true" />
+                <strong>Stamp Duties</strong><br>
+                includes Stamp Duty Reserve Tax (SDRT) and Stamp Duty Land Tax (SDLT)
+              </label>
+
+              <label class="block-label">
+                <input name="tax_type" type="radio" value="statutory_payments" data-store="tax_type=Statutory payments,direct=true" />
+                <strong>Statutory payments</strong>
+              </label>
+
+              <label class="block-label">
+                <input name="tax_type" type="radio" value="student_loans" data-store="tax_type=Student Loans,direct=true" />
+                <strong>Student Loans</strong>
+              </label>
+
+              <label class="block-label">
+                <input name="tax_type" type="radio" value="tobacco_products_duty" data-store="tax_type=Tobacco products duty,direct=false" />
+                <strong>Tobacco products duty</strong>
+              </label>
+
+              <label class="block-label">
+                <input name="tax_type" type="radio" value="other" data-destination="fee" data-store="direct=true,fee=200" />
+                <strong>My dispute is not listed</strong>
+              </label>
+              <div class="form-group" data-dependent="">
+                <label class="form-label" for="appellant_contact_name">
+                  Enter the name of the tax your type of dispute you have
+                </label>
+                <input class="form-control" type="text" id="other_dispute" data-store="fee=200" data-destination="fee" >
+              </div>
+
             </div>
         </fieldset>
 
