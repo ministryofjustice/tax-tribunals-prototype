@@ -73,9 +73,9 @@ moj.Modules.recordAnswers = {
 
       $table.find('tbody').empty();
 
-      html += '<tr></tr>';
+      html += '<tr>';
       html += '<th>Have you challenged HMRC?</th>';
-      html += '<td colspan="2">';
+      html += '<td>';
       html += moj.ucFirst(moj.Modules.dataStore.getItem('hmrc_challenge'));
       html += '</td>';
       html += '</tr>';
@@ -86,7 +86,7 @@ moj.Modules.recordAnswers = {
         html += '<th>';
         html += storedAnswers[x].question;
         html += '</th>';
-        html += '<td colspan="2">';
+        html += '<td>';
         html += storedAnswers[x].text;
         html += '</td>';
         html += '</tr>';
