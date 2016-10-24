@@ -63,7 +63,7 @@ moj.Modules.taskList = {
   getTasksRemotely: function(callback) {
     var self = this;
 
-    $.get('/end_to_end/start-task-list', function(data) {
+    $.get('/end_to_end/task-list', function(data) {
       var $list = $(data).find('[data-task-list]'),
           html = $list.html(),
           tasks = self.getTasks(html);
