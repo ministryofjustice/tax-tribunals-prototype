@@ -9,7 +9,7 @@
   <script>
     if(moj.Modules.dataStore.getItem('mode') === 'task_list') {
       moj.Modules.dataStore.storeItem('task_check_if_late', 'complete');
-      $('form').attr('action', '/end_to_end/start-task-list');
+      $('form').attr('action', '/end_to_end/task-list');
     }
     if(moj.Modules.dataStore.getItem('application_is_late') === 'unknown') {
       $('.might-be-late').text('think you might be');

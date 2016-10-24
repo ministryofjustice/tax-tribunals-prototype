@@ -9,7 +9,7 @@
   <script>
     if(moj.Modules.dataStore.getItem('mode') === 'task_list') {
       moj.Modules.dataStore.storeItem('task_determine_fee', 'complete');
-      $('a.js-next').attr('href', '/end_to_end/start-task-list').text('Continue');
+      $('a.js-next').attr('href', '/end_to_end/task-list').text('Continue');
     }
   </script>
 {% endblock %}
