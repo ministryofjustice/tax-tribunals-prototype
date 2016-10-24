@@ -4,6 +4,13 @@
   What other type of tax is your dispute about? - Tax Tribunals Prototype
 {% endblock %}
 
+{% block body_end %}
+  {{ super() }}
+  <script>
+    moj.Modules.dataStore.deleteItem('challenge_redirect');
+  </script>
+{% endblock %}
+
 {% block content %}
 
 <main id="content" role="main">
@@ -12,7 +19,7 @@
 
   <div class="grid-row">
     <div class="column-two-thirds">
-      <p><a class="link-back js-link-back" href="">Back</a> &nbsp; Step 3 of 4</p>
+      <p><a class="link-back js-link-back" href="">Back</a> &nbsp; Step 1b of 4</p>
       <h1 class="heading-large">What is your appeal about?</h1>
 
       <p class="lede">The type of tax, decision or application is usually shown on the original notice letter from HMRC, or review conclusion letter (if you had a review with HMRC).</p>
@@ -21,156 +28,158 @@
         <fieldset>
            <div class="form-group form-group-day">
               <label class="block-label">
-                <input name="tax_type" type="radio" value="aggregates_levy" data-store="tax_type=Aggregates levy,direct=false" />
+                <input name="tax_type" type="radio" value="aggregates_levy" data-store="tax_type=Aggregates levy,direct=false,hardship=yes" />
                 <strong>Aggregates levy</strong>
               </label>
 
               <label class="block-label">
-                <input name="tax_type" type="radio" value="air_passenger_duty" data-store="tax_type=Air passenger duty,direct=false" />
+                <input name="tax_type" type="radio" value="air_passenger_duty" data-store="tax_type=Air passenger duty,direct=false,hardship=yes" />
                 <strong>Air passenger duty</strong>
               </label>
 
               <label class="block-label">
-                <input name="tax_type" type="radio" value="alcoholic_liqueur_duties" data-store="tax_type=Alcoholic liqueur duties,direct=false" />
+                <input name="tax_type" type="radio" value="alcoholic_liqueur_duties" data-store="tax_type=Alcoholic liqueur duties,direct=false,hardship=yes" />
                 <strong>Alcoholic liqueur duties</strong>
               </label>
 
               <label class="block-label">
-                <input name="tax_type" type="radio" value="bingo_duty" data-store="tax_type=Bingo Duty,direct=false" />
-                <strong>Bingo duty</strong>
+                <input name="tax_type" type="radio" value="bingo_duty" data-store="tax_type=Bingo Duty,direct=false,hardship=yes" />
+                <strong>Bingo Duty</strong>
               </label>
 
               <label class="block-label">
-                <input name="tax_type" type="radio" value="capital_gains_tax" data-store="tax_type=Capital gains tax,direct=true" />
-                <strong>Capital gains tax</strong>
+                <input name="tax_type" type="radio" value="capital_gains_tax" data-store="tax_type=Capital gains tax,direct=true,hardship=no" />
+                <strong>Capital Gains Tax</strong>
               </label>
 
               <label class="block-label">
-                <input name="tax_type" type="radio" value="corporation_tax" data-store="tax_type=Corporation tax,direct=true" />
+                <input name="tax_type" type="radio" value="corporation_tax" data-store="tax_type=Climate change levy,direct=false,hardship=yes" />
                 <strong>Climate change levy</strong>
               </label>
 
               <label class="block-label">
-                <input name="tax_type" type="radio" value="apn" data-store="tax_type=Corporation tax,direct=true" />
+                <input name="tax_type" type="radio" value="apn" data-store="tax_type=Construction Industry Scheme (CIS),direct=true,hardship=no" />
                 <strong>Construction Industry Scheme (CIS)</strong>
               </label>
 
               <label class="block-label">
-                <input name="tax_type" type="radio" value="corporation_tax" data-store="tax_type=Corporation tax,direct=true" />
-                <strong>Corporation tax</strong>
+                <input name="tax_type" type="radio" value="corporation_tax" data-store="tax_type=Corporation tax,direct=true,hardship=no" />
+                <strong>Corporation Tax</strong>
               </label>
 
               <label class="block-label">
-                <input name="tax_type" type="radio" value="counter_terrorism–decision" data-store="tax_type=Counter-terrorism decision,direct=false,fee=200" data-destination="fee" />
+                <input name="tax_type" type="radio" value="counter_terrorism–decision" data-store="tax_type=Counter-terrorism decision,direct=false,fee=200,hardship=no" data-destination="fee" />
                 <strong>Counter-terrorism decision</strong>
               </label>
 
               <label class="block-label">
-                <input name="tax_type" type="radio" value="customs_duty" data-store="tax_type=Customs duty,direct=false" data-destination="fee" />
+                <input name="tax_type" type="radio" value="customs_duty" data-store="tax_type=Customs duty,direct=false,hardship=yes" />
                 <strong>Customs duty</strong>
               </label>
 
               <label class="block-label">
-                <input name="tax_type" type="radio" value="gaming_duty" data-store="tax_type=Gaming duty,direct=false" />
+                <input name="tax_type" type="radio" value="gaming_duty" data-store="tax_type=Gaming duty,direct=false,hardship=yes" />
                 <strong>Gaming duty</strong>
               </label>
 
               <label class="block-label">
-                <input name="tax_type" type="radio" value="general_betting_duty" data-store="tax_type=General betting duty,direct=false" />
+                <input name="tax_type" type="radio" value="general_betting_duty" data-store="tax_type=General betting duty,direct=false,hardship=yes" />
                 <strong>General betting duty</strong>
               </label>
 
               <label class="block-label">
-                <input name="tax_type" type="radio" value="export_penalty_regulations" data-store="tax_type=Export Penalty regulations / FA 2003 decision,direct=false" />
-                <strong>Export penalty regulations / FA 2003 decision</strong>
+                <input name="tax_type" type="radio" value="export_penalty_regulations" data-store="tax_type=Export Penalty regulations / FA 2003 decision,direct=false,hardship=yes" />
+                <strong>Export Penalty regulations / FA 2003 decision</strong>
               </label>
 
-              <label class="block-label">
+              <label class="block-label"> <!-- hmmm? table says this one could be variable fee, Jason has made it fixed 200 -->
                 <input name="tax_type" type="radio" value="hydrocarbon_oil_duty" data-store="tax_type=Hydrocarbon oil duty,direct=false,fee=200" data-destination="fee" />
                 <strong>Hydrocarbon oil duty</strong>
               </label>
 
               <label class="block-label">
-                <input name="tax_type" type="radio" value="inheritance _tax" data-store="tax_type=Inheritance tax,direct=true" />
+                <input name="tax_type" type="radio" value="inheritance _tax" data-store="tax_type=Inheritance tax,direct=true,hardship=no" />
                 <strong>Inheritance tax</strong>
               </label>
 
               <label class="block-label">
-                <input name="tax_type" type="radio" value="insurance_premium_tax" data-store="tax_type=Insurance premium tax,direct=false" />
+                <input name="tax_type" type="radio" value="insurance_premium_tax" data-store="tax_type=Insurance premium tax,direct=false,hardship=yes" />
                 <strong>Insurance premium tax</strong>
               </label>
 
               <label class="block-label">
-                <input name="tax_type" type="radio" value="landfill_tax" data-store="tax_type=Landfill tax,direct=false" />
+                <input name="tax_type" type="radio" value="landfill_tax" data-store="tax_type=Landfill tax,direct=false,hardship=yes" />
                 <strong>Landfill tax</strong>
               </label>
 
               <label class="block-label">
-                <input name="tax_type" type="radio" value="lottery_tax" data-store="tax_type=Lottery tax,direct=false" />
+                <input name="tax_type" type="radio" value="lottery_tax" data-store="tax_type=Lottery tax,direct=false,hardship=yes" />
                 <strong>Lottery tax</strong>
               </label>
 
               <label class="block-label">
-                <input name="tax_type" type="radio" value="money_laundering_decisions" data-store="tax_type=Money laundering decisions,direct=false,fee=200" data-destination="fee" />
+                <input name="tax_type" type="radio" value="money_laundering_decisions" data-store="tax_type=Money laundering decisions,direct=false,hardship=yes,fee=200" data-destination="fee" />
                 <strong>Money laundering decisions</strong>
               </label>
 
               <label class="block-label">
-                <input name="tax_type" type="radio" value="national_insurance" data-store="tax_type=National insurance contributions,direct=true" />
+                <input name="tax_type" type="radio" value="national_insurance" data-store="tax_type=National insurance contributions,direct=true,hardship=no" />
                 <strong>National Insurance (NI) contributions</strong>
               </label>
 
               <label class="block-label">
-                <input name="tax_type" type="radio" value="petroleum_revenue_tax" data-store="tax_type=Petroleum revenue tax,direct=true" />
+                <input name="tax_type" type="radio" value="petroleum_revenue_tax" data-store="tax_type=Petroleum revenue tax,direct=true,hardship=no" />
                 <strong>Petroleum Revenue tax</strong>
               </label>
 
               <label class="block-label">
-                <input name="tax_type" type="radio" value="pool_betting_duty" data-store="tax_type=Pool betting duty,direct=false" />
+                <input name="tax_type" type="radio" value="pool_betting_duty" data-store="tax_type=Pool betting duty,direct=false,hardship=yes" />
                 <strong>Pool betting duty</strong>
               </label>
 
               <label class="block-label">
-                <input name="tax_type" type="radio" value="remote_gaming_duty" data-store="tax_type=Remote gaming duty,direct=false" />
+                <input name="tax_type" type="radio" value="remote_gaming_duty" data-store="tax_type=Remote gaming duty,direct=false,hardship=yes" />
                 <strong>Remote gaming duty</strong>
               </label>
 
               <label class="block-label">
-                <input name="tax_type" type="radio" value="restoration_case" data-store="tax_type=Restoration case,direct=false,fee=200" data-destination="fee"  />
+                <input name="tax_type" type="radio" value="restoration_case" data-store="tax_type=Restoration case,direct=false,hardship=no,fee=200" data-destination="fee"  />
                 <strong>Restoration case</strong><br>
                 applying to have goods replaced/returned
               </label>
 
               <label class="block-label">
-                <input name="tax_type" type="radio" value="stamp_duties" data-store="tax_type=Stamp duties,direct=true" />
-                <strong>Stamp duties</strong><br>
+                <input name="tax_type" type="radio" value="stamp_duties" data-store="tax_type=Stamp duties,direct=true,hardship=no" />
+                <strong>Stamp Duties</strong><br>
                 includes Stamp Duty Reserve Tax (SDRT) and Stamp Duty Land Tax (SDLT)
               </label>
 
               <label class="block-label">
-                <input name="tax_type" type="radio" value="statutory_payments" data-store="tax_type=Statutory payments,direct=true" />
+                <input name="tax_type" type="radio" value="statutory_payments" data-store="tax_type=Statutory payments,direct=true,hardship=no" />
                 <strong>Statutory payments</strong>
               </label>
 
               <label class="block-label">
-                <input name="tax_type" type="radio" value="student_loans" data-store="tax_type=Student Loans,direct=true" />
-                <strong>Student loans</strong>
+                <input name="tax_type" type="radio" value="student_loans" data-store="tax_type=Student Loans,direct=true,hardship=no" />
+                <strong>Student Loans</strong>
               </label>
 
               <label class="block-label">
-                <input name="tax_type" type="radio" value="tobacco_products_duty" data-store="tax_type=Tobacco products duty,direct=false" />
+                <input name="tax_type" type="radio" value="tobacco_products_duty" data-store="tax_type=Tobacco products duty,direct=false,hardship=no" />
                 <strong>Tobacco products duty</strong>
               </label>
 
-              <label class="block-label">
-                <input name="tax_type" type="radio" value="other" data-destination="fee" data-store="direct=true,fee=200" />
+              <label class="block-label" data-target="other_dispute_detail">
+                <input name="tax_type" type="radio" value="other" data-destination="fee" data-store="direct=n/a,fee=200" />
                 <strong>My dispute is not listed</strong>
               </label>
-              <div class="form-group" data-dependent="">
-                <label class="form-label" for="appellant_contact_name">
-                  Enter the name of the tax involved in your dispute
-                </label>
-                <input class="form-control" type="text" id="other_dispute" data-store="fee=200" data-destination="fee" >
+              <div class="form-group js-hidden" id="other_dispute_detail">
+                <div class="panel">
+                  <label class="form-label" for="other_dispute">
+                    Enter the name of the tax your type of dispute you have
+                  </label>
+                  <input class="form-control" type="text" id="other_dispute" data-store>
+                </div>
               </div>
 
             </div>

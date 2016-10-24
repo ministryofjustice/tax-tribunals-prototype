@@ -4,6 +4,13 @@
   What type of tax is your dispute about? - Tax Tribunals Prototype
 {% endblock %}
 
+{% block body_end %}
+  {{ super() }}
+  <script>
+    moj.Modules.dataStore.deleteItem('challenge_redirect');
+  </script>
+{% endblock %}
+
 {% block content %}
 
 <main id="content" role="main">
@@ -22,18 +29,18 @@
         <fieldset>
           <div class="form-group">
             <label class="block-label">
-              <input name="tax_type" type="radio" value="income_tax" data-store="tax_type=Income tax,direct=true" />
+              <input name="tax_type" type="radio" value="income_tax" data-store="tax_type=Income tax,direct=true,hardship=no" />
               <strong>Income tax</strong><br>
               for example, Pay As You Earn (PAYE), self-assessment
             </label>
 
             <label class="block-label">
-              <input name="tax_type" type="radio" value="vat" data-store="tax_type=VAT,direct=false" />
+              <input name="tax_type" type="radio" value="vat" data-store="tax_type=VAT,direct=false,hardship=yes" />
               <strong>Value Added Tax (VAT)</strong>
             </label>
 
             <label class="block-label">
-              <input name="tax_type" type="radio" value="apn" data-destination="fee" data-store="fee=50" />
+              <input name="tax_type" type="radio" value="apn" data-store="direct=n/a,hardship=no" />
               <strong>Advance Payment Notice (APN) penalty</strong><br>
                for example, non-compliance with Disclosure Of Tax Avoidance Schemes (DOTAS)
             </label>
@@ -45,19 +52,19 @@
             </label>
 
             <label class="block-label">
-              <input name="tax_type" type="radio" value="closure_notices" data-destination="fee" data-store="fee=50,dispute_type=closure" />
+              <input name="tax_type" type="radio" value="closure_notices" data-destination="fee" data-store="fee=50,dispute_type=closure,direct=n/a,hardship=no" />
               <strong>Closure notice</strong><br>
               request HMRC close an ongoing enquiry into your tax returns
             </label>
 
             <label class="block-label">
-              <input name="tax_type" type="radio" value="information notice" data-destination="fee" data-store="fee=50"  />
+              <input name="tax_type" type="radio" value="information notice" data-destination="fee" data-store="fee=50,direct=n/a,hardship=no"  />
               <strong>Information notices (Schedule 36)</strong><br>
               including penalties for non-compliance with information notices
             </label>
 
             <label class="block-label">
-              <input name="tax_type" type="radio" value="information notice" data-destination="fee" data-store="fee=50"  />
+              <input name="tax_type" type="radio" value="information notice" data-destination="fee" data-store="fee=50,direct=n/a,hardship=no"  />
               <strong>Request permission for a review</strong><br>
               apply to get a late review accepted by HMRC, UK Border Force (UKBF) or National Crime Authority (NCA)
             </label>
