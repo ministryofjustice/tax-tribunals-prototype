@@ -1,0 +1,78 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Task list - Tax Tribunals Prototype
+{% endblock %}
+
+{% block body_end %}
+  {{ super() }}
+  <script>
+    moj.Modules.dataStore.storeItem('mode', 'task_list');
+
+    if(moj.Modules.dataStore.getItem('application_is_late') === 'no') {
+      $('[data-task="check_if_late"]').text('IN TIME');
+    } else if(moj.Modules.dataStore.getItem('application_is_late') === 'unknown') {
+      $('[data-task="check_if_late"]').text('NOT SURE');
+    }
+  </script>
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  {% include "includes/phase_banner_alpha.html" %}
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <h1 class="heading-large">Appeal to an independent tax tribunal</h1>
+
+      <p class="lede">Use this service to settle a tax dispute by getting an impartial ruling on your case.</p>
+      <p>The Ministry of Justice operates the tax tribunal but its decision-making authority is completely independent of government.</p>
+      <p>A judge will listen to both sides in the dispute before making a decision.</p>
+       <p>You must enter your appeal details in one go following the steps below. You can't save and return to make changes at a later date.
+       <p>See the <a href="https://www.gov.uk/tax-tribunal/overview">guide to tax tribunals and fees</a> for more information about what you'll need to complete your appeal.</p>
+      <ol class="list list-number task-list" data-task-list>
+        <li>
+          <a href="/before_you_start/start">Find out the cost of your appeal</a> (5 minutes to complete)
+          <span class="task-status" data-task="determine_fee">£<span data-key="fee">20</span></span>
+        </li>
+        <li>
+          <a href="/lateness/start">Check you meet the tribunal deadline</a> (5 minutes to complete)
+          <span class="task-status" data-task="check_if_late">LATE</span>
+        </li>
+        <li>
+          <a href="/data_capture/start">Enter appeal details and pay fee</a> (20 minutes to complete)
+          <span class="task-status" data-task="enter_details">COMPLETED</span>
+        </li>
+      </ol>
+
+      <h2 class="heading-medium">Paying for an existing appeal</h2>
+      <p>If you have received a tribunal reference number and a confirmation code by email but still need to pay your fee, <a href="/payment_tool/case_requests">you can pay your tribunal fees online now</a>.</p>
+
+      <h2 class="heading-medium">Other ways to submit an appeal</h2>
+      <ul class="list list-bullet">
+        <li>You can submit an appeal or application by <a class="external" rel="external" href="http://hmctsformfinder.justice.gov.uk/HMCTS/GetForms.do?court_forms_category=Tax%20(First-tier%20Tribunal)">paper form</a></li>
+        <li>
+          Send by post to First-tier Tribunal (Tax Chamber), PO Box 16972, Birmingham, B16 6TZ
+        </li>
+      </ul>
+
+    </div>
+
+    <div class="column-one-third">
+      <aside class="govuk-related-items">
+
+        <h2 class="heading-medium">Controls</h2>
+        <nav role="navigation">
+          <ul class="font-xsmall">
+            <li><a href="start" class="reset-task-list">Reset task list</a></li>
+          </ul>
+        </nav>
+
+      </aside>
+    </div>
+  </div>
+</main>
+
+{% endblock %}
