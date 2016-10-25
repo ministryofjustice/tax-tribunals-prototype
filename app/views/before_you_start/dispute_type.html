@@ -7,8 +7,8 @@
 {% block body_end %}
   {{ super() }}
   <script>
-    if(moj.Modules.dataStore.getItem('tax_type').toLowerCase() === 'vat') {
-      $('input[value="paye_code"]').closest('label').hide();
+    if(moj.Modules.dataStore.getItem('tax_type').toLowerCase() === 'income tax') {
+      $('input[value="paye_code"]').closest('label').removeClass('js-hidden');
     }
   </script>
 {% endblock %}
@@ -37,12 +37,12 @@
             </label>
 
             <label class="block-label">
-              <input name="dispute_type" type="radio" value="other" data-store="fee=200,appeal=true" />
+              <input name="dispute_type" type="radio" value="amount_of_tax_owed" data-store="fee=200" />
               <strong>Amount of tax owed</strong>
             </label>
 
-            <label class="block-label">
-              <input name="dispute_type" type="radio" value="paye_code" data-store="fee=50,appeal=true" />
+            <label class="block-label js-hidden">
+              <input name="dispute_type" type="radio" value="paye_code" data-store="fee=50" />
               <strong>Pay As You Earn (PAYE) coding notice</strong><br>
               the code used to work out how much tax is taken from your pay
             </label>

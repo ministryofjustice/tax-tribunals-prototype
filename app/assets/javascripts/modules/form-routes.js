@@ -41,6 +41,32 @@ moj.Modules.formRoutes = {
   },
 
   next: function(page) {
-    document.location = page;
+    // do we need to go to Challenge HMRC page?
+    var self = this,
+        isDirect = moj.Modules.dataStore.getItem('direct'),
+        hasChallenged = moj.Modules.dataStore.getItem('hmrc_challenge'),
+        wasRedirected = moj.Modules.dataStore.getItem('challenge_redirect'),
+        pageName = self.getPageName();
+
+    if(isDirect === 'true' && hasChallenged === 'no' && pageName !== 'hmrc_must' && wasRedirected !== 'yes') {
+      // yes
+      moj.Modules.dataStore.storeItem('challenge_redirect', 'yes');
+      document.location = 'hmrc_must.html';
+    } else {
+      // no
+      // can user apply for hardship?
+      if(page === 'outcome' && moj.Modules.dataStore.getItem('hardship') === 'yes' && pageName !== 'hardship') {
+        document.location = 'hardship';
+      } else {
+        document.location = page;
+      }
+    }
+  },
+
+  getPageName: function() {
+    var locArr = document.location.href.split('/'),
+        page = locArr[locArr.length - 1].split('.')[0];
+
+    return page;
   }
 };

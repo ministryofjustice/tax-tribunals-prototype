@@ -87,7 +87,7 @@ moj.Modules.recordAnswers = {
         html += storedAnswers[x].question;
         html += '</th>';
         html += '<td>';
-        html += storedAnswers[x].text;
+        html += (x === storedAnswers.length - 1 && storedAnswers[x].val === 'other' ? moj.ucFirst(moj.Modules.dataStore.getItem('other_dispute')) : storedAnswers[x].text);
         html += '</td>';
         html += '</tr>';
       }

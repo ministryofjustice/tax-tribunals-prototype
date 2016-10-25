@@ -4,6 +4,13 @@
   Have you challenged HMRC? - Tax Tribunals Prototype
 {% endblock %}
 
+{% block body_end %}
+  {{ super() }}
+  <script>
+    moj.Modules.dataStore.deleteItem('direct');
+  </script>
+{% endblock %}
+
 {% block content %}
 
 <main id="content" role="main">

@@ -14,7 +14,7 @@
       document.location = 'outcome';
     } else if(moj.Modules.dataStore.getItem('direct') === 'false') {
       moj.Modules.dataStore.storeItem('concerns_indirect_tax', 'yes');
-      document.location = 'paid_disputed_tax';
+      document.location = 'hardship';
     }
   </script>
 {% endblock %}
@@ -36,7 +36,7 @@
             <fieldset>
               <legend class="visuallyhidden">{{ ptitle }}</legend>
               <label class="block-label">
-                <input name="concerns_indirect_tax" type="radio" value="yes" data-store="concerns_indirect_tax=yes" data-destination="paid_disputed_tax" />
+                <input name="concerns_indirect_tax" type="radio" value="yes" data-store="concerns_indirect_tax=yes" data-destination="hardship" />
                 Yes
               </label>
 
