@@ -19,7 +19,7 @@ ul.buttons {
     position: relative;
   }
 
-  a {
+  a.task-link {
     font-weight: bold;
     display: block;
   }
@@ -39,5 +39,11 @@ ul.buttons {
     letter-spacing: 1px;
     color: #fff;
     background-color: $black;
+  }
+
+  a.button-start {
+    position: absolute;
+    right: 5px;
+    top: 20px;
   }
 }
