@@ -17,65 +17,91 @@
 
   {% include "includes/phase_banner_alpha.html" %}
 
-  <h1 class="heading-large">
-    <span class="heading-secondary" data-key="tc_number">TC/2016/123456</span>
-    <span data-key="appellant_name">Terry Example</span> vs HMRC
-  </h1>
+  <div class="grid-row">
+    <div class="column-two-thirds">
 
-  <p class="lede">
-    You need to pay fees before the tribunal continues to work on your case.
-  </p>
+      <h1 class="heading-large">
+        <span data-key="appellant_name">Terry Example</span> vs HMRC
+      </h1>
 
-  <div class="notice notice-payment">
-    <i class="icon icon-important">
-      <span class="visuallyhidden">Warning</span>
-    </i>
-    <strong class="bold-small">
-      You may lose the right to appeal if you do not pay your fee within the time limit we give you.
-    </strong>
-  </div>
+      <p class="lede">
+        You need to pay fees before the tribunal continues to work on your case.
+      </p>
+      <p>
+        Your case reference is <strong data-key="tc_number">TC/2016/123456</strong>. Please make a note of this in case you need to contact us about your case.
+      </p>
 
-  <div class="liabilities-list">
-    <h2 class="heading-large">£<span data-key="fee">20</span> Lodgement Fee</h2>
-  </div>
-
-  <p class="lede">Select your method of payment</p>
-
-  <form class="js_route" action="pay_credit_card">
-    <fieldset>
-      <div class="form-group">
-        <label class="block-label">
-          <input name="payment_type" type="radio" value="debit_credit_card" />
-          Debit or credit card
-        </label>
-
-        <label class="block-label">
-          <input name="payment_type" type="radio" value="help_with_fees" data-destination="pay_hwf" />
-          Help with fees
-        </label>
-
-        <label class="block-label">
-          <input name="payment_type" type="radio" value="account" data-destination="pay_account" />
-          Authorised account
-        </label>
-
-        <label class="block-label">
-          <input name="payment_type" type="radio" value="cheque" data-destination="pay_cheque" />
-          Cheque
-        </label>
-
+      <div class="notice notice-payment util_mt-large">
+        <i class="icon icon-important">
+          <span class="visuallyhidden">Warning</span>
+        </i>
+        <strong class="bold-small">
+          You may lose the right to appeal if you do not pay your fee within the time limit we give you.
+        </strong>
       </div>
-    </fieldset>
 
-    <p>
-      <input class="button" type="submit" value="Continue">
-    </p>
+      <div class="liabilities-list">
+        <h2 class="heading-large">£<span data-key="fee">20</span> Lodgement Fee</h2>
+      </div>
 
-  </form>
+      <p>Select your method of payment</p>
 
-  <p>
-    <a class="link-back" href="case_requests">Find another case</a>
-  </p>
+      <form class="js_route" action="pay_credit_card">
+        <fieldset>
+          <div class="form-group">
+            <label class="block-label">
+              <input name="payment_type" type="radio" value="debit_credit_card" />
+              Debit or credit card
+            </label>
+
+            <label class="block-label">
+              <input name="payment_type" type="radio" value="help_with_fees" data-destination="pay_hwf" />
+              Help with fees
+            </label>
+
+            <label class="block-label">
+              <input name="payment_type" type="radio" value="account" data-destination="pay_account" />
+              Authorised account
+            </label>
+
+            <label class="block-label">
+              <input name="payment_type" type="radio" value="cheque" data-destination="pay_cheque" />
+              Cheque
+            </label>
+
+          </div>
+        </fieldset>
+
+        <p>
+          <input class="button" type="submit" value="Continue">
+        </p>
+
+      </form>
+
+    </div>
+
+    <div class="column-one-third">
+      <aside class="govuk-related-items">
+
+        <h2 class="heading-medium">Courts, sentencing and tribunals</h2>
+        <nav role="navigation">
+          <ul class="font-xsmall">
+              <li><a href="https://www.gov.uk/court-fees-what-they-are">Court and tribunal fees</a></li>
+              <li><a href="https://www.gov.uk/tax-tribunal">Appeal to a tax tribunal</a></li>
+          </ul>
+        </nav>
+
+        <h2 class="heading-medium">Elsewhere on GOV.UK</h2>
+        <nav role="navigation">
+          <ul class="font-xsmall">
+            <li><a href="https://www.gov.uk/tax-appeals">Disagree with a tax decision</a></li>
+            <li><a href="https://www.gov.uk/government/publications/tax-chamber-tribunal-procedure-rules">Tax tribunal procedure rules</a></li>
+          </ul>
+        </nav>
+
+      </aside>
+    </div>
+  </div>
 
 </main>
 
