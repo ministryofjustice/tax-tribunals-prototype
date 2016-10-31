@@ -1,3 +1,8 @@
 textarea.form-control-large {
   height: 20em;
 }
+
+.block-label:last-child,
+.block-label:last-of-type {
+  margin-bottom: 10px;
+}

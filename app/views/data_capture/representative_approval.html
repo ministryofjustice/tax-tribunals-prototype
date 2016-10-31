@@ -17,13 +17,35 @@
       <p><a class="link-back js-link-back" href="start.html">Back</a> &nbsp; Step 7 of 16</p>
       <h1 class="heading-large">{{ ptitle }}</h1>
 
-      <p class="lede">You will need to personally approve your representative to act on your behalf if they are not a legal professional.</p>
-      <p>You can notify the tribunal by reading the declaration below and clicking "I agree".</p>
+      <p class="lede">The appellant will need to personally approve their representative to act on their behalf if they are not a legal professional.</p>
+      <p>If you are completing this form as a representative on behalf of the appellant, you will need to obtain their written consent to act on their behalf and upload this as a supporting document.</p>
 
       <form class="js_route" action="outcome">
 
         <div class="form-group">
-          <p>I agree to the named representative acting on my behalf during my appeal to the independent tax tribunal</p>
+          <fieldset>
+            <legend>Who are you?</legend>
+            <label class="block-label">
+              <input name="form_completed_by" type="radio" value="appellant" data-store="form_completed_by=appellant" />
+              I am the appellant, <strong data-key="appellant_name">Terry Example</strong>, and I authorise <strong data-key="representative_name">Joe Neighbour</strong> to act as my representative
+            </label>
+
+            <label class="block-label" data-target="representative_letter">
+              <input name="form_completed_by" type="radio" value="no" data-store="form_completed_by=representative" />
+              I am the representative, <strong data-key="representative_name">Joe Neighbour</strong>, and I am acting on behalf of the appellant, <strong data-key="appellant_name">Terry Example</strong>
+            </label>
+            <div class="panel js-hidden" id="representative_letter">
+              <p>A representative who is not a legal professional must provide signed approval from the appellant authorising them to act on their behalf.</p>
+              <p>You may copy and paste the following into a new document or download it in PDF format. This must then be printed out and signed by the appellant. A scan of this signed letter must then be included in your supporting documents later in this process.</p>
+              <div class="letter">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tempor sodales nisl, porta semper ligula condimentum ac. Ut vehicula rutrum lacus eget blandit. Nunc eget neque elit. Maecenas faucibus lectus et neque finibus tincidunt. Quisque quis dui vel sem mollis egestas ultrices sit amet erat. Aliquam fringilla justo urna, in volutpat ipsum cursus ut. In sagittis viverra elit, et imperdiet est pellentesque non.</p>
+
+                <p>Nunc congue blandit consectetur. Quisque volutpat arcu at ex commodo fringilla. Fusce nec nunc ut quam lobortis volutpat in eu orci. Ut rhoncus commodo arcu ac laoreet. Nulla et tincidunt ex. Suspendisse mattis molestie quam. Etiam ut massa euismod, interdum sapien porttitor, fringilla tellus. Proin eu venenatis urna, sit amet suscipit sem. Fusce pulvinar odio efficitur consectetur bibendum. Duis pellentesque eros quam, non viverra nulla venenatis auctor.</p>
+              </div>
+
+              <button class="button">Download this in PDF format</button>
+            </div>
+          </fieldset>
         </div>
 
         <p>
