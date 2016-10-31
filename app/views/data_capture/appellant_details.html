@@ -17,7 +17,9 @@
       <p><a class="link-back js-link-back" href="start.html">Back</a> &nbsp; Step 2 of 16</p>
       <h1 class="heading-large">{{ ptitle }}</h1>
 
-      <p class="lede">Enter details for the taxpayer involved in the appeal.</p>
+      <p class="lede">Enter details for the taxpayer involved in the appeal. These will usually be shown on any correspondence with HMRC.</p>
+      <p>
+      Please note: you should not enter any details for your representative here.
 
       <form class="js_route" action="representation">
 
@@ -45,7 +47,7 @@
 
         <div class="form-group js-hidden" data-dependent="appellant_type=company">
           <label class="form-label" for="appellant_contact_name">
-            Contact name
+            Company contact person (first name and last name)
           </label>
           <input class="form-control" type="text" id="appellant_contact_name" data-store>
         </div>
@@ -53,7 +55,7 @@
         <div class="form-group">
           <label class="form-label" for="appellant_email">
             <span class="js-hidden" data-dependent="appellant_type=individual">Email address</span>
-            <span class="js-hidden" data-dependent="appellant_type=company">Contact's email address</span>
+            <span class="js-hidden" data-dependent="appellant_type=company">Company's contact email address</span>
           </label>
           <input class="form-control" type="text" id="appellant_email" data-store>
         </div>
@@ -61,7 +63,7 @@
         <div class="form-group">
           <label class="form-label" for="appellant_phone">
             <span class="js-hidden" data-dependent="appellant_type=individual">Phone number</span>
-            <span class="js-hidden" data-dependent="appellant_type=company">Contact's phone number</span>
+            <span class="js-hidden" data-dependent="appellant_type=company">Company's contact phone number</span>
           </label>
           <input class="form-control" type="text" id="appellant_phone" data-store>
         </div>
