@@ -69,7 +69,8 @@ moj.Modules.recordAnswers = {
 
     if(storedAnswers.length) {
       var $table = $('table.your-answers').eq(0),
-          html = '';
+          html = '',
+          other = '';
 
       $table.find('tbody').empty();
 
@@ -81,13 +82,23 @@ moj.Modules.recordAnswers = {
       html += '</tr>';
 
       for(var x = 0; x < storedAnswers.length; x++) {
-
         html += '<tr>';
         html += '<th>';
         html += storedAnswers[x].question;
         html += '</th>';
         html += '<td>';
-        html += (x === storedAnswers.length - 1 && storedAnswers[x].val === 'other' ? moj.ucFirst(moj.Modules.dataStore.getItem('other_dispute')) : storedAnswers[x].text);
+
+        other = storedAnswers[x].text;
+
+        if(x === storedAnswers.length - 1) {
+          if(storedAnswers[x].val === 'other') {
+            other = moj.ucFirst(moj.Modules.dataStore.getItem('other_dispute'));
+          } else if(storedAnswers[x].val === 'none_of_the_above') {
+            other = moj.ucFirst(moj.Modules.dataStore.getItem('other_dispute_type'));
+          }
+        }
+
+        html += other;
         html += '</td>';
         html += '</tr>';
       }

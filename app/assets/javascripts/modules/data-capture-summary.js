@@ -48,12 +48,21 @@ moj.Modules.dataCaptureSummary = {
   showFeeDeterminationAnswers: function() {
     var $el = $('.js_fee-determination-details').eq(0),
         html = '',
-        answers = moj.Modules.dataStore.getItem('storedAnswers');
+        answers = moj.Modules.dataStore.getItem('storedAnswers'),
+        answer = '';
 
     if(answers) {
       for(var x = 0; x < answers.length; x++) {
         html += '<li>';
-        html += answers[x].text;
+
+        answer = answers[x].text;
+        if(answers[x].val === 'other') {
+          answer = moj.Modules.dataStore.getItem('other_dispute');
+        } else if(answers[x].val === 'none_of_the_above') {
+          answer = moj.Modules.dataStore.getItem('other_dispute_type');
+        }
+        html += answer;
+
         html += '</li>';
       }
 

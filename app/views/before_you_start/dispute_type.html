@@ -47,6 +47,19 @@
               the code used to work out how much tax is taken from your pay
             </label>
 
+            <label class="block-label" data-target="other_dispute_type_detail">
+              <input name="dispute_type" type="radio" value="none_of_the_above" data-store="fee=200" />
+              <strong>None of the above</strong>
+            </label>
+            <div class="form-group js-hidden" id="other_dispute_type_detail">
+              <div class="panel">
+                <label class="form-label" for="other_dispute_type">
+                  What is your dispute about?
+                </label>
+                <input class="form-control" type="text" id="other_dispute_type" data-store>
+              </div>
+            </div>
+
           </div>
         </fieldset>
 
