@@ -16,7 +16,7 @@ moj.Modules.dataCaptureSummary = {
     },
     {
       elementId: 'application_is_late_row',
-      dataKey: 'hmrc_view',
+      dataKey: 'hmrc_challenge',
       dataValue: 'yes'
     },
     {
