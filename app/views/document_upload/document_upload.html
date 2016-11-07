@@ -1,0 +1,61 @@
+{% extends "layout.html" %}
+
+{% set ptitle = "Document upload test" %}
+
+{% block page_title %}
+  {{ ptitle }} - Tax Tribunals Prototype
+{% endblock %}
+
+{% block head %}
+  {{ super() }}
+  <link href="/public/css/vendor/dropzone.css" media="screen" rel="stylesheet" type="text/css" />
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  {% include "includes/phase_banner_alpha.html" %}
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <p><a class="link-back js-link-back" href="start.html">Back</a> &nbsp; Step X of Y</p>
+      <h1 class="heading-large">{{ ptitle }}</h1>
+
+      <p class="lede">Lorem ipsum</p>
+
+      <form class="dropzone" id="doc_upload_demo" action="send_files">
+<!--
+        <div class="form-group">
+          <label class="form-label" for="grounds_for_appeal">
+            Use the input box below or attach your reasons as a document (for example, Word, PDF).
+          </label>
+
+          <textarea class="form-control form-control-3-4 form-control-large" id="grounds_for_appeal" rows="4" cols="40" data-store></textarea>
+        </div>
+
+        <div class="form-group">
+          <input class="button secondary" type="button" value="Attach a document" ></li>
+        </div>
+
+        <p>You will next have to upload any supporting documents including any correspondence with HMRC and evidence to support your case.</p>
+        <p>
+          <input class="button" type="submit" value="Continue">
+        </p>
+ -->
+
+
+      </form>
+
+      <h2 class="heading-medium">Uploaded files</h2>
+      <ol class="list uploaded-files">
+        <li class="no-files">No files uploaded</li>
+      </ol>
+
+    </div>
+  </div>
+</main>
+
+{% endblock %}
+
+

@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 router.get('/', function (req, res) {
-  
+
   res.render('index');
 
 });
@@ -40,5 +40,15 @@ router.get('/examples/over-18', function (req, res) {
 });
 
 // add your routes here
+
+router.post('/document_upload/send_files', function(req, res) {
+
+  var response = {
+      status  : 200,
+      success : 'Updated Successfully'
+  }
+
+  res.end(JSON.stringify(response));
+});
 
 module.exports = router;
