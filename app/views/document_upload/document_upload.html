@@ -13,7 +13,7 @@
 
 {% block content %}
 
-<main id="content" role="main">
+<main id="content" role="main" class="doc-upload">
 
   {% include "includes/phase_banner_alpha.html" %}
 
@@ -22,28 +22,9 @@
       <p><a class="link-back js-link-back" href="start.html">Back</a> &nbsp; Step X of Y</p>
       <h1 class="heading-large">{{ ptitle }}</h1>
 
-      <p class="lede">Lorem ipsum</p>
+      <p class="lede">For your case to proceed without delay you need to make sure you upload the correct documents. We can accept scanned images or good quality pictures, for example via a smartphone.</p>
 
       <form class="dropzone" id="doc_upload_demo" action="send_files">
-<!--
-        <div class="form-group">
-          <label class="form-label" for="grounds_for_appeal">
-            Use the input box below or attach your reasons as a document (for example, Word, PDF).
-          </label>
-
-          <textarea class="form-control form-control-3-4 form-control-large" id="grounds_for_appeal" rows="4" cols="40" data-store></textarea>
-        </div>
-
-        <div class="form-group">
-          <input class="button secondary" type="button" value="Attach a document" ></li>
-        </div>
-
-        <p>You will next have to upload any supporting documents including any correspondence with HMRC and evidence to support your case.</p>
-        <p>
-          <input class="button" type="submit" value="Continue">
-        </p>
- -->
-
 
       </form>
 
@@ -51,6 +32,84 @@
       <ol class="list uploaded-files">
         <li class="no-files">No files uploaded</li>
       </ol>
+
+      <form>
+
+        <h2 class="heading-medium">You will need (select the items you have uploaded):</h2>
+        <div class="form-group">
+
+          <label class="block-label" for="doc_hmrc_letter">
+            <input id="doc_hmrc_letter" name="doc_hmrc_letter" type="checkbox" />
+            <strong>Original notice letter from HMRC</strong><br>
+            this letter includes the explanation for any decision(s)
+          </label>
+
+          <label class="block-label" for="doc_review_conclusion">
+            <input id="doc_review_conclusion" name="doc_review_conclusion" type="checkbox" />
+            <strong>The review conclusion letter from HMRC</strong><br>
+            If your case was reviewed, this letter is often headed the 'Conclusion of review'
+          </label>
+
+          <label class="block-label" for="doc_grounds_of_appeal">
+            <input id="doc_grounds_of_appeal" name="doc_grounds_of_appeal" type="checkbox" />
+            <strong>Grounds of appeal</strong><br>
+            the information that makes up your case
+          </label>
+
+          <label class="block-label" for="doc_hardship">
+            <input id="doc_hardship" name="doc_hardship" type="checkbox" />
+            <strong>Any hardship decision by HMRC</strong><br>
+            or letter to HMRC applying for hardship
+          </label>
+
+        </div>
+
+        <div class="form-group">
+          <h2 class="heading-medium">You can also add the following to help your case:</h2>
+          <ul class="list list-bullet">
+            <li>A copy of any letter sent to HRMC querying the decision or asking for a review</li>
+            <li>Any evidence to support your case</li>
+            <li>Approval for your representative to act on your behalf</li>
+          </ul>
+          <label class="block-label" for="upload_additional" data-target="doc_upload_supporting_docs">
+            <input id="upload_additional" name="upload_additional" type="checkbox" />
+            I will upload additional information
+          </label>
+          <div id="doc_upload_supporting_docs" class="panel js-hidden">
+            <label class="form-label" for="supporting_doc">
+              Name the type of information you are uploading<br>
+              (for example, bank statements)
+            </label>
+
+            <ul class="list list-bullet supporting_docs_list js-hidden">
+            </ul>
+
+            <p>
+              <input class="form-control" type="text" id="supporting_doc">
+              <a class="add-file" href="#">Add</a>
+            </p>
+
+          </div>
+        </div>
+
+        <div class="form-group">
+          <h2 class="heading-medium">Additional information</h2>
+          <label class="form-label form-hint" for="additional_information">For example any other information that will help us process your claim</label>
+          <textarea class="form-control form-control-full-width" rows="10" id="additional_information" data-store></textarea>
+        </div>
+
+        <div class="form-group util_mt-large">
+          <label class="block-label" for="unable_to_upload">
+            <input id="unable_to_upload" name="unable_to_upload" type="checkbox" />
+            I am unable to upload my documents
+          </label>
+        </div>
+
+        <div class="form-group util_mt-large">
+          <input class="button" type="submit" value="Continue">
+        </div>
+
+      </form>
 
     </div>
   </div>
