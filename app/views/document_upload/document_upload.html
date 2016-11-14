@@ -6,11 +6,6 @@
   {{ ptitle }} - Tax Tribunals Prototype
 {% endblock %}
 
-{% block head %}
-  {{ super() }}
-  <link href="/public/css/vendor/dropzone.css" media="screen" rel="stylesheet" type="text/css" />
-{% endblock %}
-
 {% block content %}
 
 <main id="content" role="main" class="doc-upload">
@@ -25,7 +20,16 @@
       <p class="lede">For your case to proceed without delay you need to make sure you upload the correct documents. We can accept scanned images or good quality pictures, for example via a smartphone.</p>
 
       <form class="dropzone" id="doc_upload_demo" action="send_files">
-
+        <div class="dz-default dz-message grid-row">
+          <div class="column-one-third arrow-icon">
+            <p></p>
+          </div>
+          <div class="column-one-half">
+            Drag and drop files here<br>
+            <strong>or</strong><br>
+            click to choose a file
+          </div>
+        </div>
       </form>
 
       <h2 class="heading-medium">Uploaded files</h2>
