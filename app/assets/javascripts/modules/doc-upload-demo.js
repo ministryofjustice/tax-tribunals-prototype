@@ -29,6 +29,7 @@ moj.Modules.docUploadDemo = {
 
     self.$form.dropzone(dzOptions);
     self.$form.sticky({topSpacing: 0, zIndex: 100});
+    // $('.uploaded-files-wrapper').sticky({topSpacing: -40, zIndex: 100});
 
     self.bindEvents();
   },
@@ -39,17 +40,6 @@ moj.Modules.docUploadDemo = {
     $(document).on('click', 'li.file a', function(e) {
       e.preventDefault();
       self.removeFileFromList(e.target);
-    });
-
-    $(document).on('click', 'a.remove-file', function(e) {
-      e.preventDefault();
-      self.removeSupportingDocument(e.target);
-    });
-
-    $('a.add-file').on('click', function(e) {
-      e.preventDefault();
-      this.blur();
-      self.addSupportingDocument();
     });
   },
 
@@ -78,30 +68,12 @@ moj.Modules.docUploadDemo = {
     var self = this;
 
     self.$fileList.find('.no-files').hide();
-    self.$fileList.append('<li class="file"><strong>' + file.name + '</strong><a href="#">Remove</a></li>');
+    self.$fileList.append('<li class="file">' + file.name + '<a href="#">Remove</a></li>');
     $(file.previewElement).fadeOut(400, function() {
       $(file.previewElement).remove();
       if(!self.$form.find('.dz-preview').length) {
         self.$form.removeClass('dz-started dz-drag-hover');
       }
     });
-  },
-
-  addSupportingDocument: function() {
-    var self = this,
-        file = $('#supporting_doc').val();
-
-    if(file !== '') {
-      $('.supporting_docs_list').removeClass('js-hidden').append('<li><span class="filename">' + file + '</span><a class="remove-file" href="#">Remove</a></li>');
-      $('#supporting_doc').val('');
-    }
-  },
-
-  removeSupportingDocument: function($el) {
-    $el.closest('li').remove();
-
-    if(!$('.supporting_docs_list li').length) {
-      $('.supporting_docs_list').addClass('js-hidden');
-    }
   }
 };

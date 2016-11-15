@@ -59,6 +59,18 @@
     font-size: 12px;
     color: $secondary-text-colour;
   }
+
+  .dz-message {
+    .dz-message-copy {
+      text-align: left;
+      margin-left: 20px;
+
+      .faux-link {
+        color: $link-colour;
+        text-decoration: underline;
+      }
+    }
+  }
 }
 
 
