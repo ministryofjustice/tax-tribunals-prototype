@@ -30,9 +30,27 @@ moj.Modules.dataStore = {
 
   checkForItemsToStore: function($form) {
     var self = this,
+        fileEls = $form.find('input[type="file"][data-store]'),
         checkboxEls = $form.find('input[type="checkbox"][data-store]'),
         radioEls = $form.find('input[type="radio"][data-store]:checked'),
         textEls = $form.find('input[type="text"][data-store], input[type="hidden"][data-store], textarea[data-store]');
+
+    if(fileEls.length) {
+      fileEls.each(function(n, el) {
+        var $el = $(el),
+            key = $el.attr('id'),
+            value = $el.val(),
+            valueArr;
+
+        if(value) {
+          valueArr = value.split('\\');
+          value = valueArr[valueArr.length - 1];
+          self.storeItem(key, value);
+        } else {
+          self.deleteItem(key);
+        }
+      });
+    }
 
     if(radioEls.length) {
       radioEls.each(function(n, el) {

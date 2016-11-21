@@ -75,9 +75,10 @@ moj.Modules.dataCaptureSummary = {
     var $list = $('.uploaded-docs').eq(0),
         letter = moj.Modules.dataStore.getItem('doc_check_hmrc_letter'),
         review = moj.Modules.dataStore.getItem('doc_check_review_conclusion'),
-        additional = moj.Modules.dataStore.getItem('additional_docs_info');
+        additional = moj.Modules.dataStore.getItem('additional_docs_info'),
+        groundsFile = moj.Modules.dataStore.getItem('file_grounds_for_appeal');
 
-    if(letter || review || additional) {
+    if(letter || review || additional || groundsFile) {
       $list.empty();
     }
 
@@ -89,6 +90,10 @@ moj.Modules.dataCaptureSummary = {
     }
     if(additional) {
       $list.append('<li>' + additional + '</li>');
+    }
+    if(groundsFile) {
+      $list.append('<li>Grounds for appeal: ' + groundsFile + '</li>');
+      $('[data-key="grounds_for_appeal"]').after('<br>(File uploaded, see below)');
     }
   }
 };
