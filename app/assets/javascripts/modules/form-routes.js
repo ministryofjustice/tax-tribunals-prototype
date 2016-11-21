@@ -11,7 +11,7 @@ moj.Modules.formRoutes = {
 
   bindEvents: function() {
     var self = this,
-        $form = $('form').eq(0);
+        $form = $('form.js_route').eq(0);
 
     moj.log('js form routing');
     $form.on('submit', function(e) {

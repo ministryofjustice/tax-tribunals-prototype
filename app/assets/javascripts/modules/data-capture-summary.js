@@ -31,6 +31,7 @@ moj.Modules.dataCaptureSummary = {
 
     self.showFeeDeterminationAnswers();
     self.showDependentItems();
+    self.showUploadedDocs();
   },
 
   showDependentItems: function() {
@@ -67,6 +68,27 @@ moj.Modules.dataCaptureSummary = {
       }
 
       $el.html(html);
+    }
+  },
+
+  showUploadedDocs: function() {
+    var $list = $('.uploaded-docs').eq(0),
+        letter = moj.Modules.dataStore.getItem('doc_check_hmrc_letter'),
+        review = moj.Modules.dataStore.getItem('doc_check_review_conclusion'),
+        additional = moj.Modules.dataStore.getItem('additional_docs_info');
+
+    if(letter || review || additional) {
+      $list.empty();
+    }
+
+    if(letter) {
+      $list.append('<li>' + letter + '</li>');
+    }
+    if(review) {
+      $list.append('<li>' + review + '</li>');
+    }
+    if(additional) {
+      $list.append('<li>' + additional + '</li>');
     }
   }
 };

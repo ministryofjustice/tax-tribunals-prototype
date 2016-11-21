@@ -30,6 +30,7 @@ moj.Modules.dataStore = {
 
   checkForItemsToStore: function($form) {
     var self = this,
+        checkboxEls = $form.find('input[type="checkbox"][data-store]'),
         radioEls = $form.find('input[type="radio"][data-store]:checked'),
         textEls = $form.find('input[type="text"][data-store], input[type="hidden"][data-store], textarea[data-store]');
 
@@ -55,7 +56,22 @@ moj.Modules.dataStore = {
             key = $el.attr('id'),
             value = $el.val();
 
-        if(value) {
+        if(value && $el.is(':visible')) {
+          self.storeItem(key, value);
+        } else {
+          self.deleteItem(key);
+        }
+      });
+    }
+
+    if(checkboxEls.length) {
+      checkboxEls.each(function(n, el) {
+        var $el = $(el),
+            key = $el.attr('id'),
+            checked = $el.is(':checked'),
+            value = $el.val();
+
+        if(checked) {
           self.storeItem(key, value);
         } else {
           self.deleteItem(key);
