@@ -1,0 +1,127 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Guidance: Tax tribunal decisions - Tax Tribunals Prototype
+{% endblock %}
+
+{% block content %}
+
+<main id="content" class="multi-page" role="main">
+
+  {% include "includes/phase_banner_alpha.html" %}
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <header class="page-header">
+        <h1 class="heading-xlarge">Appeal to the tax tribunal</h1>
+      </header>
+
+      <div class="article-container group">
+        <div class="content-block">
+          <div class="inner">
+
+            <aside>
+              <a href="#" class="show-all-parts">Show all parts of this guide</a>
+              <nav role="navigation" class="page-navigation page-navigation-closed" aria-label="parts to this guide">
+                <ol>
+                  <li class="active">
+                    <span class="part-number">1.</span>
+                    <a title="Part 1: What is the tax tribunal" href="/guidance/overview">What is the tax tribunal</a>
+                  </li>
+                  <li>
+                    <span class="part-number">2.</span>
+                    <a title="Part 2: Before you appeal" href="/guidance/before-you-appeal">Before you appeal</a>
+                  </li>
+                  <li>
+                    <span class="part-number">3.</span>
+                    <a title="Part 3: Tax tribunal fees" href="/guidance/tax-tribunal-fees">Tax tribunal fees</a>
+                  </li>
+                </ol>
+                <ol start="4">
+                  <li>
+                    <span class="part-number">4.</span>
+                    <a title="Part 4: Submit your appeal or application" href="/guidance/submit-your-appeal-or-application">Submit your appeal or application</a>
+                  </li>
+                  <li>
+                    <span class="part-number">5.</span>
+                    <a title="Part 5: If you have a hearing" href="/guidance/if-you-have-a-hearing">If you have a hearing</a>
+                  </li>
+                  <li>
+                    <span class="part-number">6.</span>
+                    <span>Tax tribunal decisions</span>
+                  </li>
+                </ol>
+              </nav>
+            </aside>
+
+            <h2 class="heading-large">6. Tax tribunal decisions</h2>
+
+            <h3 class="heading-medium">The decision on your case</h3>
+            <p>You will receive your impartial decision from the tax tribunal in writing:</p>
+            <ul class="list list-bullet">
+              <li>if you didn’t have a hearing the decision will be based on the appeal form and other paperwork</li>
+              <li>
+                if you had a hearing you may get a decision on the day but usually you will hear:
+                <ul class="list list-bullet">
+                  <li>within 1 month if your case was straightforward</li>
+                  <li>within 2 months if your case was more complicated and involved principles of law or large sums of money</li>
+                </ul>
+              </li>
+            </ul>
+
+            <h3 class="heading-medium">If either party withdraws</h3>
+            <p>If either party withdraws before the judge reaches a decision, the judge has the power to decide whether the withdrawing party should pay costs or refund any tax tribunal fees.</p>
+
+            <h3 class="heading-medium">If you win your case</h3>
+            <p>If you win your case, the judge has the power to decide whether the losing party should pay costs or refund your tax tribunal fees.</p>
+
+            <h3 class="heading-medium">If you lose your case</h3>
+            <p>If you lose your case, you will not receive a refund of your tax tribunal fees.</p>
+            <p>If you do not accept the independent decision made by the judge, you can ask for the decision to be ‘set aside’ or ask for permission to appeal.</p>
+
+            <h4 class="heading-small">Get a decision set aside</h4>
+            <p>You can ask for a decision to be ‘set aside’ (cancelled), but only if you think there was a mistake in the process. The letter you get with the decision will tell you how to do this. Contact <a href="http://www.citizensadvice.org.uk/index/getadvice.htm">Citizens Advice</a> if you need help.</p>
+
+            <h4 class="heading-small">Ask for permission to appeal</h4>
+            <p>You may be able to appeal against the decision if the First-tier Tribunal (Tax) made a legal mistake, e.g. it didn’t:</p>
+            <ul class="list list-bullet">
+              <li>apply the law correctly</li>
+              <li>fully explain its decision</li>
+            </ul>
+            <p>1. Ask for full written reasons if you haven’t had them already. You must do this within 28 days of the date on the decision notice - the decision notice will tell you how.</p>
+            <p>2. Ask for permission to appeal - <a href="http://hmctsformfinder.justice.gov.uk/HMCTS/GetForm.do?court_forms_id=4505">download the appeal form and read the guidance notes</a>. You must do this within 56 days of the date given on the full written reasons.</p>
+            <p>Send the appeal form to:</p>
+            <p>First-tier Tribunal (Tax Chamber)<br>
+              PO Box 16972<br>
+              Birmingham<br>
+              B16 6TZ </p>
+
+            <p><strong>Tax Tribunal</strong><br>
+              <a href="mailto:taxappeals@hmcts.gsi.gov.uk">taxappeals@hmcts.gsi.gov.uk</a><br>
+              Telephone: 0300 123 1024<br>
+              Monday to Friday, 8:30am to 5pm<br>
+              <a href="https://www.gov.uk/call-charges">Find out about call charges</a></p>
+
+            <h4 class="heading-small">After you send the form</h4>
+            <p>A judge will decide if you can take your case to a higher tribunal, called the Upper Tribunal (Tax and Chancery). <a href="https://www.gov.uk/tax-upper-tribunal">Appeal to the Upper Tribunal</a> if you get permission.</p>
+
+            <h4 class="heading-small">If you’re refused permission to appeal</h4>
+            <p>You can apply to the Upper Tribunal for permission to appeal if the First-tier Tribunal (Tax) refuses, or only gives you permission to appeal on limited grounds.</p>
+
+            <h3 class="heading-medium">Previous decisions</h3>
+            <p>Search the <a href="http://www.financeandtaxtribunals.gov.uk/Aspx/default.aspx">decisions database</a> to see how and why previous decisions have been made.</p>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="column-one-third">
+      {% include "includes/guidance_sidebar.html" %}
+    </div>
+  </div>
+</main>
+
+{% endblock %}

@@ -1,0 +1,104 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Guidance: If you have a hearing - Tax Tribunals Prototype
+{% endblock %}
+
+{% block content %}
+
+<main id="content" class="multi-page" role="main">
+
+  {% include "includes/phase_banner_alpha.html" %}
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <header class="page-header">
+        <h1 class="heading-xlarge">Appeal to the tax tribunal</h1>
+      </header>
+
+      <div class="article-container group">
+        <div class="content-block">
+          <div class="inner">
+
+            <aside>
+              <a href="#" class="show-all-parts">Show all parts of this guide</a>
+              <nav role="navigation" class="page-navigation page-navigation-closed" aria-label="parts to this guide">
+                <ol>
+                  <li class="active">
+                    <span class="part-number">1.</span>
+                    <a title="Part 1: What is the tax tribunal" href="/guidance/overview">What is the tax tribunal</a>
+                  </li>
+                  <li>
+                    <span class="part-number">2.</span>
+                    <a title="Part 2: Before you appeal" href="/guidance/before-you-appeal">Before you appeal</a>
+                  </li>
+                  <li>
+                    <span class="part-number">3.</span>
+                    <a title="Part 3: Tax tribunal fees" href="/guidance/tax-tribunal-fees">Tax tribunal fees</a>
+                  </li>
+                </ol>
+                <ol start="4">
+                  <li>
+                    <span class="part-number">4.</span>
+                    <a title="Part 4: Submit your appeal or application" href="/guidance/submit-your-appeal-or-application">Submit your appeal or application</a>
+                  </li>
+                  <li>
+                    <span class="part-number">5.</span>
+                    <span>If you have a hearing</span>
+                  </li>
+                  <li>
+                    <span class="part-number">6.</span>
+                    <a title="Part 6: Tax tribunal decisions" href="/guidance/tax-tribunal-decisions">Tax tribunal decisions</a>
+                  </li>
+                </ol>
+              </nav>
+            </aside>
+
+            <h2 class="heading-large">5. If you have a hearing</h2>
+
+            <h3 class="heading-medium">Will your case need a hearing</h3>
+            <p>Not every case will need a hearing. The tax tribunal will write to you to let you know if your case needs a hearing and what will happen next.</p>
+            <p>If you need a hearing, you will be asked to pay a fee to cover costs for the hearing and paperwork before your case proceeds.</p>
+            <p>The tax tribunal can also specify lead cases if there are a number of appeals which bring up common or related issues of fact or law. It will then group similar cases, which are then put on hold until it has reached a decision on the lead case or cases.</p>
+
+            <h3 class="heading-medium">What to bring to your hearing</h3>
+            <p>You must bring copies of all documents relevant to your appeal (e.g. letters, invoices and accounts) to the hearing together with your notice of appeal. You must also bring the original decision notice letter from HMRC and any response you made.</p>
+            <p>HMRC may send you a ‘bundle’ of their documents before the hearing. You must bring this with you to your hearing if you receive these.</p>
+
+            <h3 class="heading-medium">Who’ll be at the hearing</h3>
+            <p>The hearing will normally be held in public. The tribunal is made up of:</p>
+            <ul class="list list-bullet">
+              <li>a tribunal panel, including a judge and, in some cases, a tax expert</li>
+              <li>a tribunal clerk</li>
+            </ul>
+            <p>You can also bring:</p>
+            <ul class="list list-bullet">
+              <li>a representative to act on your behalf eg a lawyer, tax adviser or accountant</li>
+              <li>a friend, family member or colleague</li>
+              <li>a witness, if you need one</li>
+            </ul>
+
+            <h3 class="heading-medium">What happens at the hearing</h3>
+            <p>You (or your representative) will present your case to the tribunal. You must explain:</p>
+            <ul class="list list-bullet">
+              <li>what has been agreed</li>
+              <li>what you think is wrong</li>
+              <li>what evidence you have to support you such as documents or witnesses</li>
+            </ul>
+            <p>Representatives from the other party will present the case against you.</p>
+            <p>The tribunal and the other party may also ask questions during the hearing.</p>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="column-one-third">
+      {% include "includes/guidance_sidebar.html" %}
+    </div>
+  </div>
+</main>
+
+{% endblock %}

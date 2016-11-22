@@ -1,0 +1,104 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Guidance: What is the tax tribunal - Tax Tribunals Prototype
+{% endblock %}
+
+{% block content %}
+
+<main id="content" class="multi-page" role="main">
+
+  {% include "includes/phase_banner_alpha.html" %}
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <header class="page-header">
+        <h1 class="heading-xlarge">Appeal to the tax tribunal</h1>
+      </header>
+
+      <div class="article-container group">
+        <div class="content-block">
+          <div class="inner">
+
+            <aside>
+              <a href="#" class="show-all-parts">Show all parts of this guide</a>
+              <nav role="navigation" class="page-navigation page-navigation-closed" aria-label="parts to this guide">
+                <ol>
+                  <li class="active">
+                    <span class="part-number">1.</span>
+                    <span>What is the tax tribunal</span>
+                  </li>
+                  <li>
+                    <span class="part-number">2.</span>
+                    <a title="Part 2: Before you appeal" href="/guidance/before-you-appeal">Before you appeal</a>
+                  </li>
+                  <li>
+                    <span class="part-number">3.</span>
+                    <a title="Part 3: Tax tribunal fees" href="/guidance/tax-tribunal-fees">Tax tribunal fees</a>
+                  </li>
+                </ol>
+                <ol start="4">
+                  <li>
+                    <span class="part-number">4.</span>
+                    <a title="Part 4: Submit your appeal or application" href="/guidance/submit-your-appeal-or-application">Submit your appeal or application</a>
+                  </li>
+                  <li>
+                    <span class="part-number">5.</span>
+                    <a title="Part 5: If you have a hearing" href="/guidance/if-you-have-a-hearing">If you have a hearing</a>
+                  </li>
+                  <li>
+                    <span class="part-number">6.</span>
+                    <a title="Part 6: Tax tribunal decisions" href="/guidance/tax-tribunal-decisions">Tax tribunal decisions</a>
+                  </li>
+                </ol>
+              </nav>
+            </aside>
+
+            <h2 class="heading-large">1. What is the tax tribunal</h2>
+            <p>The Ministry of Justice (MOJ) operates the tax tribunal service.</p>
+            <p>The tax tribunal’s decision-making authority is completely independent of government. A judge gives an impartial ruling on every case.</p>
+
+            <h3 class="heading-medium">You can appeal most tax decisions</h3>
+            <p>You should consider <a href="https://www.gov.uk/tax-appeals/overview">resolving your dispute</a> before you submit an appeal. For certain disputes, you will need to ask for your case to be looked into before you can take your case to the tax tribunal.</p>
+            <p>You can appeal against:</p>
+            <ul class="list list-bullet">
+              <li>decisions made by HM Revenue &amp; Customs (HMRC) such as tax owed or penalties for late filing or payment</li>
+              <li>seizure of goods by HMRC or UK Border Force</li>
+              <li>enquiries into tax returns or requests for information by HMRC or the National Crime Agency (NCA)</li>
+            </ul>
+            <p>There’s a different way to appeal decisions about <a href="https://www.gov.uk/social-security-child-support-tribunal/overview">tax credits</a> and <a href="https://www.gov.uk/council-tax-appeals">Council Tax</a>.</p>
+
+            <h3 class="heading-medium">The appeal process depends on your case</h3>
+            <p>Your appeal or application will be considered by the First-tier Tribunal (Tax). You should prepare your case carefully before you submit your appeal.</p>
+
+            <p class="notice util_mt-large">
+              <i class="icon icon-important">
+                <span class="visuallyhidden">Warning</span>
+              </i>
+              <strong class="bold-small">
+                You will need to submit the correct documents and pay an initial fee for your appeal to proceed.
+              </strong>
+            </p>
+            <p>The tax tribunal will process your case and let you know whether your case needs further documents or a hearing.</p>
+            <p>Your case will be looked at by a judge, either on paper or at a hearing, which you can attend in person. The judge will consider both sides in the dispute before making an impartial decision.</p>
+            <p>Straightforward fixed penalty disputes can be decided within 3 months with no need for a hearing. Complex cases involving principles of law can sometimes last for 2 years or more.</p>
+
+            <h3 class="heading-medium">Legislation</h3>
+            <p>The tribunal must follow the <a href="https://www.gov.uk/government/publications/tax-chamber-tribunal-procedure-rules">Tribunal Procedure (First-tier Tribunal) (Tax Chamber) Rules 2009</a>.</p>
+            <p>Read the <a href="http://www.judiciary.gov.uk/publications/?filter_type=publication&search=tax&tax-single-subject=955&tax-single-publication-type=905&tax-single-publication-jurisdiction=-1&date-range-after=&date-range-before=">practice directions</a> and <a href="http://www.judiciary.gov.uk/publications/?filter_type=publication&search=tax&tax-single-subject=955&tax-single-publication-type=948&tax-single-publication-jurisdiction=-1&date-range-after=&date-range-before=">practice statements</a> for more detailed guidance.</p>
+            <p>The tribunal was set up by the <a href="http://www.legislation.gov.uk/ukpga/2007/15/contents">Tribunals, Courts and Enforcement Act 2007</a> and <a href="http://www.legislation.gov.uk/uksi/2009/56/contents/made">Transfer of Tribunal Functions and Revenue and Customs Appeals Order 2009</a>.</p>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="column-one-third">
+      {% include "includes/guidance_sidebar.html" %}
+    </div>
+  </div>
+</main>
+
+{% endblock %}
