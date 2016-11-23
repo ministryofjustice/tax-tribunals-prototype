@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 
-{% set ptitle = "What are the reasons for your hardship application?" %}
+{% set ptitle = "Have you paid or deposited the disputed tax?" %}
 
 {% block page_title %}
   {{ ptitle }} - Tax Tribunals Prototype
@@ -14,26 +14,28 @@
 
   <div class="grid-row">
     <div class="column-two-thirds">
-      <p><a class="link-back js-link-back" href="start.html">Back</a> &nbsp; Step 8 of 16</p>
+      <p><a class="link-back js-link-back" href="start.html">Back</a> &nbsp; Step 4 of 7</p>
       <h1 class="heading-large">{{ ptitle }}</h1>
 
-      <p class="lede">If you are unable to pay the disputed tax you will need to provide a reason. This is known as a hardship application.</p>
+      <p class="lede">You must usually pay upfront what HMRC says you owe. If you are unable to pay the disputed tax you will need to provide a reason. This is known as a hardship application.</p>
 
-        <form class="js_route" action="outcome">
+        <form class="js_route" action="fee">
 
           <div class="form-group">
-            
             <fieldset>
               <legend class="visuallyhidden">{{ ptitle }}</legend>
-              <div class="form-group panel" id="hmrc_application_refused_reasons_details">
-                  <label class="form-label" for="hmrc_reasons_to_allow_hardship">
-                    Reasons why you think the hardship should be allowed
-                  </label>
-                  <textarea class="form-control form-control-3-4" id="hmrc_reasons_to_allow_hardship" rows="10" cols="40" data-store></textarea>
-                  </div>
+              <label class="block-label">
+                <input name="paid_disputed_tax" type="radio" value="Yes" data-store="paid_disputed_tax=yes" />
+                Yes
+              </label>
+
+              <label class="block-label" data-target="unpaid_disputed_tax_details">
+                <input name="paid_disputed_tax" type="radio" value="No" data-store="paid_disputed_tax=no" data-destination="hardship_hmrc_applied" />
+                No
+              </label>
             </fieldset>
 
-            <div class="form-group js-hidden panel" id="unpaid_disputed_tax_details">
+            <!--div class="form-group js-hidden panel" id="unpaid_disputed_tax_details">
               <fieldset>
                 <legend>Have you applied to HMRC for their agreement that the appeal may proceed without payment or deposit of the disputed tax?</legend>
                 <label class="block-label" data-target="hmrc_application_status_details">
@@ -47,7 +49,7 @@
                 </label>
               </fieldset>
 
-              <!-- div class="form-group js-hidden panel" id="hmrc_application_status_details">
+              <div class="form-group js-hidden panel" id="hmrc_application_status_details">
                 <fieldset>
                   <legend>Please tell us the status of your application.</legend>
                   <label class="block-label">
@@ -80,12 +82,17 @@
                     </label>
                   </fieldset>
 
-                  
+                  <div class="form-group js-hidden panel" id="hmrc_application_refused_reasons_details">
+                    <label class="form-label" for="hmrc_reasons_to_allow_hardship">
+                      Reasons why you think the hardship should be allowed
+                    </label>
+                    <textarea class="form-control form-control-3-4" id="hmrc_reasons_to_allow_hardship" rows="10" cols="40" data-store></textarea>
+                  </div>
 
                 </div>
-              </div -->
+              </div>
             </div>
-          </div>
+          </div -->
 
           <p>
             <input class="button" type="submit" value="Continue">

@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+
+{% set ptitle = "Have you applied to HMRC for their agreement that the appeal may proceed without payment or deposit of the disputed tax?" %}
+
+{% block page_title %}
+  {{ ptitle }} - Tax Tribunals Prototype
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  {% include "includes/phase_banner_alpha.html" %}
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <p><a class="link-back js-link-back" href="start.html">Back</a> &nbsp; Step 7 of 7</p>
+      <h1 class="heading-large">{{ ptitle }}</h1>
+
+      <p class="lede">New text needed here</p>
+
+        <form class="js_route" action="http://www.gov.uk">
+
+          <div class="form-group">
+            Stuff in here
+
+          <p>
+            <input class="button" type="submit" value="Contact HMRC">
+          </p>
+
+        </form>
+
+      </div>
+
+    </div>
+  </div>
+</main>
+
+{% endblock %}

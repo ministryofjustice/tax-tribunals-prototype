@@ -21,28 +21,28 @@
 
   <div class="grid-row">
     <div class="column-two-thirds">
-      <p><a class="link-back js-link-back" href="start.html">Back</a> &nbsp; Step 3 of 5</p>
+      <p><a class="link-back js-link-back" href="start.html">Back</a> &nbsp; Step 3 of 7</p>
       <h1 class="heading-large">What is your dispute about?</h1>
 
       <p class="lede">Your dispute will be stated on either the original notice letter from HMRC, or the review conclusion letter if your case was reviewed.</p>
       <p>You can't combine separate disputes on separate letters into one appeal.</p>
 
-      <form class="js_route js_store_answers" action="fee" data-number="2">
+      <form class="js_route js_store_answers" action="hardship_paid" data-number="2">
         <fieldset>
           <div class="form-group">
             <label class="block-label">
               <input name="dispute_type" type="radio" value="penalty" data-destination="penalty_detail" data-store="hardship=no" />
-              <strong>Late return or payment</strong><br>
-              penalty or surcharge for late filing of returns and documents or late payment of duties
+              <strong>Penalty or surcharge</strong><br>
+              for example for late filing of returns and documents, late payment of duties, inacuracies, non-compliance of informtion notices
             </label>
 
             <label class="block-label">
-              <input name="dispute_type" type="radio" value="amount_of_tax_owed" data-store="fee=200" />
+              <input name="dispute_type" type="radio" value="amount_of_tax_owed"  data-store="fee=200" />
               <strong>Amount of tax owed</strong>
             </label>
 
             <label class="block-label js-hidden">
-              <input name="dispute_type" type="radio" value="paye_code" data-store="fee=50" />
+              <input name="dispute_type" type="radio" value="paye_code" data-store="fee=50" data-destination="fee" />
               <strong>Pay As You Earn (PAYE) coding notice</strong><br>
               the code used to work out how much tax is taken from your pay
             </label>
