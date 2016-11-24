@@ -54,7 +54,9 @@ moj.Modules.dataCaptureSummary = {
 
     if(answers) {
       for(var x = 0; x < answers.length; x++) {
-        html += '<li>';
+        html += '<tr><td>';
+        html += answers[x].question;
+        html += '</td><td>';
 
         answer = answers[x].text;
         if(answers[x].val === 'other') {
@@ -64,10 +66,14 @@ moj.Modules.dataCaptureSummary = {
         }
         html += answer;
 
-        html += '</li>';
+        html += '</td>';
+
+        html += (x === 0 ? '<td class="change-answer"><a href="#" data-alert="This functionality is not currently available in this demo">Change</a>' : '<td>&nbsp;');
+
+        html += '</td></tr>';
       }
 
-      $el.html(html);
+      $el.replaceWith(html);
     }
   },
 
