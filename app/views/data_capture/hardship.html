@@ -22,69 +22,12 @@
         <form class="js_route" action="outcome">
 
           <div class="form-group">
-            
-            <fieldset>
-              <legend class="visuallyhidden">{{ ptitle }}</legend>
-              <div class="form-group panel" id="hmrc_application_refused_reasons_details">
-                  <label class="form-label" for="hmrc_reasons_to_allow_hardship">
-                    Reasons why you think the hardship should be allowed
-                  </label>
-                  <textarea class="form-control form-control-3-4" id="hmrc_reasons_to_allow_hardship" rows="10" cols="40" data-store></textarea>
-                  </div>
-            </fieldset>
 
-            <div class="form-group js-hidden panel" id="unpaid_disputed_tax_details">
-              <fieldset>
-                <legend>Have you applied to HMRC for their agreement that the appeal may proceed without payment or deposit of the disputed tax?</legend>
-                <label class="block-label" data-target="hmrc_application_status_details">
-                  <input name="applied_to_hmrc" type="radio" value="yes" data-store="applied_to_hmrc=yes" />
-                  Yes
-                </label>
+            <label class="form-label" for="hmrc_reasons_to_allow_hardship">
+              Reasons why you think the hardship should be allowed
+            </label>
+            <textarea class="form-control form-control-3-4" id="hmrc_reasons_to_allow_hardship" rows="10" cols="40" data-store></textarea>
 
-                <label class="block-label">
-                  <input name="applied_to_hmrc" type="radio" value="no" data-store="applied_to_hmrc=no" />
-                  No
-                </label>
-              </fieldset>
-
-              <!-- div class="form-group js-hidden panel" id="hmrc_application_status_details">
-                <fieldset>
-                  <legend>Please tell us the status of your application.</legend>
-                  <label class="block-label">
-                    <input name="hmrc_application_status" type="radio" value="granted" data-store="hmrc_application_status=granted" />
-                    Granted
-                  </label>
-
-                  <label class="block-label" data-target="hmrc_application_refused_details">
-                    <input name="hmrc_application_status" type="radio" value="refused" data-store="hmrc_application_status=refused" />
-                    Refused
-                  </label>
-
-                  <label class="block-label">
-                    <input name="hmrc_application_status" type="radio" value="pending" data-store="hmrc_application_status=pending" />
-                    Pending HMRC decision
-                  </label>
-                </fieldset>
-
-                <div class="form-group js-hidden panel" id="hmrc_application_refused_details">
-                  <fieldset>
-                    <legend>Are you applying to the Tribunal for consent to the appeal proceeding without payment or deposit of tax?</legend>
-                    <label class="block-label" data-target="hmrc_application_refused_reasons_details">
-                      <input name="applying_for_consent_to_appeal_without_payment" type="radio" value="yes" data-store="applying_for_consent_to_appeal_without_payment=yes" />
-                      Yes
-                    </label>
-
-                    <label class="block-label">
-                      <input name="applying_for_consent_to_appeal_without_payment" type="radio" value="no" data-store="applying_for_consent_to_appeal_without_payment=no" data-destination="abort" />
-                      No
-                    </label>
-                  </fieldset>
-
-                  
-
-                </div>
-              </div -->
-            </div>
           </div>
 
           <p>
