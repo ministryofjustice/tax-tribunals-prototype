@@ -12,7 +12,7 @@ moj.Modules.linkAlerts = {
   bindEvents: function() {
     var self = this;
 
-    $('a[data-' + self.alert_attribute + ']').on('click', function(e) {
+    $(document).on('click', 'a[data-' + self.alert_attribute + ']', function(e) {
       e.preventDefault();
       self.showAlert($(e.target));
     });

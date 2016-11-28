@@ -1,0 +1,56 @@
+{% extends "layout.html" %}
+
+{% set ptitle = "Please tell us the status of your hardship application with HMRC" %}
+
+{% block page_title %}
+  {{ ptitle }} - Tax Tribunals Prototype
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  {% include "includes/phase_banner_alpha.html" %}
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <p><a class="link-back js-link-back" href="start.html">Back</a> &nbsp; Step 6 of 7</p>
+      <h1 class="heading-large">{{ ptitle }}</h1>
+
+      <p class="lede">New text needed here</p>
+
+        <form class="js_route js_store_answers" action="fee">
+
+          <div class="form-group">
+            <fieldset>
+              <legend class="visuallyhidden">{{ ptitle }}</legend>
+              <label class="block-label">
+                <input name="hardship_application_status" type="radio" value="Granted" data-store="hardship_application_status=granted" />
+                Granted
+              </label>
+
+              <label class="block-label">
+                <input name="hardship_application_status" type="radio" value="Pending" data-store="hardship_application_status=pending" />
+                Pending HMRC decision
+              </label>
+
+              <label class="block-label">
+                <input name="hardship_application_status" type="radio" value="Refused" data-store="hardship_application_status=refused" />
+                Refused
+              </label>
+            </fieldset>
+          </div>
+
+          <p>
+            <input class="button" type="submit" value="Continue">
+          </p>
+
+        </form>
+
+      </div>
+
+    </div>
+  </div>
+</main>
+
+{% endblock %}

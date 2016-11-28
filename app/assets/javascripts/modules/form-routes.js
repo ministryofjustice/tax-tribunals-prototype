@@ -55,7 +55,7 @@ moj.Modules.formRoutes = {
     } else {
       // no
       // can user apply for hardship?
-      if(page === 'outcome' && moj.Modules.dataStore.getItem('hardship') === 'yes' && pageName !== 'hardship') {
+      if(page === 'outcome' && moj.Modules.dataStore.getItem('hardship') === 'yes' && pageName !== 'hardship' && moj.Modules.dataStore.getItem('paid_disputed_tax') !== 'yes') {
         document.location = 'hardship';
       } else {
         document.location = page;
