@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Are you late? - Tax Tribunals Prototype
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <h1 class="heading-large">Appeal or application documents</h1>
+
+      <h2></h2>
+      <p class="lede"><strong>Documents</strong><br/>
+       </p>
+
+      <ul class="list list-bullet">
+        <li><strong><a href="TC_2016_123456_HMRC_TaxpayerFullName.pdf" title="Download PDF of appeal or application">TC_2016_123456_HMRC_TaxpayerFullName.pdf</a></strong></li>
+        <li><a href="#" title="Download appellant's hardship document">hardship-reason.docx</a></li>
+        <li><a href="#" title="Download appellant's grounds of appeal document">grounds-hmrc.pdf</a></li>
+        <li><a href="#" title="Download appellant's supporting document">medical-certificate.jpg</a></li>
+        <li><a href="#" title="Download appellant's supporting document">bank-accounts-2014-15.xcl</a></li>
+      </ul>
+    </div>
+
+    <div class="column-one-third">
+      <aside class="govuk-related-items">
+
+        <h2 class="heading-medium">Downloading files on a PC</h2>
+        <nav role="navigation">
+          <ul class="font-xsmall">
+              <li>Right mouse click the link and select "Save Target As."</li>
+              <li>Follow prompts to save the file to your location.</li>
+          </ul>
+        </nav>
+
+      </aside>
+    </div>
+  </div>
+</main>
+
+{% endblock %}
