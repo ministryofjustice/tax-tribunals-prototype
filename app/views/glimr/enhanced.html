@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Are you late? - Tax Tribunals Prototype
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <h1 class="heading-large">Terry Example vs HMRC</h1>
+
+      <p>TC/2016/123456</p>
+      
+      <h2><strong>First Tier Tax Tribunal appeal/application</strong></h2>
+      <ul class="list list-bullet">
+        <li><strong><a href="TC_2016_123456_HMRC_TaxpayerFullName.pdf" title="Download PDF of appeal or application">TC_2016_123456_HMRC_TaxpayerFullName.pdf</a></strong></li>
+      </ul>
+      <br />
+      <p><strong>Hardship</strong></p>
+      <ul class="list list-bullet">
+        <li><a href="#" title="Download appellant's hardship document">hardship-reason.docx</a></li>
+      </ul>
+      <p><strong>Grounds of appeal</strong></p>
+      <ul class="list list-bullet">
+        <li><a href="#" title="Download appellant's grounds of appeal document">grounds-hmrc.pdf</a></li>
+      </ul>
+      <p><strong>Other documents</strong></p>
+      <ul class="list list-bullet">
+        <li><a href="#" title="Download appellant's supporting document">medical-certificate.jpg</a></li>
+        <li><a href="#" title="Download appellant's supporting document">bank-accounts-2014-15.xcl</a></li>
+      </ul>
+      <p>&nbsp;</p>
+      <p>
+        <a class="button button-start js-start-task" href="#">Download all documents</a>
+      </p>
+    </div>
+
+    <div class="column-one-third">
+      <aside class="govuk-related-items">
+
+        <h2 class="heading-medium">Downloading files on a PC</h2>
+        <nav role="navigation">
+          <ul class="font-xsmall">
+              <li>Right mouse click the link and select "Save Target As."</li>
+              <li>Follow prompts to save the file to your location.</li>
+          </ul>
+        </nav>
+
+      </aside>
+    </div>
+  </div>
+</main>
+
+{% endblock %}
