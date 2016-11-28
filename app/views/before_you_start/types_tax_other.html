@@ -26,6 +26,11 @@
 
       <form class="js_route js_store_answers" action="dispute_type" data-number="2">
         <fieldset>
+           <label class="block-label">
+              <input name="tax_type" type="radio" value="apn" data-store="direct=n/a,hardship=no" />
+              <strong>Accelerated Payment Notice (APN) penalty</strong><br>
+            </label>
+            
            <div class="form-group form-group-day">
               <label class="block-label">
                 <input name="tax_type" type="radio" value="aggregates_levy" data-store="tax_type=Aggregates levy,direct=false,hardship=yes" />
@@ -48,11 +53,6 @@
               </label>
 
               <label class="block-label">
-                <input name="tax_type" type="radio" value="capital_gains_tax" data-store="tax_type=Capital gains tax,direct=true,hardship=no" />
-                <strong>Capital Gains Tax</strong>
-              </label>
-
-              <label class="block-label">
                 <input name="tax_type" type="radio" value="corporation_tax" data-store="tax_type=Climate change levy,direct=false,hardship=yes" />
                 <strong>Climate Change Levy</strong>
               </label>
@@ -63,11 +63,6 @@
               </label>
 
               <label class="block-label">
-                <input name="tax_type" type="radio" value="corporation_tax" data-store="tax_type=Corporation tax,direct=true,hardship=no" />
-                <strong>Corporation Tax</strong>
-              </label>
-
-              <label class="block-label">
                 <input name="tax_type" type="radio" value="counter_terrorism–decision" data-store="tax_type=Counter-terrorism decision,direct=false,fee=200,hardship=no" data-destination="fee" />
                 <strong>Counter-terrorism decision</strong>
               </label>
@@ -75,6 +70,11 @@
               <label class="block-label">
                 <input name="tax_type" type="radio" value="customs_duty" data-store="tax_type=Customs duty,direct=false,hardship=yes" />
                 <strong>Customs Duty</strong>
+              </label>
+
+              <label class="block-label">
+                <input name="tax_type" type="radio" value="apn" data-store="direct=n/a,hardship=no" />
+                <strong>Disclosure Of Tax Avoidance Schemes (DOTAS) penalty</strong>
               </label>
 
               <label class="block-label">
@@ -142,10 +142,16 @@
                 <strong>Remote Gaming Duty</strong>
               </label>
 
+            <label class="block-label">
+              <input name="tax_type" type="radio" value="information notice" data-destination="fee" data-store="fee=50,direct=n/a,hardship=no" />
+              <strong>Request permission for a late review</strong><br>
+              apply to get a late review accepted by HMRC, UK Border Force (UKBF) or National Crime Authority (NCA)
+            </label>
+
               <label class="block-label">
                 <input name="tax_type" type="radio" value="restoration_case" data-store="tax_type=Restoration case,direct=false,hardship=no,fee=200" data-destination="fee" />
                 <strong>Restoration case</strong><br>
-                applying to have goods replaced/returned
+                apply for the return of seized goods or equivalent compensation 
               </label>
 
               <label class="block-label">
