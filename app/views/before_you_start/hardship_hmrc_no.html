@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 
-{% set ptitle = "Have you applied to HMRC for their agreement that the appeal may proceed without payment or deposit of the disputed tax?" %}
+{% set ptitle = "You will have to pay the tax amount upfront or apply for hardship first" %}
 
 {% block page_title %}
   {{ ptitle }} - Tax Tribunals Prototype
@@ -17,13 +17,16 @@
       <p><a class="link-back js-link-back" href="start.html">Back</a> &nbsp; Step 7 of 7</p>
       <h1 class="heading-large">{{ ptitle }}</h1>
 
-      <p class="lede">New text needed here</p>
+      <p class="lede">When you submit an appeal for the amount of VAT or any indirect tax you owe, you must do one of the following:
+      </p>
+      <ul>
+      <li>pay the amount owed upfront</li>
+      <li>ask HMRC to defer payment, this is known as a hardship application</li>
+      </ul>
+
+      <p>You do not have to apply for hardship if your appeal is about a penalty or surcharge.</p>
 
         <form class="js_route" action="http://www.gov.uk">
-
-          <div class="form-group">
-            Stuff in here
-          </div>
 
           <p>
             <input class="button" type="submit" value="Contact HMRC">
