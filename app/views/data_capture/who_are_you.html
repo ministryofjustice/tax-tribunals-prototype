@@ -1,0 +1,66 @@
+{% extends "layout.html" %}
+
+{% set ptitle = "Who are you?" %}
+
+{% block page_title %}
+  {{ ptitle }} - Tax Tribunals Prototype
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  {% include "includes/phase_banner_alpha.html" %}
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <p><a class="link-back js-link-back" href="start.html">Back</a> &nbsp; Step 3 of 16</p>
+      <h1 class="heading-large">{{ ptitle }}</h1>
+
+      <p class="lede">Text needed here.</p>
+
+        <form class="js_route" action="appellant_type">
+          <div class="form-group">
+            <fieldset>
+              <legend class="visuallyhidden">{{ ptitle }}</legend>
+              <label class="block-label">
+                <input name="who_are_you" type="radio" value="representative" data-store="who_are_you=representative" data-destination="representative_professional" />
+                The taxpayer's representative
+              </label>
+
+              <label class="block-label">
+                <input name="who_are_you" type="radio" value="taxpayer" data-store="who_are_you=taxpayer" />
+                The taxpayer
+              </label>
+            </fieldset>
+          </div>
+
+          <p>
+            <input class="button" type="submit" value="Continue">
+          </p>
+
+        </form>
+
+        <details>
+          <summary>What is a representative?</summary>
+          <div class="panel">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur consequat arcu a nisi tempus, a interdum sapien elementum. Duis ac aliquam mi. Phasellus nec molestie neque. Quisque eget cursus neque. In a leo eu arcu cursus iaculis. Nunc ut nisl justo. Ut urna diam, suscipit non enim ullamcorper, venenatis euismod nunc. Proin at lectus nisi. Ut laoreet ligula et mauris scelerisque auctor.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>Why use a representative?</summary>
+          <div class="panel">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur consequat arcu a nisi tempus, a interdum sapien elementum. Duis ac aliquam mi. Phasellus nec molestie neque. Quisque eget cursus neque. In a leo eu arcu cursus iaculis. Nunc ut nisl justo. Ut urna diam, suscipit non enim ullamcorper, venenatis euismod nunc. Proin at lectus nisi. Ut laoreet ligula et mauris scelerisque auctor.</p>
+          </div>
+        </details>
+
+      </div>
+
+    </div>
+  </div>
+</main>
+
+{% endblock %}
+
+
