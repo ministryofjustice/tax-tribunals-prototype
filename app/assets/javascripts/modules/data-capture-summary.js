@@ -87,12 +87,16 @@ moj.Modules.dataCaptureSummary = {
         letter = moj.Modules.dataStore.getItem('doc_check_hmrc_letter'),
         review = moj.Modules.dataStore.getItem('doc_check_review_conclusion'),
         additional = moj.Modules.dataStore.getItem('additional_docs_info'),
-        groundsFile = moj.Modules.dataStore.getItem('file_grounds_for_appeal');
+        groundsFile = moj.Modules.dataStore.getItem('file_grounds_for_appeal'),
+        proFormaFile = moj.Modules.dataStore.getItem('file_rep_pro_forma');
 
-    if(letter || review || additional || groundsFile) {
+    if(letter || review || additional || groundsFile || proFormaFile) {
       $list.empty();
     }
 
+    if(proFormaFile) {
+      $list.append('<li>Representative pro forma: ' + proFormaFile + '</li>');
+    }
     if(letter) {
       $list.append('<li>' + letter + '</li>');
     }
