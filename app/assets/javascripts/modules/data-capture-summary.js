@@ -23,6 +23,11 @@ moj.Modules.dataCaptureSummary = {
       elementId: 'reasons_for_late_application_row',
       dataKey: 'application_is_late',
       dataValue: 'yes'
+    },
+    {
+      elementId: 'hardship_reasons_row',
+      dataKey: 'hardship_application_status',
+      dataValue: 'refused'
     }
   ],
 
