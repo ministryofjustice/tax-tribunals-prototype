@@ -12,7 +12,6 @@
     init: function() {
       for (var x in moj.Modules) {
         if (typeof moj.Modules[x].init === 'function') {
-          moj.log('Initialising "' + x + '" module');
           moj.Modules[x].init();
         }
       }

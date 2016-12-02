@@ -8,14 +8,34 @@ moj.Modules.dataStore = {
     for (var i = storedLength - 1; i >= 0; i--) {
       if($('body').hasClass('clear-session')) {
         self.deleteItem(sessionStorage.key(i));
-      } else {
-        moj.log('RETRIEVED: ' + sessionStorage.key(i) + ' = ' + sessionStorage.getItem(sessionStorage.key(i)));
       }
     }
+
+    self.bindEvents();
+  },
+
+  bindEvents: function() {
+    var self = this;
+
+    $(document).on('keyup', function(e) {
+      if(e.keyCode === 27) {
+        self.dumpData();
+      }
+    });
+  },
+
+  dumpData: function() {
+    var self = this,
+        storedLength = sessionStorage.length;
+
+    moj.log('*** session vars ***');
+    for(var i = 0; i < storedLength; i++) {
+      moj.log(sessionStorage.key(i) + ' = ' + sessionStorage.getItem(sessionStorage.key(i)));
+    }
+    moj.log('*** END session vars ***');
   },
 
   storeItem: function(key, value) {
-    moj.log('STORING: ' + key + '=' + value);
     sessionStorage.setItem(key, JSON.stringify(value));
   },
 
@@ -24,7 +44,6 @@ moj.Modules.dataStore = {
   },
 
   deleteItem: function(key) {
-    moj.log('DELETING: ' + key);
     sessionStorage.removeItem(key);
   },
 

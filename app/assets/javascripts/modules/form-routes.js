@@ -13,7 +13,6 @@ moj.Modules.formRoutes = {
     var self = this,
         $form = $('form.js_route').eq(0);
 
-    moj.log('js form routing');
     $form.on('submit', function(e) {
       e.preventDefault();
 
