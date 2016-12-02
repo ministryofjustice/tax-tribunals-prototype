@@ -33,7 +33,7 @@
             <label class="block-label">
               <input name="dispute_type" type="radio" value="penalty" data-destination="penalty_detail" data-store="hardship=no" />
               <strong>Penalty or surcharge</strong><br>
-             for late filing of returns and documents, late payment of duties, inaccuracies, or non-compliance with information notices or Schedule 41
+              for late filing of returns and documents, late payment of duties, inaccuracies, or non-compliance with information notices or Schedule 41
             </label>
 
             <label class="block-label">
@@ -41,10 +41,28 @@
               <strong>Amount of tax owed</strong>
             </label>
 
+            <label class="block-label">
+              <input name="dispute_type" type="radio" value="amount_of_tax_owed"  data-store="fee=200" />
+              <strong>Amount of tax owed and a penalty or surcharge</strong><br>
+              both of these disputes will be stated on either the original notice letter from HMRC or the review conclusion letter
+            </label>
+
             <label class="block-label js-hidden">
               <input name="dispute_type" type="radio" value="paye_code" data-store="fee=50" />
               <strong>Pay As You Earn (PAYE) coding notice</strong><br>
               the code used to work out how much tax is taken from your pay
+            </label>
+
+            <!-- label class="block-label">
+              <input name="dispute_type" type="radio" value="amount_of_tax_owed"  data-store="fee=200" />
+              <strong>Schedule 41</strong><br>
+              some text about Schedule 41
+            </label -->
+
+            <label class="block-label">
+              <input name="dispute_type" type="radio" value="amount_of_tax_owed"  data-store="fee=200" />
+              <strong>Counter action notice</strong><br>
+              appeal to force HMRC to give a decision on an enquiry
             </label>
 
             <label class="block-label" data-target="other_dispute_type_detail">
