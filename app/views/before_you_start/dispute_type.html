@@ -9,6 +9,8 @@
   <script>
     if(moj.Modules.dataStore.getItem('tax_type').toLowerCase() === 'income tax') {
       $('input[value="paye_code"]').closest('label').removeClass('js-hidden');
+    if(moj.Modules.dataStore.getItem('direct').toLowerCase() === 'yes') {
+      $('input[value="closure_notices"]').closest('label').removeClass('js-hidden');
     }
   </script>
 {% endblock %}
@@ -51,6 +53,12 @@
               <input name="dispute_type" type="radio" value="paye_code" data-store="fee=50" />
               <strong>Pay As You Earn (PAYE) coding notice</strong><br>
               the code used to work out how much tax is taken from your pay
+            </label>
+
+            <label class="block-label js-hidden">
+              <input name="dispute_type" type="radio" value="closure_notices" data-destination="fee" data-store="fee=50,dispute_type=closure,direct=yes,hardship=no" />
+              <strong>Apply to close an enquiry</strong><br>
+              request a closure notice for an ongoing enquiry into your tax returns
             </label>
 
             <!-- label class="block-label">

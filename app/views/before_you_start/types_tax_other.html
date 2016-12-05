@@ -27,7 +27,7 @@
       <form class="js_route js_store_answers" action="dispute_type" data-number="2">
         <fieldset>
            <label class="block-label">
-              <input name="tax_type" type="radio" value="apn" data-store="direct=n/a,hardship=no" />
+              <input name="tax_type" type="radio" value="apn" data-destination="penalty_detail" data-store="direct=n/a,hardship=no" />
               <strong>Accelerated Payment Notice (APN) penalty</strong><br>
             </label>
             
@@ -93,7 +93,7 @@
               </label>
 
               <label class="block-label"> <!-- hmmm? table says this one could be variable fee, Jason has made it fixed 200 -->
-                <input name="tax_type" type="radio" value="hydrocarbon_oil_duty" data-store="tax_type=Hydrocarbon oil duty,direct=false,fee=200" data-destination="fee" />
+                <input name="tax_type" type="radio" value="hydrocarbon_oil_duty" data-store="tax_type=Hydrocarbon oil duty,direct=false,hardship=yes" />
                 <strong>Hydrocarbon Oil Duties</strong>
               </label>
 
