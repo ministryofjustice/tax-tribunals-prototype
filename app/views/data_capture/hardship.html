@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 
-{% set ptitle = "What are the reasons for your hardship application?" %}
+{% set ptitle = "Why should hardship be allowed for your case?" %}
 
 {% block page_title %}
   {{ ptitle }} - Tax Tribunals Prototype
@@ -17,14 +17,14 @@
       <p><a class="link-back js-link-back" href="start.html">Back</a> &nbsp; Step 8 of 16</p>
       <h1 class="heading-large">{{ ptitle }}</h1>
 
-      <p class="lede">If you are unable to pay the disputed tax you will need to provide a reason. This is known as a hardship application.</p>
+      <p class="lede">The judge will consider your reasons, even if HMRC  refused your hardship application. Your main appeal may not proceed and you may lose your tribunal fee if the judge does not accept these reasons.</p>
 
         <form class="js_route" action="outcome">
 
           <div class="form-group">
 
             <label class="form-label" for="hmrc_reasons_to_allow_hardship">
-              Reasons why you think the hardship should be allowed
+              Give reasons why paying the tax involved in the case would cause you financial difficulties
             </label>
             <textarea class="form-control form-control-3-4" id="hmrc_reasons_to_allow_hardship" rows="10" cols="40" data-store></textarea>
 
