@@ -9,6 +9,7 @@
   <script>
     if(moj.Modules.dataStore.getItem('tax_type').toLowerCase() === 'income tax') {
       $('input[value="paye_code"]').closest('label').removeClass('js-hidden');
+    }
     if(moj.Modules.dataStore.getItem('direct').toLowerCase() === 'yes') {
       $('input[value="closure_notices"]').closest('label').removeClass('js-hidden');
     }
