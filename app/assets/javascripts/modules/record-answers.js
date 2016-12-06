@@ -101,6 +101,16 @@ moj.Modules.recordAnswers = {
         html += other;
         html += '</td>';
         html += '</tr>';
+
+      }
+
+      if(moj.Modules.dataStore.getItem('penalty_amount')) {
+        html += '<tr>';
+        html += '<th>What is the penalty or surcharge amount?</th>';
+        html += '<td>£';
+        html += moj.ucFirst(moj.Modules.dataStore.getItem('penalty_amount'));
+        html += '</td>';
+        html += '</tr>';
       }
 
       $table.find('tbody').append(html);
