@@ -42,6 +42,18 @@
           <li class="no-files">No files uploaded</li>
         </ol>
       </div>
+      <details>
+        <summary>File upload requirements</summary>
+        <div class="panel">
+          <ul class="list list-bullet">
+                    <li>File formats: Word, PDF, Excel, JPG, GIF, PNG</li>
+                    <li>File size: up to 20 megabytes (MB)</li>
+                    <li>Scan documents in black and white
+                    <li>Files cannot be password protected</li>
+                    </ul>
+                    <p>You can’t upload executable (.exe) and other zip, archive or compressed files due to virus risks.</p>
+        </div>
+        </details>
 
       <form class="js_route" action="check_answers">
 
@@ -50,7 +62,7 @@
 
           <label class="block-label" for="doc_check_hmrc_letter">
             <input id="doc_check_hmrc_letter" name="doc_check_hmrc_letter" type="checkbox" value="Original notice letter from HMRC" data-store />
-            <strong>Original notice letter from HMRC</strong><br>
+            <strong>Original notice or decision letter from HMRC</strong><br>
             this letter includes the explanation for any decision(s)
           </label>
 
@@ -67,7 +79,7 @@
           <ul class="list list-bullet">
             <li>A copy of any letter sent to HMRC querying the decision or asking for a review</li>
             <li>Any evidence to support your case</li>
-            <li>Approval for your representative to act on your behalf</li>
+            <li>Approval to act as a representative</li>
           </ul>
           <label class="block-label" for="upload_additional" data-target="supporting_docs_info">
             <input id="upload_additional" name="upload_additional" type="checkbox" value="true" data-store />
