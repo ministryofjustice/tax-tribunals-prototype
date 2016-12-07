@@ -7,10 +7,7 @@
 {% block body_end %}
   {{ super() }}
   <script>
-    if(moj.Modules.dataStore.getItem('mode') === 'task_list') {
-      moj.Modules.dataStore.storeItem('task_check_if_late', 'complete');
-      $('form').attr('action', '/end_to_end/task-list');
-    }
+    moj.Modules.dataStore.storeItem('task_check_if_late', 'complete');
   </script>
 {% endblock %}
 
@@ -30,7 +27,7 @@
       You can still submit an appeal if you are late or have allowed HMRC 45 days to carry out a review.
       </p>
 
-      <form class="js_route" action="/data_capture/appellant_type">
+      <form class="js_route" action="/end_to_end/task-list">
         <fieldset>
           <div class="form-group">
             <label class="block-label">

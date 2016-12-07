@@ -7,10 +7,7 @@
 {% block body_end %}
   {{ super() }}
   <script>
-    if(moj.Modules.dataStore.getItem('mode') === 'task_list') {
-      moj.Modules.dataStore.storeItem('task_determine_fee', 'complete');
-      $('a.js-next').attr('href', '/end_to_end/task-list').text('Continue');
-    }
+    moj.Modules.dataStore.storeItem('task_determine_fee', 'complete');
   </script>
 {% endblock %}
 
@@ -130,7 +127,7 @@
     The judge is independent of government and has the power to decide whether your fees are refunded by the unsuccessful party. The tribunal itself does not have the power to enforce or award costs.
   </p>
   <p>
-    <a class="button button-start js-next" href="/lateness/hmrc_view_date">Continue with appeal</a>
+    <a class="button button-start js-next" href="/end_to_end/task-list">Continue</a>
   </p>
 
 </main>

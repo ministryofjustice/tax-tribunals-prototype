@@ -14,50 +14,52 @@
 
   <div class="grid-row">
     <div class="column-two-thirds">
-      <p><a class="link-back js-link-back" href="start.html">Back</a> &nbsp; Step 7 of 16</p>
+      <p><a class="link-back js-link-back" href="start.html">Back</a> &nbsp; Step 3 of 16</p>
       <h1 class="heading-large">{{ ptitle }}</h1>
 
-      <p class="lede">You will need to approve your representative to act on your behalf before they can deal with your case.</p>
-      <p>If you are completing this form as a representative, you can still continue and complete the appeal. You will need approval from your client before you can receive any correspondence from the tribunal.</p>
+      <p class="lede">You will need to complete a pro forma letter blah blah JOSH - copy needed here.</p>
+      <p>You may upload a file, download a PDF to complete and then upload, or view an example letter.</p>
 
-      <form class="js_route" action="outcome">
+      <form class="js_route" action="representative_type">
 
-        <div class="form-group">
-          <fieldset>
-            <legend>Who are you?</legend>
-            <label class="block-label">
-              <input name="form_completed_by" type="radio" value="appellant" data-store="form_completed_by=appellant" />
-              I am the taxpayer, <strong data-key="appellant_name">Terry Example</strong>, and I authorise <strong data-key="representative_name">Joe Neighbour</strong> to act as my representative
-            </label>
+        <h2 class="heading-medium">Upload a file</h2>
+        <input type="file" id="file_rep_pro_forma" name="file_rep_pro_forma" data-store>
 
-            <label class="block-label" data-target="representative_letter">
-              <input name="form_completed_by" type="radio" value="no" data-store="form_completed_by=representative" />
-              I am the representative, <strong data-key="representative_name">Joe Neighbour</strong>, and I am acting on behalf of the taxpayer, <strong data-key="appellant_name">Terry Example</strong>
-            </label>
-            <div class="panel js-hidden" id="representative_letter">
-              <p>You will need approval to act on behalf of the taxpayer. You can copy and paste the text below into an email or document, or download a PDF form, to send to your client.</p>
-              <div class="letter">
-                <p>Taxpayer's name:</p>
-                <p>I authorise my representative to act on my behalf in this appeal.</p>
-                <p>Name of representative:</p>
-                <p>Address of representative:
-                 
-                </p>
-                <p>Signed by taxpayer:</p>
-                <p>Name of signatory (printed):</p>
-                <p>Position held:</p>
-                <p>Date:</p>
+        <h2 class="heading-medium">Download PDF</h2>
+        <p>You may download this PDF example to complete then upload a scan or good quality photo of it above.</p>
+        <button class="button">Download PDF</button>
 
-              </div>
+        <h2 class="heading-medium">View example</h2>
+        <details>
+          <summary>View an example pro-forma letter which you may copy and paste</summary>
+          <div class="panel">
+            <div class="letter">
+              <p>Taxpayer's name:</p>
+              <p>I authorise my representative to act on my behalf in this appeal.</p>
+              <p>Name of representative:</p>
+              <p>Address of representative:
 
-              <button class="button">Download this in PDF format</button>
-              <p>&nbsp</p>
-              <p>Once the taxpayer has returned the completed approval, you can upload it later in this appeal as part of the document upload.</p>
+              </p>
+              <p>Signed by taxpayer:</p>
+              <p>Name of signatory (printed):</p>
+              <p>Position held:</p>
+              <p>Date:</p>
+
             </div>
-          </fieldset>
-        </div>
-        
-        <p>
+          </div>
+        </details>
+
+        <p class="notice form-group">
+          <i class="icon icon-important">
+            <span class="visuallyhidden">Warning</span>
+          </i>
+          <strong class="bold-small">
+            If not completed, something something something JOSH HELP
+          </strong>
+        </p>
+
+
+        <p class="form-group">
           <input class="button" type="submit" value="Continue">
         </p>
 

@@ -7,8 +7,6 @@
 {% block body_end %}
   {{ super() }}
   <script>
-    moj.Modules.dataStore.storeItem('mode', 'task_list');
-
     if(moj.Modules.dataStore.getItem('application_is_late') === 'no') {
       $('[data-task="check_if_late"]').text('IN TIME');
     } else if(moj.Modules.dataStore.getItem('application_is_late') === 'unknown') {
