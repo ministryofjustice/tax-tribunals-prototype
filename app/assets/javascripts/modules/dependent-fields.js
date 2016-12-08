@@ -15,10 +15,14 @@ moj.Modules.dependentFields = {
       var $field = $(field),
           storedPair = $field.data('dependent'),
           key = storedPair.split('=')[0],
-          value = storedPair.split('=')[1];
+          values = storedPair.split('=')[1];
 
-      if(moj.Modules.dataStore.getItem(key) === value) {
-        $field.removeClass('js-hidden');
+      values = values.split(',');
+
+      for(var x = 0; x < values.length; x++) {
+        if(moj.Modules.dataStore.getItem(key) === values[x]) {
+          $field.removeClass('js-hidden');
+        }
       }
     });
   }

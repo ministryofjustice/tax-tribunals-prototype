@@ -19,22 +19,25 @@
 
       <p class="lede">If you are authorised to act on behalf of the taxpayer all correspondence will be sent to the address, or email address, you enter below.</p>
 
-      <form class="js_route" action="appellant_type">
+      <form class="js_route" action="representative_type">
 
-        <div class="form-group">
-          <label class="form-label" for="representative_name">
-            <span class="js-hidden" data-dependent="representative_type=individual">First name</span>
-            <span class="js-hidden" data-dependent="representative_type=company">Company name</span>
-             <span class="js-hidden" data-dependent="representative_type=organisation">Organisation name</span>
-          </label>
-          <input class="form-control" type="text" id="representative_name" data-store>
+        <div class="form-group js-hidden" data-dependent="representative_type=individual">
+          <label class="form-label" for="representative_name">First name</label>
+          <input class="form-control" type="text" id="representative_first_name" data-store>
+        </div>
+        <div class="form-group js-hidden" data-dependent="representative_type=individual">
+          <label class="form-label" for="representative_name">Last name</label>
+          <input class="form-control" type="text" id="representative_last_name" data-store>
         </div>
 
-        <div class="form-group">
-          <label class="form-label" for="representative_name">
-            <span class="js-hidden" data-dependent="representative_type=individual">Last name</span>
-          </label>
-          <span class="js-hidden" data-dependent="representative_type=individual"><input class="form-control" type="text" id="representative_name" data-store></span>
+        <div class="form-group js-hidden" data-dependent="representative_type=company">
+          <label class="form-label" for="representative_company_name">Company name</label>
+          <input class="form-control" type="text" id="representative_company_name" data-store>
+        </div>
+
+        <div class="form-group js-hidden" data-dependent="representative_type=organisation">
+          <label class="form-label" for="representative_organisation_name">Organisation name</label>
+          <input class="form-control" type="text" id="representative_organisation_name" data-store>
         </div>
 
         <div class="form-group">
@@ -45,10 +48,10 @@
         </div>
 
         <div class="form-group">
-          <label class="form-label" for="representative_address">
+          <label class="form-label" for="representative_postcode">
             Postcode
           </label>
-          <input class="form-control" id="representative_address" data-store>
+          <input class="form-control" id="representative_postcode" data-store>
         </div>
 
         <div class="form-group js-hidden" data-dependent="representative_type=company">
@@ -58,7 +61,7 @@
           <input class="form-control" type="text" id="representative_company_number" data-store>
         </div>
 
-        <div class="form-group js-hidden" data-dependent="representative_type=company">
+        <div class="form-group js-hidden" data-dependent="representative_type=company,organisation">
           <label class="form-label" for="representative_contact_name">
             Contact name (optional)
           </label>
@@ -68,7 +71,7 @@
         <div class="form-group">
           <label class="form-label" for="representative_email">
             <span class="js-hidden" data-dependent="representative_type=individual">Email address (optional)</span>
-            <span class="js-hidden" data-dependent="representative_type=company">Contact email address (optional)</span>
+            <span class="js-hidden" data-dependent="representative_type=company,organisation">Contact email address (optional)</span>
           </label>
           <input class="form-control" type="text" id="representative_email" data-store>
         </div>
@@ -76,7 +79,7 @@
         <div class="form-group">
           <label class="form-label" for="representative_phone">
             <span class="js-hidden" data-dependent="representative_type=individual">Phone number (optional)</span>
-            <span class="js-hidden" data-dependent="representative_type=company">Contact phone number (optional)</span>
+            <span class="js-hidden" data-dependent="representative_type=company,organisation">Contact phone number (optional)</span>
           </label>
           <input class="form-control" type="text" id="representative_phone" data-store>
         </div>

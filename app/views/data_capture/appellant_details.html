@@ -18,23 +18,26 @@
       <h1 class="heading-large">{{ ptitle }}</h1>
 
       <p class="lede">Enter details for the taxpayer involved in the case. You will need to enter an email address if you want to receive confirmation and correspondence via email.</p>
-     
+
       <form class="js_route" action="outcome">
 
-        <div class="form-group">
-          <label class="form-label" for="appellant_name">
-            <span class="js-hidden" data-dependent="appellant_type=individual">First name</span>
-            <span class="js-hidden" data-dependent="appellant_type=company">Company name</span>
-            <span class="js-hidden" data-dependent="appellant_type=organisation">Organisation name</span>
-          </label>
-          <input class="form-control" type="text" id="appellant_name" data-store>
+        <div class="form-group js-hidden" data-dependent="appellant_type=individual">
+          <label class="form-label" for="appellant_name">First name</label>
+          <input class="form-control" type="text" id="appellant_first_name" data-store>
+        </div>
+        <div class="form-group js-hidden" data-dependent="appellant_type=individual">
+          <label class="form-label" for="appellant_name">Last name</label>
+          <input class="form-control" type="text" id="appellant_last_name" data-store>
         </div>
 
-        <div class="form-group">
-          <label class="form-label" for="appellant_name">
-            <span class="js-hidden" data-dependent="appellant_type=individual">Last name</span>
-          </label>
-          <span class="js-hidden" data-dependent="appellant_type=individual"><input class="form-control" type="text" id="appellant_name" data-store></span>
+        <div class="form-group js-hidden" data-dependent="appellant_type=company">
+          <label class="form-label" for="appellant_company_name">Company name</label>
+          <input class="form-control" type="text" id="appellant_company_name" data-store>
+        </div>
+
+        <div class="form-group js-hidden" data-dependent="appellant_type=organisation">
+          <label class="form-label" for="appellant_organisation_name">Organisation name</label>
+          <input class="form-control" type="text" id="appellant_organisation_name" data-store>
         </div>
 
         <div class="form-group">
@@ -45,20 +48,20 @@
         </div>
 
         <div class="form-group">
-          <label class="form-label" for="appellant_address">
+          <label class="form-label" for="appellant_postcode">
             Postcode
           </label>
-          <input class="form-control" id="appellant_address" data-store>
+          <input class="form-control" id="appellant_postcode" data-store>
         </div>
 
         <div class="form-group js-hidden" data-dependent="appellant_type=company">
           <label class="form-label" for="appellant_company_number">
             Company registered number (optional)
           </label>
-           <span class="js-hidden" data-dependent="appellant_type=company"><input class="form-control" type="text" id="appellant_company_number" data-store></span>
+          <input class="form-control" type="text" id="appellant_company_number" data-store>
         </div>
 
-        <div class="form-group js-hidden" data-dependent="appellant_type=company">
+        <div class="form-group js-hidden" data-dependent="appellant_type=company,organisation">
           <label class="form-label" for="appellant_contact_name">
             Contact name (optional)
           </label>
@@ -68,7 +71,7 @@
         <div class="form-group">
           <label class="form-label" for="appellant_email">
             <span class="js-hidden" data-dependent="appellant_type=individual">Email address (optional)</span>
-            <span class="js-hidden" data-dependent="appellant_type=company">Contact email address (optional)</span>
+            <span class="js-hidden" data-dependent="appellant_type=company,organisation">Contact email address (optional)</span>
           </label>
           <input class="form-control" type="text" id="appellant_email" data-store>
         </div>
@@ -76,7 +79,7 @@
         <div class="form-group">
           <label class="form-label" for="appellant_phone">
             <span class="js-hidden" data-dependent="appellant_type=individual">Phone number (optional)</span>
-            <span class="js-hidden" data-dependent="appellant_type=company">Contact phone number (optional)</span>
+            <span class="js-hidden" data-dependent="appellant_type=company,organisation">Contact phone number (optional)</span>
           </label>
           <input class="form-control" type="text" id="appellant_phone" data-store>
         </div>
