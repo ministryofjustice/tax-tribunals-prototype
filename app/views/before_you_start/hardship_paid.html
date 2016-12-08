@@ -26,12 +26,18 @@
               <legend class="visuallyhidden">{{ ptitle }}</legend>
               <label class="block-label">
                 <input name="paid_disputed_tax" type="radio" value="Yes" data-store="paid_disputed_tax=yes" />
-                Yes
+                <strong>Yes</strong>
               </label>
 
               <label class="block-label" data-target="unpaid_disputed_tax_details">
                 <input name="paid_disputed_tax" type="radio" value="No" data-store="paid_disputed_tax=no" data-destination="hardship_hmrc_applied" />
-                No
+                <strong>No</strong>
+              </label>
+
+              <label class="block-label" data-target="unpaid_disputed_tax_details">
+                <input name="paid_disputed_tax" type="radio" value="n/a" data-store="paid_disputed_tax=n/a" />
+                <strong>Not required</strong><br>
+                there is no amount under dispute in this case
               </label>
             </fieldset>
           </div>

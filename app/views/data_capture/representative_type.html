@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 
-{% set ptitle = "Is the representative an individual or company?" %}
+{% set ptitle = "Are you representing the taxpayer as an individual, company or other type of organisation?" %}
 
 {% block page_title %}
   {{ ptitle }} - Tax Tribunals Prototype
@@ -17,7 +17,7 @@
       <p><a class="link-back js-link-back" href="start.html">Back</a> &nbsp; Step 4 of 16</p>
       <h1 class="heading-large">{{ ptitle }}</h1>
 
-      <p class="lede">Select whether the representative is an individual or a company.</p>
+      <p class="lede">Select whether you are acting on behalf of the taxpayer as an individual or whether you're employed by a company or other type of organisation.</p>
 
       <form class="js_route" action="representative_details">
         <div class="form-group">
@@ -29,8 +29,13 @@
 
             <label class="block-label">
               <input name="representative_type" type="radio" value="company" data-store="representative_type=company" />
-              <strong>Company</strong><br>
-              including partnerships (LLP)
+              <strong>Company</strong>
+            </label>
+
+            <label class="block-label">
+              <input name="representative_type" type="radio" value="organisation" data-store="representative_type=organisation" />
+              <strong>Other type of organisation</strong><br>
+              for example partnerships (LLP)
             </label>
           </fieldset>
         </div>

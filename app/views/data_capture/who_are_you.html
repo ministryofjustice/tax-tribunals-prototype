@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 
-{% set ptitle = "Who are you?" %}
+{% set ptitle = "Are you the taxpayer involved in the case or their representative?" %}
 
 {% block page_title %}
   {{ ptitle }} - Tax Tribunals Prototype
@@ -17,21 +17,23 @@
       <p><a class="link-back js-link-back" href="start.html">Back</a> &nbsp; Step 1 of 16</p>
       <h1 class="heading-large">{{ ptitle }}</h1>
 
-      <p class="lede">Text needed here.</p>
+      <p class="lede">Select whether you are entering details as the taxpayer involved in the case, or as a representative acting on their behalf.</p>
 
         <form class="js_route" action="appellant_type">
           <div class="form-group">
             <fieldset>
               <legend class="visuallyhidden">{{ ptitle }}</legend>
-              <label class="block-label">
-                <input name="who_are_you" type="radio" value="representative" data-store="who_are_you=representative" data-destination="representative_professional" />
-                The taxpayer's representative
-              </label>
 
               <label class="block-label">
                 <input name="who_are_you" type="radio" value="taxpayer" data-store="who_are_you=taxpayer" />
-                The taxpayer
+                I am the taxpayer
               </label>
+
+              <label class="block-label">
+                <input name="who_are_you" type="radio" value="representative" data-store="who_are_you=representative" data-destination="representative_professional" />
+                I am a representative
+              </label>
+
             </fieldset>
           </div>
 
@@ -42,16 +44,13 @@
         </form>
 
         <details>
-          <summary>What is a representative?</summary>
+          <summary>What is a representative and what can they do?</summary>
           <div class="panel">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur consequat arcu a nisi tempus, a interdum sapien elementum. Duis ac aliquam mi. Phasellus nec molestie neque. Quisque eget cursus neque. In a leo eu arcu cursus iaculis. Nunc ut nisl justo. Ut urna diam, suscipit non enim ullamcorper, venenatis euismod nunc. Proin at lectus nisi. Ut laoreet ligula et mauris scelerisque auctor.</p>
-          </div>
-        </details>
-
-        <details>
-          <summary>Why use a representative?</summary>
-          <div class="panel">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur consequat arcu a nisi tempus, a interdum sapien elementum. Duis ac aliquam mi. Phasellus nec molestie neque. Quisque eget cursus neque. In a leo eu arcu cursus iaculis. Nunc ut nisl justo. Ut urna diam, suscipit non enim ullamcorper, venenatis euismod nunc. Proin at lectus nisi. Ut laoreet ligula et mauris scelerisque auctor.</p>
+            <p>A representative is someone who can act on your behalf when dealing with the tax tribunal.</p>
+            <p>You may want to use one if you need help or advice, or need assistance submitting an appeal or application.</p>
+            <p>A representative could be a lawyer, tax adviser or accountant. It could also be a friend or family relative who you approve to act on your behalf.</p>
+            <p>If a representative is not a certified legal professional they will need to be authorised by the taxpayer to act on their behalf to handle any matters related to an appeal or application.</p>
+            <p>An authorised representative will be able to receive any correspondence from the tax tribunal and can represent the taxpayer at a hearing with the judge.</p>
           </div>
         </details>
 

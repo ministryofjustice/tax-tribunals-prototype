@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 
-{% set ptitle = "Approve a non-legal representative" %}
+{% set ptitle = "Upload approval to act as a representative (optional)" %}
 
 {% block page_title %}
   {{ ptitle }} - Tax Tribunals Prototype
@@ -17,47 +17,53 @@
       <p><a class="link-back js-link-back" href="start.html">Back</a> &nbsp; Step 3 of 16</p>
       <h1 class="heading-large">{{ ptitle }}</h1>
 
-      <p class="lede">You will need to complete a pro forma letter blah blah JOSH - copy needed here.</p>
-      <p>You may upload a file, download a PDF to complete and then upload, or view an example letter.</p>
-
+      <p class="lede">As you are not a legal professional, you must provide signed approval from the taxpayer to act on their behalf.</p>
+      <p>You can still submit this appeal without approval. You will not be able to receive any correspondence or act at a hearing until you've provided approval to the tax tribunal.
       <form class="js_route" action="representative_type">
 
-        <h2 class="heading-medium">Upload a file</h2>
+        <h2 class="heading-medium">Upload taxpayer approval</h2>
         <input type="file" id="file_rep_pro_forma" name="file_rep_pro_forma" data-store>
 
-        <h2 class="heading-medium">Download PDF</h2>
-        <p>You may download this PDF example to complete then upload a scan or good quality photo of it above.</p>
-        <button class="button">Download PDF</button>
-
-        <h2 class="heading-medium">View example</h2>
         <details>
-          <summary>View an example pro-forma letter which you may copy and paste</summary>
+          <summary>File upload requirements</summary>
           <div class="panel">
-            <div class="letter">
-              <p>Taxpayer's name:</p>
-              <p>I authorise my representative to act on my behalf in this appeal.</p>
-              <p>Name of representative:</p>
-              <p>Address of representative:
-
-              </p>
-              <p>Signed by taxpayer:</p>
-              <p>Name of signatory (printed):</p>
-              <p>Position held:</p>
-              <p>Date:</p>
-
-            </div>
+            <ul class="list list-bullet">
+              <li>File formats: Word, PDF, Excel, JPG, GIF, PNG</li>
+              <li>File size: up to 20 megabytes (MB)</li>
+              <li>Scan documents in black and white</li>
+              <li>Files cannot be password protected</li>
+            </ul>
+            <p>You can’t upload executable (.exe) and other zip, archive or compressed files due to virus risks.</p>
           </div>
         </details>
 
-        <p class="notice form-group">
-          <i class="icon icon-important">
-            <span class="visuallyhidden">Warning</span>
-          </i>
-          <strong class="bold-small">
-            If not completed, something something something JOSH HELP
-          </strong>
-        </p>
+        <h2 class="heading-medium">How to get approval from the taxpayer</h2>
 
+        <details>
+          <summary>See an example approval letter or download a PDF template</summary>
+          <div class="panel">
+            <p>You can copy and paste the text below into an email or document, or download it as a PDF form, to send to the taxpayer.</p>
+            <p>This must then be printed out and signed by the taxpayer and returned to you. You can upload the approval form now or attach it later in this appeal when you upload supporting documents.</p>
+            <p>You will not be able to receive any correspondence from the tax tribunal or act at a hearing until you have provided approveal from the taxpayer.</p>
+
+            <h2 class="heading-medium">Example letter</h2>
+            <div class="panel">
+              <div class="letter">
+                <p>Taxpayer's name:</p>
+                <p>I authorise my representative to act on my behalf in this appeal.</p>
+                <p>Name of representative:</p>
+                <p>Address of representative:</p>
+                <p>Signed by taxpayer:</p>
+                <p>Name of signatory (printed):</p>
+                <p>Position held:</p>
+                <p>Date:</p>
+              </div>
+            </div>
+
+            <p>You may download this example as a PDF to send to the taxpayer to complete. You can then upload a scan or good quality photo with your appeal.</p>
+            <button class="button">Download PDF</button>
+          </div>
+        </details>
 
         <p class="form-group">
           <input class="button" type="submit" value="Continue">
