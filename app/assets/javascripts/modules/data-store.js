@@ -10,18 +10,6 @@ moj.Modules.dataStore = {
         self.deleteItem(sessionStorage.key(i));
       }
     }
-
-    self.bindEvents();
-  },
-
-  bindEvents: function() {
-    var self = this;
-
-    $(document).on('keyup', function(e) {
-      if(e.keyCode === 27) {
-        self.dumpData();
-      }
-    });
   },
 
   dumpData: function() {
