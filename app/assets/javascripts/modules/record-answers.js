@@ -24,7 +24,7 @@ moj.Modules.recordAnswers = {
       storedAnswers = [];
     }
 
-    answer.question = $('main h1').eq(0).text();
+    answer.question = $('main h1:not(.error-summary-heading)').eq(0).text();
 
     $selectedRadio = $('main input[type="radio"]:checked').last();
 

@@ -5,6 +5,10 @@ moj.Modules.debug = {
     {
       text: 'log session vars',
       call: 'moj.Modules.dataStore.dumpData();'
+    },
+    {
+      text: 'toggle validation',
+      call: 'moj.Modules.formRoutes.toggleValidation()'
     }
   ],
   init: function() {
@@ -43,6 +47,8 @@ moj.Modules.debug = {
       self.tools.forEach(function(tool) {
         $('#debugPanel ul').append('<li class="link" data-call="' + tool.call + '">' + tool.text + '</li>');
       });
+
+      $('#debugPanel ul').before('<p>Validation: <span id="validationStatus">' + moj.Modules.formRoutes.validationOn + '</span></p>');
     } else {
       $('#debugPanel').toggle();
     }

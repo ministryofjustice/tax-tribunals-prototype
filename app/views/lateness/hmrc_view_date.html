@@ -28,8 +28,10 @@
       </p>
 
       <form class="js_route" action="/end_to_end/task-list">
-        <fieldset>
-          <div class="form-group">
+        <div class="form-group">
+          <fieldset data-required data-error="Please select an answer">
+            <legend class="visuallyhidden">Do you think you're in time to appeal to the tax tribunal?</legend>
+
             <label class="block-label">
               <input name="lateness" type="radio" value="in_time" data-store="application_is_late=no" />
               Yes, I am in time
@@ -45,8 +47,8 @@
               I'm not sure
             </label>
 
-          </div>
-        </fieldset>
+          </fieldset>
+        </div>
 
           <input class="button" type="submit" value="Continue">
         </p>

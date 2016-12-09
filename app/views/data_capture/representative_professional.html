@@ -21,7 +21,8 @@
 
       <form class="js_route" action="representative_type">
         <div class="form-group">
-          <fieldset>
+          <fieldset data-required data-error="Please select an answer">
+            <legend class="visuallyhidden">{{ ptitle }}</legend>
             <label class="block-label">
               <input name="representative_is_legal_professional" type="radio" value="yes" data-store="representative_is_legal_professional=yes" />
               Yes

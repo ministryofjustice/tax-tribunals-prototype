@@ -7,10 +7,10 @@
 {% block body_end %}
   {{ super() }}
   <script>
-    if(moj.Modules.dataStore.getItem('tax_type').toLowerCase() === 'income tax') {
+    if(moj.Modules.dataStore.getItem('tax_type') && moj.Modules.dataStore.getItem('tax_type').toLowerCase() === 'income tax') {
       $('input[value="paye_code"]').closest('label').removeClass('js-hidden');
     }
-    if(moj.Modules.dataStore.getItem('direct').toLowerCase() === 'yes') {
+    if(moj.Modules.dataStore.getItem('direct') && moj.Modules.dataStore.getItem('direct').toLowerCase() === 'yes') {
       $('input[value="closure_notices"]').closest('label').removeClass('js-hidden');
     }
   </script>
@@ -31,8 +31,9 @@
       <p>You can't combine separate disputes on separate letters into one appeal.</p>
 
       <form class="js_route js_store_answers" action="fee" data-number="2">
-        <fieldset>
-          <div class="form-group">
+        <div class="form-group">
+          <fieldset data-required data-error="Please select an answer">
+            <legend class="visuallyhidden">What is your dispute about?</legend>
             <label class="block-label">
               <input name="dispute_type" type="radio" value="penalty" data-destination="penalty_detail" data-store="hardship=no" />
               <strong>Penalty or surcharge</strong><br>
@@ -79,17 +80,18 @@
               <input name="dispute_type" type="radio" value="none_of_the_above" data-store="fee=200" />
               <strong>None of the above</strong>
             </label>
-            <div class="form-group js-hidden" id="other_dispute_type_detail">
-              <div class="panel">
-                <label class="form-label" for="other_dispute_type">
-                  What is your dispute about?
-                </label>
-                <input class="form-control" type="text" id="other_dispute_type" data-store>
-              </div>
-            </div>
 
+          </fieldset>
+
+          <div class="panel js-hidden" id="other_dispute_type_detail">
+            <fieldset data-required data-error="Please enter an answer">
+              <label class="form-label" for="other_dispute_type">
+                What is your dispute about?
+              </label>
+              <input class="form-control" type="text" id="other_dispute_type" data-store>
+            </fieldset>
           </div>
-        </fieldset>
+        </div>
 
         <p>
           <input class="button" type="submit" value="Continue">

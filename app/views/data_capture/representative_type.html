@@ -21,7 +21,8 @@
 
       <form class="js_route" action="representative_details">
         <div class="form-group">
-          <fieldset>
+          <fieldset data-required data-error="Please select an answer">
+            <legend class="visuallyhidden">{{ ptitle }}</legend>
             <label class="block-label">
               <input name="representative_type" type="radio" value="individual" data-store="representative_type=individual" />
               <strong>Individual</strong>

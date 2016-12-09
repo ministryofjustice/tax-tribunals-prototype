@@ -31,10 +31,12 @@
       <form class="js_route" action="/end_to_end/task-list">
 
         <div class="form-group">
-          <label class="form-label" for="lateness-reason">
-            Reason(s) for late appeal
-          </label>
-          <textarea class="form-control form-control-3-4" id="lateness_reason" rows="4" cols="40" data-store></textarea>
+          <fieldset data-required data-error="Please provide an answer">
+            <label class="form-label" for="lateness-reason">
+              Reason(s) for late appeal
+            </label>
+            <textarea class="form-control form-control-3-4" id="lateness_reason" rows="4" cols="40" data-store></textarea>
+          </fieldset>
         </div>
 
         <p>

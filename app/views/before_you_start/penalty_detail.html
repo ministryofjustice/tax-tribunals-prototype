@@ -18,8 +18,10 @@
       <p class="lede">Select an option below based on the amount shown on the original notice letter or review conclusion letter you received from HMRC.</p>
 
       <form class="js_route js_store_answers" action="penalty_amount" data-number="3">
-        <fieldset>
-          <div class="form-group">
+        <div class="form-group">
+          <fieldset data-required data-error="Please select an answer">
+            <legend class="visuallyhidden">What is the penalty or surcharge amount?</legend>
+
             <label class="block-label">
               <input name="dispute_type" type="radio" value="low" data-store="fee=20" />
               £100 or less
@@ -34,8 +36,8 @@
               <input name="dispute_type" type="radio" value="high" data-store="fee=200" />
               £20,001 or more
             </label>
-          </div>
-        </fieldset>
+          </fieldset>
+        </div>
 
         <p>
           <input class="button" type="submit" value="Continue">

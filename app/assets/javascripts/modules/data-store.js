@@ -5,8 +5,9 @@ moj.Modules.dataStore = {
     var self = this,
         storedLength = sessionStorage.length;
 
-    for (var i = storedLength - 1; i >= 0; i--) {
-      if($('body').hasClass('clear-session')) {
+    if($('body').hasClass('clear-session')) {
+      moj.log('wiping session vars');
+      for (var i = storedLength - 1; i >= 0; i--) {
         self.deleteItem(sessionStorage.key(i));
       }
     }

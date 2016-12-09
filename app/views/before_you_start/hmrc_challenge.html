@@ -27,8 +27,9 @@
         If you accepted or asked for a review, you should wait until it ends or allow 45 days before appealing. Your appeal risks being rejected if a review is ongoing.
       </p>
       <form class="js_route" action="type_of_tax">
-        <fieldset>
-          <div class="form-group">
+        <div class="form-group">
+          <fieldset data-required data-error="Please select an answer">
+            <legend class="visuallyhidden">Did you challenge the original decision with HMRC?</legend>
             <label class="block-label">
               <input name="hmrc_challenge" type="radio" value="yes" data-store="hmrc_challenge=yes" />
               Yes
@@ -44,8 +45,8 @@
               My dispute isn't with HMRC
             </label>
 
-          </div>
-        </fieldset>
+          </fieldset>
+        </div>
 
         <p>
           <input class="button" type="submit" value="Continue">

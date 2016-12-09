@@ -26,8 +26,9 @@
       <p>If the tax or decision is not listed below or you’re making a different type of appeal or application, please select ‘other’.</p>
 
       <form class="js_route js_store_answers" action="dispute_type" data-number="1">
-        <fieldset>
-          <div class="form-group">
+        <div class="form-group">
+          <fieldset data-required data-error="Please select an answer">
+            <legend class="visuallyhidden">What is your appeal about?</legend>
             <label class="block-label">
               <input name="tax_type" type="radio" value="income_tax" data-store="tax_type=Income tax,direct=true,hardship=no" />
               <strong>Income Tax</strong><br>
@@ -70,8 +71,8 @@
               <input name="tax_type" type="radio" value="other" data-destination="types_tax_other" />
               <strong>Other type of tax, appeal or application</strong>
             </label>
-          </div>
-        </fieldset>
+          </fieldset>
+        </div>
 
         <p>
           <input class="button" type="submit" value="Continue">
