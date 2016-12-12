@@ -104,6 +104,15 @@ moj.Modules.recordAnswers = {
 
       }
 
+      if(moj.Modules.dataStore.getItem('tax_amount')) {
+        html += '<tr>';
+        html += '<th>What is the amount of tax in dispute?</th>';
+        html += '<td>£';
+        html += moj.ucFirst(moj.Modules.dataStore.getItem('tax_amount'));
+        html += '</td>';
+        html += '</tr>';
+      }
+
       if(moj.Modules.dataStore.getItem('penalty_amount')) {
         html += '<tr>';
         html += '<th>What is the penalty or surcharge amount?</th>';
