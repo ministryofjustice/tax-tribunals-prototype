@@ -88,9 +88,10 @@ moj.Modules.dataCaptureSummary = {
         review = moj.Modules.dataStore.getItem('doc_check_review_conclusion'),
         additional = moj.Modules.dataStore.getItem('additional_docs_info'),
         groundsFile = moj.Modules.dataStore.getItem('file_grounds_for_appeal'),
+        hardshipFile = moj.Modules.dataStore.getItem('file_reasons_for_hardship'),
         proFormaFile = moj.Modules.dataStore.getItem('file_rep_pro_forma');
 
-    if(letter || review || additional || groundsFile || proFormaFile) {
+    if(letter || review || additional || groundsFile || proFormaFile || hardshipFile) {
       $list.empty();
     }
 
@@ -109,6 +110,10 @@ moj.Modules.dataCaptureSummary = {
     if(groundsFile) {
       $list.append('<li>Grounds for appeal: ' + groundsFile + '</li>');
       $('[data-key="grounds_for_appeal"]').after('<br>(File uploaded, see below)');
+    }
+    if(hardshipFile) {
+      $list.append('<li>Reasons for hardship application: ' + hardshipFile + '</li>');
+      $('[data-key="hmrc_reasons_to_allow_hardship"]').after('<br>(File uploaded, see below)');
     }
   }
 };
