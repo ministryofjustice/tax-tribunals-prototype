@@ -13,6 +13,9 @@
     if(moj.Modules.dataStore.getItem('direct') && moj.Modules.dataStore.getItem('direct').toLowerCase() === 'yes') {
       $('input[value="closure_notices"]').closest('label').removeClass('js-hidden');
     }
+    if(moj.Modules.dataStore.getItem('tax_type').toLowerCase() === 'info_notice') {
+      $('input:not([value="penalty"],[value="appeal_info_notice"])').closest('label').addClass('js-hidden');
+    }
   </script>
 {% endblock %}
 
@@ -64,14 +67,13 @@
               request a closure notice for an ongoing enquiry into your tax returns
             </label>
 
-            <!-- label class="block-label">
-              <input name="dispute_type" type="radio" value="amount_of_tax_owed"  data-store="fee=200" />
-              <strong>Schedule 41</strong><br>
-              some text about Schedule 41
-            </label -->
+            <label class="block-label">
+              <input name="dispute_type" type="radio" value="appeal_info_notice"  data-store="fee=50" />
+              <strong>Appeal against an information notice</strong>
+            </label>
 
             <label class="block-label">
-              <input name="dispute_type" type="radio" value="amount_of_tax_owed"  data-store="fee=50" />
+              <input name="dispute_type" type="radio" value="apply_decision"  data-store="fee=50" />
               <strong>Apply for a decision on an enquiry</strong><br>
               force HMRC to issue a counteraction notice
             </label>
