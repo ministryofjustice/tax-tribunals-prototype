@@ -6,6 +6,15 @@
   {{ ptitle }} - Tax Tribunals Prototype
 {% endblock %}
 
+{% block body_end %}
+  {{ super() }}
+  <script>
+  if(moj.Modules.dataStore.getItem('other_dispute_type')) {
+    $('input[name="paid_disputed_tax"][value="n/a"]').closest('.js-hidden').removeClass('js-hidden');
+  }
+  </script>
+{% endblock %}
+
 {% block content %}
 
 <main id="content" role="main">
@@ -29,12 +38,12 @@
                 <strong>Yes</strong>
               </label>
 
-              <label class="block-label" data-target="unpaid_disputed_tax_details">
+              <label class="block-label">
                 <input name="paid_disputed_tax" type="radio" value="No" data-store="paid_disputed_tax=no" data-destination="hardship_hmrc_applied" />
                 <strong>No</strong>
               </label>
 
-              <label class="block-label" data-target="unpaid_disputed_tax_details">
+              <label class="block-label js-hidden">
                 <input name="paid_disputed_tax" type="radio" value="n/a" data-store="paid_disputed_tax=n/a" />
                 <strong>Not required</strong><br>
                 there is no amount under dispute in this case
