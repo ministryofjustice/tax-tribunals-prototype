@@ -66,7 +66,7 @@ moj.Modules.formRoutes = {
     } else {
       // no
       // can user apply for hardship?
-      if(page === 'fee' && moj.Modules.dataStore.getItem('hardship') === 'yes' && pageName !== 'hardship_paid' && pageName !== 'hardship_hmrc_status') {
+      if(page === 'fee' && moj.Modules.dataStore.getItem('hardship') === 'yes' && pageName !== 'hardship_paid' && pageName !== 'hardship_hmrc_status' && pageName !== 'hardship_hmrc_applied') {
         self.go('hardship_paid');
       } else if(page === 'outcome' && moj.Modules.dataStore.getItem('hardship') === 'yes' && pageName !== 'hardship' && moj.Modules.dataStore.getItem('paid_disputed_tax') !== 'yes' && moj.Modules.dataStore.getItem('hardship_application_status') === 'refused') {
         self.go('hardship');
