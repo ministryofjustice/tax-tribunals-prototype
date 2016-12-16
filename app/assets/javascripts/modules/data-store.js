@@ -2,14 +2,21 @@
 
 moj.Modules.dataStore = {
   init: function() {
+    var self = this;
+
+    if($('body').hasClass('clear-session')) {
+      self.clearSessionData();
+    }
+  },
+
+  clearSessionData: function() {
     var self = this,
         storedLength = sessionStorage.length;
 
-    if($('body').hasClass('clear-session')) {
-      moj.log('wiping session vars');
-      for (var i = storedLength - 1; i >= 0; i--) {
-        self.deleteItem(sessionStorage.key(i));
-      }
+    moj.log('wiping session vars');
+
+    for (var i = storedLength - 1; i >= 0; i--) {
+      self.deleteItem(sessionStorage.key(i));
     }
   },
 
