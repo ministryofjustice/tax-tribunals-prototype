@@ -6,6 +6,15 @@
   {{ ptitle }} - Tax Tribunals Prototype
 {% endblock %}
 
+{% block body_end %}
+  {{ super() }}
+  <script>
+    if(moj.Modules.dataStore.getItem('who_are_you') === 'taxpayer') {
+      $('form').attr('action', 'do_you_have_rep');
+    }
+  </script>
+{% endblock %}
+
 {% block content %}
 
 <main id="content" role="main">

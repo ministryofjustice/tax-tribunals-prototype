@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 
-{% set ptitle = "Are you the taxpayer involved in the case or their representative?" %}
+{% set ptitle = "Do want someone to represent you?" %}
 
 {% block page_title %}
   {{ ptitle }} - Tax Tribunals Prototype
@@ -17,21 +17,21 @@
       <p><a class="link-back js-link-back" href="start.html">Back</a> &nbsp; Step 1 of 16</p>
       <h1 class="heading-large">{{ ptitle }}</h1>
 
-      <p class="lede">Select whether you are entering details as the taxpayer involved in the case, or as a representative acting on their behalf.</p>
+      <p class="lede">Select whether you will have a representative acting on your behalf.</p>
 
-        <form class="js_route" action="appellant_type">
+        <form class="js_route" action="outcome">
           <div class="form-group">
             <fieldset data-required data-error="Please select an answer">
               <legend class="visuallyhidden">{{ ptitle }}</legend>
 
               <label class="block-label">
-                <input name="who_are_you" type="radio" value="taxpayer" data-store="who_are_you=taxpayer" />
-                I am the taxpayer
+                <input name="appellant_has_representation" type="radio" value="no" data-store="appellant_has_representation=no" />
+                No
               </label>
 
               <label class="block-label">
-                <input name="who_are_you" type="radio" value="representative" data-store="who_are_you=representative,appellant_has_representation=yes" data-destination="representative_professional" />
-                I am a representative
+                <input name="appellant_has_representation" type="radio" value="yes" data-store="appellant_has_representation=yes" data-destination="representative_professional" />
+                Yes
               </label>
 
             </fieldset>

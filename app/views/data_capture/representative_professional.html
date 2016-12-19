@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 
-{% set ptitle = "Are you a legal professional?" %}
+{% set ptitle = "Representative status" %}
 
 {% block page_title %}
   {{ ptitle }} - Tax Tribunals Prototype
@@ -15,9 +15,11 @@
   <div class="grid-row">
     <div class="column-two-thirds">
       <p><a class="link-back js-link-back" href="start.html">Back</a> &nbsp; Step 2 of 16</p>
-      <h1 class="heading-large">{{ ptitle }}</h1>
+      <h1 class="heading-large">
+        <span class="js-hidden" data-dependent="who_are_you=representative">Are you</span><span class="js-hidden" data-dependent="who_are_you=taxpayer">Is your representative</span> a legal professional?
+      </h1>
 
-      <p class="lede">Select whether you are certified to practise law in the UK, for example as a solicitor or barrister</p>
+      <p class="lede">Select whether <span class="js-hidden" data-dependent="who_are_you=representative">you are</span><span class="js-hidden" data-dependent="who_are_you=taxpayer">your representative is</span> certified to practise law in the UK, for example as a solicitor or barrister</p>
 
       <form class="js_route" action="representative_type">
         <div class="form-group">

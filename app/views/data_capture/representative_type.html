@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 
-{% set ptitle = "Are you representing the taxpayer as an individual, company or other type of organisation?" %}
+{% set ptitle = "Is the representative an individual, company or other type of organisation?" %}
 
 {% block page_title %}
   {{ ptitle }} - Tax Tribunals Prototype
@@ -15,9 +15,9 @@
   <div class="grid-row">
     <div class="column-two-thirds">
       <p><a class="link-back js-link-back" href="start.html">Back</a> &nbsp; Step 4 of 16</p>
-      <h1 class="heading-large">{{ ptitle }}</h1>
+      <h1 class="heading-large"><span class="js-hidden" data-dependent="who_are_you=representative">Are you representing the taxpayer as</span><span class="js-hidden" data-dependent="who_are_you=taxpayer">Is your representative</span> an individual, company or other type of organisation?</h1>
 
-      <p class="lede">Select whether you are acting on behalf of the taxpayer as an individual or whether you're employed by a company or other type of organisation.</p>
+      <p class="lede">Select whether <span class="js-hidden" data-dependent="who_are_you=representative">you are acting on behalf of the taxpayer as</span><span class="js-hidden" data-dependent="who_are_you=taxpayer">your representative is</span> an individual or whether <span class="js-hidden" data-dependent="who_are_you=representative">you're</span><span class="js-hidden" data-dependent="who_are_you=taxpayer">they're</span> employed by a company or other type of organisation.</p>
 
       <form class="js_route" action="representative_details">
         <div class="form-group">

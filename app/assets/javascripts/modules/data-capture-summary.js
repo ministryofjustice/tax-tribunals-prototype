@@ -6,8 +6,8 @@ moj.Modules.dataCaptureSummary = {
   dependencies: [
     {
       elementId: 'representative_details_row',
-      dataKey: 'who_are_you',
-      dataValue: 'representative'
+      dataKey: 'appellant_has_representation',
+      dataValue: 'yes'
     },
     {
       elementId: 'closure_notice_row',
