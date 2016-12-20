@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 
-{% set ptitle = "Have you paid the amount of tax involved in the dispute?" %}
+{% set ptitle = "Have you paid the amount of tax under dispute?" %}
 
 {% block page_title %}
   {{ ptitle }} - Tax Tribunals Prototype
@@ -26,7 +26,7 @@
       <p><a class="link-back js-link-back" href="start.html">Back</a> &nbsp; Step 4 of 7</p>
       <h1 class="heading-large">{{ ptitle }}</h1>
 
-      <p class="lede">If you have paid or deposited the amount of tax involved in the dispute, select 'Yes'. If you can't pay because it will cause you financial difficulties, you can still continue your appeal.</p>
+      <p class="lede">If you can't pay because it will cause you financial hardship, you can still continue your appeal.</p>
 
         <form class="js_route js_store_answers" action="fee">
 
@@ -35,18 +35,17 @@
               <legend class="visuallyhidden">{{ ptitle }}</legend>
               <label class="block-label">
                 <input name="paid_disputed_tax" type="radio" value="Yes" data-store="paid_disputed_tax=yes" />
-                <strong>Yes</strong>
+               Yes
               </label>
 
               <label class="block-label">
                 <input name="paid_disputed_tax" type="radio" value="No" data-store="paid_disputed_tax=no" data-destination="hardship_hmrc_applied" />
-                <strong>No</strong>
+               No
               </label>
 
               <label class="block-label js-hidden">
                 <input name="paid_disputed_tax" type="radio" value="n/a" data-store="paid_disputed_tax=n/a" />
-                <strong>Not required</strong><br>
-                there is no amount under dispute in this case
+                There is no amount under dispute
               </label>
             </fieldset>
           </div>
