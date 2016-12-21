@@ -19,33 +19,11 @@
 
   <div class="grid-row">
     <div class="column-two-thirds">
-
-      <p><a class="link-back js-link-back" href="start.html">Back</a> &nbsp; Step 13 of 16</p>
+      <p>&nbsp;</p>
+      <p>Pay fee - step 1 of 4</p>
       <h1 class="heading-large">
-        <span data-key="appellant_name">Terry Example</span> vs HMRC
+        Select your payment method
       </h1>
-
-      <p class="lede">
-         Your case reference is <strong data-key="tc_number">TC/2016/123456</strong>. Please make a note of this in case you need to contact us about your case. 
-      </p>
-      <p>
-       You need to pay the following fee before the tribunal continues to work on your case.
-      </p>
-
-      <div class="notice notice-payment util_mt-large">
-        <i class="icon icon-important">
-          <span class="visuallyhidden">Warning</span>
-        </i>
-        <strong class="bold-small">
-          If you do not pay your fee immediately you risk losing your right to appeal
-        </strong>
-      </div>
-
-      <div class="liabilities-list">
-        <h2 class="heading-large">£<span data-key="fee">20</span> fee to lodge your appeal</h2>
-      </div>
-
-      <p>Select your method of payment</p>
 
       <form class="js_route" action="pay_credit_card">
         <fieldset>
@@ -64,12 +42,13 @@
             <label class="block-label">
               <input name="payment_type" type="radio" value="account" data-destination="pay_account" />
               <strong>Authorised account</strong><br>
-              if you have an account with HMCTS
+              if you have an account set up with HMCTS
             </label>
 
             <label class="block-label">
               <input name="payment_type" type="radio" value="cheque" data-destination="pay_cheque" />
-              Cheque
+              <strong>Other</strong>
+              <br>if you want to pay by cheque and send your appeal by post
             </label>
 
           </div>
@@ -84,14 +63,23 @@
     </div>
 
         <div class="column-one-third">
-       <p class="lede">&nbsp</p>
-       <p class="lede">&nbsp</p>
-      <h2 class="heading-small">Technical help</h2>
-        <nav role="navigation" class="font-xsmall">
-              <p><a href="#" data-alert="This feature is not available in this demo">Contact us</a> if you need help using the online service</p>
-        </nav>
+         <p>&nbsp;</p>
+          <p>&nbsp;</p>
+          <div class="liabilities-list">
+          <h2 class="heading-large">£<span data-key="fee">20</span> fee to submit your appeal</h2>
+        </div>
 
-    </div>
+
+      <div class="notice notice-payment util_mt-large">
+        <i class="icon icon-important">
+          <span class="visuallyhidden">Warning</span>
+        </i>
+        <strong class="bold-small">
+          Your appeal will not be valid until you pay your fee
+        </strong>
+        
+      </div>
+      </div>
   </div>
 
 </main>
