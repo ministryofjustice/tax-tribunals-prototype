@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block page_title %}
-  Tax tribunal lodgement fee - Tax Tribunals Prototype
+  Pay by cheque- Tax Tribunals Prototype
 {% endblock %}
 
 {% block head %}
@@ -18,50 +18,50 @@
   <div class="grid-row">
     <div class="column-two-thirds">
 
-      <p><a class="link-back js-link-back" href="start.html">Back</a> &nbsp; Step 16 of 16</p>
+      <p><a class="link-back js-link-back" href="start.html">Back</a> &nbsp; Pay fee - step 2 of 2</p>  
       <h1 class="heading-large">
-        <span class="heading-secondary" data-key="tc_number">TC/2012/00001</span>
-        <span data-key="appellant_name">Terry Example</span> vs HMRC
-      </h1>
+        Send your appeal by post</h1>
+      
+      <p class="lede">You will need to send everything by post before the 30 day appeal deadline ends.</p>
+      <ol class="list list-number">
+      <li><strong>Print out your case details</strong>
+      <p>Use the following link to print your case details</p>
+      <p><strong><a href="TC_2016_123456_HMRC_TaxpayerFullName.pdf">TaxPayer Name Case details (PDF, 124 KB)</a></strong></p>
+      </li>
+      <li><strong>Write out a cheque for £<span data-key="fee">20</span></strong>
+      <p>Please make your cheque payable to 'HM Courts & Tribunals Service'</p>
+      </li>
+      <li><strong>Get copies of your letters from HMRC</strong>
+      <p>Enclose a copy of either the original notice letter or review conclusion letter from HMRC. Please note the tax tribunal cannot return any documents.</p></li>
 
-      <h2 class="heading-medium">Pay via cheque</h2>
-
-      <div class="notice notice-payment">
-        <i class="icon icon-important">
-          <span class="visuallyhidden">Warning</span>
-        </i>
-        <strong class="bold-small">
-          You may lose the right to appeal if you do not pay your fee within the time limit we give you.
-        </strong>
-      </div>
-
-      <p>&nbsp;</p>
-      <p>Send your cheque clearly marked with your reference number <strong class="heading-secondary" data-key="tc_number">TC/2012/00001</strong> on the back to:</p>
+      <li><strong>Send everything together by post</strong>
+     <p>Enclose your case details, cheque, copies of HMRC letters and send to:</p>
       <address>
-        Tax Tribunal Fees<br>
-        1 Test Road<br>
-        Testerham<br>
-        TE37 1NG
+        First-tier Tribunal (Tax Chamber)<br>
+        PO Box 16972<br> 
+        Birmingham<br>
+        B16 6TZ
       </address>
+      </li>
+      </ol>
+      <p>Once the tax tribunal has received your appeal they will write to you with details of the next steps.</p>
 
+  <div class="form-group">
+          <input class="button" type="button" value="Finish" >
+        </div>
       <!--h2 class="heading-medium">What to do next</h2>
       <p>Lorem ipsum</p -->
 
     </div>
 
     <div class="column-one-third">
-      <aside class="payment-summary">
-        <div class="inner js-stick-at-top-when-scrolling" style="width: 250px;">
-          <h2>Payment summary</h2>
-          <p>
-            <span id="payment-description"><span data-key="tc_number">TC/2016/00019</span> - Lodgement Fee</span>
-          </p>
-          <p>
-            Total amount:
-            <span id="amount" class="amount">£<span data-key="fee">20</span></span>
-          </p>
-        </div>
-      </aside>
+  <aside class="payment-summary">
+    <div class="inner js-stick-at-top-when-scrolling" style="width: 250px;">
+     <h2 class="heading-large">£<span data-key="fee">20</span> fee to submit your appeal</h2>
+    </div>
+
+
+  </aside>
     </div>
   </div>
 
