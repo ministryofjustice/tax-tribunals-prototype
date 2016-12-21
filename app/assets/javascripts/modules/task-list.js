@@ -44,10 +44,10 @@ moj.Modules.taskList = {
           $el = $('span[data-task="' + task + '"]');
 
       if(moj.Modules.dataStore.getItem('task_' + task) === 'complete') {
-        $el.show();
+        $el.removeClass('js-hidden');
         completedTasks++;
       } else {
-        $el.hide();
+        $el.addClass('js-hidden');
       }
     }
 
