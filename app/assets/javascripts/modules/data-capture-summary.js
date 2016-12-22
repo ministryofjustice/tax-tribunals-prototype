@@ -86,12 +86,11 @@ moj.Modules.dataCaptureSummary = {
     var $list = $('.uploaded-docs').eq(0),
         letter = moj.Modules.dataStore.getItem('doc_check_hmrc_letter'),
         review = moj.Modules.dataStore.getItem('doc_check_review_conclusion'),
-        additional = moj.Modules.dataStore.getItem('additional_docs_info'),
         groundsFile = moj.Modules.dataStore.getItem('file_grounds_for_appeal'),
         hardshipFile = moj.Modules.dataStore.getItem('file_reasons_for_hardship'),
         proFormaFile = moj.Modules.dataStore.getItem('file_rep_pro_forma');
 
-    if(letter || review || additional || groundsFile || proFormaFile || hardshipFile) {
+    if(letter || review || groundsFile || proFormaFile || hardshipFile) {
       $list.empty();
     }
 
@@ -103,9 +102,6 @@ moj.Modules.dataCaptureSummary = {
     }
     if(review) {
       $list.append('<li>' + review + '</li>');
-    }
-    if(additional) {
-      $list.append('<li>' + additional + '</li>');
     }
     if(groundsFile) {
       $list.append('<li>Grounds for appeal: ' + groundsFile + '</li>');

@@ -1,8 +1,8 @@
 'use strict';
 
-moj.Modules.docUploadDemo = {
-  form_id: 'doc_upload_demo',
-  $form: null,
+moj.Modules.docUpload = {
+  zone_id: 'doc_upload_zone',
+  $zone: null,
   $fileList: $('.uploaded-files').eq(0),
 
   init: function() {
@@ -11,13 +11,14 @@ moj.Modules.docUploadDemo = {
 
     Dropzone.autoDiscover = false;
 
-    self.$form = $('#' + self.form_id);
+    self.$zone = $('#' + self.zone_id);
     dzOptions = {
       autoProcessQueue: true,
       addRemoveLinks: true,
       createImageThumbnails: true,
       uploadMultiple: false,
       forceFallback: false,
+      url: 'send_files',
       accept: function(file, done) {
         done();
         self.addFileToList(file);
@@ -27,9 +28,8 @@ moj.Modules.docUploadDemo = {
       }
     };
 
-    self.$form.dropzone(dzOptions);
-    self.$form.sticky({topSpacing: 0, zIndex: 100});
-    // $('.uploaded-files-wrapper').sticky({topSpacing: -40, zIndex: 100});
+    self.$zone.dropzone(dzOptions);
+    self.$zone.sticky({topSpacing: 0, zIndex: 100});
 
     self.bindEvents();
   },
@@ -71,8 +71,8 @@ moj.Modules.docUploadDemo = {
     self.$fileList.append('<li class="file">' + file.name + '<a href="#">Remove</a></li>');
     $(file.previewElement).fadeOut(400, function() {
       $(file.previewElement).remove();
-      if(!self.$form.find('.dz-preview').length) {
-        self.$form.removeClass('dz-started dz-drag-hover');
+      if(!self.$zone.find('.dz-preview').length) {
+        self.$zone.removeClass('dz-started dz-drag-hover');
       }
     });
   }
