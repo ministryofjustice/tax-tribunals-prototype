@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 
-{% set ptitle = "Taxpayer's details" %}
+{% set ptitle = "Enter taxpayer's details" %}
 
 {% block page_title %}
   {{ ptitle }} - Tax Tribunals Prototype
@@ -25,8 +25,6 @@
     <div class="column-two-thirds">
       <p><a class="link-back js-link-back" href="start.html">Back</a> &nbsp; Step 7 of 16</p>
       <h1 class="heading-large">{{ ptitle }}</h1>
-
-      <p class="lede">Enter details for the taxpayer involved in the case.</p>
 
       <form class="js_route" action="outcome">
 
@@ -63,24 +61,17 @@
           <input class="form-control" id="appellant_postcode" data-store>
         </div>
 
-        <div class="form-group js-hidden" data-dependent="appellant_type=company">
-          <label class="form-label" for="appellant_company_number">
-            Company registered number (optional)
-          </label>
-          <input class="form-control" type="text" id="appellant_company_number" data-store>
-        </div>
-
         <div class="form-group js-hidden" data-dependent="appellant_type=company,organisation">
           <label class="form-label" for="appellant_contact_name">
-            Contact name (optional)
+            Contact name
           </label>
           <input class="form-control" type="text" id="appellant_contact_name" data-store>
         </div>
 
         <div class="form-group">
           <label class="form-label" for="appellant_email">
-            <span class="js-hidden" data-dependent="appellant_type=individual">Email address (optional)</span>
-            <span class="js-hidden" data-dependent="appellant_type=company,organisation">Contact email address (optional)</span>
+            <span class="js-hidden" data-dependent="appellant_type=individual">Email address (if you want confirmation by email)</span>
+            <span class="js-hidden" data-dependent="appellant_type=company,organisation">Email address (if you want confirmation by email)</span>
           </label>
           <input class="form-control" type="text" id="appellant_email" data-store>
         </div>
@@ -92,7 +83,12 @@
           </label>
           <input class="form-control" type="text" id="appellant_phone" data-store>
         </div>
-
+        <div class="form-group js-hidden" data-dependent="appellant_type=company">
+          <label class="form-label" for="appellant_company_number">
+            Company registered number (optional)
+          </label>
+          <input class="form-control" type="text" id="appellant_company_number" data-store>
+        </div>
         <p>
           <input class="button" type="submit" value="Continue">
         </p>
