@@ -5,9 +5,39 @@ moj.Modules.dataCaptureSummary = {
 
   dependencies: [
     {
+      elementId: 'appellant_name',
+      dataKey: 'appellant_type',
+      dataValue: 'individual'
+    },
+    {
+      elementId: 'appellant_company_name',
+      dataKey: 'appellant_type',
+      dataValue: 'company'
+    },
+    {
+      elementId: 'appellant_organisation_name',
+      dataKey: 'appellant_type',
+      dataValue: 'organisation'
+    },
+    {
       elementId: 'representative_details_row',
       dataKey: 'appellant_has_representation',
       dataValue: 'yes'
+    },
+    {
+      elementId: 'representative_name',
+      dataKey: 'representative_type',
+      dataValue: 'individual'
+    },
+    {
+      elementId: 'representative_company_name',
+      dataKey: 'representative_type',
+      dataValue: 'company'
+    },
+    {
+      elementId: 'representative_organisation_name',
+      dataKey: 'representative_type',
+      dataValue: 'organisation'
     },
     {
       elementId: 'closure_notice_row',

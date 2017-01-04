@@ -31,11 +31,11 @@
       <form class="js_route" action="appellant_type">
 
         <div class="form-group js-hidden" data-dependent="representative_type=individual">
-          <label class="form-label" for="representative_name">First name</label>
+          <label class="form-label" for="representative_first_name">First name</label>
           <input class="form-control" type="text" id="representative_first_name" data-store>
         </div>
         <div class="form-group js-hidden" data-dependent="representative_type=individual">
-          <label class="form-label" for="representative_name">Last name</label>
+          <label class="form-label" for="representative_last_name">Last name</label>
           <input class="form-control" type="text" id="representative_last_name" data-store>
         </div>
 
@@ -60,7 +60,7 @@
           <label class="form-label" for="representative_postcode">
             Postcode
           </label>
-          <input class="form-control" id="representative_postcode" data-store>
+          <input class="form-control" type="text" id="representative_postcode" data-store>
         </div>
 
         <div class="form-group js-hidden" data-dependent="representative_type=company,organisation">
