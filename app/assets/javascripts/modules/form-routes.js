@@ -52,26 +52,44 @@ moj.Modules.formRoutes = {
   },
 
   next: function(page) {
-    // do we need to go to Challenge HMRC page?
     var self = this,
+        applicationType = moj.Modules.dataStore.getItem('application_type'),
         isDirect = moj.Modules.dataStore.getItem('direct'),
         hasChallenged = moj.Modules.dataStore.getItem('hmrc_challenge'),
         wasRedirected = moj.Modules.dataStore.getItem('challenge_redirect'),
         pageName = self.getPageName();
 
-    if(isDirect === 'true' && hasChallenged === 'no' && pageName !== 'hmrc_must' && wasRedirected !== 'yes') {
-      // yes
-      moj.Modules.dataStore.storeItem('challenge_redirect', 'yes');
-      self.go('hmrc_must.html');
-    } else {
-      // no
-      // can user apply for hardship?
-      if(page === 'fee' && moj.Modules.dataStore.getItem('hardship') === 'yes' && pageName !== 'hardship_paid' && pageName !== 'hardship_hmrc_status' && pageName !== 'hardship_hmrc_applied') {
-        self.go('hardship_paid');
-      } else if(page === 'outcome' && moj.Modules.dataStore.getItem('hardship') === 'yes' && pageName !== 'hardship' && moj.Modules.dataStore.getItem('paid_disputed_tax') !== 'yes' && moj.Modules.dataStore.getItem('hardship_application_status') === 'refused') {
-        self.go('hardship');
+    // closures have a different path, need to skip certain pages/sections
+    if(applicationType === 'closure') {
+      if(isDirect === 'true') {
+        if(['dispute_type', 'fee', 'penalty_detail'].includes(page)) {
+          moj.Modules.dataStore.storeItem('fee', '50');
+          self.go('/data_capture/who_are_you');
+        } else if(page === 'outcome') {
+          self.go('/closure/enquiry_details');
+        } else {
+          self.go(page);
+        }
       } else {
-        self.go(page);
+        // cannot close if indirect
+        self.go('/closure/cannot_close');
+      }
+    } else {
+      // do we need to go to Challenge HMRC page?
+      if(isDirect === 'true' && hasChallenged === 'no' && pageName !== 'hmrc_must' && wasRedirected !== 'yes') {
+        // yes
+        moj.Modules.dataStore.storeItem('challenge_redirect', 'yes');
+        self.go('hmrc_must.html');
+      } else {
+        // no
+        // can user apply for hardship?
+        if(page === 'fee' && moj.Modules.dataStore.getItem('hardship') === 'yes' && !['hardship_paid', 'hardship_hmrc_status', 'hardship_hmrc_applied'].includes(pageName)) {
+          self.go('hardship_paid');
+        } else if(page === 'outcome' && moj.Modules.dataStore.getItem('hardship') === 'yes' && pageName !== 'hardship' && moj.Modules.dataStore.getItem('paid_disputed_tax') !== 'yes' && moj.Modules.dataStore.getItem('hardship_application_status') === 'refused') {
+          self.go('hardship');
+        } else {
+          self.go(page);
+        }
       }
     }
   },

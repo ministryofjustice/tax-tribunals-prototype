@@ -1,0 +1,64 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Application type - Tax Tribunals Prototype
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main" class="task-list-home">
+
+  {% include "includes/phase_banner_alpha.html" %}
+
+  <header class="homepage-top">
+    <div class="homepage-top-inner">
+      <div class="welcome-block">
+        <div class="inner-block floated-children">
+          <div class="welcome-text">
+            <div class="floated-inner-block">
+              <h1>Get an impartial decision on your dispute</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <p class="lede">&nbsp;</p>
+      <p class="lede">Every appeal is overseen by an independent judge. Select the option that applies.</p>
+      <ul class="list task-list">
+        <li>
+          <a class="task-link" href="/task_list">Appeal to the tax tribunal</a>
+          <p>Get an impartial decision on your dispute with HMRC, UK Border Force or National Crime Authority</p>
+          <p>(30 minutes to complete)</p>
+        </li>
+        <li>
+          <a class="task-link" href="/closure">Apply to close an enquiry</a>
+          <p>Force HMRC to issue a closure notice for an ongoing enquiry entering reasons for the judge to consider.</p>
+          <p>(15 minutes to complete)</p>
+        </li>
+        <li>
+          <a class="task-link" href="/payment_tool/case_requests">Paying for an existing appeal</a>
+          <p>If you have received a tribunal reference number and a confirmation code by email but still need to pay your fee.</p>
+          <p>(5 minutes to complete)</p>
+        </li>
+      </ul>
+
+    </div>
+
+      <div class="column-one-third">
+       <p class="lede">&nbsp;</p>
+      <h2 class="heading-small">Technical help</h2>
+        <nav role="navigation" class="font-xsmall">
+              <p><a href="#" data-alert="This feature is not available in this demo">Contact us</a> if you need help using the online service</p>
+        </nav>
+
+
+    </div>
+  </div>
+</main>
+
+{% endblock %}

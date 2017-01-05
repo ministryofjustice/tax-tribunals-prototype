@@ -24,8 +24,8 @@
   <h1 class="heading-large">{{ ptitle }}</h1>
 
   <table class="check-your-answers">
-    <tbody>
 
+    <tbody>
       <tr>
         <th colspan="3"><h2 class="heading-medium">Fee details</h2></th>
       </tr>
@@ -39,7 +39,9 @@
         <td>£<span data-key="fee">50</span></td>
         <td>&nbsp;</td>
       </tr>
+    </tbody>
 
+    <tbody id="appeal_timeliness_section" class="js-hidden">
       <tr>
         <th colspan="3"><h2 class="heading-medium">Appeal timeliness</h2></th>
       </tr>
@@ -58,14 +60,37 @@
         <td><span data-key="lateness_reason" class="js_uc_first">Yes</span></td>
         <td class="change-answer"><a href="#" data-alert="This functionality is not currently available in this demo">Change</a></td>
       </tr>
+    </tbody>
 
+    <tbody id="closure_section" class="js-hidden">
+      <tr>
+        <th colspan="3"><h2 class="heading-medium">Closure details</h2></th>
+      </tr>
+      <tr>
+        <th>HMRC reference number</th>
+        <td><span data-key="closure_reference_number">TX1138-TK421</span></td>
+        <td class="change-answer"><a href="#" data-alert="This functionality is not currently available in this demo">Change</a></td>
+      </tr>
+      <tr>
+        <th>HMRC officer conducting enquiry</th>
+        <td><span data-key="closure_hmrc_officer">Reg N. Quiry</span></td>
+        <td class="change-answer"><a href="#" data-alert="This functionality is not currently available in this demo">Change</a></td>
+      </tr>
+      <tr>
+        <th>Requested timescale for closure</th>
+        <td><span data-key="closure_timescale">Within the next month</span></td>
+        <td class="change-answer"><a href="#" data-alert="This functionality is not currently available in this demo">Change</a></td>
+      </tr>
+    </tbody>
+
+    <tbody>
       <tr>
         <th colspan="3"><h2 class="heading-medium">Appeal details</h2></th>
       </tr>
       <tr>
         <th>Appellant details</th>
         <td>
-          <div id="appellant_name" data-key="appellant_name" class="js-hidden">Terry Example</div>
+          <div id="appellant_name" class="js-hidden"><span data-key="appellant_first_name">Terry</span> <span data-key="appellant_last_name">Example</span></div>
           <div id="appellant_company_name" data-key="appellant_company_name" class="js-hidden">Terry's Cabs</div>
           <div id="appellant_organisation_name" data-key="appellant_organisation_name" class="js-hidden">TerryOrg</div>
           <div data-key="appellant_address" class="js_breaklines">1 Test Road<br>Teston</div>
@@ -83,7 +108,7 @@
       <tr id="representative_details_row" class="js-hidden">
         <th>Representative details</th>
         <td>
-          <div id="representative_name" data-key="representative_name" class="js-hidden">Joe Rep</div>
+          <div id="representative_name" class="js-hidden"><span data-key="representative_first_name">Joe</span> <span data-key="representative_last_name">Rep</span></div>
           <div id="representative_company_name" data-key="representative_company_name" class="js-hidden">ABC Solicitors</div>
           <div id="representative_organisation_name" data-key="representative_organisation_name" class="js-hidden">RepOrg</div>
           <div data-key="representative_address" class="js_breaklines">7 High Street<br>Teston</div>
@@ -104,25 +129,19 @@
         <td class="change-answer"><a href="#" data-alert="This functionality is not currently available in this demo">Change</a></td>
       </tr>
 
-      <tr>
+      <tr id="outcome_row">
         <th>Desired outcome</th>
         <td><span data-key="desired_outcome">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nec ultricies nisi, in cursus nibh. Cras iaculis malesuada consectetur. Mauris ut venenatis massa. Ut imperdiet feugiat tempus. Nunc ac molestie enim, at ullamcorper quam.</span></td>
         <td class="change-answer"><a href="#" data-alert="This functionality is not currently available in this demo">Change</a></td>
       </tr>
 
-      <tr id="closure_notice_row" class="js-hidden">
-        <th>Is application to close an enquiry?</th>
-        <td>Yes</td>
-        <td class="change-answer"><a href="#" data-alert="This functionality is not currently available in this demo">Change</a></td>
-      </tr>
-
-      <tr>
+      <tr id="grounds_row">
         <th>Grounds for appeal</th>
         <td><span data-key="grounds_for_appeal">No text entered</span></td>
         <td class="change-answer"><a href="#" data-alert="This functionality is not currently available in this demo">Change</a></td>
       </tr>
 
-      <tr>
+      <tr id="documents_row">
         <th>Documents submitted</th>
         <td>
           <ul class="list-bullet uploaded-docs">
@@ -135,6 +154,7 @@
       </tr>
 
     </tbody>
+
   </table>
 
   <h2 class="heading-medium">Declaration and statement of truth</h2>

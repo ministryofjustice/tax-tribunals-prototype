@@ -20,7 +20,7 @@
   <div class="grid-row">
     <div class="column-two-thirds">
       <p><a class="link-back js-link-back" href="">Back</a> &nbsp; Step 2 of 7</p>
-      <h1 class="heading-large">What is your appeal about?</h1>
+      <h1 class="heading-large">What is your appeal <span class="js-hidden" data-dependent="application_type=closure">you are looking to close </span>about?</h1>
 
       <p class="lede">You will find this information on either the original notice letter or review conclusion letter from HMRC.</p>
 
@@ -53,12 +53,6 @@
               <input name="tax_type" type="radio" value="inaccurate_returns" data-destination="penalty_detail" data-store="direct=n/a,hardship=no" />
               <strong>Inaccurate return penalty</strong><br>
             </label>
-
-            <!-- label class="block-label">
-              <input name="tax_type" type="radio" value="closure_notices" data-destination="fee" data-store="fee=50,dispute_type=closure,direct=n/a,hardship=no" />
-              <strong>Apply to close an enquiry</strong><br>
-              request a closure notice for an ongoing enquiry into your tax returns
-            </label -->
 
             <label class="block-label">
               <input name="tax_type" type="radio" value="information notice" data-store="fee=50,direct=n/a,hardship=no,tax_type=info_notice" />

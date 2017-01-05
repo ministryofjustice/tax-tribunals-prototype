@@ -86,7 +86,7 @@ moj.Modules.debug = {
       moj.Modules.dataStore.storeItem(x, self.dummyData[x]);
     }
 
-    document.location = '/end_to_end/task-list';
+    document.location = '/task_list';
   },
 
   dummyData: {

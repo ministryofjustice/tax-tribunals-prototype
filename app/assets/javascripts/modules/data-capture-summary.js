@@ -40,8 +40,13 @@ moj.Modules.dataCaptureSummary = {
       dataValue: 'organisation'
     },
     {
-      elementId: 'closure_notice_row',
-      dataKey: 'dispute_type',
+      elementId: 'appeal_timeliness_section',
+      dataKey: 'application_type',
+      dataValue: 'appeal'
+    },
+    {
+      elementId: 'closure_section',
+      dataKey: 'application_type',
       dataValue: 'closure'
     },
     {
@@ -58,6 +63,21 @@ moj.Modules.dataCaptureSummary = {
       elementId: 'hardship_reasons_row',
       dataKey: 'hardship_application_status',
       dataValue: 'refused'
+    },
+    {
+      elementId: 'outcome_row',
+      dataKey: 'application_type',
+      dataValue: '!closure'
+    },
+    {
+      elementId: 'grounds_row',
+      dataKey: 'application_type',
+      dataValue: '!closure'
+    },
+    {
+      elementId: 'documents_row',
+      dataKey: 'application_type',
+      dataValue: '!closure'
     }
   ],
 
@@ -73,12 +93,35 @@ moj.Modules.dataCaptureSummary = {
     var self = this;
 
     for(var x = 0; x < self.dependencies.length; x++) {
-      var dep = self.dependencies[x];
+      var dep = self.dependencies[x],
+          val = moj.Modules.dataStore.getItem(dep.dataKey);
 
-      if(moj.Modules.dataStore.getItem(dep.dataKey) === dep.dataValue) {
-        $('#' + dep.elementId).removeClass(self.hideClass);
+      if(dep.dataValue.charAt(0) === '!') {
+        if(val === dep.dataValue.slice(1)) {
+          self.hideItem(dep.elementId);
+        } else {
+          self.showItem(dep.elementId);
+        }
+      } else {
+        if(val === dep.dataValue) {
+          self.showItem(dep.elementId);
+        } else {
+          self.hideItem(dep.elementId);
+        }
       }
     }
+  },
+
+  showItem: function(id) {
+    var self = this;
+
+    $('#' + id).removeClass(self.hideClass);
+  },
+
+  hideItem: function(id) {
+    var self = this;
+
+    $('#' + id).addClass(self.hideClass);
   },
 
   showFeeDeterminationAnswers: function() {
