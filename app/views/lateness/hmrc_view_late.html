@@ -10,7 +10,9 @@
     moj.Modules.dataStore.storeItem('task_check_if_late', 'complete');
 
     if(moj.Modules.dataStore.getItem('application_is_late') === 'unknown') {
-      $('.might-be-late').text('think you might be');
+      $('.might-be-late-heading').text('Are there reasons why your appeal might be late?');
+      $('.might-be-late').text('If you are unsure about meeting the deadline, you should give any reasons why you might be late. The judge will look at your reasons and decide whether to accept your appeal if it is late.');
+      $('.might-be-late-box').text('Reason(s) your appeal might be late');
     }
   </script>
 {% endblock %}
@@ -24,16 +26,17 @@
   <div class="grid-row">
     <div class="column-two-thirds">
       <p><a class="link-back js-link-back" href="start.html">Back</a> &nbsp; Step 2 of 2</p>
-      <h1 class="heading-large">Why are you late with your appeal?</h1>
+      <h1 class="heading-large"><span class="might-be-late-heading">Why are you late with your appeal?</span></h1>
 
-      <p class="lede">Enter the reasons why you <span class="might-be-late">are</span> late appealing to the tribunal. The judge will consider your case. Your appeal fee will not be refunded if your reasons are not accepted.</p>
+      <p class="lede"><span class="might-be-late">You must provide reasonable grounds for appealing late. If the judge rejects your reasons, your appeal will not proceed and any fees will not be refunded.</span></p>
+
 
       <form class="js_route" action="/end_to_end/task-list">
 
         <div class="form-group">
           <fieldset data-required data-error="Please provide an answer">
             <label class="form-label" for="lateness-reason">
-              Reason(s) for late appeal
+              <span class="might-be-late-box">Reason(s) for late appeal</span>
             </label>
             <textarea class="form-control form-control-3-4" id="lateness_reason" rows="4" cols="40" data-store></textarea>
           </fieldset>
@@ -48,7 +51,7 @@
       <details>
         <summary>Help with late appeals</summary>
         <div class="panel">
-          <p>You must provide reasonable grounds for submitting your appeal late. These are usually unforeseen circumstances or events beyond your control which meant you weren't able to meet the appeal deadlines.</p>
+          <p>You must provide reasonable grounds for submitting your appeal late. These are usually unforeseen circumstances or events beyond your control which meant you weren't able to meet the tax tribunal deadlines.</p>
         </div>
       </details>
     </div>
