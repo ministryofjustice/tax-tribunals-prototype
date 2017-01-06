@@ -20,17 +20,18 @@ moj.Modules.taskDependencies = {
 
     if(dependencies.length) {
       moj.Modules.taskList.getTasksRemotely(function(tasks) {
-        self.checkMetDependencies(tasks, dependencies);
+        self.tasks = tasks;
+        self.checkMetDependencies(dependencies);
       });
     };
   },
 
-  checkMetDependencies: function(tasks, dependencies) {
+  checkMetDependencies: function(dependencies) {
     var self = this,
         unmetDependencies = [];
 
     for(var x = 0; x < dependencies.length; x++) {
-      if(moj.Modules.dataStore.getItem('task_'+tasks[x]) !== 'complete') {
+      if(moj.Modules.dataStore.getItem('task_'+self.tasks[x].text) !== 'complete') {
         unmetDependencies.push(dependencies[x]);
       }
     }
@@ -44,29 +45,29 @@ moj.Modules.taskDependencies = {
     var self = this,
         message = self.createMessage(unmetDependencies);
 
-    self.$button.addClass('disabled').on('click', function(e) {
+    self.$button.addClass('js-hidden').on('click', function(e) {
       e.preventDefault();
     }).before('<p class="disable-message">' + message + '</p><p><a class="link-back js-link-back" href="">Back</a></p>');
   },
 
   createMessage: function(unmetDependencies) {
-    var message = 'Please complete step';
+    var self = this,
+        message;
 
     switch(unmetDependencies.length) {
       case 1:
-        message += ' ' + unmetDependencies[0];
+        message = '<a href="' + self.tasks[unmetDependencies[0] - 1].url + '">Please complete step ' + unmetDependencies[0] + ' first</a>'
         break;
       case 2:
-        message += 's ' + unmetDependencies[0] + ' and ' + unmetDependencies[1];
+        message = 'Please complete <a href="' + self.tasks[unmetDependencies[0] - 1].url + '">step ' + unmetDependencies[0] + '</a> and <a href="' + self.tasks[unmetDependencies[1] - 1].url + '">step ' + unmetDependencies[1] + '</a> first'
         break;
       default:
-        message += 's ';
+        message = 'Please complete '
         for(var x = 0; x < unmetDependencies.length - 1; x++) {
-          message += unmetDependencies[x] + ', ';
+          message += '<a href="' + self.tasks[unmetDependencies[x] - 1].url + '">step ' + unmetDependencies[x] + '</a>, ';
         }
-        message += ' and ' + unmetDependencies[unmetDependencies.length - 1];
+        message += ' and <a href="' + self.tasks[unmetDependencies[unmetDependencies.length - 1] - 1].url + '">step ' + unmetDependencies[unmetDependencies.length - 1] + '</a> first';
     }
-    message += ' first';
 
     return message;
   }

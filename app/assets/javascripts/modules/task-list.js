@@ -29,7 +29,13 @@ moj.Modules.taskList = {
         tasks = [];
 
     $list.find('[data-task]').each(function(n, link) {
-      tasks[tasks.length] = $(link).data('task');
+      var text = $(link).data('task'),
+          url = $(link).siblings('.button-start').attr('href');
+
+      tasks.push({
+        text: text,
+        url: url
+      });
     });
 
     return tasks;
@@ -41,9 +47,9 @@ moj.Modules.taskList = {
 
     for(var x = 0; x < self.tasks.length; x++) {
       var task = self.tasks[x],
-          $el = $('span[data-task="' + task + '"]');
+          $el = $('span[data-task="' + task.text + '"]');
 
-      if(moj.Modules.dataStore.getItem('task_' + task) === 'complete') {
+      if(moj.Modules.dataStore.getItem('task_' + task.text) === 'complete') {
         $el.removeClass('js-hidden');
         completedTasks++;
       } else {
@@ -58,7 +64,7 @@ moj.Modules.taskList = {
     var self = this;
 
     for(var x = 0; x < self.tasks.length; x++) {
-      moj.Modules.dataStore.deleteItem('task_' + self.tasks[x]);
+      moj.Modules.dataStore.deleteItem('task_' + self.tasks[x].text);
     }
 
     self.checkCompletedItems();
