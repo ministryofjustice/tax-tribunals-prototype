@@ -19,7 +19,7 @@
 
       <p class="lede">Enter HMRC's details of the enquiry you want to close.</p>
 
-      <form class="js_route" action="timescale">
+      <form class="js_route" action="/data_capture/check_answers">
 
         <div class="form-group">
           <label class="form-label" for="closure_reference_number">HMRC Reference Number</label>
@@ -29,6 +29,11 @@
         <div class="form-group">
           <label class="form-label" for="closure_hmrc_officer">Name of HMRC officer conducting the enquiry</label>
           <input class="form-control" type="text" id="closure_hmrc_officer" data-store>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="years_under_enquiry">Years or accounts of returns under enquiry</label>
+          <input class="form-control" type="text" id="years_under_enquiry" data-store>
         </div>
 
         <p>
