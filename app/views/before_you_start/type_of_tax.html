@@ -8,6 +8,10 @@
   {{ super() }}
   <script>
     moj.Modules.dataStore.deleteItem('challenge_redirect');
+
+    if(moj.Modules.dataStore.getItem('application_type') === 'closure') {
+      $('#closure_text').text('you are looking to close');
+    }
   </script>
 {% endblock %}
 
@@ -20,7 +24,7 @@
   <div class="grid-row">
     <div class="column-two-thirds">
       <p><a class="link-back js-link-back" href="">Back</a> &nbsp; Step 2 of 7</p>
-      <h1 class="heading-large">What is your appeal <span class="js-hidden" data-dependent="application_type=closure">you are looking to close </span>about?</h1>
+      <h1 class="heading-large">What is your appeal <span id="closure_text"></span> about?</h1>
 
       <p class="lede">You will find this information on either the original notice letter or review conclusion letter from HMRC.</p>
 

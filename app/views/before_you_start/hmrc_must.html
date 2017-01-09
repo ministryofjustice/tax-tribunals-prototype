@@ -1,7 +1,9 @@
 {% extends "layout.html" %}
 
+{% set ptitle = "You must challenge HMRC before you can appeal" %}
+
 {% block page_title %}
-  You must challenge HMRC first? - Tax Tribunals Prototype
+  {{ ptitle }} - Tax Tribunals Prototype
 {% endblock %}
 
 {% block content %}
@@ -13,7 +15,7 @@
   <div class="grid-row">
     <div class="column-two-thirds">
       <p><a class="link-back js-link-back" href="start.html">Back</a> &nbsp; Step 7 of 7</p>
-      <h1 class="heading-large">You must challenge HMRC before you can appeal</h1>
+      <h1 class="heading-large">{{ ptitle }}</h1>
 
       <p class="lede">For your type of tax dispute you must challenge the decision with HMRC first.</p>
       <h2 class="heading-medium">

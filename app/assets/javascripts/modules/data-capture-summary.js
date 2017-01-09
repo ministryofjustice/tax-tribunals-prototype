@@ -127,14 +127,17 @@ moj.Modules.dataCaptureSummary = {
   showFeeDeterminationAnswers: function() {
     var $el = $('.js_fee-determination-details').eq(0),
         html = '',
+        row,
         answers = moj.Modules.dataStore.getItem('storedAnswers'),
         answer = '';
 
     if(answers) {
       for(var x = 0; x < answers.length; x++) {
-        html += '<tr><td>';
-        html += answers[x].question;
-        html += '</td><td>';
+        row = '';
+
+        row += '<tr><td>';
+        row += answers[x].question;
+        row += '</td><td>';
 
         answer = answers[x].text;
         if(answers[x].val === 'other') {
@@ -142,13 +145,19 @@ moj.Modules.dataCaptureSummary = {
         } else if(answers[x].val === 'none_of_the_above') {
           answer = moj.Modules.dataStore.getItem('other_dispute_type');
         }
-        html += answer;
+        row += answer;
 
-        html += '</td>';
+        row += '</td>';
 
-        html += (x === 0 ? '<td class="change-answer"><a href="#" data-alert="This functionality is not currently available in this demo">Change</a>' : '<td>&nbsp;');
+        row += (x === 0 ? '<td class="change-answer"><a href="#" data-alert="This functionality is not currently available in this demo">Change</a>' : '<td>&nbsp;');
 
-        html += '</td></tr>';
+        row += '</td></tr>';
+
+        if(answers[x].val === 'other' && !moj.Modules.dataStore.getItem('other_dispute')) {
+          row = '';
+        }
+
+        html += row;
       }
 
       $el.replaceWith(html);

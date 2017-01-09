@@ -75,13 +75,14 @@ moj.Modules.formRoutes = {
         self.go('/closure/cannot_close');
       }
     } else {
-      // do we need to go to Challenge HMRC page?
-      if(isDirect === 'true' && hasChallenged === 'no' && pageName !== 'hmrc_must' && wasRedirected !== 'yes') {
-        // yes
+      // restoration case
+      if(page === 'fee' && moj.Modules.dataStore.getItem('tax_type') === 'Restoration case' && moj.Modules.dataStore.getItem('hmrc_challenge') !== 'yes') {
+        self.go('/restoration/must_challenge');
+      } else if(isDirect === 'true' && hasChallenged === 'no' && pageName !== 'hmrc_must' && wasRedirected !== 'yes') {
+        // go to Challenge HMRC page
         moj.Modules.dataStore.storeItem('challenge_redirect', 'yes');
-        self.go('hmrc_must.html');
+        self.go('hmrc_must');
       } else {
-        // no
         // can user apply for hardship?
         if(page === 'fee' && moj.Modules.dataStore.getItem('hardship') === 'yes' && !['hardship_paid', 'hardship_hmrc_status', 'hardship_hmrc_applied'].includes(pageName)) {
           self.go('hardship_paid');
