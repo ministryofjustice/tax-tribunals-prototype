@@ -10,7 +10,7 @@
     moj.Modules.dataStore.deleteItem('challenge_redirect');
 
     if(moj.Modules.dataStore.getItem('application_type') === 'closure') {
-      $('#closure_text').text('you are looking to close');
+      $('#closure_text').text('What type of tax is involved in the enquiry?');
     }
   </script>
 {% endblock %}
@@ -24,9 +24,9 @@
   <div class="grid-row">
     <div class="column-two-thirds">
       <p><a class="link-back js-link-back" href="">Back</a> &nbsp; Step 2 of 7</p>
-      <h1 class="heading-large">What is your appeal <span id="closure_text"></span> about?</h1>
+      <h1 class="heading-large" id="closure_text">What is your appeal about?</h1>
 
-      <p class="lede">You will find this information on either the original notice letter or review conclusion letter from HMRC.</p>
+      <p class="lede">You will find this information on <span class="js-hidden" data-dependent="application_type=appeal">either the original notice letter or review conclusion letter</span><span class="js-hidden" data-dependent="application_type=closure">any letters you have received</span> from HMRC<span class="js-hidden" data-dependent="application_type=closure"> about the enquiry</span>.</p>
 
       <form class="js_route js_store_answers" action="dispute_type" data-number="1">
         <div class="form-group">
@@ -53,15 +53,15 @@
                 <strong>Corporation Tax</strong>
               </label>
 
-            <label class="block-label">
+            <span class="js-hidden" data-dependent="application_type=appeal"><label class="block-label">
               <input name="tax_type" type="radio" value="inaccurate_returns" data-destination="penalty_detail" data-store="direct=n/a,hardship=no" />
               <strong>Inaccurate return penalty</strong><br>
-            </label>
+            </label></span>
 
-            <label class="block-label">
+            <span class="js-hidden" data-dependent="application_type=appeal"><label class="block-label">
               <input name="tax_type" type="radio" value="information notice" data-store="fee=50,direct=n/a,hardship=no,tax_type=info_notice" />
               <strong>Information notices</strong><br>
-            </label>
+            </label></span>
 
             <label class="block-label">
               <input name="tax_type" type="radio" value="other" data-destination="types_tax_other" />
