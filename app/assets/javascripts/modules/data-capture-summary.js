@@ -20,6 +20,11 @@ moj.Modules.dataCaptureSummary = {
       dataValue: 'organisation'
     },
     {
+      elementId: 'appellant_email',
+      dataKey: 'who_are_you',
+      dataValue: 'taxpayer'
+    },
+    {
       elementId: 'representative_details_row',
       dataKey: 'appellant_has_representation',
       dataValue: 'yes'
