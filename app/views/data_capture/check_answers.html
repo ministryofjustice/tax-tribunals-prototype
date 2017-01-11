@@ -27,7 +27,12 @@
 
     <tbody>
       <tr>
-        <th colspan="3"><h2 class="heading-medium">Fee details</h2></th>
+        <th colspan="3"><h2 class="heading-medium">Find out your <span class="js-hidden" data-dependent="application_type=appeal">appeal</span><span class="js-hidden" data-dependent="application_type=closure">application</span> cost</h2></th>
+      </tr>
+      <tr class="js-hidden" data-dependent="application_type=appeal">
+        <th>Did you challenge the original decision?</th>
+        <td><span data-key="hmrc_challenge" class="js_uc_first">Yes</span></td>
+        <td class="change-answer"><a href="#" data-alert="This functionality is not currently available in this demo">Change</a></td>
       </tr>
       <tr class="js_fee-determination-details">
         <td>What is your appeal about?</td>
@@ -35,7 +40,7 @@
         <td class="change-answer"><a href="#" data-alert="This functionality is not currently available in this demo">Change</a></td>
       </tr>
       <tr>
-        <th>Fee</th>
+        <th>Initial <span class="js-hidden" data-dependent="application_type=appeal">appeal</span><span class="js-hidden" data-dependent="application_type=closure">application</span> fee</th>
         <td>£<span data-key="fee">50</span></td>
         <td>&nbsp;</td>
       </tr>
@@ -43,20 +48,15 @@
 
     <tbody id="appeal_timeliness_section" class="js-hidden">
       <tr>
-        <th colspan="3"><h2 class="heading-medium">Appeal timeliness</h2></th>
-      </tr>
-      <tr>
-        <th>Have you made an appeal to HMRC?</th>
-        <td><span data-key="hmrc_challenge" class="js_uc_first">Yes</span></td>
-        <td class="change-answer"><a href="#" data-alert="This functionality is not currently available in this demo">Change</a></td>
+        <th colspan="3"><h2 class="heading-medium">Did you meet the appeal deadline?</h2></th>
       </tr>
       <tr id="application_is_late_row" class="js-hidden">
-        <th>Is this application late?</th>
+        <th>Is the appeal late?</th>
         <td><span data-key="application_is_late" class="js_uc_first">Yes</span></td>
         <td class="change-answer"><a href="#" data-alert="This functionality is not currently available in this demo">Change</a></td>
       </tr>
       <tr id="reasons_for_late_application_row" class="js-hidden">
-        <th>Reason(s) for late application</th>
+        <th>Reason(s) for late appeal</th>
         <td><span data-key="lateness_reason" class="js_uc_first">Yes</span></td>
         <td class="change-answer"><a href="#" data-alert="This functionality is not currently available in this demo">Change</a></td>
       </tr>
@@ -64,7 +64,7 @@
 
     <tbody id="closure_section" class="js-hidden">
       <tr>
-        <th colspan="3"><h2 class="heading-medium">Closure details</h2></th>
+        <th colspan="3"><h2 class="heading-medium">Enquiry details</h2></th>
       </tr>
       <tr>
         <th>HMRC reference number</th>
@@ -85,10 +85,10 @@
 
     <tbody>
       <tr>
-        <th colspan="3"><h2 class="heading-medium">Appeal details</h2></th>
+        <th colspan="3"><h2 class="heading-medium"><span class="js-hidden" data-dependent="application_type=appeal">Appeal</span><span class="js-hidden" data-dependent="application_type=closure">Application</span> details</h2></th>
       </tr>
       <tr>
-        <th>Appellant details</th>
+        <th>Taxpayer's details</th>
         <td>
           <div id="appellant_name" class="js-hidden"><span data-key="appellant_first_name">Terry</span> <span data-key="appellant_last_name">Example</span></div>
           <div id="appellant_company_name" data-key="appellant_company_name" class="js-hidden">Terry's Cabs</div>
@@ -106,7 +106,7 @@
       </tr>
 
       <tr id="representative_details_row" class="js-hidden">
-        <th>Representative details</th>
+        <th>Representative's details</th>
         <td>
           <div id="representative_name" class="js-hidden"><span data-key="representative_first_name">Joe</span> <span data-key="representative_last_name">Rep</span></div>
           <div id="representative_company_name" data-key="representative_company_name" class="js-hidden">ABC Solicitors</div>
@@ -145,9 +145,8 @@
         <th>Documents submitted</th>
         <td>
           <ul class="list-bullet uploaded-docs">
-            <li>Bank statement - 01/08/2016</li>
-            <li>Rent agreement - 01/02/2013</li>
-            <li>Other document - 01/01/2016</li>
+            <li>Original notice letter - 01/08/2016</li>
+            <li>Review conclusion letter - 13/10/2016</li>
           </ul>
         </td>
         <td class="change-answer"><a href="#" data-alert="This functionality is not currently available in this demo">Change</a></td>
@@ -159,7 +158,7 @@
 
   <h2 class="heading-medium">Declaration and statement of truth</h2>
 
-  <p>By completing this application and clicking the ‘Submit and continue’ button, I believe the information I have given in this form is true to the best of my knowledge. If I am found to have been deliberately untruthful or dishonest, criminal proceedings for fraud can be brought against me. I understand that if I have given false information or I do not provide further evidence if requested, my application may be rejected and any tax tribunal fees will not be refunded.</p>
+  <p>By completing this <span class="js-hidden" data-dependent="application_type=appeal">appeal</span><span class="js-hidden" data-dependent="application_type=closure">application</span> and clicking the ‘Submit and continue’ button, I believe the information I have given in this form is true to the best of my knowledge. If I am found to have been deliberately untruthful or dishonest, criminal proceedings for fraud can be brought against me. I understand that if I have given false information or I do not provide further evidence if requested, my <span class="js-hidden" data-dependent="application_type=appeal">appeal</span><span class="js-hidden" data-dependent="application_type=closure">application</span> may be rejected and any tax tribunal fees will not be refunded.</p>
 
       <p class="notice util_mt-large">
         <i class="icon icon-important">
