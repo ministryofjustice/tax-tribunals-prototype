@@ -11,6 +11,10 @@
   <script src="/public/javascripts/modules/data-capture-summary.js"></script>
   <script>
     moj.Modules.dataCaptureSummary.init();
+
+    if(moj.Modules.dataStore.getItem('fees').toLowerCase() === 'no') {
+      $('#confirm-answers').attr('href', '/no_fees/confirmation');
+    }
   </script>
 {% endblock %}
 
@@ -179,7 +183,7 @@
         </strong>
       </p>
   <p>
-    <a class="button js-next" href="/payment_tool/case_to_pay">Submit and continue</a>
+    <a id="confirm-answers" class="button" href="/payment_tool/case_to_pay">Submit and continue</a>
   </p>
 
 </main>

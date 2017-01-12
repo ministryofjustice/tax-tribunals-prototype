@@ -53,11 +53,23 @@ moj.Modules.formRoutes = {
 
   next: function(page) {
     var self = this,
+        fees = moj.Modules.dataStore.getItem('fees'),
         applicationType = moj.Modules.dataStore.getItem('application_type'),
         isDirect = moj.Modules.dataStore.getItem('direct'),
         hasChallenged = moj.Modules.dataStore.getItem('hmrc_challenge'),
         wasRedirected = moj.Modules.dataStore.getItem('challenge_redirect'),
         pageName = self.getPageName();
+
+    // route around fee page and task list if fees=no
+    if(fees === 'no') {
+      if(page === 'fee') {
+        self.go('/lateness/hmrc_view_date');
+        return;
+      } else if(page === '/task_list') {
+        self.go('/data_capture/who_are_you');
+        return;
+      }
+    }
 
     // closures have a different path, need to skip certain pages/sections
     if(applicationType === 'closure') {
@@ -75,8 +87,8 @@ moj.Modules.formRoutes = {
         self.go('/closure/cannot_close');
       }
     } else {
-      // restoration case
       if(page === 'fee' && moj.Modules.dataStore.getItem('tax_type') === 'Restoration case' && moj.Modules.dataStore.getItem('hmrc_challenge') !== 'yes') {
+        // must challenge if restoration
         self.go('/restoration/must_challenge');
       } else if(isDirect === 'true' && hasChallenged === 'no' && pageName !== 'hmrc_must' && wasRedirected !== 'yes') {
         // go to Challenge HMRC page

@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Tax Tribunals Prototype
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  {% include "includes/phase_banner_alpha.html" %}
+
+  <p><a class="link-back js-link-back" href="start.html">Back</a> &nbsp; Pay fee - step 4 of 4</p>
+    <div class="govuk-box-highlight">
+    <h1 class="bold-large">Case submitted</h1>
+    <p>
+      We will send confirmation by email
+    </p>
+  </div>
+  <h1 class="heading-large">
+    <span class="heading-secondary">Your case reference number is:</span>
+    <span data-key="tc_number">TC/2012/00001</span>
+  </h1>
+
+        <p>
+         Please make a note of this number in case you need to contact us.</p>
+         <h2 class="heading-medium"><a href="TC_2016_123456_HMRC_TaxpayerFullName.pdf">Save or print your case details (PDF, 124 KB)</a></h2>
+         <p>We will also send your case reference number and case details by email.</p>
+  <h2 class="heading-medium">What happens next?</h2>
+  <ul class="list list-bullet">
+            <li>we will review your details</li>
+            <li>we may ask for more information before your case can proceed</li>
+            <li>we will write to let you know the next steps and if your case needs a hearing</li>
+            <li>we will notify other parties involved and ask for their response</li>
+          </ul>
+
+  <p>If you have any questions, you can contact the tax tribunal on 0300 123 1024 (find out about <a href="https://www.gov.uk/call-charges">call charges).</a></p>
+
+  <div class="form-group">
+          <input class="button" type="button" value="Finish" >
+        </div>
+
+</main>
+
+{% endblock %}
