@@ -68,10 +68,10 @@
           <input class="form-control" type="text" id="appellant_contact_name" data-store>
         </div>
 
-        <div class="form-group js-hidden" data-dependent="who_are_you=taxpayer">
+        <div class="form-group">
           <label class="form-label" for="appellant_email">
-            <span class="js-hidden" data-dependent="appellant_type=individual">Email address (if you want confirmation by email)</span>
-            <span class="js-hidden" data-dependent="appellant_type=company,organisation">Email address (if you want confirmation by email)</span>
+            <span class="js-hidden" data-dependent="appellant_type=individual">Email address <span class="js-hidden" data-dependent="who_are_you=taxpayer">(to receive confirmation by email)</span></span>
+            <span class="js-hidden" data-dependent="appellant_type=company,organisation">Email address <span class="js-hidden" data-dependent="who_are_you=taxpayer">(to receive confirmation by email)</span></span>
           </label>
           <input class="form-control" type="text" id="appellant_email" data-store>
         </div>
