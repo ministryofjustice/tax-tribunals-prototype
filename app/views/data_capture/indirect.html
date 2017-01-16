@@ -11,7 +11,7 @@
   <script>
     if(moj.Modules.dataStore.getItem('direct') === 'true') {
       moj.Modules.dataStore.storeItem('concerns_indirect_tax', 'no');
-      document.location = 'outcome';
+      document.location = 'grounds_for_appeal';
     } else if(moj.Modules.dataStore.getItem('direct') === 'false') {
       moj.Modules.dataStore.storeItem('concerns_indirect_tax', 'yes');
       document.location = 'hardship';
@@ -31,7 +31,7 @@
 
       <p class="lede">Lorem ipsum</p>
 
-        <form class="js_route" action="outcome">
+        <form class="js_route" action="grounds_for_appeal">
           <div class="form-group">
             <fieldset>
               <legend class="visuallyhidden">{{ ptitle }}</legend>

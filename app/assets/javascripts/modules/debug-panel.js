@@ -11,8 +11,12 @@ moj.Modules.debug = {
       call: 'moj.Modules.formRoutes.toggleValidation()'
     },
     {
-      text: 'skip to data capture',
-      call: 'moj.Modules.debug.skipToDataCapture()'
+      text: 'skip to data capture (direct, Income tax, no hardship)',
+      call: 'moj.Modules.debug.skipToDataCapture(0)'
+    },
+    {
+      text: 'skip to data capture (indirect, VAT, hardship)',
+      call: 'moj.Modules.debug.skipToDataCapture(1)'
     },
     {
       text: 'edit session var',
@@ -50,13 +54,13 @@ moj.Modules.debug = {
     var self = this;
 
     if(!$('#debugPanel').length) {
-      $('body').prepend('<div id="debugPanel"><h2>TOOLS</h2><ul></ul></div>');
+      $('body').prepend('<div id="debugPanel"><h2>TOOLS</h2><ul class="list list-bullet"></ul></div>');
 
       self.tools.forEach(function(tool) {
         $('#debugPanel ul').append('<li class="link" data-call="' + tool.call + '">' + tool.text + '</li>');
       });
 
-      $('#debugPanel ul').before('<p>Validation: <span id="validationStatus">' + moj.Modules.formRoutes.validationOn + '</span></p>');
+      $('#debugPanel ul').before('<p>Validation: <strong id="validationStatus">' + moj.Modules.formRoutes.validationOn + '</strong></p>');
     } else {
       $('#debugPanel').toggle();
     }
@@ -75,49 +79,84 @@ moj.Modules.debug = {
     }
   },
 
-  skipToDataCapture: function() {
+  skipToDataCapture: function(dataset) {
     var self = this;
 
     moj.Modules.dataStore.clearSessionData();
 
     moj.log('filling in dummy stuff for steps 1-2');
 
-    for(var x in self.dummyData) {
-      moj.Modules.dataStore.storeItem(x, self.dummyData[x]);
+    for(var x in self.dummyData[dataset]) {
+      moj.Modules.dataStore.storeItem(x, self.dummyData[dataset][x]);
     }
 
     document.location = '/task_list';
   },
 
-  dummyData: {
-    task_determine_fee: 'complete',
-    task_check_if_late: 'complete',
-    application_is_late: 'no',
-    direct: 'false',
-    fee: '200',
-    hardship: 'yes',
-    hardship_application_status: 'refused',
-    hardship_applied_for: 'yes',
-    hmrc_challenge: 'yes',
-    paid_disputed_tax: 'no',
-    tax_amount: '5000',
-    tax_type: 'VAT',
-    storedAnswers: [
-      {
-        "question":"What is your appeal about?","text":"Value Added Tax (VAT)","val":"vat"
-      },
-      {
-        "question":"What is your dispute about?","text":"Amount of tax","val":"amount_of_tax_owed"
-      },
-      {
-        "question":"Have you paid the amount of tax involved in the dispute?","text":"No","val":"No"
-      },
-      {
-        "question":"Have you asked to defer paying the tax because of hardship?","text":"Yes","val":"Yes"
-      },
-      {
-        "question":"What is the status of your hardship application with HMRC?","text":"Refused","val":"Refused"
-      }
-    ]
-  }
+  dummyData: [
+    {
+      task_determine_fee: 'complete',
+      task_check_if_late: 'complete',
+      application_is_late: 'no',
+      direct: 'true',
+      fee: '200',
+      hardship: 'no',
+      hmrc_challenge: 'yes',
+      tax_amount: '3456',
+      tax_type: 'Income tax',
+      storedAnswers: [
+        {
+          "question": "What is your appeal about?",
+          "text": "Income Tax",
+          "val": "income_tax"
+        },
+        {
+          "question": "What is your dispute about?",
+          "text": "Amount of tax",
+          "val": "amount_of_tax_owed"
+        }
+      ]
+    },
+    {
+      task_determine_fee: 'complete',
+      task_check_if_late: 'complete',
+      application_is_late: 'no',
+      direct: 'false',
+      fee: '200',
+      hardship: 'yes',
+      hardship_application_status: 'refused',
+      hardship_applied_for: 'yes',
+      hmrc_challenge: 'yes',
+      paid_disputed_tax: 'no',
+      tax_amount: '5000',
+      tax_type: 'VAT',
+      storedAnswers: [
+        {
+          "question": "What is your appeal about?",
+          "text": "Value Added Tax (VAT)",
+          "val": "vat"
+        },
+        {
+          "question": "What is your dispute about?",
+          "text": "Amount of tax",
+          "val": "amount_of_tax_owed"
+        },
+        {
+          "question": "Have you paid the amount of tax involved in the dispute?",
+          "text": "No",
+          "val": "No"
+        },
+        {
+          "question": "Have you asked to defer paying the tax because of hardship?",
+          "text": "Yes",
+          "val": "Yes"
+        },
+        {
+          "question": "What is the status of your hardship application with HMRC?",
+          "text": "Refused",
+          "val": "Refused"
+        }
+      ]
+    }
+  ]
 };

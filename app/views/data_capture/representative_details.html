@@ -10,7 +10,7 @@
   {{ super() }}
   <script>
     if(moj.Modules.dataStore.getItem('who_are_you') === 'taxpayer') {
-      $('form').attr('action', 'outcome');
+      $('form').attr('action', 'grounds_for_appeal');
     }
   </script>
 {% endblock %}

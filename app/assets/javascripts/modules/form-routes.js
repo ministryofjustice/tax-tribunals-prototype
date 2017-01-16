@@ -65,7 +65,7 @@ moj.Modules.formRoutes = {
         if(['dispute_type', 'fee', 'penalty_detail'].includes(page)) {
           moj.Modules.dataStore.storeItem('fee', '50');
           self.go('/data_capture/who_are_you');
-        } else if(page === 'outcome') {
+        } else if(page === 'grounds_for_appeal') {
           self.go('/closure/enquiry_details');
         } else {
           self.go(page);
@@ -83,10 +83,11 @@ moj.Modules.formRoutes = {
         moj.Modules.dataStore.storeItem('challenge_redirect', 'yes');
         self.go('hmrc_must');
       } else {
+
         // can user apply for hardship?
         if(page === 'fee' && moj.Modules.dataStore.getItem('hardship') === 'yes' && !['hardship_paid', 'hardship_hmrc_status', 'hardship_hmrc_applied'].includes(pageName)) {
           self.go('hardship_paid');
-        } else if(page === 'outcome' && moj.Modules.dataStore.getItem('hardship') === 'yes' && pageName !== 'hardship' && moj.Modules.dataStore.getItem('paid_disputed_tax') !== 'yes' && moj.Modules.dataStore.getItem('hardship_application_status') === 'refused') {
+        } else if(page === 'grounds_for_appeal' && moj.Modules.dataStore.getItem('hardship') === 'yes' && pageName !== 'hardship' && moj.Modules.dataStore.getItem('paid_disputed_tax') !== 'yes' && moj.Modules.dataStore.getItem('hardship_application_status') === 'refused') {
           self.go('hardship');
         } else {
           self.go(page);

@@ -1,12 +1,13 @@
 #debugPanel {
   position: fixed;
-  right: 4px;
-  top: 4px;
-  width: 150px;
-  padding: 5px;
-  background-color: $white;
+  right: 10px;
+  top: 10px;
+  width: 250px;
+  padding: 20px;
+  background-color: #fafafa;
   border: 2px solid $yellow;
   z-index: 200;
+  box-shadow: 5px 5px 5px 1px rgba(0,0,0,0.5);
 
   h2 {
     text-align: center;
@@ -16,5 +17,7 @@
 
   li {
     cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
   }
 }
