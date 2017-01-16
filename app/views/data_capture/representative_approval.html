@@ -15,16 +15,28 @@
   <div class="grid-row">
     <div class="column-two-thirds">
       <p><a class="link-back js-link-back" href="start.html">Back</a> &nbsp; Step 3 of 16</p>
-      <h1 class="heading-large">{{ ptitle }}</h1>
+      <h1 class="heading-large"><span class="js-hidden" data-dependent="who_are_you=taxpayer">Approve a representative (optional)</span><span class="js-hidden" data-dependent="who_are_you=representative">Provide approval from the taxpayer (optional)</span></h1>
 
-      <p class="lede">You can continue your <span class="js-hidden" data-dependent="application_type=appeal">appeal</span><span class="js-hidden" data-dependent="application_type=closure"> application</span> but you will need approval from the taxpayer if you want to receive correspondence or represent the taxpayer at a hearing.</p>
+      <p class="lede">You will need <span class="js-hidden" data-dependent="who_are_you=representative">approval from the taxpayer if you want to receive correspondence or represent the taxpayer at a hearing.</span><span class="js-hidden" data-dependent="who_are_you=taxpayer"> to provide approval for your representative before they can receive correspondence or represent you at a hearing.</p>
 
         <details>
-          <summary>How to get approval from the taxpayer</summary>
+          <summary><span class="js-hidden" data-dependent="who_are_you=representative">How to get approval from the taxpayer</span><span class="js-hidden" data-dependent="who_are_you=taxpayer">How to approve a representative</summary>
           <div class="panel">
-            <p>Copy and paste the text below into an email or download as a PDF to send to the taxpayer.</p>
+            <span class="js-hidden" data-dependent="who_are_you=representative"><ul class="list list-bullet">
+            <li>copy and paste the text below into an email, document or download as a PDF</li>
+            <li>send the form to the taxpayer to complete</li>
+            <li>if you are acting on behalf of a company you will need approval from a company director</li>
+            <li>ask the taxpayer to email back the information or return a signed form in digital format</li>
+            <li>upload the form in digital format below</li>
+            </ul>
+            </span>
 
-            <p>If you are acting on behalf of a company you will need approval from a company director.</p>
+             <span class="js-hidden" data-dependent="who_are_you=taxpayer"><ul class="list list-bullet">
+             <li>copy and paste the text below into a document or download as a PDF</li>
+             <li>complete and sign the form</li>
+             <li>if you are submitting an <span class="js-hidden" data-dependent="application_type=appeal">appeal</span><span class="js-hidden" data-dependent="application_type=closure">application</span> for a company you will need approval from a company director</li>
+             <li>scan and upload the form in digital format below</li>
+             </ul>
 
             <h2 class="heading-medium">Example letter</h2>
             <div class="panel">
@@ -40,13 +52,13 @@
               </div>
             </div>
 
-            <button class="button">Download PDF</button>
+            <button class="button" href="https://drive.google.com/open?id=0B-4PgEZDV9SBczhkbGNDanJEa28">Download PDF</a>
           </div>
         </details>
 
       <form class="js_route" action="representative_type">
 
-        <h2 class="heading-medium">Upload taxpayer approval</h2>
+        <h2 class="heading-medium">Upload approval</h2>
         <p>We accept scanned images or good quality pictures, for example via a smartphone. You can upload PDF, JPG, GIF or PNG formats. Maximum file size of 20MB.</p>
         <input type="file" id="file_rep_pro_forma" name="file_rep_pro_forma" data-store>
         

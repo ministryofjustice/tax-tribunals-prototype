@@ -26,7 +26,11 @@
       <p><a class="link-back js-link-back" href="start.html">Back</a> &nbsp; Step 5 of 16</p>
       <h1 class="heading-large">{{ ptitle }}</h1>
 
-      <p class="lede">If you are approved to act on behalf of the taxpayer all correspondence will be sent to the address, or email address, you enter below.</p>
+      <p class="lede"><span class="js-hidden" data-dependent="who_are_you=representative">If you are approved to act on behalf of the taxpayer all correspondence will be sent to the address, or email address, you enter below.</span>
+      </p>
+
+      <p class="lede"><span class="js-hidden" data-dependent="who_are_you=taxpayer">If you have approved your representative to act on your behalf, all correspondence will be sent to the address, or email address, you enter below.</span>
+      </p>
 
       <form class="js_route" action="appellant_type">
 
@@ -72,8 +76,8 @@
 
         <div class="form-group">
           <label class="form-label" for="representative_email">
-            <span class="js-hidden" data-dependent="representative_type=individual">Email address (if you want to be contacted by email)</span>
-            <span class="js-hidden" data-dependent="representative_type=company,organisation">Email address (if you want to be contacted by email)</span>
+            <span class="js-hidden" data-dependent="representative_type=individual">Email address</span>
+            <span class="js-hidden" data-dependent="representative_type=company,organisation">Email address</span>
           </label>
           <input class="form-control" type="text" id="representative_email" data-store>
         </div>
