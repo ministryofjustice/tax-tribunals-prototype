@@ -17,10 +17,16 @@ moj.Modules.dependentFields = {
           key = storedPair.split('=')[0],
           values = storedPair.split('=')[1];
 
-      values = values.split(',');
+      if(values) {
+        values = values.split(',');
 
-      for(var x = 0; x < values.length; x++) {
-        if(moj.Modules.dataStore.getItem(key) === values[x]) {
+        for(var x = 0; x < values.length; x++) {
+          if(moj.Modules.dataStore.getItem(key) === values[x]) {
+            $field.removeClass('js-hidden');
+          }
+        }
+      } else {
+        if(moj.Modules.dataStore.getItem(key)) {
           $field.removeClass('js-hidden');
         }
       }
