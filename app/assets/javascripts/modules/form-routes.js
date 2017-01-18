@@ -60,17 +60,6 @@ moj.Modules.formRoutes = {
         wasRedirected = moj.Modules.dataStore.getItem('challenge_redirect'),
         pageName = self.getPageName();
 
-    // route around fee page and task list if fees=no
-    if(fees === 'no') {
-      if(page === 'fee') {
-        self.go('/lateness/hmrc_view_date');
-        return;
-      } else if(page === '/task_list') {
-        self.go('/data_capture/who_are_you');
-        return;
-      }
-    }
-
     // closures have a different path, need to skip certain pages/sections
     if(applicationType === 'closure') {
       if(isDirect === 'true') {
@@ -102,6 +91,15 @@ moj.Modules.formRoutes = {
         } else if(page === 'grounds_for_appeal' && moj.Modules.dataStore.getItem('hardship') === 'yes' && pageName !== 'hardship' && moj.Modules.dataStore.getItem('paid_disputed_tax') !== 'yes' && moj.Modules.dataStore.getItem('hardship_application_status') === 'refused') {
           self.go('hardship');
         } else {
+          // route around fee page and task list if fees=no
+          if(fees === 'no') {
+            if(page === 'fee') {
+              page = '/lateness/hmrc_view_date';
+            } else if(page === '/task_list') {
+              page = '/data_capture/who_are_you';
+            }
+          }
+
           self.go(page);
         }
       }

@@ -51,7 +51,8 @@ moj.Modules.debug = {
   },
 
   debugPanel: function() {
-    var self = this;
+    var self = this,
+        feesHTML = '';
 
     if(!$('#debugPanel').length) {
       $('body').prepend('<div id="debugPanel"><h2>TOOLS</h2><ul class="list list-bullet"></ul></div>');
@@ -60,7 +61,11 @@ moj.Modules.debug = {
         $('#debugPanel ul').append('<li class="link" data-call="' + tool.call + '">' + tool.text + '</li>');
       });
 
-      $('#debugPanel ul').before('<p>Validation: <strong id="validationStatus">' + moj.Modules.formRoutes.validationOn + '</strong></p>');
+      if(moj.Modules.dataStore.getItem('fees')) {
+        feesHTML = '<br>Fees: <strong id="feesStatus">' + moj.Modules.dataStore.getItem('fees') + '</strong>';
+      }
+
+      $('#debugPanel ul').before('<p>Validation: <strong id="validationStatus">' + moj.Modules.formRoutes.validationOn + '</strong>' + feesHTML + '</p>');
     } else {
       $('#debugPanel').toggle();
     }
