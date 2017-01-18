@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 
-{% set ptitle = "You cannot close an enquiry for this type of tax" %}
+{% set ptitle = "You can only close certain types of enquiry" %}
 
 {% block page_title %}
   {{ ptitle }} - Tax Tribunals Prototype
@@ -17,8 +17,12 @@
       <p><a class="link-back js-link-back" href="start.html">Back</a> &nbsp; Step 7 of 7</p>
       <h1 class="heading-large">{{ ptitle }}</h1>
 
-      <p class="lede">You can only close an enquiry into certain types of tax usually involving income tax for individual or businesses paid through self-assessment.</p>
-      <p>See the guidance on <a href="#">closing an ongoing enquiry with HMRC</a>.</p>
+      <p class="lede">The tax tribunal only has the authority to close enquiries into certain types of tax.</p>
+      <p>For more information on tax enquiries and what they are, see the guidance from <a href="http://taxaid.org.uk/guides/taxpayers/tax-returns/enquiries">TaxAid</a>.</p>
+
+       <div class="form-group">
+          <input class="button" type="button" value="Finish" >
+        </div>
     </div>
   </div>
 </main>
