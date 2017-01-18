@@ -12,8 +12,29 @@
 
   <h1 class="heading-large">Tax Tribunals Prototypes</h1>
 
-  <h2 class="heading-medium">Main application</h2>
-  <p><a href="/start">Mock GOV.UK start page</a></p>
+  <form class="js_route" action="/start">
+    <h2 class="heading-medium">Main application</h2>
+    <p>Start at a mocked-up GOV.UK start page:</p>
+
+    <fieldset>
+      <label class="block-label">
+        <input name="fees" type="radio" value="yes" data-store="fees=yes" checked="checked" />
+        With Tribunal Fees
+      </label>
+
+      <label class="block-label">
+        <input name="fees" type="radio" value="no" data-store="fees=no" />
+        Fee-Free Service
+      </label>
+
+    </fieldset>
+
+    <p>
+      <input class="button" type="submit" value="Begin">
+    </p>
+  </form>
+
+
 
   <h2 class="heading-medium">Demos</h2>
   <ul class="list list-bullet">

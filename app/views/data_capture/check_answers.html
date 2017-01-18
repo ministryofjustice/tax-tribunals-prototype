@@ -11,6 +11,10 @@
   <script src="/public/javascripts/modules/data-capture-summary.js"></script>
   <script>
     moj.Modules.dataCaptureSummary.init();
+
+    if(moj.Modules.dataStore.getItem('fees').toLowerCase() === 'no') {
+      $('#confirm-answers').attr('href', '/no_fees/confirmation');
+    }
   </script>
 {% endblock %}
 
@@ -27,7 +31,7 @@
 
     <tbody>
       <tr>
-        <th colspan="3"><h2 class="heading-medium">Find out your <span class="js-hidden" data-dependent="application_type=appeal">appeal</span><span class="js-hidden" data-dependent="application_type=closure">application</span> cost</h2></th>
+        <th colspan="3"><h2 class="heading-medium"><span class="js-hidden" data-dependent="application_type=appeal">Appeal</span><span class="js-hidden" data-dependent="application_type=closure">Application</span> type <span data-dependent="fees=yes">and cost</span></h2></th>
       </tr>
       <tr class="js-hidden" data-dependent="application_type=appeal">
         <th>Did you challenge the original decision?</th>
@@ -49,7 +53,7 @@
         <td>£<span data-key="tax_amount" class="js_uc_first">5000</span></td>
         <td class="change-answer"><a href="#" data-alert="This functionality is not currently available in this demo">Change</a></td>
       </tr>
-      <tr>
+      <tr data-dependent="fees=yes">
         <th>Initial <span class="js-hidden" data-dependent="application_type=appeal">appeal</span><span class="js-hidden" data-dependent="application_type=closure">application</span> fee</th>
         <td>£<span data-key="fee">50</span></td>
         <td>&nbsp;</td>
@@ -58,7 +62,7 @@
 
     <tbody id="appeal_timeliness_section" class="js-hidden">
       <tr>
-        <th colspan="3"><h2 class="heading-medium">Did you meet the appeal deadline?</h2></th>
+        <th colspan="3"><h2 class="heading-medium">Appeal deadline</h2></th>
       </tr>
       <tr id="application_is_late_row" class="js-hidden">
         <th>Is the appeal late?</th>
@@ -168,7 +172,7 @@
 
   <h2 class="heading-medium">Declaration and statement of truth</h2>
 
-  <p>By completing this <span class="js-hidden" data-dependent="application_type=appeal">Notice of Appeal</span><span class="js-hidden" data-dependent="application_type=closure">Application to Close an Enquiry</span> and clicking the ‘Submit and continue’ button, I believe the information I have given in this form is true to the best of my knowledge. If I am found to have been deliberately untruthful or dishonest, criminal proceedings for fraud can be brought against me. I understand that if I have given false information or I do not provide further evidence if requested, my <span class="js-hidden" data-dependent="application_type=appeal">appeal</span><span class="js-hidden" data-dependent="application_type=closure">application</span> may be rejected and any tax tribunal fees will not be refunded.</p>
+  <p>By completing this <span class="js-hidden" data-dependent="application_type=appeal">Notice of Appeal</span><span class="js-hidden" data-dependent="application_type=closure">Application to Close an Enquiry</span> and clicking the ‘Submit and continue’ button, I believe the information I have given in this form is true to the best of my knowledge. If I am found to have been deliberately untruthful or dishonest, criminal proceedings for fraud can be brought against me. I understand that if I have given false information or I do not provide further evidence if requested, my <span class="js-hidden" data-dependent="application_type=appeal">appeal</span><span class="js-hidden" data-dependent="application_type=closure">application</span> may be rejected<span data-dependent="fees=yes"> and any tax tribunal fees will not be refunded</span>.</p>
 
       <p class="notice util_mt-large">
         <i class="icon icon-important">
@@ -179,7 +183,7 @@
         </strong>
       </p>
   <p>
-    <a class="button js-next" href="/payment_tool/case_to_pay">Submit and continue</a>
+    <a id="confirm-answers" class="button" href="/payment_tool/case_to_pay">Submit and continue</a>
   </p>
 
 </main>

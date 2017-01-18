@@ -4,6 +4,17 @@
   Application type - Tax Tribunals Prototype
 {% endblock %}
 
+{% block body_end %}
+  {{ super() }}
+  <script>
+    if(moj.Modules.dataStore.getItem('fees').toLowerCase() === 'no') {
+      $('#appeal-link').attr('href', '/no_fees');
+
+      moj.Modules.dataStore.storeItem('application_type', 'appeal');
+    }
+  </script>
+{% endblock %}
+
 {% block content %}
 
 <main id="content" role="main" class="task-list-home">
@@ -17,16 +28,16 @@
       <h1 class="heading-large">What do you want to do?</h1>
       <ul class="list task-list">
         <li>
-          <a class="task-link" href="/task_list">Appeal against a tax decision</a>
+          <a id="appeal-link" class="task-link" href="/task_list">Appeal against a tax decision</a>
           <p>Get an impartial decision from a judge on a dispute with HMRC, UK Border Force or the National Crime Agency.</p>
           <p>(30 minutes to complete)</p>
         </li>
         <li>
           <a class="task-link" href="/closure">Apply to close an enquiry</a>
-          <p>Ask the judge to force HMRC to end an ongoing enquiry into your tax affairs.</p>
+          <p>Ask the judge to request that an ongoing enquiry into your tax affairs is closed.</p>
           <p>(15 minutes to complete)</p>
         </li>
-        <li>
+        <li data-dependent="fees=yes">
           <a class="task-link" href="/payment_tool/case_requests">Pay for an existing appeal</a>
           <p>If you have received a tax tribunal reference number and confirmation code by email but still need to pay your fee.</p>
           <p>(5 minutes to complete)</p>
