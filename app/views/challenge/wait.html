@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% set ptitle = "You must wait for the review conclusion before you can challenge the decision" %}
+
+{% block page_title %}
+  {{ ptitle }} - Tax Tribunals Prototype
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  {% include "includes/phase_banner_alpha.html" %}
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <p><a class="link-back js-link-back" href="start.html">Back</a> &nbsp; Step 7 of 7</p>
+      <h1 class="heading-large">{{ ptitle }}</h1>
+
+      <p class="lede">The original notice letter will say how you can query or challenge a tax decision.</p>
+      <p>
+        You can appeal to the tax tribunal once you have written to challenge the decision.
+      </p>
+      <p>If you accepted or asked for a review, you can only appeal to the tribunal once you receive a review conclusion letter, or wait for 45 days without receiving one.</p>
+      <p>See the guidance on what to do when you <a href="https://www.gov.uk/tax-appeals">disagree with a tax decision</a>.</p>
+      <p>
+        <a class="button" href="https://www.gov.uk/contact-hmrc">Contact HMRC</a>
+      </p>
+    </div>
+  </div>
+</main>
+
+{% endblock %}
+
+

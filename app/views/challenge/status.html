@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+
+{% set ptitle = "What is the status of your challenge?" %}
+
+{% block page_title %}
+  {{ ptitle }} - Tax Tribunals Prototype
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  {% include "includes/phase_banner_alpha.html" %}
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <p><a class="link-back js-link-back" href="start.html">Back</a> &nbsp; Step x of y</p>
+      <h1 class="heading-large">{{ ptitle }}</h1>
+
+      <p class="lede">Related text here - JOSH TO UPDATE?</p>
+      <form class="js_route js_store_answers" action="/before_you_start/dispute_type">
+
+        <div class="form-group">
+          <fieldset data-required data-error="Please select an answer">
+            <legend class="visuallyhidden">{{ ptitle }}</legend>
+            <label class="block-label">
+              <input name="challenge_status" type="radio" value="Concluded" data-store="challenge_status=concluded" />
+              Review conclusion received
+            </label>
+
+            <label class="block-label">
+              <input name="challenge_status" type="radio" value="Pending" data-destination="wait" data-store="challenge_status=pending" />
+              Pending
+            </label>
+
+            <label class="block-label">
+              <input name="challenge_status" type="radio" value="Overdue" data-store="challenge_status=overdue" />
+              Pending - more than 45 days
+            </label>
+          </fieldset>
+        </div>
+
+        <p>
+          <input class="button" type="submit" value="Continue">
+        </p>
+
+      </form>
+
+      </div>
+
+    </div>
+  </div>
+</main>
+
+{% endblock %}

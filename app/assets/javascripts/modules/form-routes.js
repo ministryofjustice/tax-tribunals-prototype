@@ -60,6 +60,8 @@ moj.Modules.formRoutes = {
         wasRedirected = moj.Modules.dataStore.getItem('challenge_redirect'),
         pageName = self.getPageName();
 
+    // WARNING: spaghettified mess of edge cases ahead!
+
     // closures have a different path, need to skip certain pages/sections
     if(applicationType === 'closure') {
       if(isDirect === 'true') {
@@ -83,8 +85,9 @@ moj.Modules.formRoutes = {
         // go to Challenge HMRC page
         moj.Modules.dataStore.storeItem('challenge_redirect', 'yes');
         self.go('hmrc_must');
+      } else if(page === 'dispute_type' && hasChallenged === 'yes' && isDirect === 'false') {
+        self.go('/challenge/status');
       } else {
-
         // can user apply for hardship?
         if(page === 'fee' && moj.Modules.dataStore.getItem('hardship') === 'yes' && !['hardship_paid', 'hardship_hmrc_status', 'hardship_hmrc_applied'].includes(pageName)) {
           self.go('hardship_paid');
