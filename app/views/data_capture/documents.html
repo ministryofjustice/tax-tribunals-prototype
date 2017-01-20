@@ -1,9 +1,7 @@
 {% extends "layout.html" %}
 
-{% set ptitle = "Select and upload your letters in digital format" %}
-
 {% block page_title %}
-  {{ ptitle }} - Tax Tribunals Prototype
+  Document upload - Tax Tribunals Prototype
 {% endblock %}
 
 {% block content %}
@@ -17,13 +15,14 @@
 
     <div class="column-two-thirds">
       <p><a class="link-back js-link-back" href="start.html">Back</a> &nbsp; Step 11 of 16</p>
-      <h1 class="heading-large">{{ ptitle }}</h1>
+      <h1 class="heading-large" data-dependent="application_type=appeal">Select and upload your letters in digital format</h1>
+      <h1 class="heading-large" data-dependent="application_type=closure">Upload any supporting material (optional)</h1>
 
       <p class="lede">We accept scanned images or good quality pictures, for example via a smartphone. You can upload PDF, JPG, GIF or PNG formats. Maximum file size of 20MB.</p>
 
       <form class="js_route" action="check_answers">
 
-        <div class="form-group">
+        <div class="form-group" data-dependent="application_type=appeal">
 
           <label class="block-label" for="doc_check_hmrc_letter">
             <input id="doc_check_hmrc_letter" name="doc_check_hmrc_letter" type="checkbox" value="Original notice letter from HMRC" data-store />
@@ -81,12 +80,12 @@
     </div>
 
     <div class="column-one-third">
-       <p class="lede">&nbsp</p>
-       <p class="lede">&nbsp</p>
+      <p class="lede">&nbsp;</p>
+      <p class="lede">&nbsp;</p>
       <h2 class="heading-small">Need help using the online service?</h2>
-        <nav role="navigation" class="font-xsmall">
-              <p><a href="#" data-alert="This feature is not available in this demo">Contact us</a></p>
-        </nav>
+      <nav role="navigation" class="font-xsmall">
+        <p><a href="#" data-alert="This feature is not available in this demo">Contact us</a></p>
+      </nav>
 
     </div>
 

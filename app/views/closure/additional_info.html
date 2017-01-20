@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+{% set ptitle = "Do you have any additional information you want to add?" %}
+
+{% block page_title %}
+  {{ ptitle }} - Tax Tribunals Prototype
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  {% include "includes/phase_banner_alpha.html" %}
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <p><a class="link-back js-link-back" href="start.html">Back</a> &nbsp; Step x of y</p>
+      <h1 class="heading-large">{{ ptitle }} (optional)</h1>
+
+      <p class="lede">Related text - JOSH TO UPDATE</p>
+
+      <form class="js_route" action="/data_capture/documents">
+
+        <div class="form-group">
+          <textarea class="form-control form-control-3-4" id="closure_additional_info" rows="6" cols="40" data-store></textarea>
+        </div>
+
+        <p>
+          <input class="button" type="submit" value="Continue">
+        </p>
+
+      </form>
+
+    </div>
+  </div>
+</main>
+
+{% endblock %}
+
+

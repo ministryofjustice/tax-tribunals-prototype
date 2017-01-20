@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 
-{% set ptitle = "What enquiry are you looking to close?" %}
+{% set ptitle = "Enter details for the enquiry you want to close" %}
 
 {% block page_title %}
   {{ ptitle }} - Tax Tribunals Prototype
@@ -15,11 +15,11 @@
   <div class="grid-row">
     <div class="column-two-thirds">
       <p><a class="link-back js-link-back" href="start.html">Back</a> &nbsp; Step x of y</p>
-      <h1 class="heading-large">Enter details for the enquiry you want to close</h1>
+      <h1 class="heading-large">{{ ptitle }}</h1>
 
       <p class="lede">You will find this information on the latest correspondence you have received from HMRC about their enquiries.</p>
 
-      <form class="js_route" action="/data_capture/check_answers">
+      <form class="js_route" action="additional_info">
 
         <div class="form-group">
           <label class="form-label" for="closure_reference_number">HMRC reference number</label>
@@ -27,13 +27,13 @@
         </div>
 
         <div class="form-group">
-          <label class="form-label" for="closure_hmrc_officer">Name of HMRC officer conducting the enquiry</label>
-          <input class="form-control" type="text" id="closure_hmrc_officer" data-store>
+          <label class="form-label" for="years_under_enquiry">Years under enquiry</label>
+          <input class="form-control" type="text" id="years_under_enquiry" data-store>
         </div>
 
         <div class="form-group">
-          <label class="form-label" for="years_under_enquiry">Years or accounts of returns under enquiry</label>
-          <input class="form-control" type="text" id="years_under_enquiry" data-store>
+          <label class="form-label" for="closure_hmrc_officer">Name of HMRC officer conducting the enquiry (Optional)</label>
+          <input class="form-control" type="text" id="closure_hmrc_officer" data-store>
         </div>
 
         <p>

@@ -32,16 +32,18 @@
         <div class="form-group">
           <fieldset data-required data-error="Please select an answer">
             <legend class="visuallyhidden">What is your appeal about?</legend>
-            <label class="block-label">
-              <input name="tax_type" type="radio" value="income_tax" data-store="tax_type=Income tax,direct=true,hardship=no" />
-              <strong>Income Tax</strong><br>
-              including tax paid through Pay As You Earn (PAYE) and Self Assessment
-            </label>
 
-            <span class="js-hidden" data-dependent="application_type=appeal"><label class="block-label">
-              <input name="tax_type" type="radio" value="vat" data-store="tax_type=VAT,direct=false,hardship=yes" />
-              <strong>Value Added Tax (VAT)</strong>
-            </label></span>
+            <div data-dependent="application_type=appeal">
+              <label class="block-label">
+                <input name="tax_type" type="radio" value="income_tax" data-store="tax_type=Income tax,direct=true,hardship=no" />
+                <strong>Income Tax</strong><br>
+                including tax paid through Pay As You Earn (PAYE) and Self Assessment
+              </label>
+
+              <label class="block-label">
+                <input name="tax_type" type="radio" value="vat" data-store="tax_type=VAT,direct=false,hardship=yes" />
+                <strong>Value Added Tax (VAT)</strong>
+              </label>
 
               <label class="block-label">
                 <input name="tax_type" type="radio" value="capital_gains_tax" data-store="tax_type=Capital gains tax,direct=true,hardship=no" />
@@ -53,20 +55,53 @@
                 <strong>Corporation Tax</strong>
               </label>
 
-            <span class="js-hidden" data-dependent="application_type=appeal"><label class="block-label">
-              <input name="tax_type" type="radio" value="inaccurate_returns" data-destination="penalty_detail" data-store="direct=n/a,hardship=no" />
-              <strong>Inaccurate return penalty</strong>
-            </label></span>
+              <label class="block-label">
+                <input name="tax_type" type="radio" value="inaccurate_returns" data-destination="penalty_detail" data-store="direct=n/a,hardship=no" />
+                <strong>Inaccurate return penalty</strong>
+              </label>
 
-            <span class="js-hidden" data-dependent="application_type=appeal"><label class="block-label">
-              <input name="tax_type" type="radio" value="information notice" data-store="fee=50,direct=n/a,hardship=no,tax_type=info_notice" />
-              <strong>Information notices</strong>
-            </label></span>
+              <label class="block-label">
+                <input name="tax_type" type="radio" value="information notice" data-store="fee=50,direct=n/a,hardship=no,tax_type=info_notice" />
+                <strong>Information notices</strong>
+              </label>
 
-            <label class="block-label">
-              <input name="tax_type" type="radio" value="other" data-destination="types_tax_other" />
-              <strong>Other type of tax<span class="js-hidden" data-dependent="application_type=appeal">, appeal or application</strong></span>
-            </label>
+              <label class="block-label">
+                <input name="tax_type" type="radio" value="other" data-destination="types_tax_other" />
+                <strong>Other type of tax<span class="js-hidden" data-dependent="application_type=appeal">, appeal or application</span></strong>
+              </label>
+            </div>
+
+            <div data-dependent="application_type=closure">
+              <label class="block-label">
+                <input name="tax_type" type="radio" value="income_tax" data-store="tax_type=Corporation Tax self-assessment,direct=true,hardship=no" />
+                <strong>Corporation Tax self-assessment</strong><br>
+                Covered under Finance Act 1998
+              </label>
+
+              <label class="block-label">
+                <input name="tax_type" type="radio" value="income_tax" data-store="tax_type=Capital Gains Tax return,direct=true,hardship=no" />
+                <strong>Capital Gains Tax return</strong><br>
+                Covered by provisions of TMA 1970
+              </label>
+
+              <label class="block-label">
+                <input name="tax_type" type="radio" value="income_tax" data-store="tax_type=Partnership Tax return,direct=true,hardship=no" />
+                <strong>Partnership Tax return</strong><br>
+                Section 12A, TMA, 1970
+              </label>
+
+              <label class="block-label">
+                <input name="tax_type" type="radio" value="income_tax" data-store="tax_type=Income Tax return,direct=true,hardship=no" />
+                <strong>Income Tax return</strong><br>
+                Covered by Section 9A, 28A, TMA, 1970
+              </label>
+
+              <label class="block-label">
+                <input name="tax_type" type="radio" value="income_tax" data-store="tax_type=Stamp Duty Land Tax,direct=true,hardship=no" />
+                <strong>Stamp Duty Land Tax</strong><br>
+                Paragraph 24 of Schedule 10 and paragraph 12 of Schedule 11A to the Finance Act 2003
+              </label>
+            </div>
           </fieldset>
         </div>
 

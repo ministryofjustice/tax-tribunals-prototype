@@ -48,6 +48,7 @@ moj.Modules.docUpload = {
 
     window.setTimeout(function() {
       self.removeFilePreview(file);
+      self.updateFiles();
     }, 1500);
   },
 
@@ -61,6 +62,8 @@ moj.Modules.docUpload = {
       if(!self.$fileList.find('.file').length) {
         self.$fileList.find('.no-files').show();
       }
+
+      self.updateFiles();
     });
   },
 
@@ -75,5 +78,24 @@ moj.Modules.docUpload = {
         self.$zone.removeClass('dz-started dz-drag-hover');
       }
     });
+  },
+
+  updateFiles: function() {
+    var self = this,
+        files = self.$fileList.find('li.file'),
+        fileArray = [],
+        key = 'document_filenames';
+
+    if(files.length) {
+      files.each(function(n, file) {
+        var $fileCopy = $(file).clone();
+        $fileCopy.find('a').remove();
+        fileArray.push($fileCopy.text());
+      });
+
+      moj.Modules.dataStore.storeItem(key, fileArray);
+    } else {
+      moj.Modules.dataStore.deleteItem(key);
+    }
   }
 };

@@ -78,11 +78,6 @@ moj.Modules.dataCaptureSummary = {
       elementId: 'grounds_row',
       dataKey: 'application_type',
       dataValue: '!closure'
-    },
-    {
-      elementId: 'documents_row',
-      dataKey: 'application_type',
-      dataValue: '!closure'
     }
   ],
 
@@ -171,32 +166,42 @@ moj.Modules.dataCaptureSummary = {
 
   showUploadedDocs: function() {
     var $list = $('.uploaded-docs').eq(0),
+        html = '',
+        filenames = moj.Modules.dataStore.getItem('document_filenames'),
         letter = moj.Modules.dataStore.getItem('doc_check_hmrc_letter'),
         review = moj.Modules.dataStore.getItem('doc_check_review_conclusion'),
         groundsFile = moj.Modules.dataStore.getItem('file_grounds_for_appeal'),
         hardshipFile = moj.Modules.dataStore.getItem('file_reasons_for_hardship'),
         proFormaFile = moj.Modules.dataStore.getItem('file_rep_pro_forma');
 
-    if(letter || review || groundsFile || proFormaFile || hardshipFile) {
-      $list.empty();
-    }
+    // if(filenames || letter || review || groundsFile || proFormaFile || hardshipFile) {
+    //   $list.empty();
+    // }
 
     if(proFormaFile) {
-      $list.append('<li>Representative pro forma: ' + proFormaFile + '</li>');
+      html += '<li>Representative pro forma: ' + proFormaFile + '</li>';
     }
     if(letter) {
-      $list.append('<li>' + letter + '</li>');
+      html += '<li>' + letter + '</li>';
     }
     if(review) {
-      $list.append('<li>' + review + '</li>');
+      html += '<li>' + review + '</li>';
     }
     if(groundsFile) {
-      $list.append('<li>Grounds for appeal: ' + groundsFile + '</li>');
+      html += '<li>Grounds for appeal: ' + groundsFile + '</li>';
       $('[data-key="grounds_for_appeal"]').after('<br>(File uploaded, see below)');
     }
     if(hardshipFile) {
-      $list.append('<li>Reasons for hardship application: ' + hardshipFile + '</li>');
+      html += '<li>Reasons for hardship application: ' + hardshipFile + '</li>';
       $('[data-key="hmrc_reasons_to_allow_hardship"]').after('<br>(File uploaded, see below)');
+    }
+
+    if(filenames && moj.Modules.dataStore.getItem('application_type') === 'closure') {
+      html += '<li>Supporting documents: ' + filenames.join(', ') + '</li>';
+    }
+
+    if(html !== '') {
+      $list.html(html);
     }
   }
 };
