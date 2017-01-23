@@ -142,11 +142,7 @@ moj.Modules.dataCaptureSummary = {
         }
         row += answer;
 
-        row += '</td>';
-
-        row += (x === 0 ? '<td class="change-answer"><a href="#" data-alert="This functionality is not currently available in this demo">Change</a>' : '<td>&nbsp;');
-
-        row += '</td></tr>';
+        row += '</td><td>&nbsp;</td></tr>';
 
         if(answers[x].val === 'other' && !moj.Modules.dataStore.getItem('other_dispute')) {
           row = '';
