@@ -55,11 +55,6 @@ moj.Modules.dataCaptureSummary = {
       dataValue: 'closure'
     },
     {
-      elementId: 'application_is_late_row',
-      dataKey: 'hmrc_challenge',
-      dataValue: 'yes'
-    },
-    {
       elementId: 'reasons_for_late_application_row',
       dataKey: 'application_is_late',
       dataValue: 'yes'
@@ -135,7 +130,7 @@ moj.Modules.dataCaptureSummary = {
       for(var x = 0; x < answers.length; x++) {
         row = '';
 
-        row += '<tr><td>';
+        row += '<tr class="fee-question-row"><td>';
         row += answers[x].question;
         row += '</td><td>';
 
@@ -161,6 +156,11 @@ moj.Modules.dataCaptureSummary = {
       }
 
       $el.replaceWith(html);
+
+      if(moj.Modules.dataStore.getItem('fees') === 'no') {
+        var $lastQuestionRow = $('.fee-question-row').last();
+        $('#hardship_reasons_row').remove().insertAfter($lastQuestionRow);
+      }
     }
   },
 

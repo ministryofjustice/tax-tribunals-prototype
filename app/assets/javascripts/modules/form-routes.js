@@ -91,15 +91,23 @@ moj.Modules.formRoutes = {
         // can user apply for hardship?
         if(page === 'fee' && moj.Modules.dataStore.getItem('hardship') === 'yes' && !['hardship_paid', 'hardship_hmrc_status', 'hardship_hmrc_applied'].includes(pageName)) {
           self.go('hardship_paid');
-        } else if(page === 'grounds_for_appeal' && moj.Modules.dataStore.getItem('hardship') === 'yes' && pageName !== 'hardship' && moj.Modules.dataStore.getItem('paid_disputed_tax') !== 'yes' && moj.Modules.dataStore.getItem('hardship_application_status') === 'refused') {
+        } else if(page === 'grounds_for_appeal' && moj.Modules.dataStore.getItem('hardship') === 'yes' && pageName !== 'hardship' && moj.Modules.dataStore.getItem('paid_disputed_tax') !== 'yes' && moj.Modules.dataStore.getItem('hardship_application_status') === 'refused' && fees !== 'no') {
           self.go('hardship');
         } else {
           // route around fee page and task list if fees=no
           if(fees === 'no') {
             if(page === 'fee') {
-              page = '/lateness/hmrc_view_date';
+              if(pageName === 'hardship_hmrc_status' && moj.Modules.dataStore.getItem('hardship_application_status') === 'refused') {
+                // ask hardship reason question early if fees=no
+                page = '/data_capture/hardship';
+              } else {
+                page = '/lateness/hmrc_view_date';
+              }
             } else if(page === '/task_list') {
               page = '/data_capture/who_are_you';
+            } else if(page === 'hardship' && moj.Modules.dataStore.getItem('hardship_application_status') === 'refused') {
+              // route around hardship reason question later on, as already asked it earlier on
+              page = 'grounds_for_appeal';
             }
           }
 

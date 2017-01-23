@@ -6,6 +6,15 @@
   {{ ptitle }} - Tax Tribunals Prototype
 {% endblock %}
 
+{% block body_end %}
+  {{ super() }}
+  <script>
+    if(moj.Modules.dataStore.getItem('fees') === 'no') {
+      $('form').attr('action', '/lateness/hmrc_view_date');
+    }
+  </script>
+{% endblock %}
+
 {% block content %}
 
 <main id="content" role="main">
