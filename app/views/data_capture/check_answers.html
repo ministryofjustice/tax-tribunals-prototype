@@ -160,12 +160,23 @@
         <td class="change-answer"><a href="#" data-alert="This functionality is not currently available in this demo">Change</a></td>
       </tr>
 
+        <tr id="closure_additional_info">
+        <th>Why the enquiry should close</th>
+        <td><span data-key="desired_outcome">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nec ultricies nisi, in cursus nibh.</span></td>
+        <td class="change-answer"><a href="#" data-alert="This functionality is not currently available in this demo">Change</a></td>
+      </tr>
+
       <tr id="documents_row">
         <th>Documents submitted</th>
         <td>
           <ul class="list-bullet uploaded-docs">
+            <span class="js-hidden" data-dependent="application_type=appeal">
             <li>Original notice letter</li>
             <li>Review conclusion letter</li>
+            </span>
+            <span class="js-hidden" data-dependent="application_type=closure">
+            <li>HMRC enquiry correspondence</li>
+            </span>
           </ul>
         </td>
         <td class="change-answer"><a href="#" data-alert="This functionality is not currently available in this demo">Change</a></td>
