@@ -37,6 +37,7 @@
             <legend class="visuallyhidden">What is your appeal about?</legend>
 
             <div data-dependent="application_type=appeal">
+
               <label class="block-label">
                 <input name="tax_type" type="radio" value="income_tax" data-store="tax_type=Income tax,direct=true,hardship=no" />
                 <strong>Income Tax</strong><br>
@@ -72,14 +73,16 @@
                 <input name="tax_type" type="radio" value="other" data-destination="types_tax_other" />
                 <strong>Other type of tax<span class="js-hidden" data-dependent="application_type=appeal">, appeal or application</span></strong>
               </label>
+
             </div>
+
+            <div data-dependent="application_type=closure">
 
               <label class="block-label">
                 <input name="tax_type" type="radio" value="income_tax" data-store="tax_type=Capital Gains Tax return,direct=true,hardship=no" />
                 Capital Gains Tax
               </label>
 
-            <div data-dependent="application_type=closure">
               <label class="block-label">
                 <input name="tax_type" type="radio" value="income_tax" data-store="tax_type=Corporation Tax self-assessment,direct=true,hardship=no" />
                 Corporation Tax
@@ -99,6 +102,7 @@
                 <input name="tax_type" type="radio" value="income_tax" data-store="tax_type=Stamp Duty Land Tax,direct=true,hardship=no" />
                 Stamp Duty Land Tax
               </label>
+
             </div>
           </fieldset>
         </div>
