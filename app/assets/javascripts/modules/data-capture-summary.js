@@ -65,6 +65,11 @@ moj.Modules.dataCaptureSummary = {
       dataValue: 'refused'
     },
     {
+      elementId: 'closure_reasons_row',
+      dataKey: 'application_type',
+      dataValue: 'closure'
+    },
+    {
       elementId: 'outcome_row',
       dataKey: 'application_type',
       dataValue: '!closure'
