@@ -29,7 +29,6 @@ moj.Modules.docUpload = {
     };
 
     self.$zone.dropzone(dzOptions);
-    self.$zone.sticky({topSpacing: 0, zIndex: 100});
 
     self.bindEvents();
   },
@@ -40,6 +39,13 @@ moj.Modules.docUpload = {
     $(document).on('click', 'li.file a', function(e) {
       e.preventDefault();
       self.removeFileFromList(e.target);
+    });
+
+    $(document).on('keydown', 'a.faux-link, .dz-clickable', function(e) {
+      if([13, 32].includes(e.keyCode)) { // pressed RETURN or SPACE
+        e.preventDefault();
+        self.$zone.trigger('click');
+      }
     });
   },
 

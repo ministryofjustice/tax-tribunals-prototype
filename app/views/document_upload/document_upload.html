@@ -1,9 +1,7 @@
 {% extends "layout.html" %}
 
-{% set ptitle = "Select and upload your letters from HMRC in digital format" %}
-
 {% block page_title %}
-  {{ ptitle }} - Tax Tribunals Prototype
+  Document upload - Tax Tribunals Prototype
 {% endblock %}
 
 {% block content %}
@@ -17,11 +15,11 @@
 
     <div class="column-two-thirds">
       <p><a class="link-back js-link-back" href="start.html">Back</a> &nbsp; Step 11 of 16</p>
-      <h1 class="heading-large">{{ ptitle }}</h1>
+      <h1 class="heading-large">Select and upload your letters in digital format</h1>
 
       <p class="lede">We accept scanned images or good quality pictures, for example via a smartphone. You can upload PDF, JPG, GIF or PNG formats. Maximum file size of 20MB.</p>
 
-      <form class="js_route" action="/data_capture/check_answers">
+      <form class="js_route" action="check_answers">
 
         <div class="form-group">
 
@@ -34,12 +32,12 @@
           <label class="block-label" for="doc_check_review_conclusion">
             <input id="doc_check_review_conclusion" name="doc_check_review_conclusion" type="checkbox" value="The review conclusion letter from HMRC" data-store />
             <strong>Review conclusion letter</strong><br>
-            you will receive this only if your case was reviewed
+            you will only have this if your case was reviewed
           </label>
 
         </div>
 
-        <div class="dropzone" id="doc_upload_zone">
+        <div class="dropzone" id="doc_upload_zone" tabindex="0">
           <div class="dz-default dz-message grid-row">
             <div class="column-one-third arrow-icon">
               <p></p>
@@ -48,7 +46,7 @@
               <p class="dz-message-copy">
                 Drag and drop files here<br>
                 <strong>or</strong><br>
-                <span class="faux-link">click to choose a file</span>
+                <a href="#" class="faux-link" tabindex="-1">click to choose a file</a>
               </p>
             </div>
           </div>
@@ -81,12 +79,12 @@
     </div>
 
     <div class="column-one-third">
-       <p class="lede">&nbsp</p>
-       <p class="lede">&nbsp</p>
+      <p class="lede">&nbsp;</p>
+      <p class="lede">&nbsp;</p>
       <h2 class="heading-small">Need help using the online service?</h2>
-        <nav role="navigation" class="font-xsmall">
-              <p><a href="#" data-alert="This feature is not available in this demo">Contact us</a></p>
-        </nav>
+      <nav role="navigation" class="font-xsmall">
+        <p><a href="#" data-alert="This feature is not available in this demo">Contact us</a></p>
+      </nav>
 
     </div>
 
