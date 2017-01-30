@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 
-{% set ptitle = "What is the status of your challenge?" %}
+{% set ptitle = "Did you receive a response to your challenge?" %}
 
 {% block page_title %}
   {{ ptitle }} - Tax Tribunals Prototype
@@ -17,7 +17,6 @@
       <p><a class="link-back js-link-back" href="start.html">Back</a> &nbsp; Step x of y</p>
       <h1 class="heading-large">{{ ptitle }}</h1>
 
-      <p class="lede">Related text here - JOSH TO UPDATE?</p>
       <form class="js_route js_store_answers" action="/before_you_start/dispute_type">
 
         <div class="form-group">
@@ -25,17 +24,17 @@
             <legend class="visuallyhidden">{{ ptitle }}</legend>
             <label class="block-label">
               <input name="challenge_status" type="radio" value="Concluded" data-store="challenge_status=concluded" />
-              Review conclusion received
+              Yes, I have a review conclusion letter
             </label>
 
             <label class="block-label">
               <input name="challenge_status" type="radio" value="Pending" data-destination="wait" data-store="challenge_status=pending" />
-              Pending
+              No
             </label>
 
             <label class="block-label">
               <input name="challenge_status" type="radio" value="Overdue" data-store="challenge_status=overdue" />
-              Pending - more than 45 days
+              No, I've been waiting for 45 days or more
             </label>
           </fieldset>
         </div>
