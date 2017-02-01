@@ -18,7 +18,7 @@
       <h1 class="heading-large" data-dependent="application_type=appeal">Upload your letter(s)</h1>
       <h1 class="heading-large" data-dependent="application_type=closure">Add documents to support your application (optional)</h1>
 
-      <p class="lede">The tax tribunal is independent and relies on the information you give. It doesn't have access to files from HMRC.</p>
+      <p class="lede">The tax tribunal is independent and doesn't have access to files from HMRC.</p>
 
       <p>We accept scanned images or good quality pictures, for example via a smartphone. You can upload PDF, JPG, GIF or PNG formats. Maximum file size of 20MB.</p>
 
@@ -69,9 +69,18 @@
           </label>
 
           <div id="unable_to_upload_panel" class="panel js-hidden">
-            <p>You will need to continue completing your appeal and print off details, send copies of letters with a cheque or money order.</p>
-            <label for="document_upload_problems">Describe the trouble you are having uploading your documents</label>
-            <input type="text" class="form-control form-control-3-4" id="document_upload_problems" name="document_upload_problems">
+          <p><strong>What to do next</strong></p>
+             <ul class="list list-bullet">
+             <li>enter reasons why you can't upload documents</li>
+             <li>continue your appeal online</li>
+             <li>print out your case details</li>
+             <li>post your documents and case details<span data-dependent="fees=yes"> together with a cheque or postal order</span></li>
+             </ul>
+             <p>
+
+            <label for="document_upload_problems">Reasons you can't upload</label>
+              <input type="text" class="form-control form-control-3-4" id="document_upload_problems" name="document_upload_problems">
+              </p>
           </div>
         </div>
 
