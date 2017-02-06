@@ -31,7 +31,13 @@
       <form class="js_route" action="documents">
 
         <div class="form-group">
-          <textarea class="form-control form-control-3-4" id="desired_outcome" rows="6" cols="40" data-store></textarea>
+
+          <fieldset data-required data-error="Cannot be blank">
+            <legend class="visuallyhidden">Grounds for appeal</legend>
+            <label class="form-label visuallyhidden" for="desired_outcome">Grounds for appeal</label>
+            <textarea class="form-control form-control-3-4" id="desired_outcome" rows="6" cols="40" data-store></textarea>
+          </fieldset>
+
         </div>
 
         <p>

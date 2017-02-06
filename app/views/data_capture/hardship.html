@@ -32,17 +32,18 @@
 
           <div class="form-group">
 
-            <label class="form-label" for="hmrc_reasons_to_allow_hardship">
-              Enter your reasons for financial hardship
-            </label>
-            <textarea class="form-control form-control-3-4" id="hmrc_reasons_to_allow_hardship" rows="10" cols="40" data-store></textarea>
-
+            <fieldset data-required data-error="Cannot be blank">
+              <legend class="visuallyhidden">Reasons for hardship</legend>
+              <label class="form-label" for="hmrc_reasons_to_allow_hardship">
+                Enter your reasons for financial hardship
+              </label>
+              <textarea class="form-control form-control-3-4" id="hmrc_reasons_to_allow_hardship" rows="10" cols="40" data-store></textarea>
+            </fieldset>
           </div>
-
 
           <p><strong>Attach reasons as a document</strong></p>
           <div class="form-group">
-            <input type="file" id="file_reasons_for_hardship" name="file_reasons_for_hardship" data-store>
+            <input type="file" id="file_reasons_for_hardship" name="file_reasons_for_hardship" data-store data-textbox="hmrc_reasons_to_allow_hardship">
           </div>
           <details>
             <summary>File upload requirements</summary>
@@ -50,7 +51,7 @@
               <ul class="list list-bullet">
                 <li>File formats: Word, PDF, Excel, JPG, GIF, PNG</li>
                 <li>File size: up to 20 megabytes (MB)</li>
-                <li>Scan documents in black and white
+                <li>Scan documents in black and white</li>
                 <li>Files cannot be password protected</li>
               </ul>
               <p>You can’t upload executable (.exe) and other zip, archive or compressed files due to virus risks.</p>
@@ -63,7 +64,6 @@
 
         </form>
 
-      </div>
 
     </div>
   </div>

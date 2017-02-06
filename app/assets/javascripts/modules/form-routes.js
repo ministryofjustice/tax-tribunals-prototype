@@ -125,6 +125,9 @@ moj.Modules.formRoutes = {
       moj.Modules.dataStore.storeItem('validationOn', self.validationDefault);
       self.validationOn = self.validationDefault;
       moj.log('validation not stored, setting to default: ' + self.validationDefault);
+      if($('input[name="validation-radio"]').length) {
+        $('input[name="validation-radio"][value="' + self.validationDefault + '"]').trigger('click');
+      }
     } else {
       self.validationOn = validation;
     }

@@ -12,27 +12,50 @@
 
   <h1 class="heading-large">Tax Tribunals Prototypes</h1>
 
-  <form class="js_route" action="/start">
-    <h2 class="heading-medium">Main application</h2>
-    <p>Start at a mocked-up GOV.UK start page:</p>
+  <div class="grid-row">
 
-    <fieldset>
-      <label class="block-label">
-        <input name="fees" type="radio" value="yes" data-store="fees=yes" checked="checked" />
-        With Tribunal Fees
-      </label>
+    <form class="js_route" action="/start">
+      <div class="column-two-thirds">
+        <h2 class="heading-medium">Main application</h2>
+        <p>Start at a mocked-up GOV.UK start page:</p>
 
-      <label class="block-label">
-        <input name="fees" type="radio" value="no" data-store="fees=no" />
-        Fee-Free Service
-      </label>
+        <fieldset>
+          <label class="block-label">
+            <input name="fees" type="radio" value="yes" data-store="fees=yes" checked="checked" />
+            With Tribunal Fees
+          </label>
 
-    </fieldset>
+          <label class="block-label">
+            <input name="fees" type="radio" value="no" data-store="fees=no" />
+            Fee-Free Service
+          </label>
 
-    <p>
-      <input class="button" type="submit" value="Begin">
-    </p>
-  </form>
+        </fieldset>
+
+        <p>
+          <input class="button" type="submit" value="Begin">
+        </p>
+      </div>
+
+      <div class="column-one-third">
+        <h2 class="heading-medium">Validation</h2>
+        <p>Error messages for required fields</p>
+
+        <fieldset>
+          <label class="block-label">
+            <input name="validation-radio" type="radio" value="on" data-store="validationOn=on" />
+            On
+          </label>
+
+          <label class="block-label">
+            <input name="validation-radio" type="radio" value="off" data-store="validationOn=off" />
+            Off
+          </label>
+        </fieldset>
+      </div>
+    </form>
+  </div>
+
 
 
 

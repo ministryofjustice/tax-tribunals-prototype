@@ -35,51 +35,74 @@
       <form class="js_route" action="appellant_type">
 
         <div class="form-group js-hidden" data-dependent="representative_type=individual">
-          <label class="form-label" for="representative_first_name">First name</label>
-          <input class="form-control" type="text" id="representative_first_name" data-store>
+          <fieldset data-required data-error="Cannot be blank">
+            <legend class="visuallyhidden">First name</legend>
+            <label class="form-label" for="representative_first_name">First name</label>
+            <input class="form-control" type="text" id="representative_first_name" data-store>
+          </fieldset>
         </div>
         <div class="form-group js-hidden" data-dependent="representative_type=individual">
-          <label class="form-label" for="representative_last_name">Last name</label>
-          <input class="form-control" type="text" id="representative_last_name" data-store>
+          <fieldset data-required data-error="Cannot be blank">
+            <legend class="visuallyhidden">Last name</legend>
+            <label class="form-label" for="representative_last_name">Last name</label>
+            <input class="form-control" type="text" id="representative_last_name" data-store>
+          </fieldset>
         </div>
 
         <div class="form-group js-hidden" data-dependent="representative_type=company">
-          <label class="form-label" for="representative_company_name">Company name</label>
-          <input class="form-control" type="text" id="representative_company_name" data-store>
+          <fieldset data-required data-error="Cannot be blank">
+            <legend class="visuallyhidden">Company name</legend>
+            <label class="form-label" for="representative_company_name">Company name</label>
+            <input class="form-control" type="text" id="representative_company_name" data-store>
+          </fieldset>
         </div>
 
         <div class="form-group js-hidden" data-dependent="representative_type=organisation">
-          <label class="form-label" for="representative_organisation_name">Organisation name</label>
-          <input class="form-control" type="text" id="representative_organisation_name" data-store>
+          <fieldset data-required data-error="Cannot be blank">
+            <legend class="visuallyhidden">Organisation name</legend>
+            <label class="form-label" for="representative_organisation_name">Organisation name</label>
+            <input class="form-control" type="text" id="representative_organisation_name" data-store>
+          </fieldset>
         </div>
 
         <div class="form-group">
-          <label class="form-label" for="representative_address">
-            Address
-          </label>
-          <textarea class="form-control" id="representative_address" rows="4" cols="40" data-store></textarea>
+          <fieldset data-required data-error="Cannot be blank">
+            <legend class="visuallyhidden">Address</legend>
+            <label class="form-label" for="representative_address">
+              Address
+            </label>
+            <textarea class="form-control" id="representative_address" rows="4" cols="40" data-store></textarea>
+          </fieldset>
         </div>
 
         <div class="form-group">
-          <label class="form-label" for="representative_postcode">
-            Postcode
-          </label>
-          <input class="form-control" type="text" id="representative_postcode" data-store>
+          <fieldset data-required data-error="Cannot be blank">
+            <legend class="visuallyhidden">Postcode</legend>
+            <label class="form-label" for="representative_postcode">
+              Postcode
+            </label>
+            <input class="form-control" type="text" id="representative_postcode" data-store>
+          </fieldset>
         </div>
 
         <div class="form-group js-hidden" data-dependent="representative_type=company,organisation">
-          <label class="form-label" for="representative_contact_name">
-            Contact name
-          </label>
-          <input class="form-control" type="text" id="representative_contact_name" data-store>
+          <fieldset data-required data-error="Cannot be blank">
+            <legend class="visuallyhidden">Contact name</legend>
+            <label class="form-label" for="representative_contact_name">
+              Contact name
+            </label>
+            <input class="form-control" type="text" id="representative_contact_name" data-store>
+          </fieldset>
         </div>
 
         <div class="form-group">
-          <label class="form-label" for="representative_email">
-            <span class="js-hidden" data-dependent="representative_type=individual">Email address</span>
-            <span class="js-hidden" data-dependent="representative_type=company,organisation">Email address</span>
-          </label>
-          <input class="form-control" type="text" id="representative_email" data-store>
+          <fieldset data-required data-error="Cannot be blank">
+            <legend class="visuallyhidden">Email address</legend>
+            <label class="form-label" for="representative_email">
+              Email address
+            </label>
+            <input class="form-control" type="text" id="representative_email" data-store>
+          </fieldset>
         </div>
 
         <div class="form-group">

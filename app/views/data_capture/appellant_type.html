@@ -21,7 +21,9 @@
 
       <form class="js_route" action="appellant_details">
         <div class="form-group">
-          <fieldset>
+          <fieldset data-required data-error="Please select an answer">
+            <legend class="visuallyhidden">Who is your appeal/application for?</legend>
+
             <label class="block-label">
               <input name="appellant_type" type="radio" value="individual" data-store="appellant_type=individual" />
               <strong>Individual</strong>
@@ -31,7 +33,7 @@
               <input name="appellant_type" type="radio" value="company" data-store="appellant_type=company" />
               <strong>Company</strong><br>
             </label>
-            
+
             <label class="block-label">
               <input name="appellant_type" type="radio" value="organisation" data-store="appellant_type=organisation" />
               <strong>Other type of organisation</strong><br>
