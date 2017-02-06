@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 
-{% set ptitle = "Are you the taxpayer involved in the appeal?" %}
+{% set ptitle = "Are you the taxpayer making the appeal?" %}
 
 {% block page_title %}
   {{ ptitle }} - Tax Tribunals Prototype
@@ -15,7 +15,7 @@
   <div class="grid-row">
     <div class="column-two-thirds">
       <p><a class="link-back js-link-back" href="start.html">Back</a> &nbsp; Step 1 of 16</p>
-      <h1 class="heading-large">Are you the taxpayer involved in the <span class="js-hidden" data-dependent="application_type=appeal">appeal?</span><span class="js-hidden" data-dependent="application_type=closure">application?</span></h1>
+      <h1 class="heading-large">Are you the taxpayer making the <span class="js-hidden" data-dependent="application_type=appeal">appeal?</span><span class="js-hidden" data-dependent="application_type=closure">application?</span></h1>
 
         <form class="js_route" action="appellant_type">
           <div class="form-group">
