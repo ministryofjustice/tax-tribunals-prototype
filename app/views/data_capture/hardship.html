@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 
-{% set ptitle = "Why should hardship be allowed for your case?" %}
+{% set ptitle = "Why will paying the tax under dispute cause financial hardship?" %}
 
 {% block page_title %}
   {{ ptitle }} - Tax Tribunals Prototype
@@ -26,14 +26,14 @@
       <p><a class="link-back js-link-back" href="start.html">Back</a> &nbsp; Step 8 of 16</p>
       <h1 class="heading-large">{{ ptitle }}</h1>
 
-      <p class="lede">The judge will decide whether to grant hardship and let your appeal continue. If the judge doesn't accept your reasons, your appeal will be unsuccessful and your fee won't be refunded.</p>
+      <p class="lede">The judge will decide whether your appeal can continue without paying the tax first. <span data-dependent="fees=yes">If the judge doesn't accept your reasons, your appeal won't go ahead and your fee won't be refunded.</span></p>
 
         <form class="js_route" action="grounds_for_appeal">
 
           <div class="form-group">
 
             <label class="form-label" for="hmrc_reasons_to_allow_hardship">
-              Enter your reasons for hardship
+              Enter your reasons for financial hardship
             </label>
             <textarea class="form-control form-control-3-4" id="hmrc_reasons_to_allow_hardship" rows="10" cols="40" data-store></textarea>
 

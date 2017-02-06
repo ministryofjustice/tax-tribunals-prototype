@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 
-{% set ptitle = "Did you apply for financial hardship?" %}
+{% set ptitle = "Did you ask HMRC if you could appeal without paying the tax first?" %}
 
 {% block page_title %}
   {{ ptitle }} - Tax Tribunals Prototype
@@ -17,7 +17,7 @@
       <p><a class="link-back js-link-back" href="start.html">Back</a> &nbsp; Step 5 of 7</p>
       <h1 class="heading-large">{{ ptitle }}</h1>
 
-      <p class="lede">You can still continue if you select 'No'. The tax tribunal will keep your appeal as pending until you write to HMRC and ask to defer paying because of financial hardship.</p>
+      <p class="lede">Your appeal will be kept pending until you write to HMRC and explain why paying might cause financial hardship. </p>
 
         <form class="js_route js_store_answers" action="hardship_hmrc_status">
 

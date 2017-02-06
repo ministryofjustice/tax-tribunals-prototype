@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 
-{% set ptitle = "What is the status of your hardship application?" %}
+{% set ptitle = "Did HMRC allow you to defer paying because of financial hardship?" %}
 
 {% block page_title %}
   {{ ptitle }} - Tax Tribunals Prototype
@@ -17,7 +17,7 @@
       <p><a class="link-back js-link-back" href="start.html">Back</a> &nbsp; Step 6 of 7</p>
       <h1 class="heading-large">{{ ptitle }}</h1>
 
-      <p class="lede">If hardship was refused, you can still continue your appeal. You must provide hardship reasons. The judge will decide whether your appeal can go ahead.</p>
+      <p class="lede">If HMRC said no, you can ask the judge to consider your reasons.</p>
         <form class="js_route js_store_answers" action="fee">
 
           <div class="form-group">
@@ -25,17 +25,18 @@
               <legend class="visuallyhidden">{{ ptitle }}</legend>
               <label class="block-label">
                 <input name="hardship_application_status" type="radio" value="Granted" data-store="hardship_application_status=granted" />
-                Granted
+                Yes
+              </label>
+
+
+              <label class="block-label">
+                <input name="hardship_application_status" type="radio" value="Refused" data-store="hardship_application_status=refused" />
+                No
               </label>
 
               <label class="block-label">
                 <input name="hardship_application_status" type="radio" value="Pending" data-store="hardship_application_status=pending" />
-                Pending HMRC decision
-              </label>
-
-              <label class="block-label">
-                <input name="hardship_application_status" type="radio" value="Refused" data-store="hardship_application_status=refused" />
-                Refused
+                I am waiting for a decision
               </label>
             </fieldset>
           </div>
