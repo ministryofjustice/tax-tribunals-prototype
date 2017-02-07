@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 
-{% set ptitle = "Did you receive a response to your challenge?" %}
+{% set ptitle = "What has happened since you challenged the original decision?" %}
 
 {% block page_title %}
   {{ ptitle }} - Tax Tribunals Prototype
@@ -24,18 +24,38 @@
             <legend class="visuallyhidden">{{ ptitle }}</legend>
             <label class="block-label">
               <input name="challenge_status" type="radio" value="Concluded" data-store="challenge_status=concluded" />
-              Yes, I have a review conclusion letter
+              <strong>Review completed</strong><br>
+              I have received a review conclusion letter
             </label>
 
             <label class="block-label">
               <input name="challenge_status" type="radio" value="Pending" data-destination="wait" data-store="challenge_status=pending" />
-              No
+              <strong>Review in progress</strong><br>
+              I asked for or accepted the offer of a review 
             </label>
+
+            <div data-dependent="direct=true"><label class="block-label">
+              <input name="challenge_status" type="radio" value="Overdue" data-store="challenge_status=overdue" />
+              <strong>Review declined</strong><br>
+              I was offered a review but did not accept the offer
+            </label>
+            </div>
 
             <label class="block-label">
               <input name="challenge_status" type="radio" value="Overdue" data-store="challenge_status=overdue" />
-              No, I've been waiting for 45 days or more
+              <strong>Nothing</strong><br>
+              I did not receive the offer of a review
             </label>
+
+            <div class="panel js-hidden" id="challenge_status=pending">
+            <fieldset data-required data-error="Please enter an answer">
+              <label class="form-label" for="penalty_amount">
+                How many days have passed since you asked for or accepted the offer of a review?
+              </label>
+              <input class="form-control" type="text" id="penalty_amount" data-store>
+            </fieldset>
+          </div>
+
           </fieldset>
         </div>
 
