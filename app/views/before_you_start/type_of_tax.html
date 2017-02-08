@@ -10,7 +10,7 @@
     moj.Modules.dataStore.deleteItem('challenge_redirect');
 
     if(moj.Modules.dataStore.getItem('application_type') === 'closure') {
-      $('#closure_text').text('What type of tax return is under enquiry?');
+      $('#closure_text').text('What type of enquiry do you want to close?');
     }
   </script>
 {% endblock %}
@@ -28,7 +28,7 @@
 
       <p class="lede"><span class="js-hidden" data-dependent="application_type=appeal">You will find this information on either the original notice letter or review conclusion letter.</span>
 
-      <span class="js-hidden" data-dependent="application_type=closure">The tax tribunal can only receive applications to close the following types of enquiry.</span></p>
+      <span class="js-hidden" data-dependent="application_type=closure">The tax tribunal can only deal with applications to close the following enquiries.</span></p>
 
 
       <form class="js_route js_store_answers" action="dispute_type" data-number="1">
@@ -86,28 +86,53 @@
 
               <label class="block-label">
                 <input name="tax_type" type="radio" value="income_tax" data-store="tax_type=Capital Gains Tax return,direct=true,hardship=no" />
-                Capital Gains Tax
+                Personal return
               </label>
 
               <label class="block-label">
                 <input name="tax_type" type="radio" value="income_tax" data-store="tax_type=Corporation Tax self-assessment,direct=true,hardship=no" />
-                Corporation Tax
+                Company return
               </label>
 
               <label class="block-label">
                 <input name="tax_type" type="radio" value="income_tax" data-store="tax_type=Income Tax return,direct=true,hardship=no" />
-                Income Tax
+                Partnership return
               </label>
 
               <label class="block-label">
                 <input name="tax_type" type="radio" value="income_tax" data-store="tax_type=Partnership Tax return,direct=true,hardship=no" />
-                Partnership Tax
+                Trustee return
               </label>
 
               <label class="block-label">
                 <input name="tax_type" type="radio" value="income_tax" data-store="tax_type=Stamp Duty Land Tax,direct=true,hardship=no" />
-                Stamp Duty Land Tax
+                Claim or amendment of a claim
               </label>
+
+              <label class="block-label">
+                <input name="tax_type" type="radio" value="income_tax" data-store="tax_type=Stamp Duty Land Tax,direct=true,hardship=no" />
+                Enterprise Management Incentives (EMIs): qualifying options
+              </label>
+
+              <label class="block-label">
+                <input name="tax_type" type="radio" value="income_tax" data-store="tax_type=Stamp Duty Land Tax,direct=true,hardship=no" />
+                Non-resident Capital Gains Tax (NRCGT) return
+              </label>
+
+              <label class="block-label">
+                <input name="tax_type" type="radio" value="income_tax" data-store="tax_type=Stamp Duty Land Tax,direct=true,hardship=no" />
+                Stamp Duty Land Tax (SDLT): land transaction return
+              </label>
+
+              <label class="block-label">
+                <input name="tax_type" type="radio" value="income_tax" data-store="tax_type=Stamp Duty Land Tax,direct=true,hardship=no" />
+                Stamp Duty Land Tax (SDLT): claim or amendment of a claim
+              </label>    
+
+              <label class="block-label">
+                <input name="tax_type" type="radio" value="income_tax" data-store="tax_type=Stamp Duty Land Tax,direct=true,hardship=no" />
+                Transactions in securities: issue of counteraction or no-counteraction notice
+              </label>   
 
             </div>
           </fieldset>
