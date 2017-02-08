@@ -11,11 +11,11 @@ moj.Modules.debug = {
       call: 'moj.Modules.formRoutes.toggleValidation()'
     },
     {
-      text: 'skip to data capture (direct, Income tax, no hardship)',
+      text: 'skip to data capture (direct, Income tax, no hardship, FFS)',
       call: 'moj.Modules.debug.skipToDataCapture(0)'
     },
     {
-      text: 'skip to data capture (indirect, VAT, hardship)',
+      text: 'skip to data capture (indirect, VAT, hardship, FFS)',
       call: 'moj.Modules.debug.skipToDataCapture(1)'
     },
     {
@@ -95,17 +95,17 @@ moj.Modules.debug = {
       moj.Modules.dataStore.storeItem(x, self.dummyData[dataset][x]);
     }
 
-    document.location = '/task_list';
+    document.location = '/data_capture/who_are_you';
   },
 
   dummyData: [
     {
       task_determine_fee: 'complete',
       task_check_if_late: 'complete',
+      application_type: 'appeal',
       application_is_late: 'no',
       direct: 'true',
-      fee: '200',
-      fees: 'yes',
+      fees: 'no',
       hardship: 'no',
       hmrc_challenge: 'yes',
       tax_amount: '3456',
@@ -126,10 +126,10 @@ moj.Modules.debug = {
     {
       task_determine_fee: 'complete',
       task_check_if_late: 'complete',
+      application_type: 'appeal',
       application_is_late: 'no',
       direct: 'false',
-      fee: '200',
-      fees: 'yes',
+      fees: 'no',
       hardship: 'yes',
       hardship_application_status: 'refused',
       hardship_applied_for: 'yes',
