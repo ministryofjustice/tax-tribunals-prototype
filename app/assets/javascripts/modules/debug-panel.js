@@ -21,6 +21,10 @@ moj.Modules.debug = {
     {
       text: 'edit session var',
       call: 'moj.Modules.debug.editSessionVar()'
+    },
+    {
+      text: 'go to check answers with current data',
+      call: 'moj.Modules.debug.goToCheckAnswers()'
     }
   ],
   init: function() {
@@ -98,18 +102,22 @@ moj.Modules.debug = {
     document.location = '/data_capture/who_are_you';
   },
 
+  goToCheckAnswers: function() {
+    document.location = '/data_capture/check_answers';
+  },
+
   dummyData: [
     {
       task_determine_fee: 'complete',
       task_check_if_late: 'complete',
       application_type: 'appeal',
-      application_is_late: 'no',
+      application_is_in_time: 'yes',
       direct: 'true',
       fees: 'no',
       hardship: 'no',
       hmrc_challenge: 'yes',
       tax_amount: '3456',
-      tax_type: 'Income tax',
+      tax_type: 'Income Tax',
       storedAnswers: [
         {
           "question": "What is your appeal about?",
@@ -127,7 +135,7 @@ moj.Modules.debug = {
       task_determine_fee: 'complete',
       task_check_if_late: 'complete',
       application_type: 'appeal',
-      application_is_late: 'no',
+      application_is_in_time: 'yes',
       direct: 'false',
       fees: 'no',
       hardship: 'yes',
@@ -136,7 +144,7 @@ moj.Modules.debug = {
       hmrc_challenge: 'yes',
       paid_disputed_tax: 'no',
       tax_amount: '5000',
-      tax_type: 'VAT',
+      tax_type: 'Value Added Tax (VAT)',
       storedAnswers: [
         {
           "question": "What is your appeal about?",

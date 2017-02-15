@@ -39,13 +39,13 @@
             <div data-dependent="application_type=appeal">
 
               <label class="block-label">
-                <input name="tax_type" type="radio" value="income_tax" data-store="tax_type=Income tax,direct=true,hardship=no" />
+                <input name="tax_type" type="radio" value="income_tax" data-store="tax_type=Income Tax,direct=true,hardship=no" />
                 <strong>Income Tax</strong><br>
                 including tax paid through Pay As You Earn (PAYE) and Self Assessment
               </label>
 
               <label class="block-label">
-                <input name="tax_type" type="radio" value="vat" data-store="tax_type=VAT,direct=false,hardship=yes" />
+                <input name="tax_type" type="radio" value="vat" data-store="tax_type=Value Added Tax (VAT),direct=false,hardship=yes" />
                 <strong>Value Added Tax (VAT)</strong>
               </label>
 
@@ -70,7 +70,7 @@
               </label>
 
               <label class="block-label">
-                <input name="tax_type" type="radio" value="information notice" data-store="fee=50,direct=n/a,hardship=no,tax_type=info_notice" />
+                <input name="tax_type" type="radio" value="information notice" data-store="fee=50,direct=n/a,hardship=no,tax_type=Information notice" />
                 <strong>Information notice</strong><br>
                 a request for further information about your tax position
               </label>
@@ -127,19 +127,20 @@
               <label class="block-label">
                 <input name="tax_type" type="radio" value="income_tax" data-store="tax_type=Stamp Duty Land Tax,direct=true,hardship=no" />
                 Stamp Duty Land Tax (SDLT): claim or amendment of a claim
-              </label>    
+              </label>
 
               <label class="block-label">
                 <input name="tax_type" type="radio" value="income_tax" data-store="tax_type=Stamp Duty Land Tax,direct=true,hardship=no" />
                 Transactions in securities: issue of counteraction or no-counteraction notice
-              </label>   
+              </label>
 
             </div>
           </fieldset>
         </div>
 
-        <p>
+        <p class="actions">
           <input class="button" type="submit" value="Continue">
+          <a class="save-link" href="#">Save and come back later</a>
         </p>
 
       </form>

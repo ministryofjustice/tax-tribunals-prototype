@@ -26,8 +26,8 @@ moj.Modules.dataCaptureSummary = {
     },
     {
       elementId: 'representative_details_row',
-      dataKey: 'appellant_has_representation',
-      dataValue: 'yes'
+      dataKey: 'representative_address',
+      dataValue: '*'
     },
     {
       elementId: 'representative_name',
@@ -46,8 +46,8 @@ moj.Modules.dataCaptureSummary = {
     },
     {
       elementId: 'appeal_timeliness_section',
-      dataKey: 'application_type',
-      dataValue: 'appeal'
+      dataKey: 'application_is_in_time',
+      dataValue: '*'
     },
     {
       elementId: 'closure_section',
@@ -56,8 +56,8 @@ moj.Modules.dataCaptureSummary = {
     },
     {
       elementId: 'reasons_for_late_application_row',
-      dataKey: 'application_is_late',
-      dataValue: 'yes'
+      dataKey: 'application_is_in_time',
+      dataValue: '!yes'
     },
     {
       elementId: 'hardship_reasons_row',
@@ -70,14 +70,29 @@ moj.Modules.dataCaptureSummary = {
       dataValue: 'closure'
     },
     {
+      elementId: 'taxpayer_details_row',
+      dataKey: 'appellant_address',
+      dataValue: '*'
+    },
+    {
+      elementId: 'appellant_phone',
+      dataKey: 'appellant_phone',
+      dataValue: '*'
+    },
+    {
+      elementId: 'appellant_email',
+      dataKey: 'appellant_email',
+      dataValue: '*'
+    },
+    {
       elementId: 'outcome_row',
-      dataKey: 'application_type',
-      dataValue: '!closure'
+      dataKey: 'desired_outcome',
+      dataValue: '*'
     },
     {
       elementId: 'grounds_row',
-      dataKey: 'application_type',
-      dataValue: '!closure'
+      dataKey: 'grounds_for_appeal',
+      dataValue: '*'
     }
   ],
 
@@ -87,6 +102,10 @@ moj.Modules.dataCaptureSummary = {
     self.showFeeDeterminationAnswers();
     self.showDependentItems();
     self.showUploadedDocs();
+
+    if(moj.Modules.dataStore.getItem('returning') === 'true') {
+      self.tweakPageForReturn();
+    }
   },
 
   showDependentItems: function() {
@@ -101,6 +120,12 @@ moj.Modules.dataCaptureSummary = {
           self.hideItem(dep.elementId);
         } else {
           self.showItem(dep.elementId);
+        }
+      } else if(dep.dataValue === '*') {
+        if(val) {
+          self.showItem(dep.elementId);
+        } else {
+          self.hideItem(dep.elementId);
         }
       } else {
         if(val === dep.dataValue) {
@@ -166,8 +191,10 @@ moj.Modules.dataCaptureSummary = {
   },
 
   showUploadedDocs: function() {
-    var $list = $('.uploaded-docs').eq(0),
+    var self = this,
+        $list = $('.uploaded-docs').eq(0),
         html = '',
+        items = [],
         filenames = moj.Modules.dataStore.getItem('document_filenames'),
         letter = moj.Modules.dataStore.getItem('doc_check_hmrc_letter'),
         review = moj.Modules.dataStore.getItem('doc_check_review_conclusion'),
@@ -175,34 +202,46 @@ moj.Modules.dataCaptureSummary = {
         hardshipFile = moj.Modules.dataStore.getItem('file_reasons_for_hardship'),
         proFormaFile = moj.Modules.dataStore.getItem('file_rep_pro_forma');
 
-    // if(filenames || letter || review || groundsFile || proFormaFile || hardshipFile) {
-    //   $list.empty();
-    // }
+    $list.empty();
 
     if(proFormaFile) {
-      html += '<li>Representative pro forma: ' + proFormaFile + '</li>';
+      items.push('Representative pro forma: ' + proFormaFile);
     }
     if(letter) {
-      html += '<li>' + letter + '</li>';
+      items.push(letter);
     }
     if(review) {
-      html += '<li>' + review + '</li>';
+      items.push(review);
     }
     if(groundsFile) {
-      html += '<li>Grounds for appeal: ' + groundsFile + '</li>';
+      items.push('Grounds for appeal: ' + groundsFile);
       $('[data-key="grounds_for_appeal"]').after('<br>(File uploaded, see below)');
     }
     if(hardshipFile) {
-      html += '<li>Reasons for hardship application: ' + hardshipFile + '</li>';
+      items.push('Reasons for hardship application: ' + hardshipFile);
       $('[data-key="hmrc_reasons_to_allow_hardship"]').after('<br>(File uploaded, see below)');
     }
 
     if(filenames && moj.Modules.dataStore.getItem('application_type') === 'closure') {
-      html += '<li>Supporting documents: ' + filenames.join(', ') + '</li>';
+      items.push('Supporting documents: ' + filenames.join(', '));
     }
 
-    if(html !== '') {
+    if(items.length) {
+      items.forEach(function(item) {
+        html += '<li>' + item + '</li>';
+      });
       $list.html(html);
+    } else {
+      self.hideItem('documents_row');
     }
+  },
+
+  tweakPageForReturn: function() {
+    var page = moj.Modules.dataStore.getItem('return_page');
+
+    $('td.change-answer').html('&nbsp;');
+    $('table.check-your-answers tbody:last').append('<tr class="no-border"><td colspan="3" class="right"><a class="button" href="' + page + '">Continue</a></td></tr>');
+    $('#confirm-answers').addClass('disabled');
   }
 };
+

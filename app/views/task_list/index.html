@@ -9,9 +9,9 @@
   <script>
     moj.Modules.dataStore.storeItem('application_type', 'appeal');
 
-    if(moj.Modules.dataStore.getItem('application_is_late') === 'no') {
-      $('[data-task="check_if_late"]').text('IN TIME');
-    } else if(moj.Modules.dataStore.getItem('application_is_late') === 'unknown') {
+    if(moj.Modules.dataStore.getItem('application_is_in_time') === 'no') {
+      $('[data-task="check_if_late"]').text('LATE');
+    } else if(moj.Modules.dataStore.getItem('application_is_in_time') === 'unknown') {
       $('[data-task="check_if_late"]').text('NOT SURE');
     }
   </script>
@@ -53,7 +53,7 @@
           <a class="task-link" href="/lateness/start">Check you meet the tribunal deadline</a>
           <p>You can still submit your appeal late by giving reasons for the judge to consider.</p>
           <p>(5 minutes to complete)</p>
-          <span class="task-status js-hidden" data-task="check_if_late">LATE</span>
+          <span class="task-status js-hidden" data-task="check_if_late">IN TIME</span>
           <a class="button button-start js-hidden" href="/lateness/start">Start</a>
         </li>
         <li>

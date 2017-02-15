@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+
+{% set ptitle = "Sign into your account" %}
+
+{% block page_title %}
+  {{ ptitle }} - Tax Tribunals Prototype
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  {% include "includes/phase_banner_alpha.html" %}
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <p><a class="link-back js-link-back" href="#">Back</a></p>
+      <h1 class="heading-large">
+        {{ ptitle }}
+      </h1>
+
+      <p><a href="create_account">I need to create an account</a></p>
+
+      <form class="js_route" action="/data_capture/check_answers">
+
+        <div class="form-group">
+          <label class="form-label" for="login_email">Email</label>
+          <input class="form-control" type="text" id="login_email" data-store>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="login_password">Password</label>
+          <input class="form-control" type="password" id="login_password" data-store>
+        </div>
+
+        <input type="hidden" id="returning" value="true" data-store>
+
+        <p><a href="#" data-alert="Functionality not required for testing - any email any password will work">I've forgotten my password</a></p>
+
+        <p>
+          <input class="button" type="submit" value="Continue">
+        </p>
+
+      </form>
+
+    </div>
+  </div>
+</main>
+
+{% endblock %}
+
+

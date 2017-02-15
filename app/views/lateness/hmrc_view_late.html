@@ -9,7 +9,7 @@
   <script>
     moj.Modules.dataStore.storeItem('task_check_if_late', 'complete');
 
-    if(moj.Modules.dataStore.getItem('application_is_late') === 'unknown') {
+    if(moj.Modules.dataStore.getItem('application_is_in_time') === 'unknown') {
       $('.might-be-late-heading').text('Are there reasons why your appeal might be late?');
       $('.might-be-late').text('To help us process your case quickly, you should give reasons why your appeal might be late. The judge will look at your reasons and decide whether to accept your appeal if it is late.');
       $('.might-be-late-box').text('Reason(s) your appeal might be late');
@@ -42,8 +42,9 @@
           </fieldset>
         </div>
 
-        <p>
+        <p class="actions">
           <input class="button" type="submit" value="Continue">
+          <a class="save-link" href="#">Save and come back later</a>
         </p>
 
       </form>

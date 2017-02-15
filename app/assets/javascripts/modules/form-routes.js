@@ -27,7 +27,10 @@ moj.Modules.formRoutes = {
 
       moj.Modules.dataStore.checkForItemsToStore($form);
 
-      if(self.validationOn === 'on') {
+      if(moj.Modules.dataStore.getItem('saving') === 'true') {
+        moj.Modules.dataStore.deleteItem('saving');
+        self.go($form.attr('action'));
+      } else if(self.validationOn === 'on') {
         if(validate(e)) {
           self.checkRoute($form);
         }
@@ -53,6 +56,7 @@ moj.Modules.formRoutes = {
 
   next: function(page) {
     var self = this,
+        saving = moj.Modules.dataStore.getItem('saving'),
         fees = moj.Modules.dataStore.getItem('fees'),
         applicationType = moj.Modules.dataStore.getItem('application_type'),
         isDirect = moj.Modules.dataStore.getItem('direct'),
@@ -78,7 +82,7 @@ moj.Modules.formRoutes = {
         self.go('/closure/cannot_close');
       }
     } else {
-      if(page === 'fee' && moj.Modules.dataStore.getItem('tax_type') === 'Restoration case' && moj.Modules.dataStore.getItem('hmrc_challenge') !== 'yes') {
+      if(page === 'fee' && moj.Modules.dataStore.getItem('tax_type').toLowerCase() === 'restoration case' && moj.Modules.dataStore.getItem('hmrc_challenge') !== 'yes') {
         // must challenge if restoration
         self.go('/restoration/must_challenge');
       } else if(isDirect === 'true' && hasChallenged === 'no' && pageName !== 'hmrc_must' && wasRedirected !== 'yes') {

@@ -16,3 +16,15 @@ strong {
 address {
   font-style: normal;
 }
+
+p.actions {
+
+  a, input {
+    vertical-align: middle;
+    display: inline-block;
+  }
+
+  a {
+    margin-left: 3em;
+  }
+}

@@ -33,26 +33,12 @@
       <tr>
         <th colspan="3"><h2 class="heading-medium"><span class="js-hidden" data-dependent="application_type=appeal">Appeal</span><span class="js-hidden" data-dependent="application_type=closure">Application</span> type <span data-dependent="fees=yes">and cost</span></h2></th>
       </tr>
-      <tr class="js-hidden" data-dependent="application_type=appeal">
+      <tr class="js-hidden" data-dependent="hmrc_challenge">
         <th>Did you challenge the original decision?</th>
         <td><span data-key="hmrc_challenge" class="js_uc_first">Yes</span></td>
         <td class="change-answer"><a href="#" data-alert="This functionality is not currently available in this demo">Change</a></td>
       </tr>
-      <tr class="js_fee-determination-details">
-        <td>What is your appeal about?</td>
-        <td>Income tax</td>
-        <td>&nbsp;</td>
-      </tr>
-      <tr class="js-hidden" data-dependent="penalty_amount">
-        <th>What is the penalty or surcharge amount?</th>
-        <td>£<span data-key="penalty_amount" class="js_uc_first">500</span></td>
-        <td>&nbsp;</td>
-      </tr>
-      <tr class="js-hidden" data-dependent="tax_amount">
-        <th>What is the amount of tax?</th>
-        <td>£<span data-key="tax_amount" class="js_uc_first">5000</span></td>
-        <td>&nbsp;</td>
-      </tr>
+      <tr class="js_fee-determination-details"></tr>
       <tr data-dependent="fees=yes">
         <th>Initial <span class="js-hidden" data-dependent="application_type=appeal">appeal</span><span class="js-hidden" data-dependent="application_type=closure">application</span> fee</th>
         <td>£<span data-key="fee">50</span></td>
@@ -64,9 +50,9 @@
       <tr>
         <th colspan="3"><h2 class="heading-medium">Appeal deadline</h2></th>
       </tr>
-      <tr id="application_is_late_row">
-        <th>Is the appeal late?</th>
-        <td><span data-key="application_is_late" class="js_uc_first">Yes</span></td>
+      <tr id="application_is_in_time_row">
+        <th>Is the appeal in time?</th>
+        <td><span data-key="application_is_in_time" class="js_uc_first">Yes</span></td>
         <td class="change-answer"><a href="#" data-alert="This functionality is not currently available in this demo">Change</a></td>
       </tr>
       <tr id="reasons_for_late_application_row" class="js-hidden">
@@ -106,7 +92,7 @@
       <tr>
         <th colspan="3"><h2 class="heading-medium"><span class="js-hidden" data-dependent="application_type=appeal">Appeal</span><span class="js-hidden" data-dependent="application_type=closure">Application</span> details</h2></th>
       </tr>
-      <tr>
+      <tr id="taxpayer_details_row">
         <th>Taxpayer's details</th>
         <td>
           <div id="appellant_name" class="js-hidden"><span data-key="appellant_first_name">Terry</span> <span data-key="appellant_last_name">Example</span></div>
@@ -114,7 +100,7 @@
           <div id="appellant_organisation_name" data-key="appellant_organisation_name" class="js-hidden">TerryOrg</div>
           <div data-key="appellant_address" class="js_breaklines">1 Test Road<br>Teston</div>
           <div data-key="appellant_postcode">TE37 1NG</div>
-          <div>
+          <div id="appellant_phone">
             Tel: <span data-key="appellant_phone">01234 567890</span>
           </div>
           <div id="appellant_email">
@@ -156,7 +142,7 @@
 
       <tr id="outcome_row">
         <th>Desired outcome</th>
-        <td><span data-key="desired_outcome">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nec ultricies nisi, in cursus nibh. Cras iaculis malesuada consectetur. Mauris ut venenatis massa. Ut imperdiet feugiat tempus. Nunc ac molestie enim, at ullamcorper quam.</span></td>
+        <td><span data-key="desired_outcome"></span></td>
         <td class="change-answer"><a href="#" data-alert="This functionality is not currently available in this demo">Change</a></td>
       </tr>
 
@@ -170,13 +156,7 @@
         <th>Documents submitted</th>
         <td>
           <ul class="list-bullet uploaded-docs">
-            <span class="js-hidden" data-dependent="application_type=appeal">
             <li>Original notice letter</li>
-            <li>Review conclusion letter</li>
-            </span>
-            <span class="js-hidden" data-dependent="application_type=closure">
-            <li>HMRC enquiry correspondence</li>
-            </span>
           </ul>
         </td>
         <td class="change-answer"><a href="#" data-alert="This functionality is not currently available in this demo">Change</a></td>

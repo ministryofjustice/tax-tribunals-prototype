@@ -30,24 +30,26 @@
             <legend class="visuallyhidden">Do you think you're in time to appeal to the tax tribunal?</legend>
 
             <label class="block-label">
-              <input name="lateness" type="radio" value="in_time" data-store="application_is_late=no" />
+              <input name="application_is_in_time" type="radio" value="yes" data-store="application_is_in_time=yes" />
               Yes, I am in time
             </label>
 
             <label class="block-label">
-              <input name="lateness" type="radio" value="out_time" data-destination="hmrc_view_late" data-store="application_is_late=yes" />
+              <input name="application_is_in_time" type="radio" value="no" data-destination="hmrc_view_late" data-store="application_is_in_time=no" />
               No, I am late
             </label>
 
             <label class="block-label">
-              <input name="lateness" type="radio" value="unknown" data-destination="hmrc_view_late" data-store="application_is_late=unknown" />
+              <input name="application_is_in_time" type="radio" value="unknown" data-destination="hmrc_view_late" data-store="application_is_in_time=unknown" />
               I am not sure
             </label>
 
           </fieldset>
         </div>
 
+        <p class="actions">
           <input class="button" type="submit" value="Continue">
+          <a class="save-link" href="#">Save and come back later</a>
         </p>
 
       </form>

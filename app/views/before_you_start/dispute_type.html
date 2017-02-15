@@ -13,7 +13,7 @@
     if(moj.Modules.dataStore.getItem('direct') && moj.Modules.dataStore.getItem('direct').toLowerCase() === 'yes') {
       $('input[value="closure_notices"]').closest('label').removeClass('js-hidden');
     }
-    if(moj.Modules.dataStore.getItem('tax_type').toLowerCase() === 'info_notice') {
+    if(moj.Modules.dataStore.getItem('tax_type') && moj.Modules.dataStore.getItem('tax_type').toLowerCase() === 'information notice') {
       $('input:not([value="penalty"],[value="appeal_info_notice"])').closest('label').addClass('js-hidden');
     }
   </script>
@@ -42,17 +42,17 @@
             </label>
 
             <label class="block-label">
-              <input name="dispute_type" type="radio" value="amount_of_tax_owed" data-destination="tax_amount"  data-store="fee=200" />
+              <input name="dispute_type" type="radio" value="tax_owed_to_taxpayer" data-destination="tax_amount"  data-store="fee=200" />
               <strong>HMRC should repay tax to you</strong>
             </label>
 
             <label class="block-label">
-              <input name="dispute_type" type="radio" value="amount_of_tax_owed" data-destination="tax_amount"  data-store="fee=200" />
+              <input name="dispute_type" type="radio" value="tax_owed_to_hmrc" data-destination="tax_amount"  data-store="fee=200" />
               <strong>HMRC claim you owe tax</strong>
             </label>
 
             <label class="block-label">
-              <input name="dispute_type" type="radio" value="amount_of_tax_owed" data-destination="penalty_tax_amount"  data-store="fee=200" />
+              <input name="dispute_type" type="radio" value="tax_and_penalty_owed" data-destination="penalty_tax_amount"  data-store="fee=200" />
               <strong>HMRC claim you owe tax and a penalty or surcharge</strong><br>
               both must be shown on the same letter
             </label>
@@ -69,7 +69,7 @@
               request a closure notice for an ongoing enquiry into your tax returns
             </label>
 
-            <label class="block-label" data-dependent="tax_type=info_notice">
+            <label class="block-label" data-dependent="tax_type=Information notice">
               <input name="dispute_type" type="radio" value="appeal_info_notice"  data-store="fee=50" />
               <strong>Appeal against an information notice</strong>
             </label>
@@ -91,8 +91,9 @@
           </div>
         </div>
 
-        <p>
+        <p class="actions">
           <input class="button" type="submit" value="Continue">
+          <a class="save-link" href="#">Save and come back later</a>
         </p>
 
       </form>

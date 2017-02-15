@@ -1,0 +1,50 @@
+{% extends "layout.html" %}
+
+{% set ptitle = "Is your email correct?" %}
+
+{% block page_title %}
+  {{ ptitle }} - Tax Tribunals Prototype
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  {% include "includes/phase_banner_alpha.html" %}
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <p><a class="link-back js-link-back" href="#">Back</a></p>
+      <h1 class="heading-large">
+        {{ ptitle }}
+      </h1>
+
+      <p class="lede" data-key="account_email">terry-example@example.com</p>
+
+      <form class="js_route" action="email_confirmation">
+
+        <div class="form-group">
+          <label class="block-label">
+            <input name="email_correct" type="radio" value="yes" />
+            Yes
+          </label>
+
+          <label class="block-label">
+            <input name="email_correct" type="radio" value="no" data-destination="create_account" />
+            No
+          </label>
+        </div>
+
+        <p>
+          <input class="button" type="submit" value="Continue">
+        </p>
+
+      </form>
+
+    </div>
+  </div>
+</main>
+
+{% endblock %}
+
+
