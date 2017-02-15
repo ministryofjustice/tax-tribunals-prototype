@@ -28,3 +28,9 @@ p.actions {
     margin-left: 3em;
   }
 }
+
+.js-toggle-password {
+  cursor: pointer;
+  color: $link-colour;
+  text-decoration: underline;
+}

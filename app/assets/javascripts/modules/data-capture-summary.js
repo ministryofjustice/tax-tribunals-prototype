@@ -158,27 +158,29 @@ moj.Modules.dataCaptureSummary = {
 
     if(answers) {
       for(var x = 0; x < answers.length; x++) {
-        row = '';
-
-        row += '<tr class="fee-question-row"><td>';
-        row += answers[x].question;
-        row += '</td><td>';
-
-        answer = answers[x].text;
-        if(answers[x].val === 'other') {
-          answer = moj.Modules.dataStore.getItem('other_dispute');
-        } else if(answers[x].val === 'none_of_the_above') {
-          answer = moj.Modules.dataStore.getItem('other_dispute_type');
-        }
-        row += answer;
-
-        row += '</td><td>&nbsp;</td></tr>';
-
-        if(answers[x].val === 'other' && !moj.Modules.dataStore.getItem('other_dispute')) {
+        if(answers[x].val && answers[x].val !== '') {
           row = '';
-        }
 
-        html += row;
+          row += '<tr class="fee-question-row"><td>';
+          row += answers[x].question;
+          row += '</td><td>';
+
+          answer = answers[x].text;
+          if(answers[x].val === 'other') {
+            answer = moj.Modules.dataStore.getItem('other_dispute');
+          } else if(answers[x].val === 'none_of_the_above') {
+            answer = moj.Modules.dataStore.getItem('other_dispute_type');
+          }
+          row += answer;
+
+          row += '</td><td>&nbsp;</td></tr>';
+
+          if(answers[x].val === 'other' && !moj.Modules.dataStore.getItem('other_dispute')) {
+            row = '';
+          }
+
+          html += row;
+        }
       }
 
       $el.replaceWith(html);
@@ -237,7 +239,12 @@ moj.Modules.dataCaptureSummary = {
   },
 
   tweakPageForReturn: function() {
-    var page = moj.Modules.dataStore.getItem('return_page');
+    var page = moj.Modules.dataStore.getItem('return_page'),
+        visibleApplicationSectionRows = $('#application_section tr:visible');
+
+    if(visibleApplicationSectionRows.length === 1) {
+      $('#application_section tr').addClass('js-hidden');
+    }
 
     $('td.change-answer').html('&nbsp;');
     $('table.check-your-answers tbody:last').append('<tr class="no-border"><td colspan="3" class="right"><a class="button" href="' + page + '">Continue</a></td></tr>');

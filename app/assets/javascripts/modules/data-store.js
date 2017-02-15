@@ -13,36 +13,36 @@ moj.Modules.dataStore = {
 
   clearSessionData: function() {
     var self = this,
-        storedLength = sessionStorage.length;
+        storedLength = localStorage.length;
 
     moj.log('wiping session vars');
 
     for (var i = storedLength - 1; i >= 0; i--) {
-      self.deleteItem(sessionStorage.key(i));
+      self.deleteItem(localStorage.key(i));
     }
   },
 
   dumpData: function() {
     var self = this,
-        storedLength = sessionStorage.length;
+        storedLength = localStorage.length;
 
     moj.log('*** session vars ***');
     for(var i = 0; i < storedLength; i++) {
-      moj.log(sessionStorage.key(i) + ' = ' + sessionStorage.getItem(sessionStorage.key(i)));
+      moj.log(localStorage.key(i) + ' = ' + localStorage.getItem(localStorage.key(i)));
     }
     moj.log('*** END session vars ***');
   },
 
   storeItem: function(key, value) {
-    sessionStorage.setItem(key, JSON.stringify(value));
+    localStorage.setItem(key, JSON.stringify(value));
   },
 
   getItem: function(key) {
-    return JSON.parse(sessionStorage.getItem(key));
+    return JSON.parse(localStorage.getItem(key));
   },
 
   deleteItem: function(key) {
-    sessionStorage.removeItem(key);
+    localStorage.removeItem(key);
   },
 
   checkForItemsToStore: function($form) {

@@ -19,11 +19,13 @@
         {{ ptitle }}
       </h1>
 
-      <p>
-        To save your appeal you must first create an account.
-        <br>
-        <a href="sign_in">I already have an account.</a>
+      <p class="notice util_mt-large">
+        <i class="icon icon-important">
+          <span class="visuallyhidden">Warning</span>
+        </i>
+        <strong class="font-small">You must create an account before we can save your case.</strong>
       </p>
+      <p><a href="sign_in">I already have an account.</a></p>
 
       <form class="js_route" action="check_email">
 
@@ -37,7 +39,7 @@
             Create your password
             <span class="form-hint">Must be at least 8 characters</span>
           </label>
-          <input class="form-control form-control-3-4" type="password" id="account_password" data-store>
+          <input class="form-control form-control-3-4 js-toggleable-password" type="password" id="account_password" data-store>
         </div>
 
         <p>
