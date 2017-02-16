@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 
-{% set ptitle = "Email confirmation" %}
+{% set ptitle = "Your appeal has been saved" %}
 
 {% block page_title %}
   {{ ptitle }} - Tax Tribunals Prototype
@@ -14,24 +14,45 @@
 
   <div class="grid-row">
     <div class="column-two-thirds">
-      <p><a class="link-back js-link-back" href="#">Back</a></p>
       <h1 class="heading-large">
         {{ ptitle }}
       </h1>
 
-      <p class="lede">Please check your email.</p>
-      <p>The information you have entered so far has been saved, and you can return to complete your application at any time.</p>
-      <p>An email has been sent to <strong data-key="account_email">terry-example@example.com</strong> not your password obviously lorem ipsum login information etc etc etc</p>
+      <br>
+      <p class="lede">You can return to complete your application at any time. Your application will be saved for 30 days.</p>
+      <p class="lede">A confirmation email has been sent to: <strong data-key="account_email">terry-example@example.com</strong></p>
 
       <br><br>
       <form class="js_route" action="/application_type">
 
         <p>
-          <input class="button" type="submit" value="Back to service">
+          <input class="button" type="submit" value="Return to Appeal to Tax Tribunal">
         </p>
 
       </form>
 
+    </div>
+
+    <div class="column-one-third">
+      <aside class="govuk-related-items">
+
+        <h2 class="heading-medium">Courts, sentencing and tribunals</h2>
+        <nav role="navigation">
+          <ul class="font-xsmall">
+              <li><a href="https://www.gov.uk/court-fees-what-they-are">Court and tribunal fees</a></li>
+              <li><a href="https://www.gov.uk/tax-tribunal">Guide to tax tribunals</a></li>
+          </ul>
+        </nav>
+
+        <h2 class="heading-medium">Elsewhere on GOV.UK</h2>
+        <nav role="navigation">
+          <ul class="font-xsmall">
+            <li><a href="https://www.gov.uk/tax-appeals">Disagree with a tax decision</a></li>
+            <li><a href="https://www.gov.uk/government/publications/tax-chamber-tribunal-procedure-rules">Tax tribunal procedure rules</a></li>
+          </ul>
+        </nav>
+
+      </aside>
     </div>
   </div>
 </main>
