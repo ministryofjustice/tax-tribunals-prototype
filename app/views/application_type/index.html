@@ -7,7 +7,7 @@
 {% block body_end %}
   {{ super() }}
   <script>
-    if(moj.Modules.dataStore.getItem('fees').toLowerCase() === 'no') {
+    if(moj.Modules.dataStore.getItem('fees') && moj.Modules.dataStore.getItem('fees').toLowerCase() === 'no') {
       $('#appeal-link').attr('href', '/no_fees');
 
       moj.Modules.dataStore.storeItem('application_type', 'appeal');
