@@ -15,18 +15,18 @@
   <div class="grid-row">
     <div class="column-two-thirds">
       <h1 class="heading-large">
-        {{ ptitle }}
+        Your <span class="js-hidden" data-dependent="application_type=appeal">appeal</span><span class="js-hidden" data-dependent="application_type=closure">application</span> has been saved
       </h1>
 
       <br>
-      <p class="lede">You can return to complete your application at any time. Your application will be saved for 30 days.</p>
+      <p class="lede">You can return to complete your <span class="js-hidden" data-dependent="application_type=appeal">appeal</span><span class="js-hidden" data-dependent="application_type=closure">application</span> at any time. Your details will be saved for 30 days.</p>
       <p class="lede">A confirmation email has been sent to: <strong data-key="account_email">terry-example@example.com</strong></p>
 
       <br><br>
       <form class="js_route" action="/application_type">
 
         <p>
-          <input class="button" type="submit" value="Return to Appeal to Tax Tribunal">
+          <input class="button" type="submit" value="Return to start">
         </p>
 
       </form>
