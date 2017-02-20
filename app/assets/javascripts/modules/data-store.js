@@ -50,7 +50,7 @@ moj.Modules.dataStore = {
         fileEls = $form.find('input[type="file"][data-store]'),
         checkboxEls = $form.find('input[type="checkbox"][data-store]'),
         radioEls = $form.find('input[type="radio"][data-store]:checked'),
-        textEls = $form.find('input[type="text"][data-store], input[type="password"][data-store], input[type="number"][data-store], input[type="hidden"][data-store], textarea[data-store]');
+        textEls = $form.find('input[type="text"][data-store]:visible, input[type="password"][data-store]:visible, input[type="number"][data-store]:visible, input[type="hidden"][data-store], textarea[data-store]:visible');
 
     if(fileEls.length) {
       fileEls.each(function(n, el) {
