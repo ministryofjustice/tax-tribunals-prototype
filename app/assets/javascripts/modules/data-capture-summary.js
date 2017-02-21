@@ -105,7 +105,14 @@ moj.Modules.dataCaptureSummary = {
 
     if(moj.Modules.dataStore.getItem('returning') === 'true') {
       self.tweakPageForReturn();
+      self.bindEvents();
     }
+  },
+
+  bindEvents: function() {
+    $(document).on('click', '.js-resume', function() {
+      moj.Modules.dataStore.deleteItem('returning');
+    });
   },
 
   showDependentItems: function() {
@@ -247,7 +254,7 @@ moj.Modules.dataCaptureSummary = {
     }
 
     $('td.change-answer').html('&nbsp;');
-    $('table.check-your-answers tbody:last').append('<tr class="no-border"><td colspan="3" class="right"><a class="button" href="' + page + '">Continue</a></td></tr>');
+    $('table.check-your-answers tbody:last').append('<tr class="no-border"><td colspan="3" class="right"><a class="button js-resume" href="' + page + '">Continue</a></td></tr>');
     $('#confirm-answers').addClass('disabled');
   }
 };
