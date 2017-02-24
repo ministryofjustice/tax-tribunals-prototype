@@ -247,15 +247,18 @@ moj.Modules.dataCaptureSummary = {
 
   tweakPageForReturn: function() {
     var page = moj.Modules.dataStore.getItem('return_page'),
-        visibleApplicationSectionRows = $('#application_section tr:visible');
+        visibleApplicationSectionRows = $('#application_section tr:visible'),
+        applicationType = moj.Modules.dataStore.getItem('application_type') === 'closure' ? 'application' : 'appeal';
 
     if(visibleApplicationSectionRows.length === 1) {
       $('#application_section tr').addClass('js-hidden');
     }
 
-    $('td.change-answer').html('&nbsp;');
-    $('table.check-your-answers tbody:last').append('<tr class="no-border"><td colspan="3" class="right"><a class="button js-resume" href="' + page + '">Continue</a></td></tr>');
-    $('#confirm-answers').addClass('disabled');
+    $('.link-back').closest('p').remove();
+    $('h1.page-heading').text('Your saved ' + applicationType);
+    $('title').text('Your saved ' + applicationType + ' - Tax Tribunals Prototype');
+    $('.declaration').remove();
+    $('#confirm-answers').addClass('js-resume').text('Continue').attr('href', page);
   }
 };
 

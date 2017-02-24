@@ -12,7 +12,7 @@
   <script>
     moj.Modules.dataCaptureSummary.init();
 
-    if(moj.Modules.dataStore.getItem('fees').toLowerCase() === 'no') {
+    if(moj.Modules.dataStore.getItem('fees') === 'no' && moj.Modules.dataStore.getItem('returning') !== 'true') {
       $('#confirm-answers').attr('href', '/no_fees/confirmation');
     }
   </script>
@@ -25,7 +25,7 @@
   {% include "includes/phase_banner_alpha.html" %}
 
   <p><a class="link-back js-link-back" href="start.html">Back</a> &nbsp; Step 12 of 16</p>
-  <h1 class="heading-large">{{ ptitle }}</h1>
+  <h1 class="heading-large page-heading">{{ ptitle }}</h1>
 
   <table class="check-your-answers">
 
@@ -166,18 +166,21 @@
 
   </table>
 
-  <h2 class="heading-medium">Declaration and statement of truth</h2>
+  <div class="declaration">
+    <h2 class="heading-medium">Declaration and statement of truth</h2>
 
-  <p>By completing this <span class="js-hidden" data-dependent="application_type=appeal">Notice of Appeal</span><span class="js-hidden" data-dependent="application_type=closure">Application to Close an Enquiry</span> and clicking the ‘Submit and continue’ button, I believe the information I have given in this form is true to the best of my knowledge. If I am found to have been deliberately untruthful or dishonest, criminal proceedings for fraud can be brought against me. I understand that if I have given false information or I do not provide further evidence if requested, my <span class="js-hidden" data-dependent="application_type=appeal">appeal</span><span class="js-hidden" data-dependent="application_type=closure">application</span> may be rejected<span data-dependent="fees=yes"> and any tax tribunal fees will not be refunded</span>.</p>
+    <p>By completing this <span class="js-hidden" data-dependent="application_type=appeal">Notice of Appeal</span><span class="js-hidden" data-dependent="application_type=closure">Application to Close an Enquiry</span> and clicking the ‘Submit and continue’ button, I believe the information I have given in this form is true to the best of my knowledge. If I am found to have been deliberately untruthful or dishonest, criminal proceedings for fraud can be brought against me. I understand that if I have given false information or I do not provide further evidence if requested, my <span class="js-hidden" data-dependent="application_type=appeal">appeal</span><span class="js-hidden" data-dependent="application_type=closure">application</span> may be rejected<span data-dependent="fees=yes"> and any tax tribunal fees will not be refunded</span>.</p>
 
-      <p class="notice util_mt-large">
-        <i class="icon icon-important">
-          <span class="visuallyhidden">Warning</span>
-        </i>
-        <strong class="bold-small">
-          Once you click 'Submit and continue', you cannot change your answers
-        </strong>
-      </p>
+    <p class="notice util_mt-large">
+      <i class="icon icon-important">
+        <span class="visuallyhidden">Warning</span>
+      </i>
+      <strong class="bold-small">
+        Once you click 'Submit and continue', you cannot change your answers
+      </strong>
+    </p>
+  </div>
+
   <p>
     <a id="confirm-answers" class="button" href="/payment_tool/case_to_pay">Submit and continue</a>
   </p>

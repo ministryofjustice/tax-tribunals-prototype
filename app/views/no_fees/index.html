@@ -4,6 +4,14 @@
   Start your appeal - Tax Tribunals Prototype
 {% endblock %}
 
+{% block body_end %}
+  {{ super() }}
+  <script>
+      moj.Modules.dataStore.storeItem('application_type', 'appeal');
+    }
+  </script>
+{% endblock %}
+
 {% block content %}
 
 <main id="content" role="main">
